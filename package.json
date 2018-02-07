@@ -12,11 +12,13 @@
     "gatsby-plugin-offline": "^1.0.10",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sass": "^1.0.12",
+    "gatsby-plugin-typescript": "^1.4.15",
     "gatsby-remark-copy-linked-files": "^1.5.16",
     "gatsby-remark-prismjs": "^1.2.9",
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.17",
-    "reactstrap": "^5.0.0-alpha.3"
+    "reactstrap": "^5.0.0-alpha.3",
+    "typescript": "^2.7.1"
   },
   "keywords": [
     "gatsby",
@@ -29,5 +31,9 @@
     "build": "gatsby build",
     "start": "gatsby develop"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/react": "^16.0.36",
+    "@types/react-helmet": "^5.0.3",
+    "@types/reactstrap": "^5.0.12"
+  }
 }

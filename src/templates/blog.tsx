@@ -1,17 +1,17 @@
-import React from 'react'
+import * as React from 'react'
 import { Container, Card, CardTitle, CardGroup, CardBody } from 'reactstrap'
 import Helmet from 'react-helmet'
-import graphql from 'graphql'
+import * as graphql from 'graphql'
 import { basename } from 'path'
 import Link from 'gatsby-link'
 
 // find a post title by path
-const findNode = (path, data) => data.allMarkdownRemark.edges
+const findNode = (path: string, data: ITemplateData) => data.allMarkdownRemark.edges
   .map(edge => edge.node.frontmatter)
   .filter(r => r.path === path)
   .pop()
 
-export default function Template ({ data }) {
+export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
   const related = post.frontmatter.related ? post.frontmatter.related.map(r => findNode(r.post, data)) : []
   return (
@@ -65,6 +65,40 @@ export default function Template ({ data }) {
   )
 }
 
+interface ITemplateData {
+  site: {
+    siteMetadata: {
+      disqus: string
+    }
+  },
+  markdownRemark: {
+    html: string,
+    frontmatter: {
+      path: string,
+      date: string,
+      title: string,
+      attachments: [{
+        filename: string
+      }],
+      related: [{
+        post: string
+      }]
+    }
+  },
+  allMarkdownRemark: {
+    edges: [
+      {
+        node: {
+          frontmatter: {
+            title: string,
+            path: string
+          }
+        }
+      }
+    ]
+  }
+}
+
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     site {
@@ -72,7 +106,7 @@ export const pageQuery = graphql`
         disqus
       }
     }
-    
+
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

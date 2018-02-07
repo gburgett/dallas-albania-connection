@@ -22,6 +22,11 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: "gatsby-plugin-typescript",
+      options: {
+      },
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass'

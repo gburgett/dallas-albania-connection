@@ -1,7 +1,7 @@
-import React from 'react'
+import * as React from 'react'
 import { Container } from 'reactstrap'
 import PropTypes from 'prop-types'
-import graphql from 'graphql'
+import * as graphql from 'graphql'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
@@ -12,7 +12,7 @@ import 'prismjs/themes/prism-twilight.css'
 // main site style
 import './index.scss'
 
-const TemplateWrapper = ({ children, data }) => {
+const TemplateWrapper = ({ children, data }: IPageContext<ILayoutData>) => {
   let user
   if (typeof window !== 'undefined') {
     user = window.netlifyIdentity && window.netlifyIdentity.currentUser()
@@ -42,8 +42,12 @@ const TemplateWrapper = ({ children, data }) => {
   )
 }
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
+interface ILayoutData {
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
 }
 
 export const pageQuery = graphql`

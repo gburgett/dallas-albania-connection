@@ -1,9 +1,9 @@
-import React from 'react'
+import * as React from 'react'
 import { Container, Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import Link from 'gatsby-link'
-import graphql from 'graphql'
+import * as graphql from 'graphql'
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data }: IPageContext<IPageData>) => (
   <Container>
     {data.allMarkdownRemark.edges.filter(post => post.node.frontmatter.contentType === 'blog').map(({ node: post }) => (
       <Card style={{marginBottom: 10}} key={post.id}>
@@ -18,6 +18,25 @@ const IndexPage = ({ data }) => (
 )
 
 export default IndexPage
+
+interface IPageData {
+  allMarkdownRemark: {
+    edges: [
+      {
+        node: {
+          excerpt: string,
+          id: any,
+          frontmatter: {
+            title: string,
+            contentType: string,
+            date: string,
+            path: string
+          }
+        }
+      }
+    ]
+  }
+}
 
 export const pageQuery = graphql`
   query IndexQuery {

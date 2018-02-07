@@ -1,9 +1,9 @@
-import React from 'react'
+import * as React from 'react'
 import { Container } from 'reactstrap'
 import Helmet from 'react-helmet'
-import graphql from 'graphql'
+import * as graphql from 'graphql'
 
-export default function Template ({ data }) {
+export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
   return (
     <div>
@@ -16,7 +16,23 @@ export default function Template ({ data }) {
   )
 }
 
-export const aboutPageQuery = graphql`
+
+interface ITemplateData {
+  markdownRemark: {
+    html: string,
+    frontmatter: {
+      path: string,
+      title: string
+    }
+  }
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+}
+
+export const query = graphql`
   query AboutPage($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
