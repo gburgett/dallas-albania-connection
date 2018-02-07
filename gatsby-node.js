@@ -26,11 +26,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       return Promise.reject(result.errors)
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve(`src/templates/${String(node.frontmatter.contentType)}.tsx`),
-        context: {} // additional data can be passed via context
-      })
+      if (node.frontmatter.contentType) {
+        createPage({
+          path: node.frontmatter.path,
+          component: path.resolve(`src/templates/${String(node.frontmatter.contentType)}.tsx`),
+          context: {} // additional data can be passed via context
+        })
+      }
     })
   })
 }

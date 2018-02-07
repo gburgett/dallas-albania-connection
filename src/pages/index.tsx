@@ -3,8 +3,11 @@ import { Container, Card, CardText, CardBody, CardTitle, CardSubtitle } from 're
 import Link from 'gatsby-link'
 import * as graphql from 'graphql'
 
+import Hero from '../components/Hero'
+
 const IndexPage = ({ data }: IPageContext<IPageData>) => (
-  <Container>
+  <Container fluid>
+    <Hero {...data.hero} />
     {data.allMarkdownRemark.edges.filter(post => post.node.frontmatter.contentType === 'blog').map(({ node: post }) => (
       <Card style={{marginBottom: 10}} key={post.id}>
         <CardBody>
@@ -35,7 +38,8 @@ interface IPageData {
         }
       }
     ]
-  }
+  },
+  hero: any
 }
 
 export const pageQuery = graphql`
@@ -50,6 +54,17 @@ export const pageQuery = graphql`
             contentType
             date(formatString: "MMMM DD, YYYY")
             path
+          }
+        }
+      }
+    }
+    hero: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\/components/Hero\\.md$/"}}) {
+      edges {
+        node {
+          id
+          frontmatter {
+            image
+            title
           }
         }
       }
