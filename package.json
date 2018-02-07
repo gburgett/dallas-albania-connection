@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-bootstrap-netlify",
-  "description": "Example Gatsby, Bootstrap, and Netlify CMS project",
+  "name": "albania-dallas-connection",
+  "description": "Gatsby site for albania dallas connection",
   "version": "1.0.0",
-  "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "author": "Gordon Burgett <gordon@gordonburgett.net>",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "bootswatch": "^4.0.0-beta.2",
