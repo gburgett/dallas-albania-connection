@@ -1,6 +1,19 @@
 // Colors
 
-$off-white: #dfe6e9;
-$off-white-translucent: rgba(223, 230, 233, 0.8);
-$hero-head: #d63031;
-$hero-text: #2d3436;
+// https://flatuicolors.com/palette/us
+$flat-white: #dfe6e9;
+$flat-white-translucent: rgba(223, 230, 233, 0.8);
+$flat-green: #00b894;
+$flat-orange: #e17055;
+$flat-red: #d63031;
+$flat-dark: #2d3436;
+$flat-steelgrey: #636e72;
+$flat-lightgrey: #b2bec3;
+$flat-purple: #6c5ce7;
+$flat-blue: #0984e3;
+$flat-bluegreen: #00cec9;
+$flat-pink: #e84393;
+$flat-yellow: #fdcb6e;
+
+$hero-head: $flat-red;
+$hero-text: $flat-dark;
