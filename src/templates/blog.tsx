@@ -1,9 +1,11 @@
 import * as React from 'react'
-import { Container, Card, CardTitle, CardGroup, CardBody } from 'reactstrap'
+import { Row, Container, Card, CardTitle, CardGroup, CardBody } from 'reactstrap'
 import Helmet from 'react-helmet'
 import * as graphql from 'graphql'
 import { basename } from 'path'
 import Link from 'gatsby-link'
+
+import Hero from '../components/hero/Hero'
 
 // find a post title by path
 const findNode = (path: string, data: ITemplateData) => data.allMarkdownRemark.edges
@@ -13,7 +15,6 @@ const findNode = (path: string, data: ITemplateData) => data.allMarkdownRemark.e
 
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
-  const related = post.frontmatter.related ? post.frontmatter.related.map(r => findNode(r.post, data)) : []
   return (
     <div>
       <Helmet title={`Blog | ${post.frontmatter.title}`}>
@@ -29,7 +30,8 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
           })();`}</script>
         )}
       </Helmet>
-      <Container>
+      <Container fluid>
+        <Hero image={post.frontmatter.heroimage} />
         <h1 className='display-3'>{post.frontmatter.title}</h1>
       </Container>
 
@@ -54,7 +56,8 @@ interface ITemplateData {
     frontmatter: {
       path: string,
       date: string,
-      title: string
+      title: string,
+      heroimage: string
     }
   },
   allMarkdownRemark: {
@@ -63,7 +66,8 @@ interface ITemplateData {
         node: {
           frontmatter: {
             title: string,
-            path: string
+            path: string,
+            heroimage: string
           }
         }
       }
@@ -85,6 +89,7 @@ export const pageQuery = graphql`
         path
         date(formatString: "MMMM DD, YYYY")
         title
+        heroimage
       }
     }
 
@@ -94,6 +99,7 @@ export const pageQuery = graphql`
           frontmatter{
             title
             path
+            heroimage
           }
         }
       }

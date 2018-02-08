@@ -97,7 +97,6 @@
   & > .pageContent {
     flex: 1;
     overflow: auto;
-    padding-top: 10px;
   }
 }
 
@@ -110,11 +109,33 @@
 }
 
 .jumbotron {
-  background-position: 50% 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 350px;
+  margin-left: -15px;
+  margin-right: -15px;
+  background-color: $flat-steelgrey;
+
+  .hero-image {
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 600px;
+  }
 }
+
+@include media-breakpoint-up(lg) {
+  .jumbotron .hero-image {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .jumbotron .hero-image {
+    max-width: 70%;
+  }
+}
+
+
 
 .hero-title {
   padding: 40px 40px;
