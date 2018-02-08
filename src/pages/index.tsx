@@ -58,10 +58,11 @@ export const pageQuery = graphql`
         }
       }
     }
-    hero: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\/components/hero/Hero\\.md$/"}}) {
+    hero: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\/components/hero/Hero\\.md$/"}}, limit: 1) {
       edges {
         node {
           id
+          html
           frontmatter {
             image
             title

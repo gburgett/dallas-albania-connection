@@ -85,6 +85,7 @@
 // @import "node_modules/bootswatch/dist/united/bootswatch";
 // @import "node_modules/bootswatch/dist/yeti/bootswatch";
 
+@import "../colors";
 
 // page-level layout
 
@@ -117,4 +118,21 @@
 
 .hero-title {
   padding: 40px 40px;
+
+  color: $hero-text;
+
+  h1 {
+    color: $hero-head;
+  }
+
+  > div {
+    background-color: $off-white-translucent;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 4px 2px;
+
+    p {
+      margin: 0px;
+    }
+  }
 }
