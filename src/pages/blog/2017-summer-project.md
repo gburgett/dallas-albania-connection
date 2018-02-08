@@ -1,14 +1,8 @@
 ---
 contentType: blog
-path: /madeinadmin
-title: Admin Test
-date: 2017-11-08T06:15:05.907Z
-attachments:
-  - filename: /files/hynocat.jpg
-related:
-  - post: /einstein
-  - post: /claude
-  - post: /intro-to-graphql
+path: /2017
+title: 2017 summer project
+date: 2017-07-01
 ---
 This was made in the admin, complete with an image
 
