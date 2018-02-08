@@ -29,8 +29,7 @@ export default class Hero extends React.Component<IHeroProps | IHeroQueryResult,
       props = this.props
     }
 
-    console.log('image:', props.image)
-    return  (<Jumbotron style={ {'background-image': `url('${props.image}')`} }>
+    return  (<Jumbotron style={ {backgroundImage: `url('${props.image}')`} }>
       <div className="hero-title">
         <h1>{ props.title }</h1>
       </div>

@@ -3,7 +3,7 @@ import { Container, Card, CardText, CardBody, CardTitle, CardSubtitle } from 're
 import Link from 'gatsby-link'
 import * as graphql from 'graphql'
 
-import Hero from '../components/Hero'
+import Hero from '../components/hero/Hero'
 
 const IndexPage = ({ data }: IPageContext<IPageData>) => (
   <Container fluid>
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    hero: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\/components/Hero\\.md$/"}}) {
+    hero: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\/components/hero/Hero\\.md$/"}}) {
       edges {
         node {
           id
