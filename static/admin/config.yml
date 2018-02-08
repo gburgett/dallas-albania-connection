@@ -15,10 +15,10 @@ collections:
       - {label: "Content Type", name: "contentType", widget: "hidden", default: "blog"}
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Display On Homepage", name: "homepage", widget: "boolean", default: false}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Hero Image", name: "heroimage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Attachment", name: "attachments", widget: "list", fields: [{name: "filename", label: "Filename", widget: "file"}] }
-      - {label: "Related Post", name: "related", widget: "list", fields: [{name: "post", label: "Post", widget: "relation", collection: "blog", searchFields: [name, path, title], valueField: path}] }
 
   - name: "about"
     label: "About"
