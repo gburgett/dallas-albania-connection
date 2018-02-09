@@ -40,10 +40,10 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     <Hero {...data.hero} />
     {feature && <Feature {...feature} />}
     <Row>
-      <Col md={3} xs={'hidden'}>
+      <Col xs={12} md={3}>
         <h1>TODO: Events</h1>
       </Col>
-      <Col md={9}>
+      <Col xs={12} md={9}>
         <GroupedPosts cards={cards} />
       </Col>
     </Row>
