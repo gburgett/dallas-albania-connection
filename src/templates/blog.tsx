@@ -15,6 +15,7 @@ const findNode = (path: string, data: ITemplateData) => data.allMarkdownRemark.e
 
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
+  const { heroimage, title } = post.frontmatter;
   return (
     <div>
       <Helmet title={`Blog | ${post.frontmatter.title}`}>
@@ -30,9 +31,10 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
           })();`}</script>
         )}
       </Helmet>
+
       <Container fluid>
-        <Hero image={post.frontmatter.heroimage} />
-        <h1 className='display-3'>{post.frontmatter.title}</h1>
+        {heroimage && <Hero image={heroimage} />}
+        <h1 className='display-3'>{title}</h1>
       </Container>
 
       <Container dangerouslySetInnerHTML={{ __html: post.html }} />
