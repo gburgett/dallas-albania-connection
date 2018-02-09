@@ -6,9 +6,9 @@ media_folder: "/static/files/"
 public_folder: "/files/"
 
 collections:
-  - name: "pages"
+  - name: "homepage"
     label: "Homepage"
-    folder: "src"
+    folder: "src/pages/homepage"
     create: false
     fields:
       - label: "Featured Link"

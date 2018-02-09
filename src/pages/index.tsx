@@ -94,7 +94,7 @@ interface IPost {
 
 export const pageQuery = graphql`
 query IndexQuery {
-  root: markdownRemark(fileAbsolutePath: {regex: "/\/pages\/_index\\.md$/"}) {
+  root: markdownRemark(fileAbsolutePath: {regex: "/\/pages\/homepage\/_index\\.md$/"}) {
     frontmatter {
       feature {
         title
