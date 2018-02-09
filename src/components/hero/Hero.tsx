@@ -31,7 +31,7 @@ export default class Hero extends React.Component<IHeroProps | IHeroNode, {}> {
     const title = props.title && (<h1>{ props.title }</h1>)
 
     const body = props.html && props.html.length > 0 &&
-      (<div
+      (<div className='d-none d-md-block'
         dangerouslySetInnerHTML={{ __html: props.html }}
         >
       </div>)
