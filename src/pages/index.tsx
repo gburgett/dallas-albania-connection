@@ -38,7 +38,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
 
   return (<Container fluid>
     <Hero {...data.hero} />
-    <Feature {...feature} />
+    {feature && <Feature {...feature} />}
     <Row>
       <Col md={3} xs={'hidden'}>
         <h1>TODO: Events</h1>
