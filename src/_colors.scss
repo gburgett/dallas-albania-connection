@@ -7,7 +7,9 @@ $flat-green: #00b894;
 $flat-orange: #e17055;
 $flat-red: #d63031;
 $flat-dark: #2d3436;
+$flat-dark-translucent: rgba(45, 52, 54, 0.8);
 $flat-steelgrey: #636e72;
+$flat-steelgrey-translucent: rgba(99, 110, 114, 0.8);
 $flat-lightgrey: #b2bec3;
 $flat-purple: #6c5ce7;
 $flat-blue: #0984e3;
@@ -16,4 +18,5 @@ $flat-pink: #e84393;
 $flat-yellow: #fdcb6e;
 
 $hero-head: $flat-red;
-$hero-text: $flat-dark;
+$hero-text: white;
+$hero-bg: $flat-steelgrey-translucent
