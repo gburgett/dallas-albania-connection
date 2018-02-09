@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import * as graphql from 'graphql'
 
 import Hero from '../components/hero/Hero'
+import Feature from '../components/Feature'
 
 const Post = (post: IPost) => (
   <Card style={{marginBottom: 10}} key={post.id}>
@@ -19,7 +20,7 @@ const Post = (post: IPost) => (
 const GroupedPosts = ({ cards }: { cards: Array<IPost> }) => {
   const groups = []
   for(let i = 0; i < cards.length; i += 2) {
-  groups.push(<CardGroup>
+  groups.push(<CardGroup key={i}>
     <Post {...cards[i]} />
     {i + 1 < cards.length ?
       <Post {...cards[i+1]} /> :
@@ -32,8 +33,12 @@ const GroupedPosts = ({ cards }: { cards: Array<IPost> }) => {
 const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const cards = data.blogs.edges.filter(post => post.node.frontmatter.homepage).map(edge => edge.node)
 
+  const { feature } = data.root.frontmatter
+  console.log('root:', data.root)
+
   return (<Container fluid>
     <Hero {...data.hero} />
+    <Feature {...feature} />
     <Row>
       <Col md={3} xs={'hidden'}>
         <h1>TODO: Events</h1>
@@ -48,6 +53,16 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
 export default IndexPage
 
 interface IPageData {
+  root: {
+    frontmatter: {
+      feature: {
+        title: string
+        image: string
+        link: string
+        buttonText: string
+      }
+    }
+  }
   blogs: {
     edges: [
       {
@@ -55,7 +70,13 @@ interface IPageData {
       }
     ]
   },
-  hero: any
+  hero: {
+    html: string,
+    frontmatter: {
+      image: string,
+      title: string
+    }
+  }
 }
 
 interface IPost {
@@ -72,34 +93,39 @@ interface IPost {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
-    blogs: allMarkdownRemark(filter: {frontmatter: {homepage: {eq: true}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
-      edges {
-        node {
-          excerpt(pruneLength: 150)
-          id
-          frontmatter {
-            title
-            contentType
-            date(formatString: "MMMM DD, YYYY")
-            path
-            heroimage
-            homepage
-          }
-        }
+query IndexQuery {
+  root: markdownRemark(fileAbsolutePath: {regex: "/\/pages\/_index\\.md$/"}) {
+    frontmatter {
+      feature {
+        title
+        image
+        link
+        buttonText
       }
     }
-    hero: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\/components/hero/Hero\\.md$/"}}, limit: 1) {
-      edges {
-        node {
-          id
-          html
-          frontmatter {
-            image
-            title
-          }
+  }
+  blogs: allMarkdownRemark(filter: {frontmatter: {homepage: {eq: true}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+    edges {
+      node {
+        excerpt(pruneLength: 150)
+        id
+        frontmatter {
+          title
+          contentType
+          date(formatString: "MMMM DD, YYYY")
+          path
+          heroimage
+          homepage
         }
       }
     }
   }
+  hero: markdownRemark(fileAbsolutePath: {regex: "/\/components/hero/Hero\\.md$/"}) {
+    html
+    frontmatter {
+      image
+      title
+    }
+  }
+}
 `

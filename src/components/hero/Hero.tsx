@@ -10,23 +10,19 @@ interface IHeroProps {
   html?: string
 }
 
-interface IHeroQueryResult {
-  edges: [{
-    node: {
-      html: string,
-      frontmatter: {
-        image: string
-        title: string
-      }
-    }
-  }]
+interface IHeroNode {
+  html: string,
+  frontmatter: {
+    image: string
+    title: string
+  }
 }
 
-export default class Hero extends React.Component<IHeroProps | IHeroQueryResult, {}> {
+export default class Hero extends React.Component<IHeroProps | IHeroNode, {}> {
   render() {
     let props: IHeroProps
     if (isQueryResult(this.props)) {
-      const { html, frontmatter } = this.props.edges[0].node
+      const { html, frontmatter } = this.props
       props = { ...frontmatter, html: html }
     } else {
       props = this.props
@@ -51,6 +47,6 @@ export default class Hero extends React.Component<IHeroProps | IHeroQueryResult,
   }
 }
 
-function isQueryResult(props): props is IHeroQueryResult {
-  return 'edges' in props
+function isQueryResult(props): props is IHeroNode {
+  return 'frontmatter' in props
 }

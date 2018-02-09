@@ -3,6 +3,11 @@ module.exports = {
     title: 'Albania Dallas Discipleship Connection',
     disqus: 'N/A'// put your disqus ID here
   },
+  mapping: {
+   // TODO: this only matches on IDs
+   // https://github.com/gatsbyjs/gatsby/issues/3129
+   // "MarkdownRemark.frontmatter.featured": `MarkdownRemark`,
+  },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',

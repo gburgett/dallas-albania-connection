@@ -61,30 +61,6 @@
 // @import "node_modules/bootstrap/scss/carousel";
 @import "node_modules/bootstrap/scss/utilities";
 
-
-//// bootswatch theme overrides
-// @import "node_modules/bootswatch/dist/cerulean/bootswatch";
-@import "node_modules/bootswatch/dist/cosmo/bootswatch";
-// @import "node_modules/bootswatch/dist/cyborg/bootswatch";
-// @import "node_modules/bootswatch/dist/darkly/bootswatch";
-// @import "node_modules/bootswatch/dist/flatly/bootswatch";
-// @import "node_modules/bootswatch/dist/journal/bootswatch";
-// @import "node_modules/bootswatch/dist/litera/bootswatch";
-// @import "node_modules/bootswatch/dist/lumen/bootswatch";
-// @import "node_modules/bootswatch/dist/lux/bootswatch";
-// @import "node_modules/bootswatch/dist/materia/bootswatch";
-// @import "node_modules/bootswatch/dist/minty/bootswatch";
-// @import "node_modules/bootswatch/dist/pulse/bootswatch";
-// @import "node_modules/bootswatch/dist/sandstone/bootswatch";
-// @import "node_modules/bootswatch/dist/simplex/bootswatch";
-// @import "node_modules/bootswatch/dist/sketchy/bootswatch";
-// @import "node_modules/bootswatch/dist/slate/bootswatch";
-// @import "node_modules/bootswatch/dist/solar/bootswatch";
-// @import "node_modules/bootswatch/dist/spacelab/bootswatch";
-// @import "node_modules/bootswatch/dist/superhero/bootswatch";
-// @import "node_modules/bootswatch/dist/united/bootswatch";
-// @import "node_modules/bootswatch/dist/yeti/bootswatch";
-
 @import "../colors";
 
 // page-level layout
@@ -111,7 +87,7 @@
 .jumbotron {
   margin-left: -15px;
   margin-right: -15px;
-  background-color: $flat-white;
+  background-color: $theme-white;
 
   .hero-image {
     background-position: center;
@@ -171,4 +147,40 @@
 
 .card.empty {
   border: 0px;
+}
+
+.feature {
+  min-height: 200px;
+  background-color: $theme-primary-1;
+  margin: 0 20px;
+  transform: translateY(-30px);
+
+  .col {
+    padding: 10px;
+  }
+
+  .bgimg {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    border-radius: 8px;
+
+    h2 {
+      position: relative;
+      left: 10%;
+      max-width: 90%;
+      top: 100px;
+      background-color: $theme-dark;
+      color: $hero-text;
+      padding: 2px;
+      border-radius: 4px;
+    }
+  }
+
+  .btn {
+    position: relative;
+    top: 40%;
+    left: 20%;
+    width: 90%;
+  }
 }

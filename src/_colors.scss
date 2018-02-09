@@ -1,22 +1,20 @@
 // Colors
+@import "node_modules/bootswatch/dist/litera/variables";
 
 // https://flatuicolors.com/palette/us
-$flat-white: #dfe6e9;
-$flat-white-translucent: rgba(223, 230, 233, 0.8);
-$flat-green: #00b894;
-$flat-orange: #e17055;
-$flat-red: #d63031;
-$flat-dark: #2d3436;
-$flat-dark-translucent: rgba(45, 52, 54, 0.8);
-$flat-steelgrey: #636e72;
-$flat-steelgrey-translucent: rgba(99, 110, 114, 0.8);
-$flat-lightgrey: #b2bec3;
-$flat-purple: #6c5ce7;
-$flat-blue: #0984e3;
-$flat-bluegreen: #00cec9;
-$flat-pink: #e84393;
-$flat-yellow: #fdcb6e;
+$theme-white: $white;
+$theme-off-white: $gray-100;
 
-$hero-head: $flat-red;
-$hero-text: white;
-$hero-bg: $flat-steelgrey-translucent
+$theme-primary-1: $red;
+$theme-primary-2: $blue;
+$theme-secondary-1: $green;
+$theme-secondary-2: $orange;
+
+$theme-dark: $gray-900;
+$themne-dark-translucent: rgba(33, 37, 41, 0.8);
+$theme-gray: $gray-700;
+$theme-gray-translucent: rgba(73, 80, 87, 0.8);
+
+$hero-head: $theme-primary-1;
+$hero-text: $theme-white;
+$hero-bg: $theme-gray-translucent;
