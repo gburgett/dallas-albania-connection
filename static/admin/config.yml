@@ -6,6 +6,20 @@ media_folder: "/static/files/"
 public_folder: "/files/"
 
 collections:
+  - name: "pages"
+    label: "Homepage"
+    folder: "src"
+    create: false
+    fields:
+      - label: "Featured Link"
+        name: "feature"
+        widget: "object"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Link", name: "link", widget: "string"}
+          - {label: "Button Text", name: "buttonText", widget: "string"}
+          - {label: "Image", name: "image", widget: "image"}
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
