@@ -1,29 +1,29 @@
 import * as React from 'react'
 import { Row, Col, Container } from 'reactstrap'
 
-import { Sitemap } from './sitemap'
+import { Sitemap, ISitemapFields } from './sitemap'
 
 // footer styles
 import './footer.scss'
 
-export class Footer extends React.Component<IFooterFields> {
+export class Footer extends React.Component<{sitemap: ISitemapFields, fields: IFooterFields}> {
   render() {
-    const { contact, mailchimp } = this.props.frontmatter
+    const { contact, mailchimp } = this.props.fields.frontmatter
     console.log(this.props)
 
     return (
       <Container fluid className='footer'>
         <Row>
           <Col md={6} className='d-none d-md-block'>
-            <Sitemap pages={[]} blogs={[]} />
+            <Sitemap {...this.props.sitemap} />
           </Col>
           <Col md={6} xs={12}>
-            <h2>Sign up for updates!</h2>
+            <h4>Sign up for updates!</h4>
             {this.renderMailchimp(mailchimp)}
           </Col>
         </Row>
         <Row className="footer-content"
-          dangerouslySetInnerHTML={{ __html: this.props.html }}>
+          dangerouslySetInnerHTML={{ __html: this.props.fields.html }}>
         </Row>
       </Container>
     )

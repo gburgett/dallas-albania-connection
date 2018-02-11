@@ -11,6 +11,26 @@
 
     > * {
       margin: 0 auto;
+      text-align: center;
     }
   }
+
+  ul {
+    list-style: none;
+    column-gap: 10px;
+
+    li {
+      white-space: nowrap;
+    }
+  }
+
+  a {
+    color: $theme-light-gray;
+  }
+}
+
+.list-header {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-left: 30px;
 }

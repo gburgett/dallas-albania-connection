@@ -19,6 +19,11 @@ const TemplateWrapper = ({ children, data }: IPageContext<ILayoutData>) => {
   if (typeof window !== 'undefined') {
     user = window.netlifyIdentity && window.netlifyIdentity.currentUser()
   }
+
+  let pages = data.sitemap.edges.map(e => e.node.frontmatter)
+  const posts = pages.filter(p => p.contentType == 'blog').slice(0, 6)
+  pages = pages.filter(p => p.contentType != 'blog')
+
   return (
     <div className='App'>
       <Helmet title={data.site.siteMetadata.title} />
@@ -40,7 +45,7 @@ const TemplateWrapper = ({ children, data }: IPageContext<ILayoutData>) => {
         </Container>
       </div>
       <div className='pageContent'>{children()}</div>
-      <Footer {...data.footer} />
+      <Footer fields={data.footer} sitemap={{posts, pages}} />
     </div>
   )
 }
@@ -51,7 +56,19 @@ interface ILayoutData {
       title: string
     }
   }
-  footer: IFooterFields
+  footer: IFooterFields,
+  sitemap: {
+    edges: [{
+      node: {
+        id: string,
+        frontmatter: {
+          contentType: string,
+          path: string,
+          title: string
+        }
+      }
+    }]
+  }
 }
 
 export const pageQuery = graphql`
@@ -63,6 +80,18 @@ export const pageQuery = graphql`
     }
     footer: markdownRemark(fileAbsolutePath: {regex: "/\/components/footer/Footer\\.md$/"}) {
       ...footerFields
+    }
+    sitemap: allMarkdownRemark(filter: { frontmatter: { path: { ne:null } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          id
+          frontmatter {
+            contentType
+            path
+            title
+          }
+        }
+      }
     }
   }
 `
