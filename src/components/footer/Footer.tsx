@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Row, Col, Container } from 'reactstrap'
 
-import { Sitemap, ISitemapFields } from './sitemap'
+import { Sitemap, ISitemapFields } from './Sitemap'
 
 // footer styles
 import './footer.scss'
