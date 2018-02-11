@@ -44,6 +44,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     {feature && <Feature {...feature} />}
     <Row>
       <Col xs={12} md={3}>
+        <h3>Upcoming Events</h3>
         {data.events.edges.map(edge => {
           const dt = Date.parse(edge.node.frontmatter.date)
           let yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
@@ -136,7 +137,7 @@ query IndexQuery {
       }
     }
   }
-  events: allMarkdownRemark(filter: { fileAbsolutePath: {regex: "/\\/events\\/.+\\.md$/"}}, sort: {order: DESC, fields: [frontmatter___date]}, limit: 5) {
+  events: allMarkdownRemark(filter: { fileAbsolutePath: {regex: "/\\/events\\/.+\\.md$/"}}, sort: {order: ASC, fields: [frontmatter___date]}, limit: 5) {
     edges {
       node {
         ...eventFields
