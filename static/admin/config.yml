@@ -35,6 +35,18 @@ collections:
       - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 
+  - name: "events"
+    label: "Events"
+    folder: "src/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Content Type", name: "contentType", widget: "hidden", default: "event"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Event Date", name: "date", widget: "date"}
+      - {label: "Optional Link", name: "link", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
   - name: "about"
     label: "About"
     folder: "src/pages/about"
