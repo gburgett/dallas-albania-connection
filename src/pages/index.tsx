@@ -39,7 +39,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
 
   return (<Container fluid>
     <Hero {...hero} />
-    {feature && <Feature {...feature} />}
+    {feature && feature.show && <Feature {...feature} />}
     <Row>
       <Col xs={12} md={3}>
         <h3>Upcoming Events</h3>
@@ -64,9 +64,10 @@ interface IPageData {
   root: {
     frontmatter: {
       feature: {
-        title: string
-        image: string
-        link: string
+        show: boolean,
+        title: string,
+        image: string,
+        link: string,
         buttonText: string
       },
       hero: {
@@ -110,6 +111,7 @@ query IndexQuery {
   root: markdownRemark(fileAbsolutePath: {regex: "/\/pages\/homepage\/_index\\.md$/"}) {
     frontmatter {
       feature {
+        show
         title
         image
         link

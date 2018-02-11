@@ -24,6 +24,7 @@ collections:
         widget: "object"
         required: false
         fields:
+          - {label: "Show Featured Link", name: "show", widget: "boolean", default: false}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Link", name: "link", widget: "string"}
           - {label: "Button Text", name: "buttonText", widget: "string"}
