@@ -11,6 +11,14 @@ collections:
     folder: "src/pages/homepage"
     create: false
     fields:
+      - label: "Hero Image"
+        name: "hero"
+        widget: "object"
+        required: true
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
       - label: "Featured Link"
         name: "feature"
         widget: "object"
@@ -20,6 +28,7 @@ collections:
           - {label: "Link", name: "link", widget: "string"}
           - {label: "Button Text", name: "buttonText", widget: "string"}
           - {label: "Image", name: "image", widget: "image"}
+
 
   - name: "blog"
     label: "Blog"
@@ -55,15 +64,6 @@ collections:
     fields:
       - {label: "Content Type", name: "contentType", widget: "hidden", default: "about"}
       - {label: "Path", name: "path", widget: "hidden", default: "/about"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "hero"
-    label: "Hero Image"
-    folder: "src/components/hero"
-    create: false
-    fields:
-      - {label: "Image", name: "image", widget: "image"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 

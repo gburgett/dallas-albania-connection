@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Albania Dallas Discipleship Connection',
+    title: 'Team Albania',
     disqus: 'N/A'// put your disqus ID here
   },
   mapping: {

@@ -35,12 +35,10 @@ const GroupedPosts = ({ cards }: { cards: Array<IPost> }) => {
 const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const cards = data.blogs.edges.filter(post => post.node.frontmatter.homepage).map(edge => edge.node)
 
-  const { feature } = data.root.frontmatter
-
-  console.log('events', data.events)
+  const { feature, hero } = data.root.frontmatter
 
   return (<Container fluid>
-    <Hero {...data.hero} />
+    <Hero {...hero} />
     {feature && <Feature {...feature} />}
     <Row>
       <Col xs={12} md={3}>
@@ -70,9 +68,14 @@ interface IPageData {
         image: string
         link: string
         buttonText: string
+      },
+      hero: {
+        image: string,
+        title: string,
+        subtitle: string
       }
     }
-  }
+  },
   blogs: {
     edges: [
       {
@@ -86,13 +89,6 @@ interface IPageData {
         node: IEventFields
       }
     ]
-  }
-  hero: {
-    html: string,
-    frontmatter: {
-      image: string,
-      title: string
-    }
   }
 }
 
@@ -119,6 +115,11 @@ query IndexQuery {
         link
         buttonText
       }
+      hero {
+        image
+        title
+        subtitle
+      }
     }
   }
   blogs: allMarkdownRemark(filter: {frontmatter: {homepage: {eq: true}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
@@ -142,13 +143,6 @@ query IndexQuery {
       node {
         ...eventFields
       }
-    }
-  }
-  hero: markdownRemark(fileAbsolutePath: {regex: "/\/components/hero/Hero\\.md$/"}) {
-    html
-    frontmatter {
-      image
-      title
     }
   }
 }
