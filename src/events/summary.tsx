@@ -3,8 +3,11 @@ import { IEventFields } from '.'
 
 import { Card, CardTitle, CardHeader, CardBody } from 'reactstrap'
 
+interface IEventSummaryProps extends IEventFields {
+  collapse: boolean
+}
 
-export const Summary = (props: IEventFields) => {
+export const Summary = (props: IEventSummaryProps) => {
   const {date, title, link} = props.frontmatter
   console.log(props.frontmatter)
 
@@ -16,15 +19,21 @@ export const Summary = (props: IEventFields) => {
     color="danger"
   }
 
+  const id = `EventSummary-${dt}`
+
   return <Card body outline color={color}>
-          <a href={link}>
-            <CardHeader>
-              {date}
-            </CardHeader>
-            <CardBody>
-              <h4>{title}</h4>
-              {props.excerpt}
-            </CardBody>
-          </a>
+            <a data-toggle="collapse" data-target={`#${id}`} aria-expanded="true" aria-controls={id}>
+              <CardHeader>
+                <span className="date">{date}</span>
+                <h4>{title}</h4>
+              </CardHeader>
+            </a>
+            <div id={id} className={`collapse ${props.collapse || 'show'}`}>
+              <CardBody>
+                <a href={link}>
+                  {props.excerpt}
+                </a>
+              </CardBody>
+            </div>
         </Card>
 }
