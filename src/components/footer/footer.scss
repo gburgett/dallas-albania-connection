@@ -1,0 +1,16 @@
+@import '../../colors';
+
+.footer {
+  color: $theme-light-gray;
+  background-color: $theme-dark;
+  padding-bottom: 20px;
+
+  .footer-content {
+    width: 100%;
+    padding-top: 10px;
+
+    > * {
+      margin: 0 auto;
+    }
+  }
+}

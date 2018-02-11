@@ -34,7 +34,6 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const cards = data.blogs.edges.filter(post => post.node.frontmatter.homepage).map(edge => edge.node)
 
   const { feature } = data.root.frontmatter
-  console.log('root:', data.root)
 
   return (<Container fluid>
     <Hero {...data.hero} />

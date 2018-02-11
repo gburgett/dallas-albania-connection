@@ -12,6 +12,8 @@ import 'prismjs/themes/prism-twilight.css'
 // main site style
 import './index.scss'
 
+import {IFooterFields, Footer} from '../components/footer/Footer'
+
 const TemplateWrapper = ({ children, data }: IPageContext<ILayoutData>) => {
   let user
   if (typeof window !== 'undefined') {
@@ -38,6 +40,7 @@ const TemplateWrapper = ({ children, data }: IPageContext<ILayoutData>) => {
         </Container>
       </div>
       <div className='pageContent'>{children()}</div>
+      <Footer {...data.footer} />
     </div>
   )
 }
@@ -48,6 +51,7 @@ interface ILayoutData {
       title: string
     }
   }
+  footer: IFooterFields
 }
 
 export const pageQuery = graphql`
@@ -56,6 +60,9 @@ export const pageQuery = graphql`
       siteMetadata {
         title
       }
+    }
+    footer: markdownRemark(fileAbsolutePath: {regex: "/\/components/footer/Footer\\.md$/"}) {
+      ...footerFields
     }
   }
 `
