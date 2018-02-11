@@ -5,6 +5,8 @@ import * as graphql from 'graphql'
 
 import Hero from '../components/hero/Hero'
 import Feature from '../components/Feature'
+import { Summary as EventSummary } from '../events/summary'
+import { IEventFields } from '../events';
 
 const Post = (post: IPost) => (
   <Card style={{marginBottom: 10}} key={post.id}>
@@ -35,12 +37,20 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
 
   const { feature } = data.root.frontmatter
 
+  console.log('events', data.events)
+
   return (<Container fluid>
     <Hero {...data.hero} />
     {feature && <Feature {...feature} />}
     <Row>
       <Col xs={12} md={3}>
-        <h1>TODO: Events</h1>
+        {data.events.edges.map(edge => {
+          const dt = Date.parse(edge.node.frontmatter.date)
+          let yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
+          if (dt > yesterday) {
+            return <EventSummary key={dt} {...edge.node} />
+          }
+        })}
       </Col>
       <Col xs={12} md={9}>
         <GroupedPosts cards={cards} />
@@ -69,6 +79,13 @@ interface IPageData {
       }
     ]
   },
+  events: {
+    edges: [
+      {
+        node: IEventFields
+      }
+    ]
+  }
   hero: {
     html: string,
     frontmatter: {
@@ -116,6 +133,13 @@ query IndexQuery {
           heroimage
           homepage
         }
+      }
+    }
+  }
+  events: allMarkdownRemark(filter: { fileAbsolutePath: {regex: "/\\/events\\/.+\\.md$/"}}, sort: {order: DESC, fields: [frontmatter___date]}, limit: 5) {
+    edges {
+      node {
+        ...eventFields
       }
     }
   }
