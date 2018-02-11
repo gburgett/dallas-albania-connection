@@ -50,8 +50,22 @@ collections:
     label: "Hero Image"
     folder: "src/components/hero"
     create: false
-    slug: "{{slug}}"
     fields:
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "footer"
+    label: "Site Footer"
+    folder: "src/components/footer"
+    create: false
+    fields:
+      - label: "Contact Info"
+        name: "contact"
+        widget: "list"
+        fields:
+          - {label: "Name", name: "name", widget: "string", required: true}
+          - {label: "Email", name: "email", widget: "string", required: true}
+          - {label: "Phone", name: "phone", widget: "string"}
+      - {label: "Mailchimp Signup List Url", name: "mailchimp", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
