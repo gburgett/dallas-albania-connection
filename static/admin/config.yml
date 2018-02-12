@@ -2,8 +2,7 @@ backend:
   name: git-gateway
   branch: master
 
-media_folder: "/static/files/"
-public_folder: "/files/"
+media_folder: "static/files/"
 
 collections:
   - name: "homepage"

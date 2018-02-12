@@ -10,6 +10,7 @@ import {FooterPreview} from './preview-templates/footer'
 //import ImageGalleryWidget from "./image-gallery-widget.js";
 //import ImageGalleryPreview from "./image-gallery-preview.js";
 
+CMS.registerPreviewStyle('/styles.css');
 CMS.registerPreviewTemplate('footer', FooterPreview);
 
 // Register the imported widget:
