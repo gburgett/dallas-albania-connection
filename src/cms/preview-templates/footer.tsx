@@ -5,7 +5,15 @@ import { Footer, IFooterFields } from '../../components/footer/Footer';
 import { ISitemapFields } from '../../components/footer/Sitemap';
 
 export const FooterPreview = ({entry, widgetFor, widgetsFor}) => {
-  const contact = widgetsFor('contact').map(w => w.data)
+  const contact = widgetsFor('contact')
+    .map(w => w.get('data'))
+    .map(c => ({
+      name: c.get('name'),
+      email: c.get('email'),
+      phone: c.get('phone')
+    }))
+    .toArray()
+  console.log('contact', widgetsFor('contact'), contact)
 
   const fields: IFooterFields = {
     html: ReactDomServer.renderToStaticMarkup(widgetFor('body')) as string,

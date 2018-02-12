@@ -9,7 +9,6 @@ import './footer.scss'
 export class Footer extends React.Component<{sitemap: ISitemapFields, fields: IFooterFields}> {
   render() {
     const { contact, mailchimp } = this.props.fields.frontmatter
-    console.log(this.props)
 
     return (
       <Container fluid className='footer'>
@@ -18,8 +17,18 @@ export class Footer extends React.Component<{sitemap: ISitemapFields, fields: IF
             <Sitemap {...this.props.sitemap} />
           </Col>
           <Col md={6} xs={12}>
-            <h4>Sign up for updates!</h4>
-            {this.renderMailchimp(mailchimp)}
+              <h4>Sign up for updates!</h4>
+              {this.renderMailchimp(mailchimp)}
+              <h4>Contact</h4>
+              <ul style={ {columnCount: contact.length} }>
+                {contact.map((c, i) => (
+                  <li key={i}>
+                    {c.name}<br/>
+                    {c.phone}{c.phone && <br/>}
+                    {c.email && <a href={`mailto:${c.email}`}>{c.email}</a>}
+                  </li>
+                ))}
+              </ul>
           </Col>
         </Row>
         <Row className="footer-content"
