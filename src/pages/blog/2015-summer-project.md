@@ -1,10 +1,10 @@
 ---
 contentType: blog
 path: /2015
-title: 2015 summer project
-date: 2015-07-01
-heroimage: /images/2015_team_in_berat.jpg
+title: 2015 Summer Project
 homepage: true
+date: 2015-07-01T00:00:00.000Z
+heroimage: /images/2015_team_in_berat.jpg
 ---
 Modern apps are interdependent and dynamic. For example, you probably sign in to various web apps using your GitHub account. These apps may be grabbing your avatar directly from GitHub, or some information about your projects. The data about your project is always changing so, as an added bonus, these connections are constantly updating the information that is displayed.
 
