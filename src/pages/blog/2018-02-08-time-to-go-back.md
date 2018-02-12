@@ -1,7 +1,7 @@
 ---
 contentType: blog
 path: /2018
-title: We're heading back in 2018!
+title: We're Heading Back in 2018!
 homepage: false
 date: 2018-02-09T05:31:28.725Z
 heroimage: /static/files/2017 part packet cover.jpg
