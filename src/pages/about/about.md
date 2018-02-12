@@ -1,10 +1,10 @@
 ---
 contentType: about
 path: /about
-title: About Me
+title: About Us
 ---
-This is a placeholder page.
+**Mission**:
 
-Be sure to update your `.md` files in `src/pages`, or use [admin](/admin).
+**Vision**: 
 
-![undefined](/files/tumblr_npa7ksI5vy1ssby0io1_540.gif)
+![undefined]()
