@@ -1,12 +1,13 @@
 ---
 hero:
   image: /files/background-cover.jpg
-  title: Team Albania
   subtitle: Following Christ where He leads.
+  title: Team Albania
 feature:
-  show: true
-  title: "Sign Up for 2018!"
-  image: /files/afc.jpg
-  link: /2018
   buttonText: Sign Up!
+  image: /files/2017_part_packet_cover.jpg
+  link: /2018
+  show: true
+  title: Sign Up for 2018!
 ---
+
