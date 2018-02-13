@@ -14,9 +14,9 @@ We are looking for committed workers to join us in 2018. If you have a heart for
 
 For more details about this summer (and before applying), read the Info Sheet and Calendar files below. For questions, see the Contact information (also way below).
 
-\- Info Sheet file
+[Download More Information (pdf)](/files/Albania-2018-Info-Sheet.pdf)
 
-\- 2018 Calendar file
+[Download the Calendar (pdf)](/files/Albania-2018-Info-Session-Calendar.pdf)
 
 <iframe id='googleform'
   src="https://docs.google.com/forms/d/e/1FAIpQLSfkkQtTFXRUMdBEsYSsR0JAlfzZDznAjryQtwwcCZhf3BO2mQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
