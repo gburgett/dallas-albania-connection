@@ -7,7 +7,7 @@ export interface IEventFields {
     contentType: 'event',
     title: string,
     date: string
-    link: string
+    link?: string
   }
 }
 

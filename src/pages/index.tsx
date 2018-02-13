@@ -60,7 +60,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
 
 export default IndexPage
 
-interface IPageData {
+export interface IPageData {
   root: {
     frontmatter: {
       feature: {
@@ -78,22 +78,14 @@ interface IPageData {
     }
   },
   blogs: {
-    edges: [
-      {
-        node: IPost
-      }
-    ]
+    edges: Array<{ node: IPost }>
   },
   events: {
-    edges: [
-      {
-        node: IEventFields
-      }
-    ]
+    edges: Array<{node: IEventFields}>
   }
 }
 
-interface IPost {
+export interface IPost {
   excerpt: string,
   id: any,
   frontmatter: {
