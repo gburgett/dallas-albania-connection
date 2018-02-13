@@ -10,9 +10,13 @@ import Hero from '../components/hero/Hero'
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
   const { heroimage, title } = post.frontmatter;
+  const tabTitle = post.frontmatter.title ?
+    post.frontmatter.title.split(' ')[0] :
+    'Blog'
+
   return (
     <div>
-      <Helmet title={`Blog | ${post.frontmatter.title}`}>
+      <Helmet title={tabTitle}>
         {data.site.siteMetadata.disqus && (
           <script id='dsq-count-scr' src='//gatsby-starter-blog.disqus.com/count.js' async />
         )}

@@ -26,7 +26,8 @@ const TemplateWrapper = ({ children, data }: IPageContext<ILayoutData>) => {
 
   return (
     <div className='App'>
-      <Helmet title={data.site.siteMetadata.title} />
+      <Helmet titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+        title='Home' />
       <div className='navbar navbar-expand-lg navbar-light bg-light'>
         <Container fluid>
           <Link to='/' className='navbar-brand'>Home</Link>
