@@ -1,22 +1,20 @@
 import * as React from 'react'
-import { Row, Container, Card, CardTitle, CardGroup, CardBody } from 'reactstrap'
+import { Row, Col, Container, Card, CardTitle, CardGroup, CardBody } from 'reactstrap'
 import Helmet from 'react-helmet'
 import * as graphql from 'graphql'
 import { basename } from 'path'
 import Link from 'gatsby-link'
 
 import Hero from '../components/hero/Hero'
+import Feature from '../components/Feature'
 
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
-  const { heroimage, title } = post.frontmatter;
-  const tabTitle = post.frontmatter.title ?
-    post.frontmatter.title.split(' ')[0] :
-    'Blog'
+  const { heroimage, title, feature } = post.frontmatter;
 
   return (
     <div>
-      <Helmet title={tabTitle}>
+      <Helmet title={post.frontmatter.title}>
         {data.site.siteMetadata.disqus && (
           <script id='dsq-count-scr' src='//gatsby-starter-blog.disqus.com/count.js' async />
         )}
@@ -32,10 +30,15 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
 
       <Container fluid>
         {heroimage && <Hero image={heroimage} />}
-        <h1 className='display-3'>{title}</h1>
+        {feature && feature.show &&
+            <Feature {...feature} />}
       </Container>
 
-      <Container dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Container>
+
+        <h1 className='display-3'>{title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Container>
 
       {data.site.siteMetadata.disqus && (<Container>
         <hr />
@@ -57,7 +60,16 @@ export interface ITemplateData {
       path: string,
       date: string,
       title: string,
-      heroimage: string
+      heroimage: string,
+      feature?: {
+        show?: boolean
+        title?: string
+        image?: string
+        link: string
+        buttonText: string
+        buttonStyle: string
+        backgroundColor?: string
+      }
     }
   }
 }
@@ -77,6 +89,15 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         heroimage
+        feature {
+          show
+          title
+          image
+          link
+          buttonText
+          buttonStyle
+          backgroundColor
+        }
       }
     }
   }

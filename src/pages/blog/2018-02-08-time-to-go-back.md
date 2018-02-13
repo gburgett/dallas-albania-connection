@@ -5,6 +5,14 @@ title: We're Heading Back in 2018!
 homepage: false
 date: 2018-02-09T05:31:28.725Z
 heroimage: /files/2017_part_packet_cover.jpg
+feature:
+  show: true
+  title:
+  image:
+  link: '#googleform'
+  buttonText: Sign up now!
+  buttonStyle: danger
+  backgroundColor: ''
 ---
 **Summer Project 2018**
 

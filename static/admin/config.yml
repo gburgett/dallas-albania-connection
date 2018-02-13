@@ -44,6 +44,22 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Featured Link"
+        name: "feature"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Show Featured Link", name: "show", widget: "boolean", default: false}
+          - {label: "Title", name: "title", widget: "string", required: false}
+          - {label: "Link", name: "link", widget: "string"}
+          - {label: "Image", name: "image", widget: "image", required: false}
+          - {label: "Button Text", name: "buttonText", widget: "string"}
+          - {label: "Button Style (see https://getbootstrap.com/docs/4.0/components/buttons/)",
+              name: "buttonStyle", widget: "string", required: false,
+              pattern: '^(btn-)?(outline-)?(primary|secondary|success|danger|warning|info|light|dark|link)$'}
+          - {label: "Background Color (blank for no background)",
+              name: "backgroundColor", widget: "string", required: false,
+              pattern: "^(\w+|\#[a-f0-9]+|(rgba?|hsla?)\(\s*\d+,\s*\d+\%?,\s*\d+\%?(,\s*[\d\.]+)?\))$"}
 
   - name: "events"
     label: "Events"

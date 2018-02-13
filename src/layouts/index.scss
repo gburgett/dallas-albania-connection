@@ -171,6 +171,12 @@ a {
   margin: 0 auto;
   transform: translateY(-30px);
 
+  &.feature-sm {
+    background-color: inherit;
+    transform: translateY(-110%);
+    margin-bottom: -200px;
+  }
+
   .col {
     padding: 10px;
   }

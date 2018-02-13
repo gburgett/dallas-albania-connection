@@ -31,7 +31,16 @@ export const BlogPreview = ({entry, widgetFor, getAsset}) => {
         path: entry.getIn(['data', 'path']),
         date: entry.getIn(['data', 'date']),
         title: entry.getIn(['data', 'title']),
-        heroimage: getAsset(entry.getIn(['data', 'heroimage']))
+        heroimage: getAsset(entry.getIn(['data', 'heroimage'])),
+        feature: {
+          show: entry.getIn(['data', 'feature', 'show']) as boolean,
+          title: entry.getIn(['data', 'feature', 'title']) as string,
+          image: getAsset(entry.getIn(['data', 'feature', 'image'])),
+          link: entry.getIn(['data', 'feature', 'link']) as string,
+          buttonText: entry.getIn(['data', 'feature', 'buttonText']) as string,
+          buttonStyle: entry.getIn(['data', 'feature', 'buttonStyle']) as string,
+          backgroundColor: entry.getIn(['data', 'feature', 'backgroundColor']) as string
+        }
       }
     }
   }
