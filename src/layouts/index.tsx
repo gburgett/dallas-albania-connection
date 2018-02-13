@@ -50,7 +50,7 @@ const TemplateWrapper = ({ children, data }: IPageContext<ILayoutData>) => {
   )
 }
 
-interface ILayoutData {
+export interface ILayoutData {
   site: {
     siteMetadata: {
       title: string

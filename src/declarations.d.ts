@@ -1,12 +1,12 @@
 declare const graphql: (query: TemplateStringsArray) => void
 
 interface IPageContext<Data> {
-  location: {
+  location?: {
     pathname: string,
-    search: string,
-    hash: string
+    search?: string,
+    hash?: string
   },
-  history: {
+  history?: {
     createHref: Function,
     action: string,
     location: {
@@ -22,9 +22,9 @@ interface IPageContext<Data> {
     listen: Function,
     block: Function
   },
-  staticContext: any,
-  data: Data,
-  children: Function
+  staticContext?: any,
+  data?: Data,
+  children?: () => JSX.Element
 }
 
 interface Window {

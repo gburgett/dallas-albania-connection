@@ -27,7 +27,7 @@ export const FooterPreview = ({entry, widgetFor, widgetsFor}) => {
 };
 
 
-const fakeSitemap: ISitemapFields = {
+export const fakeSitemap: ISitemapFields = {
   pages: [
     { path: '/about', title: 'About' },
     { path: '/fake', title: 'Fake Page'}

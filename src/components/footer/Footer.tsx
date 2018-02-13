@@ -65,7 +65,7 @@ export interface IFooterFields {
     contact: [{
       name: string,
       email: string,
-      phone: string
+      phone?: string
     }]
     mailchimp: string
   }

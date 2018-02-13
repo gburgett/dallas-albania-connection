@@ -7,12 +7,6 @@ import Link from 'gatsby-link'
 
 import Hero from '../components/hero/Hero'
 
-// find a post title by path
-const findNode = (path: string, data: ITemplateData) => data.allMarkdownRemark.edges
-  .map(edge => edge.node.frontmatter)
-  .filter(r => r.path === path)
-  .pop()
-
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
   const { heroimage, title } = post.frontmatter;
@@ -47,10 +41,10 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
   )
 }
 
-interface ITemplateData {
+export interface ITemplateData {
   site: {
     siteMetadata: {
-      disqus: string
+      disqus?: string
     }
   },
   markdownRemark: {
@@ -61,19 +55,6 @@ interface ITemplateData {
       title: string,
       heroimage: string
     }
-  },
-  allMarkdownRemark: {
-    edges: [
-      {
-        node: {
-          frontmatter: {
-            title: string,
-            path: string,
-            heroimage: string
-          }
-        }
-      }
-    ]
   }
 }
 
@@ -92,18 +73,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         heroimage
-      }
-    }
-
-    allMarkdownRemark{
-      edges{
-        node{
-          frontmatter{
-            title
-            path
-            heroimage
-          }
-        }
       }
     }
   }
