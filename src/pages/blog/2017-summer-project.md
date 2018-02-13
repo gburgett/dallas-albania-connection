@@ -4,7 +4,7 @@ path: /2017
 title: 2017 Summer Project
 homepage: true
 date: 2017-07-01T00:00:00.000Z
-heroimage: /static/files/2017 albania team photo_title_l.jpg
+heroimage: /static/files/2017-albania-team-photo_title_l.jpg
 ---
 **Summer Project 2017**
 
