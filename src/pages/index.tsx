@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Row, Col, Container, Card, CardGroup, CardImg, CardDeck, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import Link from 'gatsby-link'
 import * as graphql from 'graphql'
+import Helmet from 'react-helmet'
 
 import Hero from '../components/hero/Hero'
 import Feature from '../components/Feature'
@@ -36,8 +37,12 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const cards = data.blogs.edges.filter(post => post.node.frontmatter.homepage).map(edge => edge.node)
 
   const { feature, hero } = data.root.frontmatter
+  const {title, siteUrl} = data.site.siteMetadata
 
   return (<Container fluid>
+    <Helmet title={title} titleTemplate={undefined}>
+        {hero && <meta property="og:image" content={siteUrl + hero.image}></meta>}
+    </Helmet>
     <Hero {...hero} />
     {feature && feature.show && <Feature {...feature} />}
     <Row>
@@ -61,6 +66,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
 export default IndexPage
 
 export interface IPageData {
+  site: ISite,
   root: {
     frontmatter: {
       feature: {
@@ -100,6 +106,12 @@ export interface IPost {
 
 export const pageQuery = graphql`
 query IndexQuery {
+  site {
+    siteMetadata {
+      title
+      siteUrl
+    }
+  }
   root: markdownRemark(fileAbsolutePath: {regex: "/\/pages\/homepage\/_index\\.md$/"}) {
     frontmatter {
       feature {

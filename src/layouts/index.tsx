@@ -14,49 +14,50 @@ import './index.scss'
 
 import {IFooterFields, Footer} from '../components/footer/Footer'
 
-const TemplateWrapper = ({ children, data }: IPageContext<ILayoutData>) => {
-  let user
-  if (typeof window !== 'undefined') {
-    user = window.netlifyIdentity && window.netlifyIdentity.currentUser()
-  }
+export default class TemplateWrapper extends React.Component<IPageContext<ILayoutData>, any> {
 
-  let pages = data.sitemap.edges.map(e => e.node.frontmatter)
-  const posts = pages.filter(p => p.contentType == 'blog').slice(0, 6)
-  pages = pages.filter(p => p.contentType != 'blog')
+  render() {
+    const { children, data } = this.props
 
-  return (
-    <div className='App'>
-      <Helmet titleTemplate={`${data.site.siteMetadata.title} | %s`}
-        title='Home' />
-      <div className='navbar navbar-expand-lg navbar-light bg-light'>
-        <Container fluid>
-          <Link to='/' className='navbar-brand'>Home</Link>
-          <ul className='nav navbar-nav'>
+    let user
+    if (typeof window !== 'undefined') {
+      user = window.netlifyIdentity && window.netlifyIdentity.currentUser()
+    }
 
-            {user && (
+    let pages = data.sitemap.edges.map(e => e.node.frontmatter)
+    const posts = pages.filter(p => p.contentType == 'blog').slice(0, 6)
+    pages = pages.filter(p => p.contentType != 'blog')
+
+    return (
+      <div className='App'>
+        <Helmet titleTemplate={`${data.site.siteMetadata.title} | %s`}>
+        </Helmet>
+        <div className='navbar navbar-expand-lg navbar-light bg-light'>
+          <Container fluid>
+            <Link to='/' className='navbar-brand'>Home</Link>
+            <ul className='nav navbar-nav'>
+
+              {user && (
+                <li className='nav-item'>
+                  <a href='/admin' className='nav-link'>Admin</a>
+                </li>
+              )}
+
               <li className='nav-item'>
-                <a href='/admin' className='nav-link'>Admin</a>
+                <Link to='/about' className='nav-link'>About</Link>
               </li>
-            )}
-
-            <li className='nav-item'>
-              <Link to='/about' className='nav-link'>About</Link>
-            </li>
-          </ul>
-        </Container>
+            </ul>
+          </Container>
+        </div>
+        <div className='pageContent'>{children()}</div>
+        <Footer fields={data.footer} sitemap={{posts, pages}} />
       </div>
-      <div className='pageContent'>{children()}</div>
-      <Footer fields={data.footer} sitemap={{posts, pages}} />
-    </div>
-  )
+    )
+  }
 }
 
 export interface ILayoutData {
-  site: {
-    siteMetadata: {
-      title: string
-    }
-  }
+  site: ISite,
   footer: IFooterFields,
   sitemap: {
     edges: [{
@@ -96,5 +97,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-export default TemplateWrapper

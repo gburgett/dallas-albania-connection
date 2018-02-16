@@ -27,6 +27,13 @@ interface IPageContext<Data> {
   children?: () => JSX.Element
 }
 
+interface ISite {
+  siteMetadata: {
+    title: string
+    siteUrl: string
+  }
+}
+
 interface Window {
   netlifyIdentity: INetlifyIdentity
 }

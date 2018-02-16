@@ -11,21 +11,12 @@ import Feature from '../components/Feature'
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
   const { heroimage, title, feature } = post.frontmatter;
+  const {siteUrl} = data.site.siteMetadata;
 
   return (
     <div>
       <Helmet title={post.frontmatter.title}>
-        {data.site.siteMetadata.disqus && (
-          <script id='dsq-count-scr' src='//gatsby-starter-blog.disqus.com/count.js' async />
-        )}
-        {data.site.siteMetadata.disqus && (
-          <script>{`(function() {
-          var d = document, s = d.createElement('script');
-          s.src = 'https://${data.site.siteMetadata.disqus}.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();`}</script>
-        )}
+        {heroimage && <meta property="og:image" content={siteUrl + heroimage}></meta>}
       </Helmet>
 
       <Container fluid>
@@ -39,21 +30,12 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
         <h1 className='display-3'>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </Container>
-
-      {data.site.siteMetadata.disqus && (<Container>
-        <hr />
-        <div id='disqus_thread' />
-      </Container>)}
     </div>
   )
 }
 
 export interface ITemplateData {
-  site: {
-    siteMetadata: {
-      disqus?: string
-    }
-  },
+  site: ISite,
   markdownRemark: {
     html: string,
     frontmatter: {
@@ -78,7 +60,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     site {
       siteMetadata {
-        disqus
+        siteUrl
       }
     }
 
