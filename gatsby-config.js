@@ -1,8 +1,5 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Team Albania',
-    disqus: 'N/A'// put your disqus ID here
-  },
+  siteMetadata: require('./site/metadata'),
   mapping: {
    // TODO: this only matches on IDs
    // https://github.com/gatsbyjs/gatsby/issues/3129
