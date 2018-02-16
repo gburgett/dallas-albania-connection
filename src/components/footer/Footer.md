@@ -1,4 +1,5 @@
 ---
+name: footer
 contact:
   - name: Gordon Burgett
     email: info@teamalbania.org

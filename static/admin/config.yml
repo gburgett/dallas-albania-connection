@@ -6,6 +6,30 @@ media_folder: "static/files/"
 public_folder: "/files"
 
 collections:
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - name: "site"
+        label: "Metadata"
+        file: "site/metadata.json"
+        fields:
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Base URL", name: "siteUrl", widget: "string"}
+      - name: "footer"
+        label: "Site Footer"
+        file: "src/components/footer/Footer.md"
+        create: false
+        fields:
+          - label: "Contact Info"
+            name: "contact"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string", required: true}
+              - {label: "Email", name: "email", widget: "string", required: true}
+              - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Mailchimp Signup List Url", name: "mailchimp", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
   - name: "homepage"
     label: "Homepage"
     folder: "src/pages/homepage"
@@ -57,9 +81,9 @@ collections:
           - {label: "Button Style (see https://getbootstrap.com/docs/4.0/components/buttons/)",
               name: "buttonStyle", widget: "string", required: false,
               pattern: '^(btn-)?(outline-)?(primary|secondary|success|danger|warning|info|light|dark|link)$'}
-          - {label: "Background Color (blank for no background)",
+          - {label: "Background Color (see https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)",
               name: "backgroundColor", widget: "string", required: false,
-              pattern: "^(\w+|\#[a-f0-9]+|(rgba?|hsla?)\(\s*\d+,\s*\d+\%?,\s*\d+\%?(,\s*[\d\.]+)?\))$"}
+              pattern: '^(\w+|\#[a-f0-9]+|(rgba?|hsla?)\(\s*\d+,\s*\d+\%?,\s*\d+\%?(,\s*[\d\.]+)?\))$'}
 
   - name: "events"
     label: "Events"
@@ -82,19 +106,4 @@ collections:
       - {label: "Content Type", name: "contentType", widget: "hidden", default: "about"}
       - {label: "Path", name: "path", widget: "hidden", default: "/about"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "footer"
-    label: "Site Footer"
-    folder: "src/components/footer"
-    create: false
-    fields:
-      - label: "Contact Info"
-        name: "contact"
-        widget: "list"
-        fields:
-          - {label: "Name", name: "name", widget: "string", required: true}
-          - {label: "Email", name: "email", widget: "string", required: true}
-          - {label: "Phone", name: "phone", widget: "string"}
-      - {label: "Mailchimp Signup List Url", name: "mailchimp", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}

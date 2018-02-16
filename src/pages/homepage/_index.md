@@ -1,4 +1,5 @@
 ---
+name: homepage
 hero:
   image: /files/background-cover.jpg
   subtitle: Following Christ where He leads
