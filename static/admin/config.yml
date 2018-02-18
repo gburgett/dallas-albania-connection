@@ -57,7 +57,7 @@ collections:
         name: "articles"
         widget: "list"
         fields:
-          - label: "Article"
+          - label: "Article Path"
             name: "path"
             widget: "relation"
             collection: "articles"

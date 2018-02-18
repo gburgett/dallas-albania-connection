@@ -3,12 +3,14 @@ import * as React from 'react';
 import * as ReactDomServer from 'react-dom/server'
 
 import TemplateWrapper from '../../layouts/index'
-import IndexPage, {IPageData, IPost} from '../../pages/index'
+import IndexPage, {IPageData, IArticle} from '../../pages/index'
 import { IEventFields } from '../../events'
 
 import {FakeLayoutData} from './fixtures/layouts'
 
-export const HomepagePreview = ({entry, widgetFor, getAsset}) => {
+export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) => {
+
+  console.log(fieldsMetaData.toJS())
 
   // Grab the fields
   const fields: IPageData = {
@@ -31,10 +33,16 @@ export const HomepagePreview = ({entry, widgetFor, getAsset}) => {
           title: entry.getIn(['data', 'hero', 'title']) as string,
           subtitle: entry.getIn(['data', 'hero', 'subtitle']) as string,
           image: getAsset(entry.getIn(['data', 'hero', 'image']))
-        }
+        },
+        articles: [
+          {path: '/fake1'},
+          {path: '/fake3'},
+          {path: '/fake2'},
+          {path: '/fake4'}
+        ]
       }
     },
-    blogs: {
+    articles: {
       edges: fakeArticles()
     },
     events: {
@@ -80,7 +88,7 @@ function fakeEvents(): Array<{ node: IEventFields }> {
   ]
 }
 
-function fakeArticles(): Array<{ node: IPost }> {
+function fakeArticles(): Array<{ node: IArticle }> {
   return [
     { node: {
       excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo lectus, ornare vel',
@@ -99,7 +107,7 @@ function fakeArticles(): Array<{ node: IPost }> {
       id: 'fakepost2',
       frontmatter: {
         title: 'Fake Post 2',
-        path: '/fake3',
+        path: '/fake2',
         date: new Date(Date.now() - 300 * DAY).toDateString(),
         contentType: 'article',
         heroimage: '/files/2016_team.jpg',

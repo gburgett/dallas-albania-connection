@@ -9,7 +9,7 @@ import Feature from '../components/Feature'
 import { Summary as EventSummary } from '../events/summary'
 import { IEventFields } from '../events';
 
-const Post = (post: IPost) => (
+const Post = (post: IArticle) => (
   <Card style={{marginBottom: 10}} key={post.id}>
     <CardBody>
       <CardImg top width="100%" src={post.frontmatter.heroimage} alt="Card image cap" />
@@ -20,7 +20,7 @@ const Post = (post: IPost) => (
   </Card>
 )
 
-const GroupedPosts = ({ cards }: { cards: Array<IPost> }) => {
+const GroupedPosts = ({ cards }: { cards: Array<IArticle> }) => {
   const groups = []
   for(let i = 0; i < cards.length; i += 2) {
   groups.push(<CardGroup key={i}>
@@ -34,7 +34,14 @@ const GroupedPosts = ({ cards }: { cards: Array<IPost> }) => {
 }
 
 const IndexPage = ({ data }: IPageContext<IPageData>) => {
-  const cards = data.blogs.edges.filter(post => post.node.frontmatter.homepage).map(edge => edge.node)
+
+  const featuredArticles = data.root.frontmatter.articles.map(a => a.path);
+  const cards = data.articles.edges.map(edge => ({
+    ...edge.node,
+    index: featuredArticles.indexOf(edge.node.frontmatter.path)
+    }))
+    .filter(n =>  n.index >= 0)
+    .sort((a, b) => a.index - b.index)
 
   const { feature, hero } = data.root.frontmatter
   const {title, siteUrl} = data.site.siteMetadata
@@ -83,17 +90,20 @@ export interface IPageData {
         title: string,
         subtitle: string
       }
+      articles: Array<{
+        path: string
+      }>
     }
   },
-  blogs: {
-    edges: Array<{ node: IPost }>
+  articles: {
+    edges: Array<{ node: IArticle }>
   },
   events: {
     edges: Array<{node: IEventFields}>
   }
 }
 
-export interface IPost {
+export interface IArticle {
   excerpt: string,
   id: any,
   frontmatter: {
@@ -128,9 +138,12 @@ query IndexQuery {
         title
         subtitle
       }
+      articles{
+        path
+      }
     }
   }
-  blogs: allMarkdownRemark(filter: {frontmatter: {homepage: {eq: true}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+  articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
     edges {
       node {
         excerpt(pruneLength: 150)
