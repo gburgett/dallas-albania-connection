@@ -1,5 +1,5 @@
 ---
-contentType: blog
+contentType: article
 path: /2018
 title: We're Heading Back in 2018!
 homepage: false

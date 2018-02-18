@@ -5,7 +5,8 @@ import {fakeSitemap} from '../footer'
 export const FakeLayoutData: ILayoutData = {
   site: {
     siteMetadata: {
-      title: 'TeamAlbania.org'
+      title: 'TeamAlbania.org',
+      siteUrl: 'https://www.teamalbania.org'
     }
   },
   footer: {

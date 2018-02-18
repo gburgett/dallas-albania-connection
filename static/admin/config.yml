@@ -53,18 +53,27 @@ collections:
           - {label: "Link", name: "link", widget: "string"}
           - {label: "Button Text", name: "buttonText", widget: "string"}
           - {label: "Image", name: "image", widget: "image"}
+      - label: "Featured Articles"
+        name: "articles"
+        widget: "list"
+        field:
+          - label: "Article"
+            name: "article"
+            widget: "relation"
+            collection: "articles"
+            searchFields: ["title", "path"]
+            valueField: "path"
 
 
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - label: "Articles"
+    name: "articles"
+    folder: "src/pages/articles"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Content Type", name: "contentType", widget: "hidden", default: "blog"}
+      - {label: "Content Type", name: "contentType", widget: "hidden", default: "article"}
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Display On Homepage", name: "homepage", widget: "boolean", default: false}
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}

@@ -3,11 +3,11 @@ import * as React from 'react';
 import * as ReactDomServer from 'react-dom/server'
 
 import TemplateWrapper from '../../layouts/index'
-import Template, {ITemplateData} from '../../templates/blog'
+import Template, {ITemplateData} from '../../templates/article'
 
 import {FakeLayoutData} from './fixtures/layouts'
 
-export const BlogPreview = ({entry, widgetFor, getAsset}) => {
+export const ArticlePreview = ({entry, widgetFor, getAsset}) => {
 
   // Add this blog to the Recent Posts at the bottom
   const layoutData = JSON.parse(JSON.stringify(FakeLayoutData))
@@ -24,7 +24,7 @@ export const BlogPreview = ({entry, widgetFor, getAsset}) => {
 
   // Grab the fields
   const fields: ITemplateData = {
-    site: { siteMetadata: {} },
+    site: { siteMetadata: { title: 'Team Albania', siteUrl: 'https://www.teamalbania.org' } },
     markdownRemark: {
       html: ReactDomServer.renderToStaticMarkup(widgetFor('body')) as string,
       frontmatter: {

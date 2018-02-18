@@ -1,5 +1,5 @@
 ---
-contentType: blog
+contentType: article
 path: /2015
 title: 2015 Summer Project
 homepage: true

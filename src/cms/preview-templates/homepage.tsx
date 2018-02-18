@@ -12,6 +12,12 @@ export const HomepagePreview = ({entry, widgetFor, getAsset}) => {
 
   // Grab the fields
   const fields: IPageData = {
+    site: {
+      siteMetadata: {
+        title: 'teamalbania.org',
+        siteUrl: 'https://www.teamalbania.org'
+      }
+    },
     root: {
       frontmatter: {
         feature: {
@@ -29,7 +35,7 @@ export const HomepagePreview = ({entry, widgetFor, getAsset}) => {
       }
     },
     blogs: {
-      edges: fakePosts()
+      edges: fakeArticles()
     },
     events: {
       edges: fakeEvents()
@@ -74,7 +80,7 @@ function fakeEvents(): Array<{ node: IEventFields }> {
   ]
 }
 
-function fakePosts(): Array<{ node: IPost }> {
+function fakeArticles(): Array<{ node: IPost }> {
   return [
     { node: {
       excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo lectus, ornare vel',
@@ -83,7 +89,7 @@ function fakePosts(): Array<{ node: IPost }> {
         title: 'Fake Post 1',
         path: '/fake1',
         date: new Date(Date.now() - 30 * DAY).toDateString(),
-        contentType: 'blog',
+        contentType: 'article',
         heroimage: '/files/afc.jpg',
         homepage: true
       }
@@ -95,7 +101,7 @@ function fakePosts(): Array<{ node: IPost }> {
         title: 'Fake Post 2',
         path: '/fake3',
         date: new Date(Date.now() - 300 * DAY).toDateString(),
-        contentType: 'blog',
+        contentType: 'article',
         heroimage: '/files/2016_team.jpg',
         homepage: true
       }
@@ -107,7 +113,7 @@ function fakePosts(): Array<{ node: IPost }> {
         title: 'Fake Post 3',
         path: '/fake3',
         date: new Date(Date.now() - 600 * DAY).toDateString(),
-        contentType: 'blog',
+        contentType: 'article',
         heroimage: '/files/2015_team_in_berat.jpg',
         homepage: true
       }
@@ -119,7 +125,7 @@ function fakePosts(): Array<{ node: IPost }> {
         title: 'Fake Post 4',
         path: '/fake4',
         date: new Date(Date.now() - 1000 * DAY).toDateString(),
-        contentType: 'blog',
+        contentType: 'article',
         heroimage: '/files/einstein.jpg',
         homepage: true
       }
