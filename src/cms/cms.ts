@@ -15,7 +15,7 @@ import { HomepagePreview } from "./preview-templates/homepage";
 
 CMS.registerPreviewStyle('/styles.css');
 CMS.registerPreviewTemplate('footer', FooterPreview);
-CMS.registerPreviewTemplate('article', ArticlePreview);
+CMS.registerPreviewTemplate('articles', ArticlePreview);
 CMS.registerPreviewTemplate('about', AboutPreview);
 CMS.registerPreviewTemplate('homepage', HomepagePreview);
 
