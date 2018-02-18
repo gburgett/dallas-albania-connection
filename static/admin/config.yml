@@ -56,9 +56,9 @@ collections:
       - label: "Featured Articles"
         name: "articles"
         widget: "list"
-        field:
+        fields:
           - label: "Article"
-            name: "article"
+            name: "path"
             widget: "relation"
             collection: "articles"
             searchFields: ["title", "path"]
