@@ -50,6 +50,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const events = data.events.edges
     .map(edge => edge.node)
     .filter(node => Date.parse(node.frontmatter.date) > yesterday)
+    .slice(0, 4)
 
   return (<Container fluid>
     <Helmet title={title} titleTemplate={undefined}>
@@ -150,12 +151,11 @@ query IndexQuery {
           date(formatString: "MMMM DD, YYYY")
           path
           heroimage
-          homepage
         }
       }
     }
   }
-  events: allMarkdownRemark(filter: { fileAbsolutePath: {regex: "/\\/events\\/.+\\.md$/"}}, sort: {order: ASC, fields: [frontmatter___date]}, limit: 4) {
+  events: allMarkdownRemark(filter: { fileAbsolutePath: {regex: "/\\/events\\/.+\\.md$/"}}, sort: {order: ASC, fields: [frontmatter___date]}) {
     edges {
       node {
         ...eventFields

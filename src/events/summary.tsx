@@ -29,10 +29,17 @@ export const Summary = (props: IEventSummaryProps) => {
             </a>
             <div id={id} className={`collapse ${props.collapse || 'show'}`}>
               <CardBody>
-                <a href={link}>
-                  {props.excerpt}
-                </a>
+                {present(link) ?
+                  <a href={link}>
+                    {props.excerpt}
+                  </a> :
+                  <span>{props.excerpt}</span>
+                }
               </CardBody>
             </div>
         </Card>
+}
+
+function present(str: string) {
+  return str && str.length > 0
 }
