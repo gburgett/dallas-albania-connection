@@ -10,7 +10,27 @@ import {FakeLayoutData} from './fixtures/layouts'
 
 export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) => {
 
-  console.log(fieldsMetaData.toJS())
+  const articles = []
+  if (fieldsMetaData.get('articles')) {
+    for (let k of fieldsMetaData.get('articles').keys()) {
+      const article = fieldsMetaData.getIn(['articles', k]).toJS()
+      articles.push(
+        { node: {
+          excerpt: article.body.substr(0, 100) + '...',
+          id: `fakearticle-${article.date.getTime()}`,
+          frontmatter: {
+            title: article.title,
+            path: article.path,
+            date: article.date.toDateString(),
+            contentType: article.contentType,
+            heroimage: article.heroimage
+          }
+        } })
+    }
+  }
+
+  const heroImage = getAsset(entry.getIn(['data', 'hero', 'image']))
+  const featureImage = getAsset(entry.getIn(['data', 'feature', 'image']))
 
   // Grab the fields
   const fields: IPageData = {
@@ -27,23 +47,20 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
           title: entry.getIn(['data', 'feature', 'title']) as string,
           link: entry.getIn(['data', 'feature', 'link']) as string,
           buttonText: entry.getIn(['data', 'feature', 'buttonText']) as string,
-          image: getAsset(entry.getIn(['data', 'feature', 'image']))
+          image: featureImage ? featureImage.value : undefined,
+          buttonStyle: entry.getIn(['data', 'feature', 'buttonStyle']) as string,
+          backgroundColor: entry.getIn(['data', 'feature', 'backgroundColor']) as string
         },
         hero: {
           title: entry.getIn(['data', 'hero', 'title']) as string,
           subtitle: entry.getIn(['data', 'hero', 'subtitle']) as string,
-          image: getAsset(entry.getIn(['data', 'hero', 'image']))
+          image: heroImage ? heroImage.value : undefined
         },
-        articles: [
-          {path: '/fake1'},
-          {path: '/fake3'},
-          {path: '/fake2'},
-          {path: '/fake4'}
-        ]
+        articles: entry.getIn(['data', 'articles']).toJS()
       }
     },
     articles: {
-      edges: fakeArticles()
+      edges: articles
     },
     events: {
       edges: fakeEvents()
@@ -85,58 +102,5 @@ function fakeEvents(): Array<{ node: IEventFields }> {
         contentType: 'event',
       }
     }}
-  ]
-}
-
-function fakeArticles(): Array<{ node: IArticle }> {
-  return [
-    { node: {
-      excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo lectus, ornare vel',
-      id: 'fakepost1',
-      frontmatter: {
-        title: 'Fake Post 1',
-        path: '/fake1',
-        date: new Date(Date.now() - 30 * DAY).toDateString(),
-        contentType: 'article',
-        heroimage: '/files/afc.jpg',
-        homepage: true
-      }
-    } },
-    { node: {
-      excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo lectus, ornare vel',
-      id: 'fakepost2',
-      frontmatter: {
-        title: 'Fake Post 2',
-        path: '/fake2',
-        date: new Date(Date.now() - 300 * DAY).toDateString(),
-        contentType: 'article',
-        heroimage: '/files/2016_team.jpg',
-        homepage: true
-      }
-    } },
-    { node: {
-      excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo lectus, ornare vel',
-      id: 'fakepost3',
-      frontmatter: {
-        title: 'Fake Post 3',
-        path: '/fake3',
-        date: new Date(Date.now() - 600 * DAY).toDateString(),
-        contentType: 'article',
-        heroimage: '/files/2015_team_in_berat.jpg',
-        homepage: true
-      }
-    } },
-    { node: {
-      excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce justo lectus, ornare vel',
-      id: 'fakepost1',
-      frontmatter: {
-        title: 'Fake Post 4',
-        path: '/fake4',
-        date: new Date(Date.now() - 1000 * DAY).toDateString(),
-        contentType: 'article',
-        heroimage: '/files/einstein.jpg',
-        homepage: true
-      }
-    } }
   ]
 }

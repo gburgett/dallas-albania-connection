@@ -5,7 +5,7 @@ import * as graphql from 'graphql'
 import Helmet from 'react-helmet'
 
 import Hero from '../components/hero/Hero'
-import Feature from '../components/Feature'
+import Feature, {IFeatureProps} from '../components/Feature'
 import { Summary as EventSummary } from '../events/summary'
 import { IEventFields } from '../events';
 
@@ -78,12 +78,8 @@ export interface IPageData {
   site: ISite,
   root: {
     frontmatter: {
-      feature: {
-        show: boolean,
-        title: string,
-        image: string,
-        link: string,
-        buttonText: string
+      feature: IFeatureProps & {
+        show: boolean
       },
       hero: {
         image: string,

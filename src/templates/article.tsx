@@ -6,7 +6,7 @@ import { basename } from 'path'
 import Link from 'gatsby-link'
 
 import Hero from '../components/hero/Hero'
-import Feature from '../components/Feature'
+import Feature, {IFeatureProps} from '../components/Feature'
 
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
@@ -43,14 +43,8 @@ export interface ITemplateData {
       date: string,
       title: string,
       heroimage: string,
-      feature?: {
+      feature?: IFeatureProps & {
         show?: boolean
-        title?: string
-        image?: string
-        link: string
-        buttonText: string
-        buttonStyle: string
-        backgroundColor?: string
       }
     }
   }

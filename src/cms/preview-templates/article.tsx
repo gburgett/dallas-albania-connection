@@ -22,6 +22,9 @@ export const ArticlePreview = ({entry, widgetFor, getAsset}) => {
     }
   })
 
+  const heroImage = getAsset(entry.getIn(['data', 'heroimage']))
+  const featureImage = getAsset(entry.getIn(['data', 'feature', 'image']))
+
   // Grab the fields
   const fields: ITemplateData = {
     site: { siteMetadata: { title: 'Team Albania', siteUrl: 'https://www.teamalbania.org' } },
@@ -31,11 +34,11 @@ export const ArticlePreview = ({entry, widgetFor, getAsset}) => {
         path: entry.getIn(['data', 'path']),
         date: entry.getIn(['data', 'date']),
         title: entry.getIn(['data', 'title']),
-        heroimage: getAsset(entry.getIn(['data', 'heroimage'])),
+        heroimage: heroImage ? heroImage.value : undefined,
         feature: {
           show: entry.getIn(['data', 'feature', 'show']) as boolean,
           title: entry.getIn(['data', 'feature', 'title']) as string,
-          image: getAsset(entry.getIn(['data', 'feature', 'image'])),
+          image: featureImage ? featureImage.value : undefined,
           link: entry.getIn(['data', 'feature', 'link']) as string,
           buttonText: entry.getIn(['data', 'feature', 'buttonText']) as string,
           buttonStyle: entry.getIn(['data', 'feature', 'buttonStyle']) as string,

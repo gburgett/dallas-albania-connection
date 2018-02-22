@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Row, Col, Button } from 'reactstrap'
 
-interface IFeatureProps {
+export interface IFeatureProps {
   title?: string
   image?: string
   link: string

@@ -9,7 +9,6 @@ interface IEventSummaryProps extends IEventFields {
 
 export const Summary = (props: IEventSummaryProps) => {
   const {date, title, link} = props.frontmatter
-  console.log(props.frontmatter)
 
   let color="light"
 
