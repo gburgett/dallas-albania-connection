@@ -100,6 +100,21 @@ collections:
               name: "backgroundColor", widget: "string", required: false,
               pattern: '^(\w+|\#[a-f0-9]+|(rgba?|hsla?)\(\s*\d+,\s*\d+\%?,\s*\d+\%?(,\s*[\d\.]+)?\))$'}
 
+  - label: "Blog Posts"
+    name: "blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Content Type", name: "contentType", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string",
+          pattern: '^[\w-\_]+$'}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Published?", name: "published", widget: "boolean", default: false}
+      - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
   - name: "events"
     label: "Events"
     folder: "src/events"

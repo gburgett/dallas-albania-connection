@@ -11,7 +11,7 @@ import Feature, {IFeatureProps} from '../components/Feature'
 const BlogsPreview = (props: { edges: { node: IBlogPreviewData }[] }) => {
   const edges = props.edges.filter(e => {
     const dt = Date.parse(e.node.frontmatter.date)
-    return dt <= Date.now()
+    return dt <= Date.now() && e.node.frontmatter.published !== false
   })
   return <div className='list-group'>
     { edges.map(e => (
@@ -48,13 +48,14 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
 
       <Container>
         <div className='row'>
-          <div className='col-md-3 blog-list'>
+          <div className='d-none d-md-block col-md-3 blog-list'>
             { blogs && <BlogsPreview edges={blogs.edges} /> }
           </div>
           <div className='col-md-9'>
             <h1 className='display-3'>{title}</h1>
             <p className='text-right'>{post.timeToRead} minute read</p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            {post.html && 
+              <div dangerouslySetInnerHTML={{ __html: post.html}} />}
           </div>
         </div>
       </Container>
@@ -71,7 +72,8 @@ export interface ITemplateData {
       slug: string,
       date: string,
       title: string,
-      heroimage: string
+      heroimage: string,
+      published?: boolean
     }
   },
   blogs: {
@@ -89,6 +91,7 @@ interface IBlogPreviewData {
     slug: string
     title: string
     date: string
+    published?: boolean
   }
 }
 
@@ -108,6 +111,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         heroimage
+        published
       }
     }
 
@@ -121,6 +125,7 @@ export const pageQuery = graphql`
             slug
             title
             date
+            published
           }
         }
       }

@@ -5,6 +5,7 @@ import "netlify-cms/dist/cms.css";
 
 import {FooterPreview} from './preview-templates/footer'
 import {ArticlePreview} from './preview-templates/article'
+import {BlogPreview} from './preview-templates/blog'
 import { AboutPreview } from "./preview-templates/about";
 import { HomepagePreview } from "./preview-templates/homepage";
 
@@ -16,6 +17,7 @@ import { HomepagePreview } from "./preview-templates/homepage";
 CMS.registerPreviewStyle('/styles.css');
 CMS.registerPreviewTemplate('footer', FooterPreview);
 CMS.registerPreviewTemplate('articles', ArticlePreview);
+CMS.registerPreviewTemplate('blog', BlogPreview);
 CMS.registerPreviewTemplate('about', AboutPreview);
 CMS.registerPreviewTemplate('homepage', HomepagePreview);
 

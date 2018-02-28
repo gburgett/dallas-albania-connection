@@ -18,7 +18,11 @@ export const FakeLayoutData: ILayoutData = {
   },
   sitemap: {
     edges: [
-      {node: { id: '1', frontmatter: { contentType: 'page', path: '/about', title: 'About' } } }
+      {node: { frontmatter: { contentType: 'page', path: '/about', title: 'About' } } }
+    ]
+  },
+  blogs: {
+    edges: [
     ]
   }
 }
