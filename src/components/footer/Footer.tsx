@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { Row, Col, Container } from 'reactstrap'
 
-import { Sitemap, ISitemapFields } from './Sitemap'
+import { Sitemap, ISitemapFields, ISitemapProps } from './Sitemap'
 
 // footer styles
 import './footer.scss'
 
-export class Footer extends React.Component<{sitemap: ISitemapFields, fields: IFooterFields}> {
+export class Footer extends React.Component<{sitemap: ISitemapProps, fields: IFooterFields}> {
   render() {
     const { contact, mailchimp } = this.props.fields.frontmatter
 

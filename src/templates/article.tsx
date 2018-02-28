@@ -51,7 +51,7 @@ export interface ITemplateData {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query ArticleByPath($path: String!) {
     site {
       siteMetadata {
         siteUrl

@@ -13,6 +13,7 @@ import 'prismjs/themes/prism-twilight.css'
 import './index.scss'
 
 import {IFooterFields, Footer} from '../components/footer/Footer'
+import { ISitemapFields } from '../components/footer/Sitemap';
 
 export default class TemplateWrapper extends React.Component<IPageContext<ILayoutData>, any> {
 
@@ -24,9 +25,12 @@ export default class TemplateWrapper extends React.Component<IPageContext<ILayou
       user = window.netlifyIdentity && window.netlifyIdentity.currentUser()
     }
 
-    let pages = data.sitemap.edges.map(e => e.node.frontmatter)
-    const posts = pages.filter(p => p.contentType == 'blog').slice(0, 6)
-    pages = pages.filter(p => p.contentType != 'blog')
+    let pages = data.sitemap.edges.map(e => e.node)
+      .filter(p => p.frontmatter.published !== false)
+      .filter(p => p.frontmatter.contentType != 'blog')
+    const posts = data.blogs.edges.map(e => e.node)
+      .filter(p => p.frontmatter.published !== false)
+      .slice(0, 6)
 
     return (
       <div className='App'>
@@ -60,16 +64,14 @@ export interface ILayoutData {
   site: ISite,
   footer: IFooterFields,
   sitemap: {
-    edges: [{
-      node: {
-        id: string,
-        frontmatter: {
-          contentType: string,
-          path: string,
-          title: string
-        }
-      }
-    }]
+    edges: {
+      node: ISitemapFields
+    }[]
+  },
+  blogs: {
+    edges: {
+      node: ISitemapFields
+    }[]
   }
 }
 
@@ -86,12 +88,14 @@ export const pageQuery = graphql`
     sitemap: allMarkdownRemark(filter: { frontmatter: { path: { ne:null } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
-          id
-          frontmatter {
-            contentType
-            path
-            title
-          }
+          ...sitemapFields
+        }
+      }
+    }
+    blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          ...sitemapFields
         }
       }
     }

@@ -3,19 +3,47 @@ const Path = require('path')
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
+  const createNode = ({ node }) => {
+    let { contentType, path, slug } = node.frontmatter
+    if (contentType) {
+      path = path || `${contentType}/${slug}`
+      
+      console.log('creating page:', contentType, 'at', path)
+      createPage({
+        path: path,
+        component: Path.resolve(`src/templates/${String(contentType)}.tsx`),
+        context: {
+          id: node.id,
+          ...node.frontmatter
+        } // additional data can be passed via context
+      })
+    } else {
+      return Promise.reject(`No template found for content type ${contentType}`)
+    }
+  }
+
   return graphql(`
   {
-    allMarkdownRemark(filter: { frontmatter: { path: { ne: null } } }) {
+    pages: allMarkdownRemark(filter: { frontmatter: { path: { ne: null } } }) {
       edges {
         node {
-          excerpt(pruneLength: 400)
-          html
           id
           frontmatter {
             contentType
             path
             date
-            title
+          }
+        }
+      }
+    }
+    blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" } } }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            contentType
+            slug
+            date
           }
         }
       }
@@ -25,18 +53,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      const { contentType, path } = node.frontmatter
-      if (contentType) {
-        console.log('creating page:', contentType, 'at', path)
-        createPage({
-          path: path,
-          component: Path.resolve(`src/templates/${String(contentType)}.tsx`),
-          context: {} // additional data can be passed via context
-        })
-      } else {
-        return Promise.reject(`No template found for content type ${contentType}`)
-      }
-    })
+    result.data.pages.edges.forEach(createNode)
+    result.data.blogs.edges.forEach(createNode)
   })
 }

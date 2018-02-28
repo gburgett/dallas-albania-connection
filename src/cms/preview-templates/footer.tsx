@@ -33,11 +33,8 @@ export const fakeSitemap: ISitemapFields = {
     { path: '/fake', title: 'Fake Page'}
   ],
   posts: [
-    { path: '/fake1', title: 'Fake Post 1' },
-    { path: '/fake2', title: 'Fake Post 2' },
-    { path: '/fake3', title: 'Fake Post 3' },
-    { path: '/fake4', title: 'Fake Post 4' },
-    { path: '/fake5', title: 'Fake Post 5' },
+    { path: '/fake1', title: 'Fake Article 1' },
+    { path: '/fake2', title: 'Fake Article 2' },
   ]
 }
 
