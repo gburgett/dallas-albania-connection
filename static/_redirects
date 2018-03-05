@@ -1,0 +1,3 @@
+/participants/:year   200!	Role=admin,editor,:year
+/participants/:year/* 200!	Role=admin,editor,:year
+/participants/*	/login	401
