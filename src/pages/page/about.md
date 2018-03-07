@@ -1,7 +1,7 @@
 ---
-contentType: about
 path: /about
 title: About Us
+public: true
 ---
 We are a group of people who are passionate about sharing the Gospel of Jesus Christ with others in Albania and across Eastern Europe. We are imperfect persons who have been redeemed by a perfect God.
 

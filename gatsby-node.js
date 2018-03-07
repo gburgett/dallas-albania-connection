@@ -7,19 +7,17 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     let { contentType, path, slug } = node.frontmatter
     if (contentType) {
       path = path || `${contentType}/${slug}`
-      
-      console.log('creating page:', contentType, 'at', path)
-      createPage({
-        path: path,
-        component: Path.resolve(`src/templates/${String(contentType)}.tsx`),
-        context: {
-          id: node.id,
-          ...node.frontmatter
-        } // additional data can be passed via context
-      })
-    } else {
-      return Promise.reject(`No template found for content type ${contentType}`)
     }
+      
+    console.log('creating page:', contentType, 'at', path)
+    createPage({
+      path: path,
+      component: Path.resolve(`src/templates/${String(contentType || 'page')}.tsx`),
+      context: {
+        id: node.id,
+        ...node.frontmatter
+      } // additional data can be passed via context
+    })
   }
 
   return graphql(`

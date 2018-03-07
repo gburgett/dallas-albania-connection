@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 
 export interface ISitemapFields {
   frontmatter: {
-    contentType: string,
+    contentType?: string,
     title: string,
     path?: string,
     slug?: string,
@@ -25,7 +25,7 @@ export const Sitemap = ({ pages, posts }: ISitemapProps) => {
     <h4>Sitemap</h4>
     <Row>
       <Pages pages={pages} columns={pagesColumns} />
-      <Posts posts={posts} />
+      { posts && <Posts posts={posts} /> }
     </Row>
   </div>)
 }

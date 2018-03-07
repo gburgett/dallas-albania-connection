@@ -70,6 +70,17 @@ collections:
             searchFields: ["title", "path"]
             valueField: "path"
 
+  - label: "Pages"
+    name: "pages"
+    folder: "src/pages/page"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Public?  If false this page is hidden from the sitemap", name: "public", widget: "boolean", default: false}
 
   - label: "Articles"
     name: "articles"
@@ -115,8 +126,8 @@ collections:
       - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "events"
-    label: "Events"
+  - label: "Events"
+    name: "events"
     folder: "src/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -125,15 +136,4 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Event Date", name: "date", widget: "date"}
       - {label: "Optional Link", name: "link", widget: "string", required: false, default: ""}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "about"
-    label: "About"
-    folder: "src/pages/about"
-    create: false
-    slug: "{{slug}}"
-    fields:
-      - {label: "Content Type", name: "contentType", widget: "hidden", default: "about"}
-      - {label: "Path", name: "path", widget: "hidden", default: "/about"}
-      - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}

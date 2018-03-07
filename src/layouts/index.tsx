@@ -28,7 +28,7 @@ export default class TemplateWrapper extends React.Component<IPageContext<ILayou
     let pages = data.sitemap.edges.map(e => e.node)
       .filter(p => p.frontmatter.published !== false)
       .filter(p => p.frontmatter.contentType != 'blog')
-    const posts = data.blogs.edges.map(e => e.node)
+    const posts = data.blogs && data.blogs.edges.map(e => e.node)
       .filter(p => p.frontmatter.published !== false)
       .slice(0, 6)
 
@@ -85,14 +85,14 @@ export const pageQuery = graphql`
     footer: markdownRemark(fileAbsolutePath: {regex: "/\/components/footer/Footer\\.md$/"}) {
       ...footerFields
     }
-    sitemap: allMarkdownRemark(filter: { frontmatter: { path: { ne:null } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+    sitemap: allMarkdownRemark(filter: { frontmatter: { path: { ne:null }, public: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
           ...sitemapFields
         }
       }
     }
-    blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+    blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" }, published: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
           ...sitemapFields

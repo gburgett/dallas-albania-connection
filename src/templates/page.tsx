@@ -37,6 +37,7 @@ export interface ITemplateData {
     html: string,
     frontmatter: {
       path: string,
+      public: boolean,
       date: string,
       title: string,
       heroimage: string
@@ -56,6 +57,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         path
+        public
         title
         heroimage
       }

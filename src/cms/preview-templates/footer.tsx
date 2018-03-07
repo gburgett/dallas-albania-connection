@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as ReactDomServer from 'react-dom/server'
 import { Footer, IFooterFields } from '../../components/footer/Footer';
-import { ISitemapFields } from '../../components/footer/Sitemap';
+import { ISitemapProps } from '../../components/footer/Sitemap';
 
 export const FooterPreview = ({entry, widgetFor, widgetsFor}) => {
   const contact = widgetsFor('contact')
@@ -27,14 +27,14 @@ export const FooterPreview = ({entry, widgetFor, widgetsFor}) => {
 };
 
 
-export const fakeSitemap: ISitemapFields = {
+export const fakeSitemap: ISitemapProps = {
   pages: [
-    { path: '/about', title: 'About' },
-    { path: '/fake', title: 'Fake Page'}
+    { frontmatter: { path: '/about', title: 'About' } },
+    { frontmatter: { path: '/fake', title: 'Fake Page'} }
   ],
   posts: [
-    { path: '/fake1', title: 'Fake Article 1' },
-    { path: '/fake2', title: 'Fake Article 2' },
+    { frontmatter: { path: '/fake1', title: 'Fake Article 1' } },
+    { frontmatter: { path: '/fake2', title: 'Fake Article 2' } },
   ]
 }
 
