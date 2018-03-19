@@ -129,6 +129,7 @@ collections:
                 fields:
                   - {label: "Name", name: "name", widget: "string", required: true}
                   - {label: "Cru ID", name: "cruId", widget: "string", required: true}
+                  - {label: "Individual Goal (if different from team goal)", name: "goal", widget: "number", required: false}
 
   - label: "Blog Posts"
     name: "blog"

@@ -99,6 +99,7 @@ export const pageQuery = graphql`
             members {
               name
               cruId
+              goal
             }
           }
         }

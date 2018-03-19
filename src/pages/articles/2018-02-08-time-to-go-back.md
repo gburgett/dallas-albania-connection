@@ -20,17 +20,21 @@ roster:
         - name: Gordon Burgett
           cruId: 0746249
         - name: Will Noll
+          goal: 3500
         - name: Mark Hapka
         - name: Brian Claussen
         - name: Claudia Corona
         - name: Lauren Horner
+          goal: 3500
         - name: Sally Neely
     - name: Tirana - High School
       goal: 3000
       members:
         - name: Carrie Beckner
         - name: Nico Arguello
+          goal: 3500
         - name: Katy Wood
+          goal: 3500
         - name: James Byrd
         - name: McKenzie Cranford
         - name: Jenn Saucier
@@ -42,6 +46,7 @@ roster:
         - name: Nico Arguello
         - name: Joseph Woodard
         - name: Lucy Chang
+          goal: 3500
         - name: Katy Wood
         - name: Jeremy Garrett
         - name: Lindsey Juarez
@@ -64,6 +69,7 @@ roster:
         - name: Randy Valdez
         - name: Sam Barrientos
         - name: Lucy Chang
+          goal: 3500
         - name: Cody Darden
         - name: Jane Rodriguez
         - name: Andy Lopez
@@ -77,7 +83,9 @@ roster:
         - name: Wes Chick
         - name: Morgan Asbill
         - name: Will Noll
+          goal: 3500
         - name: Lauren Horner
+          goal: 3500
 ---
 **Summer Project 2018**
 

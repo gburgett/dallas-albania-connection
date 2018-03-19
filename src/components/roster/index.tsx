@@ -68,7 +68,7 @@ export class TeamRoster extends React.Component<ITeamRosterProps, {}> {
       <h4>{name}</h4>
       <ul>
         {members && members.map(m => (<li key={m.name}>
-          <RosterMember {...m} goal={goal} key={m.name} />
+          <RosterMember {...m} goal={m.goal || goal} key={m.name} />
         </li>))}
       </ul>
     </div>)
