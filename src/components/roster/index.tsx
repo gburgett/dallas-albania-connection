@@ -21,10 +21,18 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
     const donateButton = (
       <a className={`donate btn btn-sm ${cruId ? "btn-info" : "btn-secondary disabled"}`}
         href={`https://give.cru.org/${cruId}`}>
-        {cruId && <span><i className="fas fa-heart"></i>  Donate!</span>}
+        {cruId && <span><i className="fas fa-gift"></i>  Donate!</span>}
         {!cruId && <span>Donation link coming soon!</span>}
       </a>
     )
+    const xsDonateButton = (
+      <a className={`donate btn btn-sm ${cruId ? "btn-info" : "btn-secondary disabled"}`}
+        href={`https://give.cru.org/${cruId}`}
+        style={{ width: '100%' }}>
+        <span>{cruId && <i className="fas fa-gift"></i>} {name}</span>
+      </a>
+    )
+
     const bgColor = cruId ? "bg-info" : "bg-secondary"
     const slider = (
       <div className="progress">
@@ -39,10 +47,13 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
     )
 
     return (<div className="member">
-      <span className="memberName">
+      <span className="memberName d-none d-sm-flex">
         <span className="name">{name}</span>
         <span className="amt">$0 of ${goal || "?"}</span>
         {donateButton}
+      </span>
+      <span className="memberName d-block d-sm-none">
+        {xsDonateButton}
       </span>
       {slider}
     </div>)

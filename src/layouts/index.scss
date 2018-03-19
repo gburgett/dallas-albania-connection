@@ -234,11 +234,11 @@ a {
   padding-bottom: 1em;
 
   .memberName {
-    display: flex;
     padding-bottom: 0.5em;
 
     .name {
       font-weight: bold;
+      min-width: 10em;
     }
 
     .amt {
