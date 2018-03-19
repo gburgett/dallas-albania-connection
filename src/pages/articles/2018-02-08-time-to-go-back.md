@@ -6,10 +6,28 @@ date: 2018-02-09T05:31:28.725Z
 heroimage: /files/2017_part_packet_cover.jpg
 feature:
   backgroundColor: ''
-  buttonStyle: danger
-  buttonText: Sign up now!
-  link: '#googleform'
+  buttonStyle: info
+  buttonText: '<i class="fas fa-heart"></i> Donate!'
+  link: '#roster'
   show: true
+roster:
+  header: Team Roster
+  teams:
+    - name: Tirana - Young Professionals
+      goal: 3000
+      members:
+        - name: Gordon Burgett
+          cruId: 0746249
+        - name: Will Noll
+    - name: Tirana - High School
+    - name: Korça - High School
+    - name: Elbasan - High School
+      goal: 3000
+      members:
+        - name: Marlie Austin
+        - name: Matt Rial
+    - name: Hungary
+    - name: Poland
 ---
 **Summer Project 2018**
 
@@ -22,6 +40,3 @@ For more details about this summer (and before applying), read the Info Sheet an
 [Download More Information (pdf)](/files/Albania-2018-Info-Sheet.pdf)
 
 [Download the Calendar (pdf)](/files/Albania-2018-Info-Session-Calendar.pdf)
-
-<iframe id='googleform'
-  src="https://docs.google.com/forms/d/e/1FAIpQLSfkkQtTFXRUMdBEsYSsR0JAlfzZDznAjryQtwwcCZhf3BO2mQ/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>

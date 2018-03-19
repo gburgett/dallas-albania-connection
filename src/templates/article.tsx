@@ -7,11 +7,19 @@ import Link from 'gatsby-link'
 
 import Hero from '../components/hero/Hero'
 import Feature, {IFeatureProps} from '../components/Feature'
+import { ITeamRosterProps, TeamRoster } from '../components/roster';
 
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
-  const { heroimage, title, feature } = post.frontmatter;
+  const { heroimage, title, feature, roster } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
+
+  const rosterComponent = roster && <div className="row">
+    <div className="col-12">
+      {roster.header && <h2 id="roster">{roster.header}</h2>}
+      {roster.teams.map(team => <TeamRoster {...team} />)}
+    </div>
+  </div>
 
   return (
     <div>
@@ -29,6 +37,8 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
 
         <h1 className='display-3'>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        {rosterComponent}
       </Container>
     </div>
   )
@@ -45,6 +55,10 @@ export interface ITemplateData {
       heroimage: string,
       feature?: IFeatureProps & {
         show?: boolean
+      },
+      roster: {
+        header: string,
+        teams: ITeamRosterProps[]
       }
     }
   }
@@ -73,6 +87,17 @@ export const pageQuery = graphql`
           buttonText
           buttonStyle
           backgroundColor
+        }
+        roster {
+          header
+          teams {
+            name
+            goal
+            members {
+              name
+              cruId
+            }
+          }
         }
       }
     }
