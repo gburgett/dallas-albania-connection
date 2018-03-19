@@ -39,6 +39,14 @@ module.exports = class HTML extends React.Component<IHTMLProps, any> {
             name='viewport'
             content='width=device-width, initial-scale=1, shrink-to-fit=no'
           />
+          <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"
+            integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk"
+            crossOrigin="anonymous"></link>
+          <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css"
+            integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P"
+            crossOrigin="anonymous"></link>
           <script src='https://identity.netlify.com/v1/netlify-identity-widget.js' />
           <script src='/admin/netlify_redirect.js' />
           {this.props.headComponents}

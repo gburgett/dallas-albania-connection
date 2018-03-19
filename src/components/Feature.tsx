@@ -29,11 +29,13 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
           <div className="bgimg" style={ { backgroundImage: present(image) && `url('${image}')` }}>
             {present(title) && <h2 className="d-none d-md-block">{title}</h2>}
 
-            <a className={`d-block d-md-none btn ${buttonStyle}`} href={link}>{present(title) ? title : buttonText}</a>
+            <a className={`d-block d-md-none btn ${buttonStyle}`} href={link}
+              dangerouslySetInnerHTML={{ __html: present(title) ? title : buttonText }}></a>
           </div>
         </Col>
         <Col className={`d-none d-md-block ${present(image) ? 'col-md-6' : 'col-md-12'}`}>
-          <a className={`btn ${buttonStyle}`} href={link}>{buttonText}</a>
+          <a className={`btn ${buttonStyle}`} href={link}
+            dangerouslySetInnerHTML={{ __html: buttonText }}></a>
         </Col>
       </Row>)
     }
@@ -43,7 +45,8 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
       <Col className='col-12 col-md-6'  style={ style }>
         <div className="bgimg" style={ { backgroundImage: present(image) && `url('${image}')` }}>
           {title && <h2 className="d-none d-md-block">{title}</h2>}
-          <a className={`btn ${buttonStyle}`} href={link}>{buttonText}</a>
+          <a className={`btn ${buttonStyle}`} href={link}
+            dangerouslySetInnerHTML={{ __html: buttonText }}></a>
         </div>
       </Col>
     </Row>)
