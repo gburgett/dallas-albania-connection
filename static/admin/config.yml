@@ -110,6 +110,24 @@ collections:
           - {label: "Background Color (see https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)",
               name: "backgroundColor", widget: "string", required: false,
               pattern: '^(\w+|\#[a-f0-9]+|(rgba?|hsla?)\(\s*\d+,\s*\d+\%?,\s*\d+\%?(,\s*[\d\.]+)?\))$'}
+      - label: "Team Roster"
+        name: "roster"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Header Text", name: "header", widget: "string", default: 'Team Roster', required: true}
+          - label: "Teams"
+            name: "teams"
+            widget: "list"
+            fields:
+              - {label: "Team Name", name: "name", widget: "string", required: true}
+              - {label: "Fundraising Goal in Dollars", name: "goal", widget: "number", required: true}
+              - label: "Team Members"
+                name: "members"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string", required: true}
+                  - {label: "Cru ID", name: "cruId", widget: "string", required: true}
 
   - label: "Blog Posts"
     name: "blog"

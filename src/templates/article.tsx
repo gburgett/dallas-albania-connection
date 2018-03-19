@@ -17,7 +17,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
   const rosterComponent = roster && <div className="row">
     <div className="col-12">
       {roster.header && <h2 id="roster">{roster.header}</h2>}
-      {roster.teams.map(team => <TeamRoster {...team} />)}
+      {roster.teams && roster.teams.map(team => <TeamRoster {...team} />)}
     </div>
   </div>
 
@@ -36,7 +36,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
       <Container>
 
         <h1 className='display-3'>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {post.html && <div dangerouslySetInnerHTML={{ __html: post.html }} />}
 
         {rosterComponent}
       </Container>
