@@ -19,15 +19,64 @@ roster:
         - name: Gordon Burgett
           cruId: 0746249
         - name: Will Noll
+        - name: Mark Hapka
+        - name: Brian Claussen
+        - name: Claudia Corona
+        - name: Lauren Horner
+        - name: Sally Neely
     - name: Tirana - High School
+      goal: 3000
+      members:
+        - name: Carrie Beckner
+        - name: Nico Arguello
+        - name: Katy Wood
+        - name: James Byrd
+        - name: McKenzie Cranford
+        - name: Jenn Saucier
+        - name: Emily McCoppin
+        - name: Morgan Asbil
     - name: Korça - High School
+      goal: 3000
+      members:
+        - name: Nico Arguello
+        - name: Joseph Woodard
+        - name: Lucy Chang
+        - name: Katy Wood
+        - name: Jeremy Garrett
+        - name: Lindsey Juarez
+        - name: Faith Michael
     - name: Elbasan - High School
       goal: 3000
       members:
         - name: Marlie Austin
         - name: Matt Rial
+        - name: Charissa Tran
+        - name: Madison McGill
+        - name: Juan Monsivais
+        - name: Marc Flores
+        - name: Cassie Fitzsimmons
+        - name: Christina Edwards
+        - name: Chelsea Prettyman
     - name: Hungary
+      goal: 3000
+      members:
+        - name: Randy Valdez
+        - name: Sam Barrientos
+        - name: Lucy Chang
+        - name: Cody Darden
+        - name: Jane Rodriguez
+        - name: Andy Lopez
+        - name: Faith Michael
+        - name: Aaron Dutton
     - name: Poland
+      goal: 3000
+      members:
+        - name: Chris Hyland
+        - name: Claudia Corona
+        - name: Wes Chick
+        - name: Morgan Asbill
+        - name: Will Noll
+        - name: Lauren Horner
 ---
 **Summer Project 2018**
 
