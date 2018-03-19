@@ -12,6 +12,7 @@ feature:
   show: true
 roster:
   header: Team Roster
+  text: Click on one of the buttons below to donate!
   teams:
     - name: Tirana - Young Professionals
       goal: 3000

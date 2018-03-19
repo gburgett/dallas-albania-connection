@@ -116,6 +116,7 @@ collections:
         required: false
         fields:
           - {label: "Header Text", name: "header", widget: "string", default: 'Team Roster', required: true}
+          - {label: "Body Text", name: "text", widget: "markdown", required: false}
           - label: "Teams"
             name: "teams"
             widget: "list"

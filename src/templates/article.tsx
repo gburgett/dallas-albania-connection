@@ -17,6 +17,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
   const rosterComponent = roster && <div className="row">
     <div className="col-12">
       {roster.header && <h2 id="roster">{roster.header}</h2>}
+      {roster.text && <div dangerouslySetInnerHTML={{ __html: roster.text }}></div>}
       {roster.teams && roster.teams.map(team => <TeamRoster {...team} />)}
     </div>
   </div>
@@ -58,6 +59,7 @@ export interface ITemplateData {
       },
       roster: {
         header: string,
+        text: string,
         teams: ITeamRosterProps[]
       }
     }
@@ -90,6 +92,7 @@ export const pageQuery = graphql`
         }
         roster {
           header
+          text
           teams {
             name
             goal
