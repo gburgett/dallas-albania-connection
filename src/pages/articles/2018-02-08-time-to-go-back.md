@@ -7,52 +7,51 @@ heroimage: /files/2017_part_packet_cover.jpg
 feature:
   backgroundColor: ''
   buttonStyle: info
-  buttonText: '<i class="fas fa-heart"></i> Donate!'
+  buttonText: <i class="fas fa-heart"></i> Donate!
   link: '#roster'
   show: true
 roster:
   header: Team Roster
-  text: Click on one of the buttons below to donate!
   teams:
-    - name: Tirana - Young Professionals
-      goal: 3000
+    - goal: 3000
       members:
-        - name: Gordon Burgett
-          cruId: 0746249
-        - name: Will Noll
-          goal: 3500
+        - cruId: 0746249
+          name: Gordon Burgett
+        - goal: 3500
+          name: Will Noll
         - name: Mark Hapka
         - name: Brian Claussen
-        - name: Claudia Corona
-        - name: Lauren Horner
-          goal: 3500
+        - goal: '3500'
+          name: Claudia Corona
+        - goal: 3500
+          name: Lauren Horner
         - name: Sally Neely
-    - name: Tirana - High School
-      goal: 3000
+      name: Tirana - Young Professionals
+    - goal: 3000
       members:
         - name: Carrie Beckner
-        - name: Nico Arguello
-          goal: 3500
-        - name: Katy Wood
-          goal: 3500
+        - goal: 3500
+          name: Nico Arguello
+        - goal: 3500
+          name: Katy Wood
         - name: James Byrd
         - name: McKenzie Cranford
         - name: Jenn Saucier
         - name: Emily McCoppin
         - name: Morgan Asbil
-    - name: Korça - High School
-      goal: 3000
+      name: Tirana - High School
+    - goal: 3000
       members:
         - name: Nico Arguello
         - name: Joseph Woodard
-        - name: Lucy Chang
-          goal: 3500
+        - goal: 3500
+          name: Lucy Chang
         - name: Katy Wood
         - name: Jeremy Garrett
         - name: Lindsey Juarez
         - name: Faith Michael
-    - name: Elbasan - High School
-      goal: 3000
+      name: Korça - High School
+    - goal: 3000
       members:
         - name: Marlie Austin
         - name: Matt Rial
@@ -63,29 +62,32 @@ roster:
         - name: Cassie Fitzsimmons
         - name: Christina Edwards
         - name: Chelsea Prettyman
-    - name: Hungary
-      goal: 3000
+      name: Elbasan - High School
+    - goal: 3000
       members:
         - name: Randy Valdez
         - name: Sam Barrientos
-        - name: Lucy Chang
-          goal: 3500
+        - goal: 3500
+          name: Lucy Chang
         - name: Cody Darden
         - name: Jane Rodriguez
         - name: Andy Lopez
         - name: Faith Michael
         - name: Aaron Dutton
-    - name: Poland
-      goal: 3000
+      name: Hungary
+    - goal: 3000
       members:
         - name: Chris Hyland
-        - name: Claudia Corona
+        - goal: '3500'
+          name: Claudia Corona
         - name: Wes Chick
         - name: Morgan Asbill
-        - name: Will Noll
-          goal: 3500
-        - name: Lauren Horner
-          goal: 3500
+        - goal: 3500
+          name: Will Noll
+        - goal: 3500
+          name: Lauren Horner
+      name: Poland
+  text: Click on one of the buttons below to donate!
 ---
 **Summer Project 2018**
 
