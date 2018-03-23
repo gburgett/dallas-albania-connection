@@ -33,9 +33,10 @@ const BlogPreview = (node: IBlogPreviewData) => (
 
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, blogs } = data
-  const { heroimage, title } = post.frontmatter;
+  const { heroimage, heroAttribution, title } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
+  console.log('attribution:', heroAttribution)
   return (
     <div>
       <Helmet title={post.frontmatter.title}>
@@ -43,7 +44,11 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
       </Helmet>
 
       <Container fluid>
-        {heroimage && <Hero image={heroimage} />}
+        {heroimage && 
+          <Hero image={heroimage} heroAttribution={heroAttribution} >
+            <h1 className='display-3'>{title}</h1>
+          </Hero>
+        }
       </Container>
 
       <Container>
@@ -52,10 +57,10 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
             { blogs && <BlogsPreview edges={blogs.edges} /> }
           </div>
           <div className='col-md-10'>
-            <h1 className='display-3'>{title}</h1>
+            {!heroimage && <h1 className='display-3'>{title}</h1>}
             <p className='text-right'>{post.timeToRead} minute read</p>
             {post.html && 
-              <div dangerouslySetInnerHTML={{ __html: post.html}} />}
+              <div className='post' dangerouslySetInnerHTML={{ __html: post.html}} />}
           </div>
         </div>
       </Container>
@@ -73,6 +78,7 @@ export interface ITemplateData {
       date: string,
       title: string,
       heroimage: string,
+      heroAttribution: string,
       published?: boolean
     }
   },
@@ -111,6 +117,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         heroimage
+        heroAttribution
         published
       }
     }

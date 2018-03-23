@@ -3,7 +3,8 @@ contentType: blog
 slug: support-raising-101
 title: Support Raising 101
 date: 2018-03-21T12:00:00-0600
-heroimage: 
+heroimage: /files/writing-a-letter-pexels-photo-211291.jpeg
+heroAttribution: Photo by John-Mark Smith from Pexels
 published: false
 author:
   name: Gordon Burgett

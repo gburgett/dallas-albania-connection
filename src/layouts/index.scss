@@ -135,6 +135,18 @@ a {
   }
 }
 
+.hero-image {
+  display: flex;
+  flex-direction: column;
+
+  .blockquote-footer {
+    margin-top: auto;
+    margin-left: auto;
+    font-size: 10px;
+    color: $light;
+  }
+}
+
 .hero-title {
   padding: 40px 40px;
 
@@ -144,7 +156,7 @@ a {
     color: $hero-head;
   }
 
-  > div {
+  .subtitle {
     background-color: $hero-bg;
     border-radius: 4px;
     display: inline-block;
@@ -157,6 +169,16 @@ a {
     p {
       margin: 0px;
     }
+  }
+}
+
+.hero-body {
+  margin-top: auto;
+  margin-bottom: 35px;
+
+  color: $light;
+  > h1 {
+    font-weight: bold;
   }
 }
 
@@ -259,4 +281,13 @@ blockquote {
   border-left: 4px solid #ccc;
   margin: 0.5em;
   padding: 0 0.5em;
+  font-family: Helvetica;
+  font-size: 14pt;
+}
+
+.post {
+  h1 {
+    padding-bottom: 2px;
+    border-bottom: 1px dotted grey
+  }
 }
