@@ -175,6 +175,7 @@ a {
 .hero-body {
   margin-top: auto;
   margin-bottom: 35px;
+  padding: 4px;
 
   color: $light;
   > h1 {
@@ -289,5 +290,28 @@ blockquote {
   h1 {
     padding-bottom: 2px;
     border-bottom: 1px dotted grey
+  }
+}
+
+.author-row {
+  display: flex;
+  margin-top: -60px;
+
+  .author {
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    > img {
+      margin: 0 auto;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .author-row {
+    .author {
+      margin: 0 10% 0 auto;
+    }
   }
 }

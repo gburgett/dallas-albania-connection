@@ -7,6 +7,7 @@ import Link from 'gatsby-link'
 
 import Hero from '../components/hero/Hero'
 import Feature, {IFeatureProps} from '../components/Feature'
+import Author from '../components/author'
 
 const BlogsPreview = (props: { edges: { node: IBlogPreviewData }[] }) => {
   const edges = props.edges.filter(e => {
@@ -33,10 +34,9 @@ const BlogPreview = (node: IBlogPreviewData) => (
 
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, blogs } = data
-  const { heroimage, heroAttribution, title } = post.frontmatter;
+  const { heroimage, heroAttribution, title, author } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
-  console.log('attribution:', heroAttribution)
   return (
     <div>
       <Helmet title={post.frontmatter.title}>
@@ -49,6 +49,8 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
             <h1 className='display-3'>{title}</h1>
           </Hero>
         }
+        {heroimage && author &&
+            <Author {...author} />}
       </Container>
 
       <Container>
@@ -58,7 +60,8 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
           </div>
           <div className='col-md-10'>
             {!heroimage && <h1 className='display-3'>{title}</h1>}
-            <p className='text-right'>{post.timeToRead} minute read</p>
+            {!heroimage && author &&
+              <Author {...author} />}
             {post.html && 
               <div className='post' dangerouslySetInnerHTML={{ __html: post.html}} />}
           </div>
@@ -80,6 +83,11 @@ export interface ITemplateData {
       heroimage: string,
       heroAttribution: string,
       published?: boolean
+      author: {
+        name: string,
+        gravatar?: string,
+        photo?: string
+      }
     }
   },
   blogs: {
@@ -119,6 +127,11 @@ export const pageQuery = graphql`
         heroimage
         heroAttribution
         published
+        author {
+          name
+          gravatar
+          photo
+        }
       }
     }
 

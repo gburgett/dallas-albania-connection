@@ -8,8 +8,8 @@ heroAttribution: Photo by John-Mark Smith from Pexels
 published: false
 author:
   name: Gordon Burgett
-  gravatar: 7609d103db474ef3fe4aa90ab626d09d
-  photo:
+  gravatar: df4465d02ee102eafa27c948dccd8e4d
+  photo: ''
 
 ---
 

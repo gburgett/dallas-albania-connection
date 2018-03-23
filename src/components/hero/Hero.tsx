@@ -8,7 +8,7 @@ interface IHeroProps {
   image: string
   title?: string
   subtitle?: string
-  heroAttribution: string
+  heroAttribution?: string
 }
 
 export default class Hero extends React.Component<IHeroProps, {}> {
@@ -26,7 +26,7 @@ export default class Hero extends React.Component<IHeroProps, {}> {
           {title && (<h1>{ title }</h1>)}
           {sub}
         </div>
-        <div className="row hero-body">
+        <div className="hero-body">
           {this.props.children}
           {heroAttribution &&
             <footer className="blockquote-footer">{heroAttribution}</footer>
