@@ -70,9 +70,11 @@ This is an opportunity to confirm your calling.  We can be absolutely sure of th
 that **if you are called to go on the project, your support will come in**.
 
 > And no one takes the honor to himself, but receives it when he is called by God,
-> even as Aaron was. (Hebrews 5:4)
+> even as Aaron was. 
+> <footer class="blockquote-footer">Hebrews 5:4</footer>
 
-> for God’s gifts and His call are irrevocable. (Romans 11:29)
+> for God’s gifts and His call are irrevocable.
+> <footer class="blockquote-footer">Romans 11:29</footer>
 
 If you are a believer in christ, you absolutely are called to be on mission.  
 If you are called to be on this *specific* mission, He will provide beyond what
@@ -81,7 +83,7 @@ you could expect.
 > Now to him who is able to do immeasurably more than all we ask or imagine,
 > according to his power that is at work within us, to him be glory in the church
 > and in Christ Jesus throughout all generations, for ever and ever! Amen.
-> (Ephesians 3:20-21)
+> <footer class="blockquote-footer">Ephesians 3:20-21</footer>
 
 So be strong and courageous (Joshua 1:9)!  God is on your side and He will bring
 in the funds.

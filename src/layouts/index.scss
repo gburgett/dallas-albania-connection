@@ -251,3 +251,12 @@ a {
     }
   }
 }
+
+blockquote {
+  @extend .blockquote;
+
+  background: #f9f9f9;
+  border-left: 4px solid #ccc;
+  margin: 0.5em;
+  padding: 0 0.5em;
+}

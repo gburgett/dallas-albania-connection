@@ -48,10 +48,10 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
 
       <Container>
         <div className='row'>
-          <div className='d-none d-md-block col-md-3 blog-list'>
+          <div className='d-none d-md-block col-md-2 blog-list'>
             { blogs && <BlogsPreview edges={blogs.edges} /> }
           </div>
-          <div className='col-md-9'>
+          <div className='col-md-10'>
             <h1 className='display-3'>{title}</h1>
             <p className='text-right'>{post.timeToRead} minute read</p>
             {post.html && 
