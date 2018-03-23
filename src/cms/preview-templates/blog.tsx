@@ -27,6 +27,7 @@ export const BlogPreview = ({entry, widgetFor, getAsset}) => {
   })
 
   const heroImage = getAsset(entry.getIn(['data', 'heroimage']))
+  const authorPhoto = getAsset(entry.getIn(['data', 'author', 'photo']))
 
   // Grab the fields
   const fields: ITemplateData = {
@@ -39,7 +40,13 @@ export const BlogPreview = ({entry, widgetFor, getAsset}) => {
         date: entry.getIn(['data', 'date']),
         title: entry.getIn(['data', 'title']),
         published: entry.getIn(['data', 'published']),
-        heroimage: heroImage ? heroImage.value : undefined
+        heroimage: heroImage ? heroImage.value : undefined,
+        heroAttribution: entry.getIn(['data', 'heroAttribution']),
+        author: {
+          name: entry.getIn(['data', 'author', 'name']),
+          gravatar: entry.getIn(['data', 'author', 'gravatar']),
+          photo: authorPhoto
+        }
       }
     },
     blogs: {

@@ -79,8 +79,8 @@ collections:
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Public?  If false this page is hidden from the sitemap", name: "public", widget: "boolean", default: false}
+      - {label: "Body", name: "body", widget: "markdown"}
 
   - label: "Articles"
     name: "articles"
@@ -93,7 +93,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
       - label: "Featured Link"
         name: "feature"
         widget: "object"
@@ -110,6 +109,7 @@ collections:
           - {label: "Background Color (see https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)",
               name: "backgroundColor", widget: "string", required: false,
               pattern: '^(\w+|\#[a-f0-9]+|(rgba?|hsla?)\(\s*\d+,\s*\d+\%?,\s*\d+\%?(,\s*[\d\.]+)?\))$'}
+      - {label: "Body", name: "body", widget: "markdown"}
       - label: "Team Roster"
         name: "roster"
         widget: "object"
@@ -144,6 +144,15 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Published?", name: "published", widget: "boolean", default: false}
       - {label: "Hero Image", name: "heroimage", widget: "image", required: false}
+      - {label: "Hero Image Attribution", name: "heroAttribution", widget: "string", required: false}
+      - label: "Author"
+        name: "author"
+        widget: "object"
+        required: false
+        fields:
+          - {label: "Name", name: "name", widget: "string", required: true}
+          - {label: "Gravatar Hash", name: "gravatar", widget: "string"}
+          - {label: "Photo (if not using Gravatar)", name: "photo", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - label: "Events"

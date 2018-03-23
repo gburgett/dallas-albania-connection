@@ -34,8 +34,17 @@ const BlogPreview = (node: IBlogPreviewData) => (
 
 export default function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, blogs } = data
-  const { heroimage, heroAttribution, title, author } = post.frontmatter;
+  const { heroimage, heroAttribution, title } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
+
+  let author = post.frontmatter.author
+  if (author){
+    if (!present(author.name) &&
+        !present(author.gravatar) &&
+        !present(author.photo)) {
+      author = undefined
+    }
+  }
 
   return (
     <div>
@@ -152,3 +161,7 @@ export const pageQuery = graphql`
     }
   }
 `
+
+function present(str?: string): boolean {
+  return str && str.length > 0
+}
