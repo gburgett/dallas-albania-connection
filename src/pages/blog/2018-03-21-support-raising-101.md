@@ -5,7 +5,7 @@ title: Support Raising 101
 date: 2018-03-21T12:00:00-0600
 heroimage: /files/writing-a-letter-pexels-photo-211291.jpeg
 heroAttribution: Photo by John-Mark Smith from Pexels
-published: true
+published: false
 author:
   name: Gordon Burgett
   gravatar: df4465d02ee102eafa27c948dccd8e4d

@@ -93,7 +93,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .slice(0, 4)
   
   const featuredPosts = (data.root.frontmatter.featuredPosts || []).map(p => p.slug);
-  const posts = data.blogs.edges.map(edge => ({
+  const posts = data.blogs && data.blogs.edges.map(edge => ({
       ...edge.node,
       index: featuredPosts.indexOf(edge.node.frontmatter.slug)
     }))
