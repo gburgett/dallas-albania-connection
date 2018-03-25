@@ -25,10 +25,9 @@ const BlogsPreview = (props: { edges: { node: IBlogPreviewData }[] }) => {
 
 const BlogPreview = (node: IBlogPreviewData) => (
   <a href={`/blog/${node.frontmatter.slug}`}>
-    <span className='pull-right'>{new Date(Date.parse(node.frontmatter.date)).toLocaleDateString()}</span>
+    <span className='body'>{new Date(Date.parse(node.frontmatter.date)).toLocaleDateString()}</span>
     <h2>{node.frontmatter.title}</h2>
-    <span>{node.excerpt}</span><br/>
-    <span className='text-right'>{node.timeToRead} minute read</span>
+    <span className='body'>{node.timeToRead} minute read</span>
   </a>
 )
 
@@ -63,7 +62,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
       <Container>
         <div className='row'>
           <div className='d-none d-md-block col-md-2 blog-list'>
-            { blogs && <BlogsPreview edges={blogs.edges} /> }
+            { false && <BlogsPreview edges={blogs.edges} /> }
           </div>
           <div className='col-md-10'>
             {!heroimage && <h1 className='display-3'>{title}</h1>}
