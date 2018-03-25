@@ -59,7 +59,7 @@ const PostList = ({ posts}: { posts: IPost[] }) => {
             <div className="title">
               <h4>{p.frontmatter.title}</h4>
               {author && 
-                <span>by {author.name}</span>}
+                <span className="body">by {author.name}</span>}
             </div>
             <div className="teaser">
               <div className="body">
