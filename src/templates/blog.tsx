@@ -58,8 +58,6 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
             <h1 className='display-3'>{title}</h1>
           </Hero>
         }
-        {heroimage && author &&
-            <Author {...author} />}
       </Container>
 
       <Container>
@@ -69,7 +67,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
           </div>
           <div className='col-md-10'>
             {!heroimage && <h1 className='display-3'>{title}</h1>}
-            {!heroimage && author &&
+            {author &&
               <Author {...author} />}
             {post.html && 
               <div className='post' dangerouslySetInnerHTML={{ __html: post.html}} />}

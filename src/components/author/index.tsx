@@ -12,12 +12,10 @@ export class Author extends React.Component<IAuthorProps, {}> {
     const {name, gravatar, photo} = this.props
 
     return (
-      <div className="author-row">
       <div className="author">
         {gravatar &&
           <img src={`https://www.gravatar.com/avatar/${gravatar}`}></img>}
         <span className="name">{name}</span>
-      </div>
       </div>
     )
   }

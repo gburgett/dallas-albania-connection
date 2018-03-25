@@ -28,10 +28,10 @@ export default class Hero extends React.Component<IHeroProps, {}> {
         </div>
         <div className="hero-body">
           {this.props.children}
-          {heroAttribution &&
-            <footer className="blockquote-footer">{heroAttribution}</footer>
-          }
         </div>
+        {heroAttribution &&
+          <footer className="blockquote-footer attribution">{heroAttribution}</footer>
+        }
       </div>
     </Jumbotron>)
   }
