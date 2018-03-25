@@ -69,6 +69,16 @@ collections:
             collection: "articles"
             searchFields: ["title", "path"]
             valueField: "path"
+      - label: "Featured Blog Posts"
+        name: "featuredPosts"
+        widget: "list"
+        fields:
+          - label: "Blog Post Slug"
+            name: "slug"
+            widget: "relation"
+            collection: "blog"
+            searchFields: ["title", "slug"]
+            valueField: "slug"
 
   - label: "Pages"
     name: "pages"

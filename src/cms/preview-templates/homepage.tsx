@@ -29,6 +29,30 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
     }
   }
 
+  const blogs = []
+  if (fieldsMetaData.get('featuredPosts')) {
+    console.log('keys:', fieldsMetaData.get('featuredPosts').keys())
+    for (let k of fieldsMetaData.get('featuredPosts').keys()) {
+      const blog = fieldsMetaData.getIn(['featuredPosts', k]).toJS()
+      blogs.push(
+        { node: {
+          excerpt: blog.body.substr(0, 100) + '...',
+          timeToRead: '?',
+          id: `fakeblog-${blog.date.getTime()}`,
+          frontmatter: {
+            title: blog.title,
+            slug: blog.slug,
+            date: blog.date.toDateString(),
+            contentType: blog.contentType,
+            heroimage: blog.heroimage,
+            author: blog.author
+          }
+        } })
+    }
+  }
+  console.log('featured posts:', fieldsMetaData.get('featuredPosts'))
+  console.log('xformed:', blogs)
+
   const heroImage = getAsset(entry.getIn(['data', 'hero', 'image']))
   const featureImage = getAsset(entry.getIn(['data', 'feature', 'image']))
 
@@ -56,11 +80,15 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
           subtitle: entry.getIn(['data', 'hero', 'subtitle']) as string,
           image: heroImage ? heroImage.value : undefined
         },
-        articles: entry.getIn(['data', 'articles']).toJS()
+        articles: entry.getIn(['data', 'articles']).toJS(),
+        featuredPosts: entry.getIn(['data', 'featuredPosts']) && entry.getIn(['data', 'featuredPosts']).toJS()
       }
     },
     articles: {
       edges: articles
+    },
+    blogs: {
+      edges: blogs
     },
     events: {
       edges: fakeEvents()

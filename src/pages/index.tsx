@@ -75,7 +75,7 @@ const PostList = ({ posts}: { posts: IPost[] }) => {
 
 const IndexPage = ({ data }: IPageContext<IPageData>) => {
 
-  const featuredArticles = data.root.frontmatter.articles.map(a => a.path);
+  const featuredArticles = (data.root.frontmatter.articles || []).map(a => a.path);
   const cards = data.articles.edges.map(edge => ({
     ...edge.node,
     index: featuredArticles.indexOf(edge.node.frontmatter.path)
@@ -91,8 +91,8 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .map(edge => edge.node)
     .filter(node => Date.parse(node.frontmatter.date) > yesterday)
     .slice(0, 4)
-
-  const featuredPosts = data.root.frontmatter.featuredPosts.map(p => p.slug);
+  
+  const featuredPosts = (data.root.frontmatter.featuredPosts || []).map(p => p.slug);
   const posts = data.blogs.edges.map(edge => ({
       ...edge.node,
       index: featuredPosts.indexOf(edge.node.frontmatter.slug)
@@ -116,8 +116,8 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
       </Col>
       <Col xs={12} md={9}>
         <GroupedArticles cards={cards} />
-        <h3>Blog Posts</h3>
-        <PostList posts={posts} />
+        {posts && posts.length > 0 && <h3>Blog Posts</h3>}
+        {posts && posts.length > 0 && <PostList posts={posts} />}
       </Col>
     </Row>
   </Container>)
@@ -201,6 +201,8 @@ query IndexQuery {
         image
         link
         buttonText
+        buttonStyle
+        backgroundColor
       }
       hero {
         image
