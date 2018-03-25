@@ -313,3 +313,36 @@ blockquote {
   border-radius: 20px;
 }
 }
+
+.post-list {
+  padding-left: 0px;
+
+  .hero {
+    width: 96px;
+    height: 96px;
+    background-size: cover;
+    background-position: center;
+    margin: 0.5em;
+    border-radius: 12px;
+  }
+
+  .title {
+    margin: 5px auto
+  }
+
+  .teaser {
+    padding: 5px;
+  }
+
+  .post {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid $black;
+    border-radius: 12px;
+  }
+}
+
+a, u .body {
+  color: $body-color;
+  text-decoration: none !important;
+}

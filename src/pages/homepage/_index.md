@@ -15,6 +15,8 @@ articles:
   - path: /2016
   - path: /2015
   - path: /2014
+featuredPosts:
+  - slug: support-raising-101
 
 ---
 

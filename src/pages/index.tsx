@@ -6,31 +6,71 @@ import Helmet from 'react-helmet'
 
 import Hero from '../components/hero/Hero'
 import Feature, {IFeatureProps} from '../components/Feature'
+import Author from '../components/author'
 import { Summary as EventSummary } from '../events/summary'
 import { IEventFields } from '../events';
 
-const Post = (post: IArticle) => (
-  <Card style={{marginBottom: 10}} key={post.id}>
+const Article = (article: IArticle) => (
+  <Card style={{marginBottom: 10}} key={article.id}>
     <CardBody>
-      <CardImg top width="100%" src={post.frontmatter.heroimage} alt="Card image cap" />
-      <CardTitle><Link to={post.frontmatter.path}>{post.frontmatter.title}</Link></CardTitle>
-      <CardSubtitle style={{marginBottom: 10}}>{post.frontmatter.date}</CardSubtitle>
-      <CardText>{post.excerpt}</CardText>
+      <CardImg top width="100%" src={article.frontmatter.heroimage} alt="Card image cap" />
+      <CardTitle><Link to={article.frontmatter.path}>{article.frontmatter.title}</Link></CardTitle>
+      <CardSubtitle style={{marginBottom: 10}}>{article.frontmatter.date}</CardSubtitle>
+      <CardText>{article.excerpt}</CardText>
     </CardBody>
   </Card>
 )
 
-const GroupedPosts = ({ cards }: { cards: Array<IArticle> }) => {
+const GroupedArticles = ({ cards }: { cards: Array<IArticle> }) => {
   const groups = []
   for(let i = 0; i < cards.length; i += 2) {
   groups.push(<CardGroup key={i}>
-    <Post {...cards[i]} />
+    <Article {...cards[i]} />
     {i + 1 < cards.length ?
-      <Post {...cards[i+1]} /> :
+      <Article {...cards[i+1]} /> :
       <Card className='empty'></Card>}
   </CardGroup>)
   }
   return <Row>{groups}</Row>
+}
+
+const PostList = ({ posts}: { posts: IPost[] }) => {
+  console.log('posts', posts)
+
+  return <ul className="post-list">
+      {posts.map(p => {
+        const {heroimage, author} = p.frontmatter
+        let img = heroimage
+        let height = "96px"
+        let width = "128px"
+        if (!img && author) {
+          width = "96px"
+          img = author.photo
+          if (!img && author.gravatar) {
+            img = `https://www.gravatar.com/avatar/${author.gravatar}`
+          }
+        }
+
+        return (
+          <a href={`/blog/${p.frontmatter.slug}`}>
+          <li className="post">
+            <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
+            </div>
+            <div className="title">
+              <h4>{p.frontmatter.title}</h4>
+              {author && 
+                <span>by {author.name}</span>}
+            </div>
+            <div className="teaser">
+              <div className="body">
+                {p.excerpt}
+                <footer className="blockquote-footer">{p.timeToRead} minute read</footer>
+              </div>
+            </div>
+          </li>
+          </a>)
+      })}
+    </ul>
 }
 
 const IndexPage = ({ data }: IPageContext<IPageData>) => {
@@ -52,6 +92,14 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .filter(node => Date.parse(node.frontmatter.date) > yesterday)
     .slice(0, 4)
 
+  const featuredPosts = data.root.frontmatter.featuredPosts.map(p => p.slug);
+  const posts = data.blogs.edges.map(edge => ({
+      ...edge.node,
+      index: featuredPosts.indexOf(edge.node.frontmatter.slug)
+    }))
+    .filter(n => n.index >= 0)
+    .sort((a, b) => a.index - b.index)
+
   return (<Container fluid>
     <Helmet title={title} titleTemplate={undefined}>
         {hero && <meta property="og:image" content={siteUrl + hero.image}></meta>}
@@ -67,7 +115,9 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
         })}
       </Col>
       <Col xs={12} md={9}>
-        <GroupedPosts cards={cards} />
+        <GroupedArticles cards={cards} />
+        <h3>Blog Posts</h3>
+        <PostList posts={posts} />
       </Col>
     </Row>
   </Container>)
@@ -89,7 +139,10 @@ export interface IPageData {
       }
       articles: Array<{
         path: string
-      }>
+      }>,
+      featuredPosts: {
+        slug: string
+      }[]
     }
   },
   articles: {
@@ -97,6 +150,9 @@ export interface IPageData {
   },
   events: {
     edges: Array<{node: IEventFields}>
+  },
+  blogs: {
+    edges: Array<{node: IPost}>
   }
 }
 
@@ -108,8 +164,24 @@ export interface IArticle {
     contentType: string,
     date: string,
     path: string,
-    homepage: boolean,
     heroimage: string
+  }
+}
+
+export interface IPost {
+  id: string
+  excerpt: string
+  timeToRead: string
+  frontmatter: {
+    slug: string
+    title: string
+    date: string
+    heroimage: string
+    author: {
+      name: string
+      gravatar: string
+      photo: string
+    }
   }
 }
 
@@ -138,6 +210,9 @@ query IndexQuery {
       articles{
         path
       }
+      featuredPosts {
+        slug
+      }
     }
   }
   articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
@@ -159,6 +234,26 @@ query IndexQuery {
     edges {
       node {
         ...eventFields
+      }
+    }
+  }
+  blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" }, published: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+    edges {
+      node {
+        id
+        excerpt
+        timeToRead
+        frontmatter {
+          slug
+          title
+          date
+          heroimage
+          author {
+            name
+            gravatar
+            photo
+          }
+        }
       }
     }
   }
