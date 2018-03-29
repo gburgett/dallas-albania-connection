@@ -3,7 +3,7 @@ contentType: article
 path: /2018
 title: We're Heading Back in 2018!
 date: 2018-02-09T05:31:28.725Z
-heroimage: /files/2017_part_packet_cover.jpg
+heroimage: /files/2018 albania group photo_social.jpg
 feature:
   backgroundColor: ''
   buttonStyle: info
@@ -25,7 +25,7 @@ roster:
           name: Claudia Corona
         - goal: '3500'
           name: Lauren Horner
-        - name: Sally Neely
+        - name: Sally Neeley
       name: Tirana - Young Professionals
     - goal: '3000'
       members:
