@@ -28,7 +28,7 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
       <a className={`donate btn btn-sm ${cruId ? "btn-info" : "btn-secondary disabled"}`}
         href={`https://give.cru.org/${cruId}`}
         style={{ width: '100%' }}>
-        <span>{cruId && <i className="fas fa-gift"></i>} {name}</span>
+        <span>{cruId && <i className="fas fa-gift"></i>} {name} #{cruId}</span>
       </a>
     )
 
@@ -49,6 +49,7 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
       <span className="memberName d-none d-sm-flex">
         <span className="name">{name}</span>
         <span className="amt">$0 of ${goal || "?"}</span>
+        {cruId && <span className="cruId">{cruId}</span>}
         {donateButton}
       </span>
       <span className="memberName d-block d-sm-none">
