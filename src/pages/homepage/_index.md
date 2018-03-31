@@ -6,7 +6,7 @@ hero:
   title: Team Albania
 feature:
   buttonText: '<i class="fas fa-heart"></i> Donate!'
-  image: /files/2017_part_packet_cover.jpg
+  image: '/files/2018 albania group photo_social.jpg'
   link: /2018
   show: true
   title: Support the team!
