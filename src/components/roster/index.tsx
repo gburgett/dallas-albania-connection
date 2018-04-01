@@ -17,8 +17,9 @@ interface IRosterMemberProps {
 
 class RosterMember extends React.Component<IRosterMemberProps, {}> {
   render() {
-    const {name, goal, adjustment, cruId} = this.props
+    const {name, goal, cruId} = this.props
     const amtRaised = 0;  //TODO
+    const adjustment = this.props.adjustment || 0;
     const amt = toInt(adjustment) + amtRaised;
     const prog = 100 * (amt / toInt(goal))
 
@@ -53,7 +54,7 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
     return (<div className="member">
       <span className="memberName d-none d-sm-flex">
         <span className="name">{name}</span>
-        <span className="amt">${amt || '?'} of ${goal || "?"}</span>
+        {goal && <span className="amt">${amt} of ${goal || "?"}</span>}
         {cruId && <span className="cruId">{cruId}</span>}
         {donateButton}
       </span>
