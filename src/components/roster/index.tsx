@@ -3,19 +3,24 @@ import * as graphql from 'graphql'
 
 export interface ITeamRosterProps {
   name: string,
-  goal: number,
+  goal: string | number,
+  adjustment: string | number,
   members: IRosterMemberProps[]
 }
 
 interface IRosterMemberProps {
   name: string,
-  goal: number,
+  goal: string | number,
+  adjustment: number | string,
   cruId?: string
 }
 
 class RosterMember extends React.Component<IRosterMemberProps, {}> {
   render() {
-    const {name, goal, cruId} = this.props
+    const {name, goal, adjustment, cruId} = this.props
+    const amtRaised = 0;  //TODO
+    const amt = toInt(adjustment) + amtRaised;
+    const prog = 100 * (amt / toInt(goal))
 
     const donateButton = (
       <a className={`donate btn btn-sm ${cruId ? "btn-info" : "btn-secondary disabled"}`}
@@ -37,10 +42,10 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
       <div className="progress">
         <div className={`progress-bar progress-bar-striped progress-bar-animated ${bgColor}`}
           role="progressbar"
-          style={{ width: '1%'}}
-          aria-valuenow={0}
+          style={{ width: prog + "%"}}
+          aria-valuenow={amt}
           aria-valuemin={0}
-          aria-valuemax={goal}>
+          aria-valuemax={toInt(goal)}>
           </div>
       </div>
     )
@@ -48,7 +53,7 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
     return (<div className="member">
       <span className="memberName d-none d-sm-flex">
         <span className="name">{name}</span>
-        <span className="amt">$0 of ${goal || "?"}</span>
+        <span className="amt">${amt || '?'} of ${goal || "?"}</span>
         {cruId && <span className="cruId">{cruId}</span>}
         {donateButton}
       </span>
@@ -62,15 +67,26 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
 
 export class TeamRoster extends React.Component<ITeamRosterProps, {}> {
   render() {
-    const { name, goal, members} = this.props
-
+    const { name, goal, adjustment, members} = this.props
+    let adj = adjustment ? toInt(adjustment) : 0
+    
     return  (<div className="teamRoster">
       <h4>{name}</h4>
       <ul>
         {members && members.map(m => (<li key={m.name}>
-          <RosterMember {...m} goal={m.goal || goal} key={m.name} />
+          <RosterMember {...m}
+            goal={m.goal || goal}
+            adjustment={m.adjustment ? adj + toInt(m.adjustment) : adj}
+            key={m.name} />
         </li>))}
       </ul>
     </div>)
   }
+}
+
+function toInt(num: number | string): number {
+  if(typeof num == 'number') {
+    return num;
+  }
+  return parseInt(num)
 }

@@ -96,10 +96,12 @@ export const pageQuery = graphql`
           teams {
             name
             goal
+            adjustment
             members {
               name
               cruId
               goal
+              adjustment
             }
           }
         }

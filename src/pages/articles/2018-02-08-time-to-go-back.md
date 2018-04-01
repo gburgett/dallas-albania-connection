@@ -14,9 +14,11 @@ roster:
   header: Team Roster
   teams:
     - goal: '3000'
+      adjustment: '150'
       members:
         - cruId: '0746249'
           name: Gordon Burgett
+          adjustment: '0'
         - goal: '3500'
           name: Will Noll
           cruId: '0735167'
@@ -34,6 +36,7 @@ roster:
           cruId: '0999996'
       name: Tirana - Young Professionals
     - goal: '3000'
+      adjustment: '150'
       members:
         - name: Carrie Beckner
           cruId: '0936825'
@@ -57,6 +60,7 @@ roster:
           cruId: '1000512'
       name: Tirana - High School
     - goal: '3000'
+      adjustment: '150'
       members:
         - name: Nico Arguello
           cruId: '0936790'
@@ -75,6 +79,7 @@ roster:
           cruId: '0999940'
       name: Korça - High School
     - goal: '3000'
+      adjustment: '150'
       members:
         - name: Marlie Austin
           cruId: '0880885'
@@ -96,6 +101,7 @@ roster:
           cruId: '1000010'
       name: Elbasan - High School
     - goal: '3000'
+      adjustment: '150'
       members:
         - name: Randy Valdez
           cruId: '0937180'
@@ -116,6 +122,7 @@ roster:
           cruId: '1000430'
       name: Hungary
     - goal: '3000'
+      adjustment: '150'
       members:
         - name: Chris Hyland
           cruId: '0936992'
