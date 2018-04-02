@@ -10,7 +10,7 @@ feature:
   image: /files/2018 albania group photo_social.jpg
   link: /2018
   show: true
-  title: Support the 2018 Team!
+  title: The 2018 Team!
 articles:
   - path: /2017
   - path: /2016
