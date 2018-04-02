@@ -1,6 +1,7 @@
 ---
 path: /participants/2018
 title: Welcome 2018 Team Members!
+heroimage: /files/2018 albania group photo_social.jpg
 public: false
 ---
 Team Members, 
