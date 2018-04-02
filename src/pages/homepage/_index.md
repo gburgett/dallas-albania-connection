@@ -6,11 +6,11 @@ hero:
 feature:
   backgroundColor: '#d9534f'
   buttonStyle: info
-  buttonText: <i class="fas fa-heart"></i> Donate!
+  buttonText: <i class="fas fa-heart"></i> Click Here to Support Us!
   image: /files/2018 albania group photo_social.jpg
   link: /2018
   show: true
-  title: Support the 2018 team!
+  title: Support the 2018 Team!
 articles:
   - path: /2017
   - path: /2016
