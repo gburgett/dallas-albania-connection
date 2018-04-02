@@ -24,7 +24,7 @@ Note: when using the links for T-shirt order forms, make sure to use the "for Te
 
 [Hungary 2018 T-Shirt Google Order Form (Internal, for Team Members)](https://docs.google.com/forms/d/1Uj4y2K0QU9ZlxhhPiGwx9qao5byKUfnmYU5B8C5QWo4/viewform?edit_requested=true)
 
-[Eastern Europe T-Shirt Order Form (for Supporters)](https://docs.google.com/forms/d/1yYPd3C062VWM6qBzY-eE2beNDXOzcU1z8lJjBejJiwk/viewform?edit_requested=true)
+[Eastern Europe T-Shirt Order Form (External, for Supporters)](https://docs.google.com/forms/d/1yYPd3C062VWM6qBzY-eE2beNDXOzcU1z8lJjBejJiwk/viewform?edit_requested=true)
 
 **Other Art Files**
 
