@@ -1,17 +1,16 @@
 ---
-title: Homepage
 hero:
   image: /files/background-cover.jpg
-  subtitle: Following Christ where He leads
+  subtitle: Discipleship Trips to Albania and Eastern Europe
   title: Team Albania
 feature:
-  buttonText: '<i class="fas fa-heart"></i> Donate!'
-  image: '/files/2018 albania group photo_social.jpg'
+  backgroundColor: '#d9534f'
+  buttonStyle: info
+  buttonText: <i class="fas fa-heart"></i> Donate!
+  image: /files/2018 albania group photo_social.jpg
   link: /2018
   show: true
-  title: Support the team!
-  buttonStyle: info
-  backgroundColor: '#d9534f'
+  title: Support the 2018 team!
 articles:
   - path: /2017
   - path: /2016
@@ -19,6 +18,5 @@ articles:
   - path: /2014
 featuredPosts:
   - slug: support-raising-101
-
 ---
 
