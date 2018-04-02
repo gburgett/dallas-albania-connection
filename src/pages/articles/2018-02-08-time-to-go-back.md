@@ -152,11 +152,11 @@ One Mission.
 
 This summer we are going to Eastern Europe to share the good news of the Gospel of Jesus Christ. We are returning to three cities in Albania: Tirana, Korça, and Elbasan. There we will continue our partnership with Cru Albania for high school and young professionals ministries. Albania teams are departing June 29 and July 7, 2018. This year will mark the sixth that we will have traveled to Albania for the Summer Project.
 
-In addition, we have two new teams traveling to Hungary and Poland. A team traveling to Pécs, Hungary (departing July 14, 2018) will be partnering with Cru Hungary to initiate young people in that city in ways that build upon the high school ministry template that is established in Albania. A team traveling to Southern Poland (departing July 7, 2018) will partner with Cru Poland to launch a recovery ministry pilot. "Regeneration Recovery" is a program that was established by Watermark Community Church and is in currently operational (or in pilot) by hundreds of churches in the United States. 
+In addition, we have two new teams traveling to Hungary and Poland. A team traveling to Pécs, Hungary (departing July 14, 2018) will be partnering with Cru Hungary to initiate young people in that city in ways that build upon the high school ministry template that is established in Albania. A team traveling to Southern Poland (departing July 7, 2018) will partner with Cru Poland to launch a pilot for a recovery ministry. "Regeneration Recovery" is a 12-step program that was established by Watermark Community Church in Dallas, Texas and is currently adopted by hundreds of churches across the United States. 
 
-The teams have been formed and is undergoing a three-month discipleship training ahead of our summer departure. We are looking for supporters to join us in 2018 through prayer and financial support. 
+The teams have been formed, and the ~40 members are undergoing three-month discipleship training ahead of our summer departure. We are looking for supporters to join us through prayer and financial support. The cost for most team members is $3,000, while those members who are a part of multiple teams have a trip cost of $3,500.  
 
-For more details about this summer take a look at the Info Sheet and Calendar below. If you have any questions about our Summer Project or ministry in general, see the Contact information (also wayyy below).
+For more details about this summer, please take a look at the Info Sheet and Calendar below. If you have any questions about our Summer Project or ministry in general, see the Contact information (also wayyy below) and send us an email. We would be encouraged to know that you are supporting us. 
 
 Prayer calendars will be posted below as they are available. 
 
