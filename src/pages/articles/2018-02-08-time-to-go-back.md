@@ -12,7 +12,7 @@ feature:
   show: true
 roster:
   header: Team Roster
-  projectIds: ['985']
+  projectIds: ['985', '1444', '1442', '1443', '1446', '1447']
   teams:
     - adjustment: '150'
       goal: '3000'
