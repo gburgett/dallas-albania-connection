@@ -27,6 +27,6 @@ Note: when using the links for T-shirt order forms, make sure to use the "for Te
 
 [Eastern Europe T-Shirt Order Form (External, for Supporters)](https://docs.google.com/forms/d/1yYPd3C062VWM6qBzY-eE2beNDXOzcU1z8lJjBejJiwk/viewform?edit_requested=true)
 
-**Other Art Files**
+**Art Files**
 
 **Prayer Calendars**
