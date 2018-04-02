@@ -31,7 +31,6 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
 
   const blogs = []
   if (fieldsMetaData.get('featuredPosts')) {
-    console.log('keys:', fieldsMetaData.get('featuredPosts').keys())
     for (let k of fieldsMetaData.get('featuredPosts').keys()) {
       const blog = fieldsMetaData.getIn(['featuredPosts', k]).toJS()
       blogs.push(
@@ -50,8 +49,6 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
         } })
     }
   }
-  console.log('featured posts:', fieldsMetaData.get('featuredPosts'))
-  console.log('xformed:', blogs)
 
   const heroImage = getAsset(entry.getIn(['data', 'hero', 'image']))
   const featureImage = getAsset(entry.getIn(['data', 'feature', 'image']))

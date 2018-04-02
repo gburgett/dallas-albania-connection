@@ -13,7 +13,6 @@ export const FooterPreview = ({entry, widgetFor, widgetsFor}) => {
       phone: c.get('phone')
     }))
     .toArray()
-  console.log('contact', widgetsFor('contact'), contact)
 
   const fields: IFooterFields = {
     html: ReactDomServer.renderToStaticMarkup(widgetFor('body')) as string,

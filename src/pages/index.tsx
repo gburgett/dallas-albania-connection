@@ -35,8 +35,6 @@ const GroupedArticles = ({ cards }: { cards: Array<IArticle> }) => {
 }
 
 const PostList = ({ posts}: { posts: IPost[] }) => {
-  console.log('posts', posts)
-
   return <ul className="post-list">
       {posts.map(p => {
         const {heroimage, author} = p.frontmatter
