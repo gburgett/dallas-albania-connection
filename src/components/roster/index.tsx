@@ -5,22 +5,27 @@ export interface ITeamRosterProps {
   name: string,
   goal: string | number,
   adjustment: string | number,
-  members: IRosterMemberProps[]
+  members: IRosterMemberProps[],
+  data?: ICollatedSmappData
+}
+
+export interface ICollatedSmappData {
+  [designation: string]: number
 }
 
 interface IRosterMemberProps {
   name: string,
   goal: string | number,
   adjustment: number | string,
+  raised: number,
   cruId?: string
 }
 
 class RosterMember extends React.Component<IRosterMemberProps, {}> {
   render() {
-    const {name, goal, cruId} = this.props
-    const amtRaised = 0;  //TODO
+    const {name, goal, cruId, raised} = this.props
     const adjustment = this.props.adjustment || 0;
-    const amt = toInt(adjustment) + amtRaised;
+    const amt = toInt(adjustment) + raised;
     const prog = 100 * (amt / toInt(goal))
 
     const donateButton = (
@@ -68,7 +73,7 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
 
 export class TeamRoster extends React.Component<ITeamRosterProps, {}> {
   render() {
-    const { name, goal, adjustment, members} = this.props
+    const { name, goal, adjustment, members, data} = this.props
     let adj = adjustment ? toInt(adjustment) : 0
     
     return  (<div className="teamRoster">
@@ -78,6 +83,7 @@ export class TeamRoster extends React.Component<ITeamRosterProps, {}> {
           <RosterMember {...m}
             goal={m.goal || goal}
             adjustment={m.adjustment ? adj + toInt(m.adjustment) : adj}
+            raised={data && m.cruId ? data[m.cruId] || 0 : 0}
             key={m.name} />
         </li>))}
       </ul>

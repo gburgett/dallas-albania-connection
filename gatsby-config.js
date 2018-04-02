@@ -28,6 +28,14 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-smapp',
+      options: {
+        username: 'gburgett@cru.org',
+        password: 'asdf',
+        dataDir: 'data/donations'
+      }
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -35,6 +43,9 @@ module.exports = {
           'gatsby-remark-copy-linked-files'
         ]
       }
+    },
+    {
+      resolve: 'gatsby-transformer-smapp'
     },
     {
       resolve: "gatsby-plugin-typescript",
