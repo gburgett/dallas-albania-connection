@@ -16,7 +16,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
   const {siteUrl} = data.site.siteMetadata;
 
   let collatedData: ICollatedSmappData
-  if (roster && roster.teams && roster.teams.length > 0 && roster.projectIds) {
+  if (roster && roster.teams && roster.teams.length > 0 && roster.projectIds && smappExport) {
     const dataForThisYear = smappExport.edges
       .filter(({node}) => roster.projectIds.includes(node.name))
     collatedData = collateByDesignationNumber(dataForThisYear.map(edge => edge.node))
