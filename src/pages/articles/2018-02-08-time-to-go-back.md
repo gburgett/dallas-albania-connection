@@ -13,144 +13,152 @@ feature:
 roster:
   header: Team Roster
   teams:
-    - goal: '3000'
-      adjustment: '150'
+    - adjustment: '150'
+      goal: '3000'
       members:
-        - cruId: '0746249'
+        - adjustment: '0'
+          cruId: 0746249
           name: Gordon Burgett
-          adjustment: '0'
-        - goal: '3500'
+        - cruId: '0735167'
+          goal: '3500'
           name: Will Noll
-          cruId: '0735167'
-        - name: Mark Hapka
-          cruId: '0936960'
-        - name: Brian Claussen
-          cruId: '0936889'
-        - goal: '3500'
+        - cruId: 0936960
+          name: Mark Hapka
+        - cruId: 0936889
+          name: Brian Claussen
+        - cruId: 0936907
+          goal: '3500'
           name: Claudia Corona
-          cruId: '0936907'
-        - goal: '3500'
+        - cruId: '1000551'
+          goal: '3500'
           name: Lauren Horner
-          cruId: '1000551'
-        - name: Sally Neeley
-          cruId: '0999996'
-      name: Tirana - Young Professionals
-    - goal: '3000'
-      adjustment: '150'
+        - cruId: 0999996
+          name: Sally Neeley
+      name: 'Tirana, Albania - Young Professionals'
+    - adjustment: '150'
+      goal: '3000'
       members:
-        - name: Carrie Beckner
-          cruId: '0936825'
-        - goal: '3500'
+        - cruId: 0936825
+          name: Carrie Beckner
+        - cruId: 0936790
+          goal: '3500'
           name: Nico Arguello
-          cruId: '0936790'
-        - goal: '3500'
+        - cruId: '1000188'
+          goal: '3500'
           name: Katy Wood
-          cruId: '1000188'
-        - name: James Byrd
-          cruId: '1000327'
-        - name: McKenzie Cranford
-          cruId: '1000380'
-        - name: Jenn Saucier
-          cruId: '1000050'
-        - name: Emily McCoppin
-          cruId: '0880846'
-        - name: Morgan Asbill
-          cruId: '1000284'
-        - name: Seth Gordon
-          cruId: '1000512'
-      name: Tirana - High School
-    - goal: '3000'
-      adjustment: '150'
+        - cruId: '1000327'
+          name: James Byrd
+        - cruId: '1000380'
+          name: McKenzie Cranford
+        - cruId: '1000050'
+          name: Jenn Saucier
+        - cruId: 0880846
+          name: Emily McCoppin
+        - cruId: '1000284'
+          name: Morgan Asbill
+        - cruId: '1000512'
+          name: Seth Gordon
+      name: 'Tirana, Albania - High School'
+    - adjustment: '150'
+      goal: '3000'
       members:
-        - name: Nico Arguello
-          cruId: '0936790'
-        - name: Joseph Woodard
-          cruId: '0881236'
-        - goal: '3500'
+        - cruId: 0936790
+          name: Nico Arguello
+        - cruId: 0881236
+          name: Joseph Woodard
+        - cruId: '0735007'
+          goal: '3500'
           name: Lucy Chang
-          cruId: '0735007'
-        - name: Katy Wood
-          cruId: '1000188'
-        - name: Jeremy Garrett
-          cruId: '1000494'
-        - name: Lindsey Juarez
-          cruId: '1000569'
-        - name: Faith Michael
-          cruId: '0999940'
-      name: Korça - High School
-    - goal: '3000'
-      adjustment: '150'
+        - cruId: '1000188'
+          name: Katy Wood
+        - cruId: '1000494'
+          name: Jeremy Garrett
+        - cruId: '1000569'
+          name: Lindsey Juarez
+        - cruId: 0999940
+          name: Faith Michael
+      name: 'Korça, Albania - High School'
+    - adjustment: '150'
+      goal: '3000'
       members:
-        - name: Marlie Austin
-          cruId: '0880885'
-        - name: Matt Rial
-          cruId: '0881065'
-        - name: Charissa Tran
-          cruId: '1000131'
-        - name: Madison McGill
-          cruId: '0999918'
-        - name: Juan Monsivais
-          cruId: '0999957'
-        - name: Marc Flores
-          cruId: '1000470'
-        - name: Cassie Fitzsimmons
-          cruId: '1000462'
-        - name: Christina Edwards
-          cruId: '1000448'
-        - name: Chelsea Prettyman
-          cruId: '1000010'
-      name: Elbasan - High School
-    - goal: '3000'
-      adjustment: '150'
+        - cruId: 0880885
+          name: Marlie Austin
+        - cruId: 0881065
+          name: Matt Rial
+        - cruId: '1000131'
+          name: Charissa Tran
+        - cruId: 0999918
+          name: Madison McGill
+        - cruId: 0999957
+          name: Juan Monsivais
+        - cruId: '1000470'
+          name: Marc Flores
+        - cruId: '1000462'
+          name: Cassie Fitzsimmons
+        - cruId: '1000448'
+          name: Christina Edwards
+        - cruId: '1000010'
+          name: Chelsea Prettyman
+      name: 'Elbasan, Albania - High School'
+    - adjustment: '150'
+      goal: '3000'
       members:
-        - name: Randy Valdez
-          cruId: '0937180'
-        - name: Sam Barrientos
-          cruId: '1000291'
-        - goal: '3500'
+        - cruId: 0937180
+          name: Randy Valdez
+        - cruId: '1000291'
+          name: Sam Barrientos
+        - cruId: '0735007'
+          goal: '3500'
           name: Lucy Chang
-          cruId: '0735007'
-        - name: Cody Darden
-          cruId: '1000416'
-        - name: Jane Rodriguez
-          cruId: '1000042'
-        - name: Andy Lopez
-          cruId: '1000601'
-        - name: Faith Michael
-          cruId: '0999940'
-        - name: Aaron Dutton
-          cruId: '1000430'
-      name: Hungary
-    - goal: '3000'
-      adjustment: '150'
+        - cruId: '1000416'
+          name: Cody Darden
+        - cruId: '1000042'
+          name: Jane Rodriguez
+        - cruId: '1000601'
+          name: Andy Lopez
+        - cruId: 0999940
+          name: Faith Michael
+        - cruId: '1000430'
+          name: Aaron Dutton
+      name: 'Pécs, Hungary - High School'
+    - adjustment: '150'
+      goal: '3000'
       members:
-        - name: Chris Hyland
-          cruId: '0936992'
-        - goal: '3500'
+        - cruId: 0936992
+          name: Chris Hyland
+        - cruId: 0936907
+          goal: '3500'
           name: Claudia Corona
-          cruId: '0936907'
-        - name: Wes Chick
-          cruId: '0880935'
-        - name: Morgan Asbill
-          cruId: '1000284'
-        - goal: '3500'
+        - cruId: 0880935
+          name: Wes Chick
+        - cruId: '1000284'
+          name: Morgan Asbill
+        - cruId: '0735167'
+          goal: '3500'
           name: Will Noll
-          cruId: '0735167'
-        - goal: '3500'
+        - cruId: '1000551'
+          goal: '3500'
           name: Lauren Horner
-          cruId: '1000551'
-        - name: Jose Lopez
-          cruId: '0999875'
-      name: Poland
+        - cruId: 0999875
+          name: Jose Lopez
+      name: Poland - Regeneration Recovery
   text: Click on one of the buttons below to donate!
 ---
 **Summer Project 2018**
 
-This summer we are returning to three cities in Albania: Tirana, Korça, and Elbasan to share the good news of the Gospel of Jesus Christ. We will be partnering with Cru Albania for high school ministry and young professionals, with whom we have long-standing partnerships. Trip dates are (1) Jun 29-Jul 9, and (2) Jul 7-Jul 16, 2018. This year will mark the sixth that we will have traveled to Albania for the Summer Project.
+Six Teams, five cities, three countries, three ministries... 
 
-We are looking for committed workers to join us in 2018. If you have a heart for sharing the love of God with others, you will be valuable. We have an application process whereby we take applications, interview applicants, and assign teams. Once teams are formed, we will begin team meetings to prepare for our trip(s). The Google form application is below.
+One Mission. 
 
-For more details about this summer (and before applying), read the Info Sheet and Calendar files below. For questions, see the Contact information (also way below).
+This summer we are going to Eastern Europe to share the good news of the Gospel of Jesus Christ. We are returning to three cities in Albania: Tirana, Korça, and Elbasan. There we will continue our partnership with Cru Albania for high school and young professionals ministries. Albania teams are departing June 29 and July 7, 2018. This year will mark the sixth that we will have traveled to Albania for the Summer Project.
+
+In addition, we have two new teams traveling to Hungary and Poland. A team traveling to Pécs, Hungary (departing July 14, 2018) will be partnering with Cru Hungary to initiate young people in that city in ways that build upon the high school ministry template that is established in Albania. A team traveling to Southern Poland (departing July 7, 2018) will partner with Cru Poland to launch a recovery ministry pilot. "Regeneration Recovery" is a program that was established by Watermark Community Church and is in currently operational (or in pilot) by hundreds of churches in the United States. 
+
+The teams have been formed and is undergoing a three-month discipleship training ahead of our summer departure. We are looking for supporters to join us in 2018 through prayer and financial support. 
+
+For more details about this summer take a look at the Info Sheet and Calendar below. If you have any questions about our Summer Project or ministry in general, see the Contact information (also wayyy below).
+
+Prayer calendars will be posted below as they are available. 
 
 [Download More Information (pdf)](/files/Albania-2018-Info-Sheet.pdf)
 
