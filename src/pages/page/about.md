@@ -7,6 +7,10 @@ We are a group of people who are passionate about sharing the Gospel of Jesus Ch
 
 Our home base is Dallas, TX, but we have many friends in other cities across Texas and the world. 
 
-**Mission**: We seek to follow Christ as he leads us to make him known among people in Albania and across Eastern Europe. 
+**Mission**
 
-**Vision**: Submitted to God, we are changing the world through the lives of Christ-followers.
+We seek to follow Christ as he leads us to make him known among people in Albania and across Eastern Europe. 
+
+**Vision**
+
+Submitted to God, we are changing the world through the lives of Christ-followers.
