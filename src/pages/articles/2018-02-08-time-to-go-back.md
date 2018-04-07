@@ -57,6 +57,7 @@ roster:
           name: Emily McCoppin
         - cruId: '1000284'
           name: Morgan Asbill
+          goal: '3500'
         - cruId: '1000512'
           name: Seth Gordon
       name: 'Tirana, Albania - High School'
@@ -65,6 +66,7 @@ roster:
       members:
         - cruId: 0936790
           name: Nico Arguello
+          goal: '3500'
         - cruId: 0881236
           name: Joseph Woodard
         - cruId: '0735007'
@@ -72,12 +74,14 @@ roster:
           name: Lucy Chang
         - cruId: '1000188'
           name: Katy Wood
+          goal: '3500'
         - cruId: '1000494'
           name: Jeremy Garrett
         - cruId: '1000569'
           name: Lindsey Juarez
         - cruId: 0999940
           name: Faith Michael
+          goal: '3500'
       name: 'Korça, Albania - High School'
     - adjustment: '150'
       goal: '3000'
@@ -119,6 +123,7 @@ roster:
           name: Andy Lopez
         - cruId: 0999940
           name: Faith Michael
+          goal: '3500'
         - cruId: '1000430'
           name: Aaron Dutton
       name: 'Pécs, Hungary - High School'
@@ -134,6 +139,7 @@ roster:
           name: Wes Chick
         - cruId: '1000284'
           name: Morgan Asbill
+          goal: '3500'
         - cruId: '0735167'
           goal: '3500'
           name: Will Noll
