@@ -30,8 +30,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-smapp',
       options: {
-        username: 'gburgett@cru.org',
-        password: 'asdf',
+        username: process.env['SMAPP_USERNAME'],
+        password: process.env['SMAPP_PASSWORD'],
         dataDir: 'data/donations'
       }
     },

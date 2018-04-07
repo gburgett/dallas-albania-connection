@@ -2,6 +2,8 @@ import * as fs from 'fs-extra'
 import * as path from 'path'
 import {createFileNode} from 'gatsby-source-filesystem/create-file-node'
 
+import download from './download'
+
 export async function sourceNodes(
   { boundActionCreators, store },
   { username, password, dataDir }
@@ -9,9 +11,18 @@ export async function sourceNodes(
   const { createNode } = boundActionCreators
   dataDir = dataDir || 'data/'
 
-  const downloaded = await fs.readdir(dataDir)
+  let downloaded = await download({
+    dataDir,
+    username,
+    password
+  })
 
-  downloaded.forEach(async (csvFile) => {
+  downloaded.push(...(await fs.readdir(dataDir)))
+  downloaded = downloaded.filter((elem, pos) =>
+    downloaded.indexOf(elem) == pos
+  )
+
+  const promises = downloaded.map(async (csvFile) => {
     const node = await createFileNode(path.join(dataDir, csvFile))
     Object.assign(node.internal, {
       type: "SmappExport"
@@ -21,6 +32,8 @@ export async function sourceNodes(
     })
     createNode(node)
   })
+
+  await Promise.all(promises)
 }
 
 export function loadNodeContent(fileNode) {

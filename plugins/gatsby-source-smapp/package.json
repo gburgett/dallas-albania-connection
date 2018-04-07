@@ -7,5 +7,14 @@
     "test": "test"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "cheerio": "^1.0.0-rc.2",
+    "fs-extra": "^5.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.85.0",
+    "request-debug": "^0.2.0",
+    "tough-cookie-file-store": "^1.2.0"
+  }
 }
