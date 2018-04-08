@@ -89,13 +89,22 @@ export default async function Download(args: IDownloadArgs) {
               'Content-Length': contentLength,
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: formData,
-            followRedirect: true
+            body: formData
           }, 
         c
       )
     )
+
     $ = cheerio.load(resp.body)
+
+    if (resp.request.uri.href.match(/signin/)) {
+
+      throw new Error(`Unable to sign in as user '${args.username}'!\n\tOn page ${resp.request.uri.href}\n\t${$('#status').text()}`)
+    }
+
+    console.log('Response:')
+    console.log(resp.headers)
+    console.log(resp.body)
   }
 
   const projIds = []
