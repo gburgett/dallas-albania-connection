@@ -3,6 +3,7 @@ import * as cheerio from 'cheerio'
 import * as querystring from 'querystring'
 import * as fs from 'fs-extra'
 import * as path from 'path'
+import * as tough from 'tough-cookie'
 import * as FileCookieStore from 'tough-cookie-file-store'
 import * as csvStringify from 'csv-stringify'
 import chalk from 'chalk'
@@ -35,19 +36,31 @@ export interface IDownloadArgs {
   password: string
 }
 
-export default async function Download(args: IDownloadArgs) {
+export default async function Download(args: IDownloadArgs, cookies?: any, saveCookies?: (cookies: any) => void) {
 
-  // the FileCookieStore has problems saving cookies sometimes.
+  // prepare dependencies
   await fs.ensureFile('cookies.json')
-  if ((await fs.readFile('cookies.json')).length == 0 && fs.existsSync('cookies.bak')) {
-    await fs.copy('cookies.bak', 'cookies.json')
+  const store = new FileCookieStore('cookies.json')
+  if (cookies) {
+    store.idx = deserializeCookies(cookies)
   }
-  const store=  new FileCookieStore('cookies.json')
   const jar = requestLib.jar(store)
+
   const request = promisify(requestLib.defaults({ jar: jar, followRedirect: false }))
 
-  // exec
-  return await (async () => {
+  // run it
+  const csvFiles = await exec()
+
+  // save state
+  if (saveCookies) {
+    saveCookies(store.idx)
+  }
+  return csvFiles
+
+  /** Implementation follows */
+
+  // exec - main entry point
+  async function exec() {
     /** step 1 - get the mpd_summary page to find project IDs */
     let resp = await request.get('https://smapp.cru.org/admin/reports/mpd_summary')
     
@@ -56,6 +69,7 @@ export default async function Download(args: IDownloadArgs) {
     {
       /** sign in if necessary */
       resp = await signIn($)
+      $ = cheerio.load(resp.body)
     }
 
     /** Step 2 - parse out project IDs */
@@ -75,12 +89,8 @@ export default async function Download(args: IDownloadArgs) {
     const promises = projIds.map(getAllDonationLinksForProject)
       .map(async (p) => generateCsvForProject(await p))
 
-    const csvFiles = await Promise.all(promises)
-
-    // ensure the cookies get saved
-    await fs.writeFile('cookies.bak', JSON.stringify(store.idx))
-    return csvFiles
-  })()
+    return await Promise.all(promises)
+  }
 
   /** execute the sign in POST request and set session cookies */
   async function signIn($: CheerioStatic) {
@@ -133,6 +143,7 @@ export default async function Download(args: IDownloadArgs) {
     }
   }
 
+  /** Writes a CSV file for each project by following the other_donations links and parsing each <tr> */
   async function generateCsvForProject(project: IProjectDetails): Promise<string> {
     const fileName = `${project.projectId}.csv`
     const filePath = path.join(args.dataDir, fileName)
@@ -191,6 +202,7 @@ export default async function Download(args: IDownloadArgs) {
     return fileName
   }
 
+  /** Old way - the report download does not include team leaders */
   async function downloadProjectCsv(projId: string): Promise<string> {
     const csvFile = `${projId}.csv`
 
@@ -238,4 +250,16 @@ interface ICsvRow {
   amount: string,
   donorName: string,
   medium: string
+ }
+
+ // https://github.com/ivanmarban/tough-cookie-file-store/blob/master/lib/file-store.js#L251
+ function deserializeCookies(dataJson: any): any {
+  for (var domainName in dataJson) {
+    for (var pathName in dataJson[domainName]) {
+      for (var cookieName in dataJson[domainName][pathName]) {
+          dataJson[domainName][pathName][cookieName] = tough.fromJSON(JSON.stringify(dataJson[domainName][pathName][cookieName]));
+      }
+    }
+  }
+  return dataJson
  }

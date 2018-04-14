@@ -8,14 +8,29 @@ export async function sourceNodes(
   { boundActionCreators, store },
   { username, password, dataDir }
 ) {
-  const { createNode } = boundActionCreators
+  const { createNode, setPluginStatus } = boundActionCreators
   dataDir = dataDir || 'data/'
 
+  let cookies
+  if (
+    store.getState().status.plugins &&
+    store.getState().status.plugins[`gatsby-source-smapp`]
+  ) {
+    cookies = store.getState().status.plugins[`gatsby-source-smapp`]
+  }
+
+  function saveCookies(cookies: any) {
+    setPluginStatus(cookies)
+  }
+
   let downloaded = await download({
-    dataDir,
-    username,
-    password
-  })
+      dataDir,
+      username,
+      password
+    },
+    cookies,
+    saveCookies
+  )
 
   downloaded.push(...(await fs.readdir(dataDir)))
   downloaded = downloaded.filter((elem, pos) =>
