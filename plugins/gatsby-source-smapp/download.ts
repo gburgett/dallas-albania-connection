@@ -10,9 +10,9 @@ import chalk from 'chalk'
 require('request-debug')(requestLib, function(type, data, r) {
   switch(type) {
     case 'request':
-      process.stderr.write(chalk.cyan(`${data.debugId} ${data.method} ${data.uri}`))
       break;
     case 'response':
+      process.stderr.write(chalk.cyan(`${data.debugId} ${r.method} ${r.uri.href}`))
       if (data.statusCode >= 400) {
         process.stderr.write(chalk.red(` ${data.statusCode}\n`))
         console.error(data.body)
@@ -42,37 +42,44 @@ export default async function Download(args: IDownloadArgs) {
   }
   const store=  new FileCookieStore('cookies.json')
   const jar = requestLib.jar(store)
-  const request = requestLib.defaults({ jar: jar, followRedirect: false })
+  const request = promisify(requestLib.defaults({ jar: jar, followRedirect: false }))
 
-  function p(req: (cb: RequestCallback) => Request): Promise<Response> {
-    return new Promise((resolve, reject) => {
-      req((err, resp, body) => {
-        if (err) {
-          reject(err)
-          return
-        }
-  
-        if(resp.statusCode == 302) {
-          request.get(resp.headers['location'], (err, resp, body) => {
-            if (err) {
-              reject(err)
-              return
-            }
+  // exec
+  return await (async () => {
+    /** step 1 - get the mpd_summary page to find project IDs */
+    let resp = await request.get('https://smapp.cru.org/admin/reports/mpd_summary')
+    
+    let $ = cheerio.load(resp.body)
+    if(resp.url.match(/signin/) || $('#login_form').length > 0)
+    {
+      /** sign in if necessary */
+      resp = await signIn($)
+    }
 
-            resolve(resp)
-          })
-        } else {
-          resolve(resp)
-        }
-      })
+    /** Step 2 - parse out project IDs */
+    const projIds = []
+    $('a').each((i, elem) => {
+      const href = elem.attribs['href']
+      // https://smapp.cru.org/admin/reports/mpd_summary?project_id=1444
+      const m = href.match(/\/admin\/reports\/mpd_summary\?.*project_id\=(\d+)/)
+      if (!m) {
+        return
+      }
+
+      projIds.push(m[1])
     })
-  }
 
-  let resp = await p(c => request.get('https://smapp.cru.org/admin/reports/mpd_summary', c))
-  
-  let $ = cheerio.load(resp.body)
-  if(resp.url.match(/signin/) || $('#login_form').length > 0)
-  {
+    /** step 3 - map those project IDs to CSV files */
+    const promises =  projIds.map(downloadProjectCsv)
+    const csvFiles = await Promise.all(promises)
+
+    // ensure the cookies get saved
+    await fs.writeFile('cookies.bak', JSON.stringify(store.idx))
+    return csvFiles
+  })()
+
+  /** execute the sign in POST request and set session cookies */
+  async function signIn($: CheerioStatic) {
     // do the sign in
     let post_data = {}
     $('#login_form input').each((i, el) => post_data[el.attribs['name']] = (el.attribs['value'] || 'unknown' ))
@@ -83,39 +90,24 @@ export default async function Download(args: IDownloadArgs) {
     const formData = querystring.stringify(post_data);
     const contentLength = formData.length;
   
-    resp = await p(c => request.post(action, 
+    const resp = await request.post(action, 
           { 
             headers: {
               'Content-Length': contentLength,
               'Content-Type': 'application/x-www-form-urlencoded'
             },
             body: formData
-          }, 
-        c
-      )
-    )
-
-    $ = cheerio.load(resp.body)
+          })
 
     if (resp.request.uri.href.match(/signin/)) {
+      const $ = cheerio.load(resp.body)
 
       throw new Error(`Unable to sign in as user '${args.username}'!\n\tOn page ${resp.request.uri.href}\n\t${$('#status').text()}`)
     }
+    return resp
   }
 
-  const projIds = []
-  $('a').each((i, elem) => {
-    const href = elem.attribs['href']
-    // https://smapp.cru.org/admin/reports/mpd_summary?project_id=1444
-    const m = href.match(/\/admin\/reports\/mpd_summary\?.*project_id\=(\d+)/)
-    if (!m) {
-      return
-    }
-
-    projIds.push(m[1])
-  })
-
-  const promises = projIds.map(async (projId) => {
+  async function downloadProjectCsv(projId: string): Promise<string> {
     const csvFile = `${projId}.csv`
 
     await fs.ensureFile(path.join(args.dataDir, csvFile))
@@ -131,11 +123,45 @@ export default async function Download(args: IDownloadArgs) {
           resolve(csvFile)
         })
     })
-  })
+  }
 
-  // ensure the cookies get saved
-  await fs.writeFile('cookies.bak', JSON.stringify(store.idx))
-
-  const csvFiles = await Promise.all(promises)
-  return csvFiles
 }
+
+/** Makes the request API use promises. */
+function promisify<TReq extends requestLib.Request, TOptions, TRequiredUriUrl>(
+    request: requestLib.RequestAPI<TReq, TOptions, TRequiredUriUrl>
+  ) {
+  
+  const extendedLib = function(uri: string, options?: TOptions) {
+    return request(uri);
+  }
+  return Object.assign(extendedLib, {
+    get: (url: string) => p(c => request.get(url, c)),
+    post: (url: string, options: TOptions) => p(c => request.post(url, options, c))
+  });
+
+  function p(req: (cb: RequestCallback) => Request): Promise<Response> {
+    return new Promise((resolve, reject) => {
+      req((err, resp, body) => {
+        if (err) {
+          reject(err)
+          return
+        }
+  
+        if(resp.statusCode == 302) {
+          request.get(resp.headers['location'], (err, resp, body) => {
+            if (err) {
+              reject(err)
+              return
+            }
+  
+            resolve(resp)
+          })
+        } else {
+          resolve(resp)
+        }
+      })
+    })
+  }
+}
+
