@@ -1,11 +1,13 @@
 import * as requestLib from 'request'
-import {Request, Response, RequestCallback} from 'request'
 import * as cheerio from 'cheerio'
 import * as querystring from 'querystring'
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as FileCookieStore from 'tough-cookie-file-store'
+import * as csvStringify from 'csv-stringify'
 import chalk from 'chalk'
+
+import { promisify, asyncWriter } from './utils';
 
 require('request-debug')(requestLib, function(type, data, r) {
   switch(type) {
@@ -70,7 +72,9 @@ export default async function Download(args: IDownloadArgs) {
     })
 
     /** step 3 - map those project IDs to CSV files */
-    const promises =  projIds.map(downloadProjectCsv)
+    const promises = projIds.map(getAllDonationLinksForProject)
+      .map(async (p) => generateCsvForProject(await p))
+
     const csvFiles = await Promise.all(promises)
 
     // ensure the cookies get saved
@@ -107,6 +111,86 @@ export default async function Download(args: IDownloadArgs) {
     return resp
   }
 
+  /** Gets a link like /admin/applications/1442/other_donations?staff_id=27744 for each person on the project */
+  async function getAllDonationLinksForProject(projId: string): Promise<IProjectDetails> {
+    const resp = await request.get(`https://smapp.cru.org/admin/projects/${projId}`)
+    const $ = cheerio.load(resp.body)
+
+    const participants: IParticipantDetails[] = []
+    $('table.people tr:not(:first-child)').each((i, tr) => {
+      const $tr = $(tr);
+      participants.push({
+        studentName: $tr.children('.name').text(),
+        designationNum: $tr.children('.designation').text(),
+        balance: $tr.children('.balance').text(),
+        donationListLink: $tr.find('.balance a').attr('href')
+      })
+    })
+
+    return {
+      projectId: projId,
+      participants
+    }
+  }
+
+  async function generateCsvForProject(project: IProjectDetails): Promise<string> {
+    const fileName = `${project.projectId}.csv`
+    const filePath = path.join(args.dataDir, fileName)
+
+    await fs.ensureFile(filePath)
+    const fileStream = fs.createWriteStream(filePath)
+    var columns = [
+       'Student Name',
+       'Designation #',
+       'Date',
+       'Amount',
+       'Donor Name',
+       'Medium'
+    ];
+    var csvStream = csvStringify({ header: true, columns: columns });
+    csvStream.pipe(fileStream)
+    const write = asyncWriter(csvStream)
+
+    try {
+      const promises = project.participants.map(async (participant) => {
+        const resp = await request.get('https://smapp.cru.org' + participant.donationListLink)
+        const $ = cheerio.load(resp.body)
+
+        const writePromises = $('table.donations tr:not(:first-child)').toArray().map((tr) => {
+          const tableDivs = $(tr).children('td')
+          if (tableDivs.first().text().match(/total/i)) {
+            // this is the "total" row
+            return;
+          }
+
+          const row = [participant.studentName, participant.designationNum]
+
+          // ["2018-03-31", "$50.00", "Smith, John and Jane", "Credit Card"]
+          tableDivs.each((i2, td) => {
+            let text = $(td).text();
+            row.push(text.trim())
+          })
+          return write(row)
+        })
+        return Promise.all(writePromises)
+      })
+
+      await Promise.all(promises)
+    } finally {
+      csvStream.end()
+    }
+
+    await new Promise((resolve, reject) => {
+      fileStream.on('close', () => {
+        console.log('Finished downloading proj', project.projectId, 'to', filePath)
+        resolve()
+      })
+      fileStream.on('error', (err) => reject(err))
+    })
+
+    return fileName
+  }
+
   async function downloadProjectCsv(projId: string): Promise<string> {
     const csvFile = `${projId}.csv`
 
@@ -127,41 +211,31 @@ export default async function Download(args: IDownloadArgs) {
 
 }
 
-/** Makes the request API use promises. */
-function promisify<TReq extends requestLib.Request, TOptions, TRequiredUriUrl>(
-    request: requestLib.RequestAPI<TReq, TOptions, TRequiredUriUrl>
-  ) {
-  
-  const extendedLib = function(uri: string, options?: TOptions) {
-    return request(uri);
-  }
-  return Object.assign(extendedLib, {
-    get: (url: string) => p(c => request.get(url, c)),
-    post: (url: string, options: TOptions) => p(c => request.post(url, options, c))
-  });
-
-  function p(req: (cb: RequestCallback) => Request): Promise<Response> {
-    return new Promise((resolve, reject) => {
-      req((err, resp, body) => {
-        if (err) {
-          reject(err)
-          return
-        }
-  
-        if(resp.statusCode == 302) {
-          request.get(resp.headers['location'], (err, resp, body) => {
-            if (err) {
-              reject(err)
-              return
-            }
-  
-            resolve(resp)
-          })
-        } else {
-          resolve(resp)
-        }
-      })
-    })
-  }
+interface IProjectDetails {
+  projectId: string,
+  participants: IParticipantDetails[]
 }
 
+interface IParticipantDetails {
+  studentName: string,
+  designationNum: string,
+  balance: string,
+  /** something like /admin/applications/1442/other_donations?staff_id=27744 */
+  donationListLink: string
+}
+
+interface IDonationDetails {
+  date: string,
+  amount: string,
+  donorName: string,
+  medium: string
+}
+
+interface ICsvRow {
+  studentName: string,
+  designationNum: string,
+  date: string,
+  amount: string,
+  donorName: string,
+  medium: string
+ }
