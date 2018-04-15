@@ -86,10 +86,14 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
     })
 
     /** step 3 - map those project IDs to CSV files */
-    const promises = projIds.map(getAllDonationLinksForProject)
-      .map(async (p) => generateCsvForProject(await p))
+    const promises = projIds.map(async (projId) => {
+      const details = await getAllDonationLinksForProject(projId)
+      if (details.participants.length > 0) {
+        return generateCsvForProject(details)
+      }
+    })
 
-    return await Promise.all(promises)
+    return Promise.all(promises)
   }
 
   /** execute the sign in POST request and set session cookies */

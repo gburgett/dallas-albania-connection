@@ -1,5 +1,6 @@
 import * as fs from 'fs-extra'
 import * as path from 'path'
+import chalk from 'chalk'
 import {createFileNode} from 'gatsby-source-filesystem/create-file-node'
 
 import download from './download'
@@ -23,20 +24,30 @@ export async function sourceNodes(
     setPluginStatus(cookies)
   }
 
-  let downloaded = await download({
-      dataDir,
-      username,
-      password
-    },
-    cookies,
-    saveCookies
-  )
 
+  let downloaded = []
+  try {
+    downloaded = await download({
+        dataDir,
+        username,
+        password
+      },
+      cookies,
+      saveCookies
+    )
+    // remove "undefined"
+    downloaded = downloaded.filter((elem) => elem)
+  }catch(e) {
+    console.error(chalk.red(`Downloading new CSV files failed!`), e)
+  }
+
+  // Add existing csv files in directory
   downloaded.push(...(await fs.readdir(dataDir)))
   downloaded = downloaded.filter((elem, pos) =>
     downloaded.indexOf(elem) == pos
   )
 
+  // create nodes from csv files
   const promises = downloaded.map(async (csvFile) => {
     const node = await createFileNode(path.join(dataDir, csvFile))
     Object.assign(node.internal, {
