@@ -12,7 +12,13 @@ feature:
   show: true
 roster:
   header: Team Roster
-  projectIds: ['985', '1444', '1442', '1443', '1446', '1447']
+  projectIds:
+    - '985'
+    - '1444'
+    - '1442'
+    - '1443'
+    - '1446'
+    - '1447'
   teams:
     - adjustment: '150'
       goal: '3000'
@@ -56,8 +62,8 @@ roster:
         - cruId: 0880846
           name: Emily McCoppin
         - cruId: '1000284'
-          name: Morgan Asbill
           goal: '3500'
+          name: Morgan Asbill
         - cruId: '1000512'
           name: Seth Gordon
       name: 'Tirana, Albania - High School'
@@ -65,23 +71,23 @@ roster:
       goal: '3000'
       members:
         - cruId: 0936790
-          name: Nico Arguello
           goal: '3500'
+          name: Nico Arguello
         - cruId: 0881236
           name: Joseph Woodard
         - cruId: '0735007'
           goal: '3500'
           name: Lucy Chang
         - cruId: '1000188'
-          name: Katy Wood
           goal: '3500'
+          name: Katy Wood
         - cruId: '1000494'
           name: Jeremy Garrett
         - cruId: '1000569'
           name: Lindsey Juarez
         - cruId: 0999940
-          name: Faith Michael
           goal: '3500'
+          name: Faith Michael
       name: 'Korça, Albania - High School'
     - adjustment: '150'
       goal: '3000'
@@ -122,8 +128,8 @@ roster:
         - cruId: '1000601'
           name: Andy Lopez
         - cruId: 0999940
-          name: Faith Michael
           goal: '3500'
+          name: Faith Michael
         - cruId: '1000430'
           name: Aaron Dutton
       name: 'Pécs, Hungary - High School'
@@ -138,8 +144,8 @@ roster:
         - cruId: 0880935
           name: Wes Chick
         - cruId: '1000284'
-          name: Morgan Asbill
           goal: '3500'
+          name: Morgan Asbill
         - cruId: '0735167'
           goal: '3500'
           name: Will Noll
@@ -159,11 +165,14 @@ One Mission.
 
 This summer we are going to Eastern Europe to share the good news of the Gospel of Jesus Christ. We are returning to three cities in Albania: Tirana, Korça, and Elbasan. There we will continue our partnership with Cru Albania for high school and young professionals ministries. Albania teams are departing June 29 and July 7, 2018. This year will mark the sixth that we will have traveled to Albania for the Summer Project.
 
-In addition, we have two new teams traveling to Hungary and Poland. A team traveling to Pécs, Hungary (departing July 14, 2018) will be partnering with Cru Hungary to initiate young people in that city in ways that build upon the high school ministry template that is established in Albania. A team traveling to Southern Poland (departing July 7, 2018) will partner with Cru Poland to launch a pilot for a recovery ministry. "Regeneration Recovery" is a 12-step program that was established by Watermark Community Church in Dallas, Texas and is currently adopted by hundreds of churches across the United States. 
+In addition, we have two new teams traveling to Hungary and Poland. A team traveling to Pécs, Hungary (departing July 14, 2018) will be partnering with Cru Hungary to initiate young people in that city in ways that build upon the high school ministry template that is established in Albania. A team traveling to Southern Poland (departing July 7, 2018) will partner with Cru Poland to launch a pilot for a recovery ministry. "Regeneration Recovery" is a 12-step program that was established by Watermark Community Church in Dallas, Texas and is currently adopted by nearly a hundred churches across the United States. 
 
 The teams have been formed, and the ~40 members are undergoing three-month discipleship training ahead of our summer departure. We are looking for supporters to join us through prayer and financial support. The cost for most team members is $3,000, while those members who are a part of multiple teams have a trip cost of $3,500.  
 
 For more details about this summer, please take a look at the Info Sheet and Calendar below. If you have any questions about our Summer Project or ministry in general, see the Contact information (also wayyy below) and send us an email. We would be encouraged to know that you are supporting us. 
+
+To order a team t-shirt, fill out the form below:
+[Eastern Europe T-Shirt Order Form](https://docs.google.com/forms/d/1yYPd3C062VWM6qBzY-eE2beNDXOzcU1z8lJjBejJiwk/viewform?edit_requested=true)
 
 Prayer calendars will be posted below as they are available. 
 
