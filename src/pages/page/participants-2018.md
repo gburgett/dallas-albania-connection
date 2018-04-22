@@ -30,3 +30,7 @@ Note: when using the links for T-shirt order forms, make sure to use the "for Te
 **Art Files**
 
 **Prayer Calendars**
+
+**Other Resources**
+
+[The 3D Gospel](https://www.amazon.com/dp/0692338012/ref=cm_sw_r_cp_awdb_t1_KOo3AbAWW8CE5) - $8.99 paperback
