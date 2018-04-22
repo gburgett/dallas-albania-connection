@@ -12,6 +12,19 @@ This page is a place where you can retrieve resources, find links, and see other
 
 [Download the Participant Guide](/files/albania_plus_2018_participant_guide_3.27.2018.pdf)
 
+**Donations Tracker**
+
+* [Elbasan HS team](https://smapp.cru.org/admin/projects/1442)
+* [Korca HS team](https://smapp.cru.org/admin/projects/1443)
+* [Tirana HS team](https://smapp.cru.org/admin/projects/1446)
+* [Tirana YP team](https://smapp.cru.org/admin/projects/985)
+* [Poland team](https://smapp.cru.org/admin/projects/1444)
+* [Hungary team](https://smapp.cru.org/admin/projects/1447)
+
+Remember to click on the "other" tab to see your name listed, then click on the $amount to get your donor list.  
+If you are on two teams, your name will only appear in one of the two projects.  
+When signing in, make sure you choose "sign in using Relay"
+
 **Sample Support Letters**
 
 
