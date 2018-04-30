@@ -88,7 +88,6 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const events = data.events.edges
     .map(edge => edge.node)
     .filter(node => Date.parse(node.frontmatter.date) > yesterday)
-    .slice(0, 4)
   
   const featuredPosts = (data.root.frontmatter.featuredPosts || []).map(p => p.slug);
   const posts = data.blogs && data.blogs.edges.map(edge => ({
@@ -105,7 +104,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     <Hero {...hero} />
     {feature && feature.show && <Feature {...feature} />}
     <Row>
-      <Col xs={12} md={3}>
+      <Col xs={12} md={3} className="eventsList">
         <h3>Upcoming Events</h3>
         {events.map((node, i) => {
           const dt = Date.parse(node.frontmatter.date)

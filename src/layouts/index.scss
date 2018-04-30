@@ -353,3 +353,16 @@ blockquote {
 .body {
   color: $body-color;
 }
+
+
+@include media-breakpoint-down(sm) {
+.eventsList {
+  .card:nth-child(n+4) {
+    display: none;
+  }
+
+  .card:nth-last-child(-n+2) {
+    display: block;
+  }
+}
+}
