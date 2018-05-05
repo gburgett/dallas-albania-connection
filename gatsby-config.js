@@ -58,6 +58,65 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.ts`
       }
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges
+                //.filter(edge => edge.node.frontmatter.published !== false)
+                .map(edge => {
+                  console.log('rss',edge.node.frontmatter.slug)
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  url: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
+                  guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                site {
+                  siteMetadata {
+                    siteUrl
+                  }
+                },
+                allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+                  edges {
+                    node {
+                      id
+                      excerpt
+                      timeToRead
+                      frontmatter {
+                        slug
+                        title
+                        date
+                        published
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/blogrss.xml",
+          }
+        ]
+      }
+    },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass'
