@@ -1,5 +1,15 @@
 const Path = require('path')
 
+exports.modifyWebpackConfig = ({ config }) => {
+  config.merge({
+    externals: {
+      jquery: 'jQuery'
+    }
+  })
+
+  return config;
+}
+
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
