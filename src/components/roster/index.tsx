@@ -4,6 +4,7 @@ import * as graphql from 'graphql'
 export interface ITeamRosterProps {
   name: string,
   goal: string | number,
+  mileMarker: string | number,
   adjustment: string | number,
   members: IRosterMemberProps[],
   data?: ICollatedSmappData
@@ -16,6 +17,7 @@ export interface ICollatedSmappData {
 interface IRosterMemberProps {
   name: string,
   goal: string | number,
+  mileMarker: string | number,
   adjustment: number | string,
   raised: number,
   cruId?: string
@@ -23,7 +25,7 @@ interface IRosterMemberProps {
 
 class RosterMember extends React.Component<IRosterMemberProps, {}> {
   render() {
-    const {name, goal, cruId, raised} = this.props
+    const {name, goal, mileMarker, cruId, raised} = this.props
     const adjustment = this.props.adjustment || 0;
     const amt = toInt(adjustment) + raised;
     const prog = 100 * (amt / toInt(goal))
@@ -43,7 +45,12 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
       </a>
     )
 
-    const bgColor = cruId ? "bg-info" : "bg-secondary"
+    let bgColor = "bg-secondary"
+    if (cruId) { bgColor = 'bg-info' }
+    if (amt >= toInt(goal)) { bgColor = 'bg-success' }
+
+    const passedMileMarker = amt >= toInt(mileMarker)
+
     const slider = (
       <div className="progress">
         <div className={`progress-bar progress-bar-striped progress-bar-animated ${bgColor}`}
@@ -52,6 +59,7 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
           aria-valuenow={amt}
           aria-valuemin={0}
           aria-valuemax={toInt(goal)}>
+          {passedMileMarker && <i className="fas fa-plane" style={{marginLeft: 'auto', marginRight: '4px'}}></i>}
           </div>
       </div>
     )
@@ -73,7 +81,7 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
 
 export class TeamRoster extends React.Component<ITeamRosterProps, {}> {
   render() {
-    const { name, goal, adjustment, members, data} = this.props
+    const { name, goal, adjustment, mileMarker, members, data} = this.props
     let adj = adjustment ? toInt(adjustment) : 0
     
     return  (<div className="teamRoster">
@@ -84,6 +92,7 @@ export class TeamRoster extends React.Component<ITeamRosterProps, {}> {
             goal={m.goal || goal}
             adjustment={m.adjustment ? adj + toInt(m.adjustment) : adj}
             raised={data && m.cruId ? data[m.cruId] || 0 : 0}
+            mileMarker={mileMarker}
             key={m.name} />
         </li>))}
       </ul>

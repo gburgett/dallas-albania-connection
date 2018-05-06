@@ -18,14 +18,14 @@ export function collateByDesignationNumber(exportData: ISmappExportFields[]): IC
   return ret
 }
 
-const smappAmountRegex = /^\$([0-9\.]+)$/
+const smappAmountRegex = /^\$([0-9\,\.]+)$/
 function parseAmount(smappAmount: string): number {
   const matches = smappAmount.match(smappAmountRegex)
   if (!matches) {
-    return parseFloat(smappAmount)
+    return parseFloat(smappAmount.replace(',', ''))
   }
 
-  return parseFloat(matches[1])
+  return parseFloat(matches[1].replace(',', ''))
 }
 
 export const smappExportFields = graphql`

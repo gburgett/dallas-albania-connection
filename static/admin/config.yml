@@ -138,6 +138,7 @@ collections:
               - {label: "Team Name", name: "name", widget: "string", required: true}
               - {label: "Fundraising Goal in Dollars", name: "goal", widget: "number", required: true}
               - {label: "Team-wide Balance Adjustment", name: "adjustment", widget: "number", required: true}
+              - {label: "Mile Marker (shows the plane icon when this is passed)", name: "mileMarker", widget: "number", required: false}
               - label: "Team Members"
                 name: "members"
                 widget: "list"

@@ -22,6 +22,7 @@ roster:
   teams:
     - adjustment: '150'
       goal: '3000'
+      mileMarker: '1700'
       members:
         - adjustment: '0'
           cruId: 0746249
@@ -44,6 +45,7 @@ roster:
       name: 'Tirana, Albania - Young Professionals'
     - adjustment: '150'
       goal: '3000'
+      mileMarker: '1700'
       members:
         - cruId: 0936825
           name: Carrie Beckner
@@ -69,6 +71,7 @@ roster:
       name: 'Tirana, Albania - High School'
     - adjustment: '150'
       goal: '3000'
+      mileMarker: '1700'
       members:
         - cruId: 0936790
           goal: '3500'
@@ -91,6 +94,7 @@ roster:
       name: 'Korça, Albania - High School'
     - adjustment: '150'
       goal: '3000'
+      mileMarker: '1700'
       members:
         - cruId: 0880885
           name: Marlie Austin
@@ -113,6 +117,7 @@ roster:
       name: 'Elbasan, Albania - High School'
     - adjustment: '150'
       goal: '3000'
+      mileMarker: '1700'
       members:
         - cruId: 0937180
           name: Randy Valdez
@@ -135,6 +140,7 @@ roster:
       name: 'Pécs, Hungary - High School'
     - adjustment: '150'
       goal: '3000'
+      mileMarker: '1700'
       members:
         - cruId: 0936992
           name: Chris Hyland

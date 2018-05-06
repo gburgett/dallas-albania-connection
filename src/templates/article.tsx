@@ -112,6 +112,7 @@ export const pageQuery = graphql`
             name
             goal
             adjustment
+            mileMarker
             members {
               name
               cruId
