@@ -81,10 +81,17 @@ module.exports = {
                 .map(edge => {
                   console.log('rss',edge.node.frontmatter.slug)
                 return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
                   guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  author: edge.node.frontmatter.author.name,
+                  custom_elements: [
+                    { "content:encoded": edge.node.html },
+                    { "media:content":  { 
+                      _attr: {
+                        url: site.siteMetadata.siteUrl + edge.node.frontmatter.heroimage
+                      }
+                    } }
+                  ],
                 });
               });
             },
@@ -99,13 +106,18 @@ module.exports = {
                   edges {
                     node {
                       id
-                      excerpt
+                      html
+                      excerpt(pruneLength: 1000)
                       timeToRead
                       frontmatter {
                         slug
                         title
                         date
                         published
+                        heroimage
+                        author {
+                          name
+                        }
                       }
                     }
                   }
