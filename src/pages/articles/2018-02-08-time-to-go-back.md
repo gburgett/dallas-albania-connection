@@ -24,7 +24,7 @@ roster:
       goal: '3000'
       mileMarker: '1700'
       members:
-        - adjustment: '0'
+        - adjustment: '3000'
           cruId: 0746249
           name: Gordon Burgett
         - cruId: '0735167'
