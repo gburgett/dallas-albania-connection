@@ -82,7 +82,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .sort((a, b) => a.index - b.index)
 
   const { feature, hero } = data.root.frontmatter
-  const {title, siteUrl} = data.site.siteMetadata
+  const {title, siteUrl, signupFormUrl} = data.site.siteMetadata
 
   let yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
   const events = data.events.edges
@@ -97,11 +97,15 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .filter(n => n.index >= 0)
     .sort((a, b) => a.index - b.index)
 
-  return (<Container fluid>
+  return (<Container fluid className="homepage">
     <Helmet title={title} titleTemplate={undefined}>
         {hero && <meta property="og:image" content={siteUrl + hero.image}></meta>}
     </Helmet>
-    <Hero {...hero} />
+    <Hero {...hero} >
+      <div className="signup">
+        <a className="btn btn-dark" href={signupFormUrl}><i className="fas fa-envelope"></i>Get updates!</a>
+      </div>
+    </Hero>
     {feature && feature.show && <Feature {...feature} />}
     <Row>
       <Col xs={12} md={3} className="eventsList">
@@ -188,6 +192,7 @@ query IndexQuery {
     siteMetadata {
       title
       siteUrl
+      signupFormUrl
     }
   }
   root: markdownRemark(fileAbsolutePath: {regex: "/\/pages\/homepage\/_index\\.md$/"}) {

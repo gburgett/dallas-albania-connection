@@ -46,7 +46,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
   }
 
   return (
-    <div>
+    <div className="blog">
       <Helmet title={post.frontmatter.title}>
         {heroimage && <meta property="og:image" content={siteUrl + heroimage}></meta>}
       </Helmet>
@@ -54,7 +54,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
       <Container fluid>
         {heroimage && 
           <Hero image={heroimage} heroAttribution={heroAttribution} >
-            <h1 className='display-3'>{title}</h1>
+            <h1 className='display-3 title'>{title}</h1>
           </Hero>
         }
       </Container>

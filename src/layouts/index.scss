@@ -172,9 +172,10 @@ a {
 }
 
 .hero-body {
-  margin-top: auto;
+  margin-bottom: auto;
   display:flex;
   padding: 4px;
+  flex-grow: 1;
 
   color: $light;
   > h1 {
@@ -293,33 +294,38 @@ blockquote {
   font-size: 14pt;
 }
 
-.post {
-  h1 {
-    padding-bottom: 2px;
-    border-bottom: 1px dotted grey
+.blog {
+  .title {
+    margin-top: auto;
   }
-}
 
-
-.author {
-  float:right;
-  display: flex;
-  flex-direction: column;
-  color: $light;
-  margin-top: -120px;
-
-  > img {
-    margin: 0 auto;
+  .post {
+    h1 {
+      padding-bottom: 2px;
+      border-bottom: 1px dotted grey
+    }
   }
-}
 
-@include media-breakpoint-up(md) {
-.author {
-  margin: 2em 2em 0.5em 0.5em;
-  padding: 1em;
-  background-color: $primary;
-  border-radius: 20px;
-}
+  .author {
+    float:right;
+    display: flex;
+    flex-direction: column;
+    color: $light;
+    margin-top: -120px;
+
+    > img {
+      margin: 0 auto;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+  .author {
+    margin: 2em 2em 0.5em 0.5em;
+    padding: 1em;
+    background-color: $primary;
+    border-radius: 20px;
+  }
+  }
 }
 
 .post-list {
@@ -354,15 +360,20 @@ blockquote {
   color: $body-color;
 }
 
-
-@include media-breakpoint-down(sm) {
-.eventsList {
-  .card:nth-child(n+4) {
-    display: none;
+.homepage {
+  .signup {
+    margin: 0 70px 0 auto;
   }
 
-  .card:nth-last-child(-n+2) {
-    display: block;
+  @include media-breakpoint-down(sm) {
+  .eventsList {
+    .card:nth-child(n+4) {
+      display: none;
+    }
+
+    .card:nth-last-child(-n+2) {
+      display: block;
+    }
   }
-}
+  }
 }

@@ -31,6 +31,7 @@ interface ISite {
   siteMetadata: {
     title: string
     siteUrl: string
+    signupFormUrl: string
   }
 }
 

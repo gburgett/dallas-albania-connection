@@ -15,6 +15,7 @@ collections:
         fields:
           - {label: "Site Title", name: "title", widget: "string"}
           - {label: "Base URL", name: "siteUrl", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
       - name: "footer"
         label: "Site Footer"
         file: "src/components/footer/Footer.md"
