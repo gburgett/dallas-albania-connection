@@ -21,12 +21,11 @@ This page is a place where you can retrieve resources, find links, and see other
 * [Poland team](https://smapp.cru.org/admin/projects/1444)
 * [Hungary team](https://smapp.cru.org/admin/projects/1447)
 
-Remember to click on the "other" tab to see your name listed, then click on the $amount to get your donor list.  
-If you are on two teams, your name will only appear in one of the two projects.  
+Remember to click on the "other" tab to see your name listed, then click on the $amount to get your donor list.\
+If you are on two teams, your name will only appear in one of the two projects.\
 When signing in, make sure you choose "sign in using Relay"
 
 **Sample Support Letters**
-
 
 **T-Shirt Order Forms**
 
@@ -47,3 +46,5 @@ Note: when using the links for T-shirt order forms, make sure to use the "for Te
 **Other Resources**
 
 [The 3D Gospel](https://www.amazon.com/dp/0692338012/ref=cm_sw_r_cp_awdb_t1_KOo3AbAWW8CE5) - $8.99 paperback
+
+[Islam in Albania](/files/islam in albania cheat sheet.pdf)
