@@ -8,8 +8,7 @@ heroimage: /files/blog/2017/albania-ron-acord.jpg
 heroAttribution: Photo by Ron Acord (<a href="http://www.ronacord.com">ronacord.com</a>)
 author:
   name: Marlie Austin
-  gravatar: a8e6d75da58135ff8089f564dd33debf
-  photo: ''
+  photo: /files/blog/2017/marlie-avatar.jpg
 
 ---
 

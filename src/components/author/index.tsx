@@ -13,7 +13,9 @@ export class Author extends React.Component<IAuthorProps, {}> {
 
     return (
       <div className="author">
-        {gravatar &&
+        {photo &&
+          <img src={photo}></img>}
+        {!photo && gravatar &&
           <img src={`https://www.gravatar.com/avatar/${gravatar}`}></img>}
         <span className="name">{name}</span>
       </div>
