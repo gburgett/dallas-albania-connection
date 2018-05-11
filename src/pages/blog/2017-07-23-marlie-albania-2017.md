@@ -1,0 +1,29 @@
+---
+contentType: blog
+slug: marlie-albania-2017
+title: Albania 2017
+date: 2017-07-23T12:00:00-0600
+published: false
+heroimage: /files/blog/2017/albania-ron-acord.jpg
+heroAttribution: Photo by Ron Acord (<a href="http://www.ronacord.com">ronacord.com</a>)
+author:
+  name: Marlie Austin
+  gravatar: a8e6d75da58135ff8089f564dd33debf
+  photo: ''
+
+---
+
+Nestled just below Greece and across the Adriatic sea from Italy, is a country I’ve grown to love: Albania. Most Americans I talk to have never heard of Albania. Maybe you haven’t either. But, let me tell you, it’s a country I’ll never forget. The people are warm, reserved yet welcoming of strangers, especially Americans. The food is beautiful mix of Greek and Italian. I had gyros for lunch, and pizza/spaghetti for dinner. It’s less than 1% evangelical Christian. If you were to put all the Christians from Albania in the new AT&T Cowboy stadium, they would take up less than 1/3 of the seats in stadium. For 4 years, a group (as small as 5 and now as big as 32) from my church has been traveling to Albania to share the gospel.  I was there from July 1-11th and it was my second time being in Elbasan, a city just 45 minute drive through the mountains from the capitol.
+
+Our team partnered with a ministry called CRU (Campus Crusades) and we hosted a camp for highschool students in the city. During the day, our team met with students in our groups for coffee to get to know the students better, and share the gospel with them. In the evenings, we had camp where the Albanian CRU staff would put on skits, games, etc. My group of students were all believers. It was such an honor to spend my whole week with 8 of the people who are part of the 1% in Albania. I loved hearing their stories, their struggles, their joys, their pain. It an amazing experience getting to disciple them and be encouraged by their faith even in the face of persecution from friends and family members. We got lunch every day, took a ton of selfies, we played cards,  we went to a park and did bumper cars, they taught me how to play an Albanian board game.  One afternoon, the students wanted to go somewhere and sing worship songs. So my coleader, the students, and I all went to a room upstairs and sang songs together. It was a beautiful experience: we live 5000 miles apart,  but here we are praising the same God. Friends,  if you’re reading this, thank you so much for making Albania feel like home. I had so much fun with each of you, your love for the Lord inspired me. I miss you guys everyday and can’t wait to see you guys next year. 
+
+with a group full of believers who already were familiar with the gospel, I thought that I was going to not get to share the gospel with anyone that week. Until one of the Albanian CRU staff (Eri), invited me to coffee with a student she met earlier in the day. Us 3 girls all sat down at a small round table.  We ordered coffee and began some small talk. Eri helped translate, as the student asked me questions about America and what it’s like there.  I knew time was precious, so I wanted to turn the conversation towards faith. So I talked about how in Dallas, there’s churches EVERYWHERE. and how just down the road from where I live, there’s 3 churches on one street. Eri asked the student about her beliefs and she said she was muslim. She had fasted for Ramadan and her Grandma (who she lives with) has been to Mecca. The two of them talked back and forth for a bit and then Eri asked if I could share my testimony with her. And so I did. Halfway through, I had this kind of out-of-body experience, where I thought to myself “Here I am, a girl born and raised in Dallas, sharing my story of God’s grace towards me and His redemption in my life to a devout muslim, all  in the middle of Elbasan, Albania, as its being translated into Albanian.” I got straight up chills, yo. Anyways, so I shared my story with her. Eri shared her story in Albanian. And then Eri asked if she could share the gospel with her. The student said yes because she had never heard it before. So Eri went through a pamphlet with her that explained the Gospel, and I followed along in my english version.
+
+While Eri was talking, I was praying “God open her heart, open her ears. Open her heart, open her ears.” Over, and over and over.  On the table, there was a glass of water. When Eri was talking about sin, God gave me the idea to pour some of my coffee in the cup of water which turned into a murky brown color. I explained to her that this is what sin is like. Gross, dirty, deserved to be thrown out. I couldn’t clean the dirty water on my own. I put some germ-x in there, and that didnt work. I tried wiping the outside with a napkin but that didn’t work. So, we  were hopeless, dead in our trespassed, But God loved us enough to make a way for us to be with Him. Later on, when Eri was talking about how accepting Christ is a decision you make. I mentioned the dirty cup of water again and said, “If I want a new glass of water, I ask the Waiter, right, and He’ll bring me a new glass. The same with Christ, if you ask Him, He will make you new.”
+
+Eri asked the student if she would like to make that decision to accept Christ. And she said yes, and Eri prayed for her and with her as she gave her life to Christ.  This is a quick photo I took of our feet as she was praying. The travel, the stress of fundraising, the meetings, the stress of travel, the spiritual warfare leading up to the trip, all became worth it in that moment. Please pray for her!!
+
+![Marlie & friends shoes](/files/blog/2017/marlie_2017_shoes.jpg)
+
+
+Thank you so much for partnering with me on this trip. You financially helped me get to Albania so I could meet those students, have life-changing conversations with students, and so much more. May the Lord bless you for your generosity and support. Your prayers were answered in more ways than we’ll ever know on this side of earth. Thank you.

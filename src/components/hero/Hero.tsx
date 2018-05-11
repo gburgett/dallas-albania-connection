@@ -30,7 +30,9 @@ export default class Hero extends React.Component<IHeroProps, {}> {
           {this.props.children}
         </div>
         {heroAttribution &&
-          <footer className="blockquote-footer attribution">{heroAttribution}</footer>
+          <footer className="blockquote-footer attribution"
+            dangerouslySetInnerHTML={{ __html: heroAttribution }}>
+          </footer>
         }
       </div>
     </Jumbotron>)
