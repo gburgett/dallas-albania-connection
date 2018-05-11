@@ -357,8 +357,17 @@ blockquote {
   .post {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid $black;
+    padding: 1px;
     border-radius: 12px;
+
+    &:hover {
+      border: 1px solid $black;
+      padding: 0;
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
   }
 }
 
@@ -404,6 +413,13 @@ blockquote {
   }
 
   li {
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
     a > * {
       display: block;
     }
