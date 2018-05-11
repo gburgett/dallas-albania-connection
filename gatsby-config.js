@@ -77,23 +77,23 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges
-                //.filter(edge => edge.node.frontmatter.published !== false)
+                .filter(edge => edge.node.frontmatter.published !== false)
                 .map(edge => {
                   console.log('rss',edge.node.frontmatter.slug)
-                return Object.assign({}, edge.node.frontmatter, {
-                  url: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
-                  guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
-                  author: edge.node.frontmatter.author.name,
-                  custom_elements: [
-                    { "content:encoded": edge.node.html },
-                    { "media:content":  { 
-                      _attr: {
-                        url: site.siteMetadata.siteUrl + edge.node.frontmatter.heroimage
-                      }
-                    } }
-                  ],
+                  return Object.assign({}, edge.node.frontmatter, {
+                    url: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
+                    guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
+                    author: edge.node.frontmatter.author.name,
+                    custom_elements: [
+                      { "content:encoded": edge.node.html },
+                      { "media:content":  { 
+                        _attr: {
+                          url: site.siteMetadata.siteUrl + edge.node.frontmatter.heroimage
+                        }
+                      } }
+                    ],
+                  });
                 });
-              });
             },
             query: `
               {
