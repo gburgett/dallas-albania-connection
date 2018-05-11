@@ -304,6 +304,10 @@ blockquote {
       padding-bottom: 2px;
       border-bottom: 1px dotted grey
     }
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .author {
@@ -375,5 +379,37 @@ blockquote {
       display: block;
     }
   }
+  }
+}
+
+.blog-list {
+
+  ul {
+    padding-left: 0;
+
+    @include media-breakpoint-up(xl) {
+      position: relative;
+      left: -40px;
+      width: calc(100% + 40px);
+    }
+
+    @media (min-width: 1400px) {
+      left: -100px;
+      width: calc(100% + 100px);
+    }
+  }
+
+  li {
+    a > * {
+      display: block;
+    }
+
+    .body {
+      font-size: 12px;
+    }
+
+    .title {
+      font-size: 24px;
+    }
   }
 }

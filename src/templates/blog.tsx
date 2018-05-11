@@ -14,20 +14,20 @@ const BlogsPreview = (props: { edges: { node: IBlogPreviewData }[] }) => {
     const dt = Date.parse(e.node.frontmatter.date)
     return dt <= Date.now() && e.node.frontmatter.published !== false
   })
-  return <div className='list-group'>
+  return <ul className='list-group'>
     { edges.map(e => (
-      <div className="d-flex w-100 justify-content-between">
+      <li className="d-flex w-100 justify-content-between" key={e.node.id}>
         <BlogPreview {...e.node} />
-      </div>
+      </li>
     ))}
-    </div>
+    </ul>
 }
 
 const BlogPreview = (node: IBlogPreviewData) => (
   <a href={`/blog/${node.frontmatter.slug}`}>
-    <span className='body'>{new Date(Date.parse(node.frontmatter.date)).toLocaleDateString()}</span>
-    <h2>{node.frontmatter.title}</h2>
-    <span className='body'>{node.timeToRead} minute read</span>
+    <span className='body date'>{new Date(Date.parse(node.frontmatter.date)).toLocaleDateString()}</span>
+    <span className='title'>{node.frontmatter.title}</span>
+    <span className='body readtime'>{node.timeToRead} minute read</span>
   </a>
 )
 
@@ -62,7 +62,7 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
       <Container>
         <div className='row'>
           <div className='d-none d-md-block col-md-2 blog-list'>
-            { false && <BlogsPreview edges={blogs.edges} /> }
+            { <BlogsPreview edges={blogs.edges} /> }
           </div>
           <div className='col-md-10'>
             {!heroimage && <h1 className='display-3'>{title}</h1>}
