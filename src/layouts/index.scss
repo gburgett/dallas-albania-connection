@@ -302,6 +302,19 @@ blockquote {
   .post {
     padding-top: 2rem;
 
+    &> p::first-letter {
+      font-size: 1.4rem;
+      margin-left: 1rem;
+      text-transform: uppercase;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    &> p:first-child::first-letter {
+      font-size: 5rem;
+      float: left;
+      margin: 10px 2px 0 0;
+    }
+
     h1 {
       padding-bottom: 2px;
       border-bottom: 1px dotted grey
