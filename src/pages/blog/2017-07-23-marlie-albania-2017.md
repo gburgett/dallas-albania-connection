@@ -2,7 +2,7 @@
 contentType: blog
 slug: marlie-albania-2017
 title: Memories of Elbasan
-date: 2017-07-23T12:00:00-0600
+date: 2018-05-11T12:00:00-0600
 published: true
 heroimage: /files/blog/2017/albania-ron-acord.jpg
 heroAttribution: Photo by Ron Acord (<a href="http://www.ronacord.com">ronacord.com</a>)
