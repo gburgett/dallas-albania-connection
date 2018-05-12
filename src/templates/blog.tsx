@@ -54,13 +54,17 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
       <Container fluid>
         {heroimage && 
           <Hero image={heroimage} heroAttribution={heroAttribution} >
-            <h1 className='display-3 title'>{title}</h1>
+            <h1 className='display-3 title'>
+              {author &&
+                <Author {...author} />}
+              {title}
+            </h1>
           </Hero>
         }
       </Container>
 
       <Container>
-        <div className='row'>
+        <div className='row blog-body'>
           <div className='d-none d-md-block col-md-2 blog-list'>
             { <BlogsPreview edges={blogs.edges} /> }
           </div>

@@ -297,6 +297,8 @@ blockquote {
 .blog {
   .title {
     margin-top: auto;
+    word-wrap: break-word;
+    max-width: 100%;
   }
 
   .post {
@@ -331,21 +333,30 @@ blockquote {
     display: flex;
     flex-direction: column;
     color: $light;
-    margin-top: -120px;
+    font-size: 1rem;
 
     > img {
       margin: 0 auto;
     }
   }
 
-  @include media-breakpoint-up(md) {
-  .author {
+  .blog-body .author {
     margin: 2em 2em 0.5em 0.5em;
     padding: 1em;
     background-color: $primary;
     border-radius: 20px;
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+  .hero-body .author {
+    display: none;
+  }
+  .blog-body .author {
+    display: flex;
   }
   }
+  
 }
 
 .post-list {
