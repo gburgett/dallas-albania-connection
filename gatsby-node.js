@@ -18,15 +18,21 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     if (contentType) {
       path = path || `${contentType}/${slug}`
     }
+
+    const context = {
+      id: node.id,
+      ...node.frontmatter
+    }
+    if (context.path) {
+      context['fm_path'] = context.path
+      delete(context.path)
+    }
       
-    console.log('creating page:', contentType, 'at', path)
+    console.log('creating page:', contentType, 'at', path, 'context', context)
     createPage({
       path: path,
       component: Path.resolve(`src/templates/${String(contentType || 'page')}.tsx`),
-      context: {
-        id: node.id,
-        ...node.frontmatter
-      } // additional data can be passed via context
+      context: context
     })
   }
 
