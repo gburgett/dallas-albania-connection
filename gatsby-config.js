@@ -85,7 +85,7 @@ module.exports = {
                     guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
                     author: edge.node.frontmatter.author.name,
                     custom_elements: [
-                      { "content:encoded": edge.node.html },
+                      { "content:encoded": edge.node.html.replace(/\"\/files\//g, `"${site.siteMetadata.siteUrl}/files/`) },
                       { "media:content":  { 
                         _attr: {
                           url: site.siteMetadata.siteUrl + edge.node.frontmatter.heroimage
