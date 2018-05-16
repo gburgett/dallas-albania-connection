@@ -304,14 +304,16 @@ blockquote {
   .post {
     padding-top: 2rem;
 
-    p::first-letter {
+    > p::first-letter,
+    > .nc-widgetPreview > p::first-letter {
       font-size: 1.1rem;
       margin-left: 1rem;
       text-transform: uppercase;
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
-    p:first-child::first-letter {
+    > p:first-child::first-letter,
+    > .nc-widgetPreview > :first-child::first-letter {
       font-size: 5rem;
       line-height: 5rem;
       float: left;
