@@ -1,29 +1,24 @@
 ---
 contentType: blog
-slug: marlie-albania-2017
 title: Memories of Elbasan
-date: 2018-05-11T12:00:00-0600
+slug: marlie-albania-2017
+date: '2018-05-11T12:00:00-0600'
 published: true
 heroimage: /files/blog/2017/albania-ron-acord.jpg
-heroAttribution: Photo by Ron Acord (<a href="http://www.ronacord.com">ronacord.com</a>)
+heroAttribution: 'Photo by Ron Acord (<a href="http://www.ronacord.com">ronacord.com</a>)'
 author:
   name: Marlie Austin
   photo: /files/blog/2017/marlie-avatar.jpg
-
 ---
-
 Nestled just above Greece and across the Adriatic sea from Italy is a country I’ve grown to love: Albania. Most Americans I talk to have never heard of Albania, and maybe you haven’t either. But let me tell you... it’s a country I’ll never forget. The people are warm and reserved yet welcoming of strangers, especially Americans. The food is a beautiful mix of Greek and Italian. I had gyros for lunch, and pizza/spaghetti for dinner. Albania is also less than one percent evangelical Christian. If you were to put all the Albanian Christians in AT&T stadium (where the Dallas Cowboys play), they would take up less than one-third of the seats in stadium. For the past five years, groups of people from my church (numbering as small as 3 and as big as 32) have been traveling to Albania to share the gospel. Last July was my second time being in Elbasan, a city just 45 minutes through the mountains from the capital.
- 
+
 Our team partnered with a ministry called Cru (formerly Campus Crusade for Christ) and we hosted a camp for high school students in the city. During the day our team met with students for coffee to get to know them better and share the gospel with them. In the evenings we had camp, during which the Albanian Cru staff would put on skits, organize games, and teach a Bible-based curriculum. Last year, my group of students were all believers. It was such an honor to spend a whole week with eight of the people who are part of the one percent in Albania. I loved hearing their stories, their struggles, their joys, their pain. It was an amazing experience getting to disciple them and be encouraged by their faith even in the face of persecution from friends and family members. We got lunch every day, took a ton of selfies, played cards, and even went to a park to play bumper cars. They even taught me how to play an Albanian board game. One afternoon the students wanted to go somewhere and sing worship songs. So my co-leader and the students and I went to a room above the coffees shop where we have camp to sing songs together. It was a beautiful experience to realize that we live 5000 miles apart but worship the same God. To my Albanian friends: If you are reading this, thank you so much for making Albania feel like home. I had so much fun with each of you, and your love for the Lord inspired me. I miss you guys every day and can’t wait to see you guys next time.
- 
+
 That year I thought that, because I was in a group of believers (who were already familiar with the gospel), I wouldn't get a chance to share the gospel with anyone new that week. That was, until one of the Albanian Cru staff invited me to coffee with a student she met earlier in the day. The three of us girls sat down at a small round table. We ordered coffee and began chatting. My Cru friend helped to translate as the student asked me questions about America. I knew that time was precious, so I wanted to turn the conversation towards faith. I began to talk about how, in Dallas, there are churches EVERYWHERE. Just down the road from where I live are three churches on one street! My Cru friend asked the student about her beliefs. She said she was a Muslim, and that she had fasted for Ramadan and that her relatives had been to Mecca. We asked if we could share our testimonies with her. And so I did. At some point while sharing my testimony, I felt like I had a kind of out-of-body experience. I thought to myself, “Here I am, a girl born and raised in Dallas, Texas sharing the story of God’s grace towards me and His redemption in my life to a devout Muslim, in the middle of Elbasan, Albania, and it's being translated into Albanian.” I got straight up chills, yo. Anyways, so I shared my story with her, then my Cru friend shared her story in Albanian. When we asked if we could share the gospel with her, the student said "yes" because she had never heard it before. So, we walked through a pamphlet with her (the Four Spiritual Laws).
- 
+
 While my Cru friend was talking, I was praying “God open her heart, open her ears. Open her heart, open her ears.” Over, and over and over. On the table, there was a glass of water. When, in the pamphlet, we got to the part about sin, God gave me the idea to pour some of my coffee in the cup of water... which turned into a murky brown color. I explained to her that this is what sin is like. Gross, dirty... deserves to be thrown out. I couldn’t clean the dirty water on my own. I put some germ-x in there, and that didn't work. I tried wiping the outside with a napkin but that didn’t work. So, we were hopeless, dead in our trespasses. But God loved us enough to make a way for us to be with Him. Later on, when we talked about how accepting Christ is a decision you make, I mentioned the dirty cup of water again and said, “If I want a new glass of water, I ask the Waiter, right, and He’ll bring me a new glass. The same with Christ, if you ask Him, He will make you new.”
- 
+
 My Cru friend asked the student if she would like to make that decision to accept Christ. And she said "yes" and we prayed for her and with her as she gave her life to Christ. Below is a quick photo I took of our feet as she was praying. The travel, the stress of fundraising, the training meetings, the stress of travel, the spiritual warfare leading up to the trip, all became worth it in that moment. Please pray for her!
 ![Marlie & friends shoes](/files/blog/2017/marlie_2017_shoes.jpg)
- 
-For those who have supported me and prayed for me, thank you so much for partnering with me on the mission to Albania! I hope that this gives you a small picture of how God is working not only Albania but in my life. Thank you.
 
-
-
+For those who have supported me and prayed for me, thank you so much for partnering with me on the mission to Albania! I hope that this gives you a small picture of how God is working not only Albania but in my life. _Thank you._
