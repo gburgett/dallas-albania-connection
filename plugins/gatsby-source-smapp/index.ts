@@ -26,19 +26,21 @@ export async function sourceNodes(
 
 
   let downloaded = []
-  try {
-    downloaded = await download({
-        dataDir,
-        username,
-        password
-      },
-      cookies,
-      saveCookies
-    )
-    // remove "undefined"
-    downloaded = downloaded.filter((elem) => elem)
-  }catch(e) {
-    console.error(chalk.red(`Downloading new CSV files failed!`), e)
+  if (process.env.NODE_ENV === `production`) {
+    try {
+      downloaded = await download({
+          dataDir,
+          username,
+          password
+        },
+        cookies,
+        saveCookies
+      )
+      // remove "undefined"
+      downloaded = downloaded.filter((elem) => elem)
+    }catch(e) {
+      console.error(chalk.red(`Downloading new CSV files failed!`), e)
+    }
   }
 
   // Add existing csv files in directory
