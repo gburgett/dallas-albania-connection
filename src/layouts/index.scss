@@ -328,6 +328,25 @@ blockquote {
     img {
       max-width: 100%;
     }
+
+  
+    .callout {
+      float: right;
+      border: 1px solid $secondary;
+      width: 50%;
+      border-radius: 16px;
+      padding: 8px;
+      margin: 10px 0 10px 10px;
+      color: $white;
+      background-color: $info;
+      box-shadow: -6px -6px 6px 0 $secondary;
+    }
+
+    @include media-breakpoint-down(sm) {
+      .callout {
+        width: 100%;
+      }
+    }
   }
 
   .author {
@@ -358,7 +377,6 @@ blockquote {
     display: flex;
   }
   }
-  
 }
 
 .post-list {
