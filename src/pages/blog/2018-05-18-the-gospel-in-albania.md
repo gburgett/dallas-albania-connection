@@ -10,7 +10,6 @@ author:
   gravatar: df4465d02ee102eafa27c948dccd8e4d
   name: Gordon Burgett
 ---
-
 Albania is a very unique place.  The openness toward Americans, pride in their religious tolerance, and history of radical communist atheism make it very easy to have a conversation about faith.  There's an interest and hunger for spiritual discussions that provide ample opportunity to experience the unique blend of Islam, Orthodox Christianity, Secular Materialism, and Paganism that exists in various parts of the country.  Understanding that blend, and how it drives their culture and is driven by their history, can open up amazing opportunities to sharing the Gospel.
 
 I once heard someone describe the culture of Haiti as 60% Catholic, 30% Protestant, 100% Voodoo.  That pithy phrase gives insight into the fact that so many (even of professing Christians) turn to the local witch doctor for power over things they can't control.  For Albania, we could almost give a similar description: **70% Muslim, 30% Christian (Catholic & Orthodox), 100% Atheist.**
@@ -36,7 +35,6 @@ Many of the Cru staff in Albania have experienced this union of faith with cultu
 > daughter against her mother,
 > a daughter-in-law against her mother-in-law.  A man’s 
 > enemies will be the members of his own household.' "
-> <footer class="blockquote-footer">Matthew 10:34-36</footer>
 
 <span class="callout">Tip #3: Be sensitive to what it might cost them.  Ask them to trust Christ, not to become a Christian.</span>
 Albanians experience the truth of this claim by Jesus in a way that, as Americans, we simply can't understand.  For Americans, faith and cultural identity are not linked.  I am an American regardless of whether I am Christian, Muslim, Atheist, Buddhist, whatever.  But an Albanian often will be judged by what village he or she is from.  This will identify their family, heritage, religion, social status, and many other things. Albanians are also very proud of their heritage, and having a son or daughter who converts from their religion can seem like they are spurning that heritage and bringing shame on the whole family.
@@ -47,26 +45,24 @@ Albania is an honor/shame culture.  This stands in contrast to America's guilt/i
 to bring shame on a Muslim family, and shame on the individual.
 
 <span class="callout">Tip #4: Show them that Christ wants to honor them far beyond any shame that men could heap on them.</span>
-When sharing the gospel in Albania, it's important to recognize the honor/shame dynamic in your conversations and to contextualize the Gospel for them.  We Americans often talk about the Gospel in legal terms: God "cancelled our debt" or Jesus "took the punishment we deserve."  But Jesus also took the *shame* we deserve. Our sins make us shameful creatures, not worthy of honor... worthy only to be turned away from
+When sharing the gospel in Albania, it's important to recognize the honor/shame dynamic in your conversations and to contextualize the Gospel for them.  We Americans often talk about the Gospel in legal terms: God "cancelled our debt" or Jesus "took the punishment we deserve."  But Jesus also took the _shame_ we deserve. Our sins make us shameful creatures, not worthy of honor... worthy only to be turned away from
 in disgust.  On the Cross, Jesus was shamed in our place.  He hung naked and endured people spitting on him, turning their backs on him, mocking him.  He was ostracized and condemned with the lowest of the low.
 
 > He was despised and rejected by mankind, a man of suffering, and familiar with pain.
 > Like one from whom people hide their faces he was despised, and we held him in low esteem.
-> <footer class="blockquote-footer">Isaiah 53:3</footer>
 
-  And yet, God raised Him from the dead and bestowed honor and glory on Him.  He freely invites us into that honorable place through adoption as sons and daughters of the King.  We make that same transition from low-down, dirty, worthless sinner to raised-up, glorified and *honored* children of the King.
+  And yet, God raised Him from the dead and bestowed honor and glory on Him.  He freely invites us into that honorable place through adoption as sons and daughters of the King.  We make that same transition from low-down, dirty, worthless sinner to raised-up, glorified and _honored_ children of the King.
 
 > ...He raised Christ from the dead and seated him at his right hand in the heavenly realms,
 > far above all rule and authority, power and dominion, and every name that is invoked, not
 > only in the present age but also in the one to come.
 > ...And God raised us up with Christ and seated us with him in the heavenly realms in Christ Jesus
-> <footer class="blockquote-footer">Ephesians 1:20-21, 2:6</footer>
 
 ## Structures of Authority
 
 Relevant in any honor/shame culture, but especially in Albania, is the cultural value of submission to authority.  In America we are so individualistic that we have a tendency to rebel against authority.  Not so in Albania--it's Haram (forbidden) and brings shame--to go against your father's authority.  This is more prevalent in the Muslim regions, and in the Muslim world in general.
 
-[Nabeel Qureshi in his book Seeking Allah Finding Jesus][seeking allah finding jesus]
+[Nabeel Qureshi in his book Seeking Allah Finding Jesus](https://www.amazon.com/gp/product/0310515025)
 describes a point in his life in which he had heard all the best arguments that Christians had to offer, and was beginning to be convinced.  Yet, he still felt bound to his father and was certain that his father would have better answers.  One day he brought his father to the discussion group, and was shocked and dismayed when his father began giving the already-debunked Islamic answers that Nabeel already knew.  His trust in his father's absolute authority was broken.
 
 <span class="callout">Tip #5: Without questioning the character of their chosen
@@ -93,7 +89,7 @@ far more important to reaching an Albanian is to tell a good story that conveys
 truth.  All the facts in the world won't convince someone if you can't contextualize
 them in a narrative that touches their heart.
 
-Back home in America, however, we as American Christians are on our home turf!  The Bible has a ton of great stories, and Jesus is the most compelling character ever to exist.  When discussing faith with an Albanian, you might come up against some objections.  Much better than arguing your way around those objectives is to share stories of someone in a similar situation, and how that played out for them in the Bible.  Examples could be Jonah, who ran from God.  Or Peter, who was proud and had to be humbled by his denying Christ three times.  Or the woman with the shameful flow of blood for many years, to whom Jesus showed kindness and said "Your faith has healed you." Ask them where they see themselves in the story.
+In the arena of storytelling, we as Christians are playing on our home turf!  The Bible has a ton of great stories, and Jesus is the most compelling character ever to exist.  When discussing faith with an Albanian, you might come up against some objections.  Much better than arguing your way around those objections is to share stories of someone in a similar situation, and how that played out for them in the Bible.  Examples could be Jonah, who ran from God.  Or Peter, who was proud and had to be humbled by his denying Christ three times.  Or the woman with the shameful flow of blood for many years, to whom Jesus showed kindness and said "Your faith has healed you." Ask them where they see themselves in the story.
 
 You are also armed with your story.  And your story, properly wielded, is a weapon.
 They want to know why you came to Albania.  They want to know why you used the
@@ -106,18 +102,11 @@ God is with you!
 
 > Have I not commanded you? Be strong and courageous. Do not be afraid; do not be
 > discouraged, for the LORD your God will be with you wherever you go."
-> <footer class="blockquote-footer">Joshua 1:9</footer>
 
 Here is some more material on this topic:
 
-* [Islam in Albania Cheat Sheet][cheat sheet]
-* [The 3D Gospel: Ministry in Guilt, Shame, and Fear Cultures][the 3d gospel]
-* [HonorShame.com][honorshame.com]
-* [Seeking Allah Finding Jesus by Nabeel Qureshi][seeking allah finding jesus]
-* [The Albanians: A Modern History][albanian history]
-
-[cheat sheet]: /files/islam_in_albania_cheat_sheet.pdf
-[honorshame.com]: http://honorshame.com/
-[the 3d gospel]: https://www.amazon.com/3D-Gospel-Ministry-Guilt-Cultures/dp/0692338012
-[seeking allah finding jesus]: https://www.amazon.com/gp/product/0310515025
-[albanian history]: https://www.amazon.com/Albanians-Modern-History-Miranda-Vickers/dp/1780766955
+* [Islam in Albania Cheat Sheet](/files/islam_in_albania_cheat_sheet.pdf)
+* [The 3D Gospel: Ministry in Guilt, Shame, and Fear Cultures](https://www.amazon.com/3D-Gospel-Ministry-Guilt-Cultures/dp/0692338012)
+* [HonorShame.com](http://honorshame.com/)
+* [Seeking Allah Finding Jesus by Nabeel Qureshi](https://www.amazon.com/gp/product/0310515025)
+* [The Albanians: A Modern History](https://www.amazon.com/Albanians-Modern-History-Miranda-Vickers/dp/1780766955)
