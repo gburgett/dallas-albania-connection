@@ -3,7 +3,7 @@ contentType: blog
 title: The Gospel in Albania
 slug: 2018-05-the-gospel-in-albania
 date: '2018-05-18'
-published: false
+published: true
 heroimage: /files/blue-sky-buildings-daylight-205334.jpg
 heroAttribution: Photo by revac films & photography from Pexels
 author:
