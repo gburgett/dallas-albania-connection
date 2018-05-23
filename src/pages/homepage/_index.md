@@ -17,6 +17,7 @@ articles:
   - path: /2015
   - path: /2014
 featuredPosts:
+  - slug: 2018-05-the-gospel-in-albania
   - slug: marlie-albania-2017
   - slug: support-raising-101
 ---
