@@ -35,7 +35,9 @@ const GroupedArticles = ({ cards }: { cards: Array<IArticle> }) => {
 }
 
 const PostList = ({ posts}: { posts: IPost[] }) => {
-  return <ul className="post-list">
+  return <div>
+    <h3>Blog Posts</h3>
+    <ul className="post-list">
       {posts.map(p => {
         const {heroimage, author} = p.frontmatter
         let img = heroimage
@@ -69,6 +71,7 @@ const PostList = ({ posts}: { posts: IPost[] }) => {
           </a>)
       })}
     </ul>
+    </div>
 }
 
 const IndexPage = ({ data }: IPageContext<IPageData>) => {
@@ -81,7 +84,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .filter(n =>  n.index >= 0)
     .sort((a, b) => a.index - b.index)
 
-  const { feature, hero } = data.root.frontmatter
+  const { feature, hero, postsToShow, } = data.root.frontmatter
   const {title, siteUrl, signupFormUrl} = data.site.siteMetadata
 
   let yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
@@ -89,13 +92,16 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .map(edge => edge.node)
     .filter(node => Date.parse(node.frontmatter.date) > yesterday)
   
-  const featuredPosts = (data.root.frontmatter.featuredPosts || []).map(p => p.slug);
-  const posts = data.blogs && data.blogs.edges.map(edge => ({
+  const featuredPostSlugs = (data.root.frontmatter.featuredPosts || []).map(p => p.slug);
+  const posts = (data.blogs || { edges: [] }).edges.map(edge => ({
       ...edge.node,
-      index: featuredPosts.indexOf(edge.node.frontmatter.slug)
+      index: featuredPostSlugs.indexOf(edge.node.frontmatter.slug)
     }))
-    .filter(n => n.index >= 0)
-    .sort((a, b) => a.index - b.index)
+  const featuredPosts = posts.filter(n => n.index >= 0).sort((a, b) => a.index - b.index)
+  const latestPosts = posts.filter(n => n.index < 0).slice(0, Math.max(postsToShow - featuredPosts.length, 0))
+  console.log(postsToShow, featuredPosts.length, latestPosts)
+  featuredPosts.push(...latestPosts)
+  const remainingPosts = posts.filter(n => n.index < 0).slice(latestPosts.length)
 
   return (<Container fluid className="homepage">
     <Helmet title={title} titleTemplate={undefined}>
@@ -117,8 +123,11 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
       </Col>
       <Col xs={12} md={9}>
         <GroupedArticles cards={cards} />
-        {posts && posts.length > 0 && <h3>Blog Posts</h3>}
-        {posts && posts.length > 0 && <PostList posts={posts} />}
+        {featuredPosts.length > 0 && <PostList posts={featuredPosts} />}
+        {postsToShow > 0 && remainingPosts.length > 0 && <h4><a href={`/blog/${remainingPosts[0].frontmatter.slug}`}>
+          {remainingPosts.length} more {remainingPosts.length > 1 ? 'posts' : 'post'}
+          <i style={{paddingLeft: '1em'}} className="fa fa-arrow-right"></i>
+          </a></h4>}
       </Col>
     </Row>
   </Container>)
@@ -144,6 +153,7 @@ export interface IPageData {
       featuredPosts: {
         slug: string
       }[]
+      postsToShow: number
     }
   },
   articles: {
@@ -217,6 +227,7 @@ query IndexQuery {
       featuredPosts {
         slug
       }
+      postsToShow
     }
   }
   articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
