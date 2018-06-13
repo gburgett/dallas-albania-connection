@@ -1,16 +1,15 @@
 ---
 contentType: blog
-slug: support-raising-101
 title: Support Raising 101
-date: 2018-03-21T12:00:00-0600
+slug: support-raising-101
+date: '2018-03-21T12:00:00-0600'
+published: true
 heroimage: /files/writing-a-letter-pexels-photo-211291.jpeg
 heroAttribution: Photo by John-Mark Smith from Pexels
-published: true
 author:
-  name: Gordon Burgett
   gravatar: df4465d02ee102eafa27c948dccd8e4d
+  name: Gordon Burgett
   photo: ''
-
 ---
 
 ## So you're going on a summer project?
@@ -149,3 +148,5 @@ If you're willing, consider writing a blog post here on [teamalbania.org](http:/
 * Your participant packet is a great resource - don't drop it on your desk and forget about it!
 * [CRU Fundraising article](https://www.cru.org/us/en/opportunities/mission-trips/summer/learn/i-need-to-raise-funds.html)
 * Reach out to your team leaders! They'll be happy to answer questions.
+
+_ - Gordon Burgett is a Team Leader with the Team Albania ministry, focusing on young professionals. He has been leading discipleship trips to Albania since 2013. For two years (2015-2017), Gordon lived in Tirana, Albania as a member of Cru's STINT program, where he focused on developing the young adults/professionals movement._
