@@ -149,4 +149,4 @@ If you're willing, consider writing a blog post here on [teamalbania.org](http:/
 * [CRU Fundraising article](https://www.cru.org/us/en/opportunities/mission-trips/summer/learn/i-need-to-raise-funds.html)
 * Reach out to your team leaders! They'll be happy to answer questions.
 
-_ - Gordon Burgett is a Team Leader with the Team Albania ministry, focusing on young professionals. He has been leading discipleship trips to Albania since 2013. For two years (2015-2017), Gordon lived in Tirana, Albania as a member of Cru's STINT program, where he focused on developing the young adults/professionals movement._
+_Gordon Burgett is a Team Leader with the Team Albania ministry, focusing on young professionals. He has been leading discipleship trips to Albania since 2013. For two years (2015-2017), Gordon lived in Tirana, Albania as a member of Cru's STINT program, where he focused on developing the young adults/professionals movement._
