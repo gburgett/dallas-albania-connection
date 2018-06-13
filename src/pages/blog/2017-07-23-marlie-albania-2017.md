@@ -22,3 +22,5 @@ My Cru friend asked the student if she would like to make that decision to accep
 ![Marlie & friends shoes](/files/blog/2017/marlie_2017_shoes.jpg)
 
 For those who have supported me and prayed for me, thank you so much for partnering with me on the mission to Albania! I hope that this gives you a small picture of how God is working not only Albania but in my life. _Thank you._
+
+_ - Marlie Austen is a Team Leader with the Team Albania ministry. She has been taking discipleship trips to Albania since 2016 and leading others back there since 2017._
