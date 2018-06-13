@@ -111,4 +111,4 @@ Here is some more material on this topic:
 * [Seeking Allah Finding Jesus by Nabeel Qureshi](https://www.amazon.com/gp/product/0310515025)
 * [The Albanians: A Modern History](https://www.amazon.com/Albanians-Modern-History-Miranda-Vickers/dp/1780766955)
 
-_ - Gordon Burgett is a Team Leader with the Team Albania ministry, focusing on young professionals. He has been leading discipleship trips to Albania since 2013. For two years (2015-2017), Gordon lived in Tirana, Albania as a member of Cru's STINT program, where he focused on developing the young adults/professionals movement._
+_Gordon Burgett is a Team Leader with the Team Albania ministry, focusing on young professionals. He has been leading discipleship trips to Albania since 2013. For two years (2015-2017), Gordon lived in Tirana, Albania as a member of Cru's STINT program, where he focused on developing the young adults/professionals movement._
