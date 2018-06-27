@@ -1,7 +1,7 @@
 ---
 contentType: event
-title: Week 2 Team Departs!
-date: 2018-07-07T14:19:39-05:00
+title: Week 2 Teams Depart!
+date: 2018-07-07T19:19:39.000Z
 link: ''
 ---
-The Korça High School team departs to Albania! The team will return to Dallas on Monday, July 16.
+Korça High School team departs to Albania, and Poland Regen team departs for Poland! The teams will return to Dallas on Monday, July 16.
