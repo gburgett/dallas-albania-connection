@@ -38,4 +38,4 @@ When will the next LeaderImpact Conference happen? I'm not sure but I hope to ge
 
 ![Leader Impact Team](/files/LI_team.jpg)
 
-Will Noll is a Director of the Team Albania ministry and has been discipling/sending mission teams to Eastern Europe since 2013. In Albania he has been a key part of high school ministry in Tirana and Korça. Will is currently focused on developing the young adults/professionals ministry in Albania, as well as launching a Christ-centered 12-step recovery ministry in Poland. Will resides in Dallas, Texas. 
+_Will Noll is Director of the Team Albania ministry and has been discipling/sending mission teams to Eastern Europe since 2013. In Albania he has been a key part of high school ministry in Tirana and Korça. Will is currently focused on developing the young adults/professionals ministry in Albania, as well as launching a Christ-centered 12-step recovery ministry in Poland. Will resides in Dallas, Texas._
