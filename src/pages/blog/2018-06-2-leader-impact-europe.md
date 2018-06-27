@@ -1,37 +1,41 @@
 ---
 contentType: blog
-title: Leader Impact Europe
+title: What I Learned at Cru's LeaderImpact Conference
 slug: 2018-06-2-leader-impact-europe
 date: '2018-06-02'
 published: false
 heroimage: /files/LI_boats.jpg
 author:
-  photo: /files/aw.noll.640x480.jpg
   name: Will Noll
+  photo: /files/aw.noll.640x480.jpg
 ---
+One of the greatest things that I have learned this year about international missions is the diversity of ministries all over the world that are doing significant work for the Kingdom. During May 18-22, 2018, I had an opportunity to witness God's creativity at work through the Campus Crusade (Cru) LeaderImpact Conference in Hungary. The conference took place in Siófok, on the southern coast of Lake Balaton, Europe's largest Lake.
 
-One of the greatest things that I have learned this year about international missions is the variety of ministries all over the world that are doing significant work for the Kingdom.  During May 18-22, 2018, I was able to witness God's creativity at work through Campus Crusade's Leader Impact Conference in Siófok, Hungary on the southern coast of Lake Balaton - Europe's largest Lake. 
-
-The vision of Leader Impact: 
+LeaderImpact is a group within Cru that seeks to leverage the contributions of leaders to influence people locally. The vision of LeaderImpact states:  
 
 > "We believe God puts leaders in positions of influence in all segments of society and in all the nations of the world to fulfill His purpose. We exist to encourage and empower these leaders to step into their God-given role as a transformational leader—to experience life to the full, not satisfied by status or success, but by stepping deeply into the call of God’s plan that was uniquely designed for them.  As these leaders join with others, integrate their faith into their home and work life and form a vision for their city, we believe that God will use us to transform our cities, nations, and ultimately the world for Christ."
 
-Leader Impact is currently in 8 countries with plans eventually to be in 20 countries and 40 cities in the next few years!
+LeaderImpact is currently in 8 countries with plans eventually to be in 20 countries and 40 cities in the next few years. 
 
 ![Session photo 1](/files/LI_session_1.jpg)
 
-During my time at the Leader Impact Conference, I got to meet leaders from Young Professional and Business Leader ministries from all over Eastern and Central Europe.  Those country teams present included Albania (2), Poland, Ukraine, Moldova, Czech Republic, Macedonia, Romania (3), and of course the Cru Leadership team from Hungary.  Partnered with each team were "organizational partners" from non-Cru organizations that were tasked with helping the teams with Dreaming, Designing, and Doing.  Each day was devoted to one of those themes with the ultimate goal at the end of conference of each team being able to do the following: 1) know at what development stage their organization currently resides 2) have concrete steps in place for where they want to go next and 3) understanding of how to take those steps.
+During my time at the LeaderImpact Conference I had the opportunity got to meet leaders from young professional and business leader ministries from across Eastern and Central Europe. The country teams present included Albania, Poland, Ukraine, Moldova, Czech Republic, Macedonia, Romania, and the Cru Leadership team from Hungary. Partnered with each team were “organizational partners” from non-Cru organizations that were tasked with helping the teams with (1) dreaming, (2) designing, and (3) doing. 
+
+Each day was devoted to one of these themes, with the end-conference goal that each team be able to do the following: (1) know at what development stage their organization currently resides; (2) have concrete steps in place for where they want to go next; and (3) understand how to take those steps.
+
 
 ![Session photo 2](/files/LI_session_2.jpg)
 
 My top three takeaways from the conference are as follows:
 
-1. God is incredibly creative in how he is using the various professional ministries all over Eastern and Central Europe.  The stories of life change from business leaders in each of these countries kept coming one after another.  I heard several specific examples of high level business professionals in multiple countries coming to Christ and that having a transformational effect on everyone around them.
+1.	God is incredibly creative in how he is using the various professional ministries all over Eastern and Central Europe. The stories of life change from business leaders in each of these countries kept coming… one after another. I heard several specific examples of high-level business professionals in multiple countries coming to Christ, which then had a transformational effect on everyone around them.
 
-2. The global body of Christ fulfills it purpose by meeting the needs of others, especially those within the church.  Two of the teams that I am most closely aligned with, the Albania and Poland teams, were able to sit down with each other and talk about how to replicate the success that the Albania team has experienced in the Young Professionals ministry.  In turn, the Poland team was able to ask questions and get detailed answers about what their next steps could be.
+2.	The global body of Christ fulfills its purpose by meeting the needs of others, especially those within the church. Two of the Europe teams that I am most closely aligned with—the Cru Albania and Cru Poland teams—had opportunity to collaborate and share ideas. The ministry area of young professionals has seen success in Albania. Here, the Poland team asked questions about what their next steps could be in replicating that success in their own country. 
 
-3. God is greater than culture and yet specifically uses cultural differences to meet needs and execute His plan for redeeming the earth.  Some of the cultures represented at the weekend had very different organizational styles than others.  Some cultures are highly organizationally focused while others are more relational.  And yet, each one needs the other to accomplish God's plan for the Kingdom.  A great example of this is how God is using our American team from Watermark Church and the Cru Albania team.  Americans culturally tend to be organizationally oriented and yet many times lack relational capability.  I certainly can fall into that category as I can be more interested in getting my to-do list accomplished than loving the people God has entrusted around me.  When we go to Albania or host our Albanian friends, I get reminded that people are not projects and that our God is incredibly relational.  I also get reminded that coffee is for much more than energy in the morning, but a convenient excuse for bonding with others which helps us be more effective in communicating the gospel and loving people as Christ intended.  In turn, our Albanian friends get tips from us on how to infuse more organizational capability onto their teams allowing them to be more effective.  Its truly a win-win situation orchestrated by God.
+3.	God moves across cultural boundaries, and yet intentionally uses cultural differences to meet needs and execute His plan for redeeming the earth. The cultures represented in Siófok had very different organizational styles. Some cultures are highly organizationally focused while others are more relational. And yet, they need and sharpen toward accomplishing God's plan for the Kingdom. A great example of this is how God is using our American team from Watermark Community Church and the Cru Albania team. Americans culturally tend to be organizationally oriented, yet often lack relational capability. I certainly fall into this when I become too focused on my to-do list, and forget to love the people God has entrusted around me. When we go to Albania (or host our Albanian friends in Dallas), I am always reminded that people are not projects and that our God is incredibly relational. In Albania I’m reminded that coffee is for much more than a beverage, but a convenient opportunity for bonding with others, which ultimately helps us to communicate (and demonstrate) the gospel. In turn, our Albanian friends have learned from us about how to infuse more organizational capability into their teams, allowing them to be more effective. It’s truly a win-win situation orchestrated by God’s use of cultural differences.
 
-When will the next Leader Impact Conference happen?  I'm not sure but I hope to get another invite and I can't wait to see what God is going to do next!
+When will the next LeaderImpact Conference happen? I'm not sure but I hope to get another invite, and I can't wait to see what God is going to do next!
 
 ![Leader Impact Team](/files/LI_team.jpg)
+
+Will Noll is a Director of the Team Albania ministry and has been discipling/sending mission teams to Eastern Europe since 2013. In Albania he has been a key part of high school ministry in Tirana and Korça. Will is currently focused on developing the young adults/professionals ministry in Albania, as well as launching a Christ-centered 12-step recovery ministry in Poland. Will resides in Dallas, Texas. 
