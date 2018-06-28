@@ -7,7 +7,7 @@ published: false
 heroimage: /files/LI_boats.jpg
 author:
   name: Will Noll
-  photo: /files/aw.noll.640x480.jpg
+  photo: /files/will-noll.png
 ---
 One of the greatest things that I have learned this year about international missions is the diversity of ministries all over the world that are doing significant work for the Kingdom. During May 18-22, 2018, I had an opportunity to witness God's creativity at work through the Campus Crusade (Cru) LeaderImpact Conference in Hungary. The conference took place in Siófok, on the southern coast of Lake Balaton, Europe's largest Lake.
 
