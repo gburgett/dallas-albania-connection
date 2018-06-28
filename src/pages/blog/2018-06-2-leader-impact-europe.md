@@ -3,7 +3,7 @@ contentType: blog
 title: Leader Impact 2018
 slug: 2018-06-2-leader-impact-europe
 date: '2018-06-02'
-published: false
+published: true
 heroimage: /files/LI_boats.jpg
 author:
   name: Will Noll
