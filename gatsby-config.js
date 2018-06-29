@@ -79,11 +79,12 @@ module.exports = {
               return allMarkdownRemark.edges
                 .filter(edge => edge.node.frontmatter.published !== false)
                 .map(edge => {
-                  console.log('rss',edge.node.frontmatter.slug)
+                  const { slug, author, heroimage } = edge.node.frontmatter
+                  console.log('rss', slug)
                   return Object.assign({}, edge.node.frontmatter, {
-                    url: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
-                    guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.frontmatter.slug,
-                    author: edge.node.frontmatter.author.name,
+                    url: site.siteMetadata.siteUrl + '/blog/' + slug,
+                    guid: site.siteMetadata.siteUrl + '/blog/' + slug,
+                    author: author ? author.name : null,
                     custom_elements: [
                       { "content:encoded": edge.node.html.replace(/\"\/files\//g, `"${site.siteMetadata.siteUrl}/files/`) },
                       { "media:content":  { 
