@@ -54,8 +54,8 @@ const PostList = ({ posts}: { posts: IPost[] }) => {
         return (
           <a href={`/blog/${p.frontmatter.slug}`}>
           <li className="post">
-            <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
-            </div>
+            {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
+            </div>}
             <div className="title">
               <h4>{p.frontmatter.title}</h4>
               {author && 
