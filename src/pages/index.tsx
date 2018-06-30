@@ -52,13 +52,13 @@ const PostList = ({ posts}: { posts: IPost[] }) => {
         }
 
         return (
-          <a href={`/blog/${p.frontmatter.slug}`}>
+          <a key={p.frontmatter.slug} href={`/blog/${p.frontmatter.slug}`}>
           <li className="post">
             {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
             </div>}
             <div className="title">
               <h4>{p.frontmatter.title}</h4>
-              {author && 
+              {author &&
                 <span className="body">by {author.name}</span>}
             </div>
             <div className="teaser">
@@ -91,7 +91,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const events = data.events.edges
     .map(edge => edge.node)
     .filter(node => Date.parse(node.frontmatter.date) > yesterday)
-  
+
   const featuredPostSlugs = (data.root.frontmatter.featuredPosts || []).map(p => p.slug);
   const posts = (data.blogs || { edges: [] }).edges.map(edge => ({
       ...edge.node,
