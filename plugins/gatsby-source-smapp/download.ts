@@ -65,10 +65,10 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
     let resp = await request.get('https://smapp.cru.org/admin/reports/mpd_summary')
     
     let $ = cheerio.load(resp.body)
-    if(resp.url.match(/signin/) || $('#login_form').length > 0)
+    if(resp.url.match(/signon/) || $('#login_form').length > 0)
     {
       /** sign in if necessary */
-      resp = await signIn($)
+      resp = await signIn($, resp.request)
       $ = cheerio.load(resp.body)
     }
 
@@ -97,14 +97,15 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
   }
 
   /** execute the sign in POST request and set session cookies */
-  async function signIn($: CheerioStatic) {
+  async function signIn($: CheerioStatic, req: requestLib.Request) {
     // do the sign in
     let post_data = {}
     $('#login_form input').each((i, el) => post_data[el.attribs['name']] = (el.attribs['value'] || 'unknown' ))
     post_data['username'] = args.username
     post_data['password'] = args.password
   
-    let action = 'https://signin.relaysso.org' + $('#login_form').attr('action')
+    let action = $('#login_form').attr('action')
+    action = action ? req.host + action : req.href
     const formData = querystring.stringify(post_data);
     const contentLength = formData.length;
   
@@ -112,12 +113,13 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
           { 
             headers: {
               'Content-Length': contentLength,
-              'Content-Type': 'application/x-www-form-urlencoded'
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'User-Agent': 'teamalbania.org smapp download script'
             },
             body: formData
           })
 
-    if (resp.request.uri.href.match(/signin/)) {
+    if (resp.request.uri.href.match(/signon/)) {
       const $ = cheerio.load(resp.body)
 
       throw new Error(`Unable to sign in as user '${args.username}'!\n\tOn page ${resp.request.uri.href}\n\t${$('#status').text()}`)
