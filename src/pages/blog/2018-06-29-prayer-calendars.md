@@ -4,6 +4,7 @@ title: 2018 Prayer Calendars
 slug: 2018-06-29-prayer-calendars
 date: '2018-06-29'
 published: true
+heroimage: /files/2018-tirana-hs-prayer-calendar-thumbnail.jpg
 ---
 
 # 
