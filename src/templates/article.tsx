@@ -1,16 +1,15 @@
 import * as React from 'react'
-import { Row, Col, Container, Card, CardTitle, CardGroup, CardBody } from 'reactstrap'
+import { Container } from 'reactstrap'
 import Helmet from 'react-helmet'
-import * as graphql from 'graphql'
-import { basename } from 'path'
-import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
 
 import Hero from '../components/hero/Hero'
 import Feature, {IFeatureProps} from '../components/Feature'
 import { ITeamRosterProps, TeamRoster, ICollatedSmappData } from '../components/roster';
 import { ISmappExportFields, collateByDesignationNumber } from '../components/roster/support';
+import { withLayout } from '../components/layout';
 
-export default function Template ({ data }: IPageContext<ITemplateData>) {
+function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, smappExport } = data
   const { heroimage, title, feature, roster } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
@@ -52,6 +51,8 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
     </div>
   )
 }
+
+export default withLayout(Template)
 
 export interface ITemplateData {
   site: ISite,

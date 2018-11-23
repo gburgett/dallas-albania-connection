@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Row, Col } from 'reactstrap'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 export interface ISitemapFields {
   frontmatter: {

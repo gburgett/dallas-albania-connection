@@ -1,13 +1,11 @@
 import * as React from 'react'
-import { Row, Col, Container, Card, CardTitle, CardGroup, CardBody } from 'reactstrap'
+import { Container } from 'reactstrap'
 import Helmet from 'react-helmet'
-import * as graphql from 'graphql'
-import { basename } from 'path'
-import Link from 'gatsby-link'
+import { graphql } from 'gatsby'
 
 import Hero from '../components/hero/Hero'
-import Feature, {IFeatureProps} from '../components/Feature'
 import Author from '../components/author'
+import { withLayout } from '../components/layout';
 
 const BlogsPreview = (props: { edges: { node: IBlogPreviewData }[] }) => {
   const edges = props.edges.filter(e => {
@@ -31,7 +29,7 @@ const BlogPreview = (node: IBlogPreviewData) => (
   </a>
 )
 
-export default function Template ({ data }: IPageContext<ITemplateData>) {
+function Template ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, blogs } = data
   const { heroimage, heroAttribution, title } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
@@ -80,6 +78,8 @@ export default function Template ({ data }: IPageContext<ITemplateData>) {
     </div>
   )
 }
+
+export default withLayout(Template)
 
 export interface ITemplateData {
   site: ISite,

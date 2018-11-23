@@ -1,14 +1,14 @@
 import * as React from 'react'
-import { Row, Col, Container, Card, CardGroup, CardImg, CardDeck, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
-import Link from 'gatsby-link'
-import * as graphql from 'graphql'
+import { Row, Col, Container, Card, CardGroup, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
+import { Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Hero from '../components/hero/Hero'
 import Feature, {IFeatureProps} from '../components/Feature'
-import Author from '../components/author'
 import { Summary as EventSummary } from '../events/summary'
 import { IEventFields } from '../events';
+import { withLayout } from '../components/layout';
 
 const Article = (article: IArticle) => (
   <Card style={{marginBottom: 10}} key={article.id}>
@@ -133,7 +133,7 @@ const IndexPage = ({ data }: IPageContext<IPageData>) => {
   </Container>)
 }
 
-export default IndexPage
+export default withLayout(IndexPage)
 
 export interface IPageData {
   site: ISite,

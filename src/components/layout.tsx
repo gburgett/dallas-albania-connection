@@ -1,21 +1,20 @@
 import * as React from 'react'
 import { Container } from 'reactstrap'
-import PropTypes from 'prop-types'
-import * as graphql from 'graphql'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from "gatsby"
 
 // code syntax-highlighting theme
 // feel free to change it to another one
 import 'prismjs/themes/prism-twilight.css'
 
 // main site style
-import './index.scss'
+import './layout.scss'
 
-import {IFooterFields, Footer} from '../components/footer/Footer'
-import { ISitemapFields } from '../components/footer/Sitemap';
+import {IFooterFields, Footer} from './footer/Footer'
+import { ISitemapFields } from './footer/Sitemap';
 
-export default class TemplateWrapper extends React.Component<IPageContext<ILayoutData>, any> {
+class Template extends React.Component<{ data: ILayoutData }, any> {
 
   render() {
     const { children, data } = this.props
@@ -53,11 +52,56 @@ export default class TemplateWrapper extends React.Component<IPageContext<ILayou
             </ul>
           </Container>
         </div>
-        <div className='pageContent'>{children()}</div>
+        <div className='pageContent'>{children}</div>
         <Footer fields={data.footer} sitemap={{posts, pages}} />
       </div>
     )
   }
+}
+
+export const Layout = ({children}) => {
+  return <StaticQuery
+    query={graphql`
+      query LayoutIndexQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+        footer: markdownRemark(fileAbsolutePath: {regex: "/\/components/footer/Footer\\.md$/"}) {
+          ...footerFields
+        }
+        sitemap: allMarkdownRemark(filter: { frontmatter: { path: { ne:null }, public: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+          edges {
+            node {
+              ...sitemapFields
+            }
+          }
+        }
+        blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" }, published: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+          edges {
+            node {
+              ...sitemapFields
+            }
+          }
+        }
+      }
+    `}
+    render={(data: ILayoutData) =>
+      <Template data={data}>
+        {children}
+      </Template>}
+  />
+}
+
+export function withLayout<TProps>(
+  PageComponent: React.ComponentType<TProps>,
+): React.ComponentType<TProps> {
+  return (props: TProps) => (
+    <Layout>
+      <PageComponent {...props} />
+    </Layout>
+  )
 }
 
 export interface ILayoutData {
@@ -74,30 +118,3 @@ export interface ILayoutData {
     }[]
   }
 }
-
-export const pageQuery = graphql`
-  query LayoutIndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    footer: markdownRemark(fileAbsolutePath: {regex: "/\/components/footer/Footer\\.md$/"}) {
-      ...footerFields
-    }
-    sitemap: allMarkdownRemark(filter: { frontmatter: { path: { ne:null }, public: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
-      edges {
-        node {
-          ...sitemapFields
-        }
-      }
-    }
-    blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" }, published: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
-      edges {
-        node {
-          ...sitemapFields
-        }
-      }
-    }
-  }
-`

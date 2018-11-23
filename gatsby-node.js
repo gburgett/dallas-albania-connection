@@ -1,17 +1,18 @@
 const Path = require('path')
 
-exports.modifyWebpackConfig = ({ config }) => {
-  config.merge({
-    externals: {
-      jquery: 'jQuery'
-    }
-  })
-
-  return config;
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  switch (stage) {
+    case `build-javascript`:
+      actions.setWebpackConfig({
+        externals: {
+          jquery: 'jQuery'
+        }
+      })
+  }
 }
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
   const createNode = ({ node }) => {
     let { contentType, path, slug } = node.frontmatter
