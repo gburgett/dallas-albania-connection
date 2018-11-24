@@ -27,6 +27,7 @@
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-csv": "^2.0.4",
     "gatsby-transformer-remark": "^2.1.12",
+    "netlify-cms": "^2.2.0",
     "netlify-lambda": "^1.0.3",
     "node-sass": "^4.10.0",
     "prismjs": "^1.15.0",
