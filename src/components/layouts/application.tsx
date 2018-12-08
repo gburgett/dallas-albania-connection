@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Container } from 'reactstrap'
-import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import {IFooterFields, Footer} from '../footer/Footer'
@@ -44,7 +43,7 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
         </Helmet>
         <div className='navbar navbar-expand-lg navbar-light bg-light'>
           <Container fluid>
-            <Link to='/' className='navbar-brand'>Home</Link>
+            <a href='/' className='navbar-brand'>Home</a>
             <ul className='nav navbar-nav'>
 
               {user && (
@@ -54,7 +53,7 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
               )}
 
               <li className='nav-item'>
-                <Link to='/about' className='nav-link'>About</Link>
+                <a href='/about' className='nav-link'>About</a>
               </li>
             </ul>
           </Container>

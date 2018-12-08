@@ -44,6 +44,6 @@ export const PagePreview = ({entry, widgetFor, getAsset}) => {
   const pathname = entry.getIn(['data', 'path'])
 
   return <ApplicationLayout data={layoutData}>
-      {() => <PageTemplate data={fields} location={{pathname}} />}
+      <PageTemplate data={fields} location={{pathname}} />
     </ApplicationLayout>
 };

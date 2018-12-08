@@ -56,6 +56,6 @@ export const BlogPreview = ({entry, widgetFor, getAsset}) => {
   const pathname = entry.getIn(['data', 'path'])
 
   return <ApplicationLayout data={layoutData}>
-      {() => <BlogTemplate data={fields} location={{pathname}} />}
+      <BlogTemplate data={fields} location={{pathname}} />
     </ApplicationLayout>
 };

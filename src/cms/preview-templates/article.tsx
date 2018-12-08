@@ -53,6 +53,6 @@ export const ArticlePreview = ({entry, widgetFor, getAsset}) => {
   const pathname = entry.getIn(['data', 'path'])
 
   return <ApplicationLayout data={layoutData}>
-      {() => <ArticleTemplate data={fields} location={{pathname}} />}
+      <ArticleTemplate data={fields} location={{pathname}} />
     </ApplicationLayout>
 };

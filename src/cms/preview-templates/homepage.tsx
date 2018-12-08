@@ -88,7 +88,7 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
 
 
   return <ApplicationLayout data={FakeLayoutData}>
-      {() => <IndexPage data={fields} location={{pathname: ''}} />}
+      <IndexPage data={fields} location={{pathname: ''}} />
     </ApplicationLayout>
 };
 

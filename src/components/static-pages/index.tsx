@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Row, Col, Container, Card, CardGroup, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
-import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Hero from '../hero/Hero'
@@ -74,7 +73,7 @@ const Article = (article: IArticle) => (
   <Card style={{marginBottom: 10}} key={article.id}>
     <CardBody>
       <CardImg top width="100%" src={article.frontmatter.heroimage} alt="Card image cap" />
-      <CardTitle><Link to={article.frontmatter.path}>{article.frontmatter.title}</Link></CardTitle>
+      <CardTitle><a href={article.frontmatter.path}>{article.frontmatter.title}</a></CardTitle>
       <CardSubtitle style={{marginBottom: 10}}>{article.frontmatter.date}</CardSubtitle>
       <CardText>{article.excerpt}</CardText>
     </CardBody>
