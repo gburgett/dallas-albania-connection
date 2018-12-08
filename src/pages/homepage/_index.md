@@ -1,4 +1,5 @@
 ---
+title: Homepage
 hero:
   image: /files/background-cover.jpg
   subtitle: Discipleship Trips to Albania and Eastern Europe

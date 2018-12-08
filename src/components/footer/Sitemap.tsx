@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Row, Col } from 'reactstrap'
-import Link from 'gatsby-link'
 
 export interface ISitemapFields {
+  id?: string
   frontmatter: {
     contentType?: string,
     title: string,
@@ -37,7 +37,7 @@ const Pages = (props: { pages: Array<ISitemapFields>, columns: number }) => {
     <ul style={ {columnCount: props.columns} }>
       {props.pages.map(p => (
         <li key={p.frontmatter.path}>
-          <Link to={p.frontmatter.path}>{p.frontmatter.title}</Link>
+          <a href={p.frontmatter.path}>{p.frontmatter.title}</a>
         </li>
       ))}
     </ul>
@@ -50,21 +50,9 @@ const Posts = (props: { posts: Array<ISitemapFields> }) => {
     <ul>
       {props.posts.map(p => (
         <li key={p.frontmatter.slug}>
-          <Link to={`/blog/${p.frontmatter.slug}`}>{p.frontmatter.title}</Link>
+          <a href={`/blog/${p.frontmatter.slug}`}>{p.frontmatter.title}</a>
         </li>
       ))}
     </ul>
   </Col>
 }
-
-export const sitemapFields = graphql`
-fragment sitemapFields on MarkdownRemark {
-  frontmatter {
-    contentType
-    path
-    slug
-    title
-    published
-  }
-}
-`

@@ -1,13 +1,4 @@
-import * as React from 'react'
-
-let stylesStr: string
-if (process.env.NODE_ENV === `production`) {
-  try {
-    stylesStr = require(`!raw-loader!../public/styles.css`)
-  } catch (e) {
-    console.log(e)
-  }
-}
+const React = require('react')
 
 interface IHTMLProps {
   htmlAttributes: Array<any>
@@ -21,15 +12,6 @@ interface IHTMLProps {
 
 module.exports = class HTML extends React.Component<IHTMLProps, any> {
   render () {
-    let css
-    if (process.env.NODE_ENV === `production`) {
-      css = (
-        <style
-          id='gatsby-inlined-css'
-          dangerouslySetInnerHTML={{ __html: stylesStr }}
-        />
-      )
-    }
     return (
       <html {...this.props.htmlAttributes}>
         <head>
@@ -50,7 +32,6 @@ module.exports = class HTML extends React.Component<IHTMLProps, any> {
           <script src='https://identity.netlify.com/v1/netlify-identity-widget.js' />
           <script src='/admin/netlify_redirect.js' />
           {this.props.headComponents}
-          {css}
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}

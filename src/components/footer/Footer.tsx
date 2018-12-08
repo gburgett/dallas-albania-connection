@@ -3,9 +3,6 @@ import { Row, Col, Container } from 'reactstrap'
 
 import { Sitemap, ISitemapFields, ISitemapProps } from './Sitemap'
 
-// footer styles
-import './footer.scss'
-
 export class Footer extends React.Component<{sitemap: ISitemapProps, fields: IFooterFields}> {
   render() {
     const { contact, mailchimp } = this.props.fields.frontmatter
@@ -70,17 +67,3 @@ export interface IFooterFields {
     mailchimp: string
   }
 }
-
-export const footerFields = graphql`
-fragment footerFields on MarkdownRemark {
-  html
-  frontmatter {
-    contact {
-      name
-      email
-      phone
-    }
-    mailchimp
-  }
-}
-`

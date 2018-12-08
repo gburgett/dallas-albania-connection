@@ -1,8 +1,5 @@
 import * as React from 'react'
 import { Row, Jumbotron, Button } from 'reactstrap'
-import * as graphql from 'graphql'
-
-
 
 interface IHeroProps {
   image: string

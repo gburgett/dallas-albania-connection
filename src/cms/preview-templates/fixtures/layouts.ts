@@ -1,12 +1,12 @@
 
-import {ILayoutData} from '../../../layouts/index'
-import {fakeSitemap} from '../footer'
+import {ILayoutData} from '../../../components/layouts/application'
 
 export const FakeLayoutData: ILayoutData = {
   site: {
     siteMetadata: {
       title: 'TeamAlbania.org',
-      siteUrl: 'https://www.teamalbania.org'
+      siteUrl: 'https://www.teamalbania.org',
+      signupFormUrl: 'https://test.com'
     }
   },
   footer: {

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as graphql from 'graphql'
 
 export interface IAuthorProps {
   name: string,

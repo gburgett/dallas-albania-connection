@@ -1,12 +1,10 @@
 
 import * as React from 'react';
-import * as ReactDomServer from 'react-dom/server'
-
-import TemplateWrapper from '../../layouts/index'
-import IndexPage, {IPageData, IArticle} from '../../pages/index'
-import { IEventFields } from '../../events'
 
 import {FakeLayoutData} from './fixtures/layouts'
+import { ApplicationLayout } from '../../components/layouts/application';
+import { IndexPage, IPageData } from '../../components/static-pages';
+import { IEventFields } from '../../components/events';
 
 export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) => {
 
@@ -55,12 +53,7 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
 
   // Grab the fields
   const fields: IPageData = {
-    site: {
-      siteMetadata: {
-        title: 'teamalbania.org',
-        siteUrl: 'https://www.teamalbania.org'
-      }
-    },
+    site: FakeLayoutData.site,
     root: {
       frontmatter: {
         feature: {
@@ -78,7 +71,8 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
           image: heroImage ? heroImage.value : undefined
         },
         articles: entry.getIn(['data', 'articles']).toJS(),
-        featuredPosts: entry.getIn(['data', 'featuredPosts']) && entry.getIn(['data', 'featuredPosts']).toJS()
+        featuredPosts: entry.getIn(['data', 'featuredPosts']) && entry.getIn(['data', 'featuredPosts']).toJS(),
+        postsToShow: entry.getIn(['data', 'postsToShow']) as number
       }
     },
     articles: {
@@ -93,9 +87,9 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
   }
 
 
-  return <TemplateWrapper data={FakeLayoutData} location={{pathname: ''}}>
-      {() => <IndexPage data={fields} location={{pathname: ''}} />}
-    </TemplateWrapper>
+  return <ApplicationLayout data={FakeLayoutData}>
+      <IndexPage data={fields} location={{pathname: ''}} />
+    </ApplicationLayout>
 };
 
 const DAY = 24 * 60 * 60 * 1000;
