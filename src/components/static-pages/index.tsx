@@ -111,7 +111,7 @@ const PostList = ({ posts}: { posts: IPost[] }) => {
         }
 
         return (
-          <a href={`/blog/${p.frontmatter.slug}`}>
+          <a key={p.frontmatter.slug} href={`/blog/${p.frontmatter.slug}`}>
           <li className="post">
             {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
             </div>}
