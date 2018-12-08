@@ -27,12 +27,3 @@ function parseAmount(smappAmount: string): number {
 
   return parseFloat(matches[1].replace(',', ''))
 }
-
-export const smappExportFields = graphql`
-fragment smappExportFields on SmappExportCsv {
-  studentName
-  amount
-  designation
-  name
-}
-`

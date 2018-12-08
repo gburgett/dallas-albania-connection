@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 
-import { withLayout } from '../components/layout-wrapper';
+import { withLayout } from '../components/application-wrapper';
 import { PageTemplate } from '../components/page';
 
 export default withLayout(PageTemplate)

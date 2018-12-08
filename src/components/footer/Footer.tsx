@@ -67,17 +67,3 @@ export interface IFooterFields {
     mailchimp: string
   }
 }
-
-export const footerFields = graphql`
-fragment footerFields on MarkdownRemark {
-  html
-  frontmatter {
-    contact {
-      name
-      email
-      phone
-    }
-    mailchimp
-  }
-}
-`

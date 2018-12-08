@@ -56,15 +56,3 @@ const Posts = (props: { posts: Array<ISitemapFields> }) => {
     </ul>
   </Col>
 }
-
-export const sitemapFields = graphql`
-fragment sitemapFields on MarkdownRemark {
-  frontmatter {
-    contentType
-    path
-    slug
-    title
-    published
-  }
-}
-`
