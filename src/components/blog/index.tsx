@@ -31,7 +31,7 @@ export interface ITemplateData {
   }
 }
 
-interface IBlogPreviewData {
+export interface IBlogPreviewData {
   id: string
   excerpt: string
   timeToRead: number

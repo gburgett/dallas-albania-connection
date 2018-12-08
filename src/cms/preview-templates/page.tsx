@@ -2,15 +2,14 @@
 import * as React from 'react';
 import * as ReactDomServer from 'react-dom/server'
 
-import TemplateWrapper from '../../layouts/index'
-import Template, {ITemplateData} from '../../templates/page'
-
 import {FakeLayoutData} from './fixtures/layouts'
+import { ApplicationLayout, ILayoutData } from '../../components/layouts/application';
+import { PageTemplate, ITemplateData } from '../../components/page';
 
 export const PagePreview = ({entry, widgetFor, getAsset}) => {
 
   // Add this blog to the Recent Posts at the bottom
-  const layoutData = JSON.parse(JSON.stringify(FakeLayoutData))
+  const layoutData: ILayoutData = JSON.parse(JSON.stringify(FakeLayoutData))
   const pub = entry.getIn(['data', 'public']) as boolean
   if (pub !== false) {
     layoutData.sitemap.edges.push({
@@ -29,7 +28,7 @@ export const PagePreview = ({entry, widgetFor, getAsset}) => {
 
   // Grab the fields
   const fields: ITemplateData = {
-    site: { siteMetadata: { title: 'Team Albania', siteUrl: 'https://www.teamalbania.org' } },
+    site: layoutData.site,
     markdownRemark: {
       html: ReactDomServer.renderToStaticMarkup(widgetFor('body')) as string,
       frontmatter: {
@@ -44,7 +43,7 @@ export const PagePreview = ({entry, widgetFor, getAsset}) => {
 
   const pathname = entry.getIn(['data', 'path'])
 
-  return <TemplateWrapper data={layoutData} location={{pathname}}>
-      {() => <Template data={fields} location={{pathname}} />}
-    </TemplateWrapper>
+  return <ApplicationLayout data={layoutData}>
+      {() => <PageTemplate data={fields} location={{pathname}} />}
+    </ApplicationLayout>
 };

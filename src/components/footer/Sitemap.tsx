@@ -3,6 +3,7 @@ import { Row, Col } from 'reactstrap'
 import { Link } from 'gatsby'
 
 export interface ISitemapFields {
+  id?: string
   frontmatter: {
     contentType?: string,
     title: string,
