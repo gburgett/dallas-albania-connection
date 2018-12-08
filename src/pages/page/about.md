@@ -13,4 +13,4 @@ We seek to follow Christ as he leads us to make him known among people in Albani
 
 **Vision**
 
-Submitted to God, we are changing the world through the gospel.
+Submitted to God, we are changing the world through the gospel!
