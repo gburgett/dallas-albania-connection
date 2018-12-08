@@ -14,7 +14,7 @@ import './layout.scss'
 import {IFooterFields, Footer} from './footer/Footer'
 import { ISitemapFields } from './footer/Sitemap';
 
-class Template extends React.Component<{ data: ILayoutData }, any> {
+class Layout extends React.Component<{ data: ILayoutData }, any> {
 
   render() {
     const { children, data } = this.props
@@ -59,7 +59,7 @@ class Template extends React.Component<{ data: ILayoutData }, any> {
   }
 }
 
-export const Layout = ({children}) => {
+export const LayoutWrapper = ({children}) => {
   return <StaticQuery
     query={graphql`
       query LayoutIndexQuery {
@@ -88,9 +88,9 @@ export const Layout = ({children}) => {
       }
     `}
     render={(data: ILayoutData) =>
-      <Template data={data}>
+      <Layout data={data}>
         {children}
-      </Template>}
+      </Layout>}
   />
 }
 
@@ -98,9 +98,9 @@ export function withLayout<TProps>(
   PageComponent: React.ComponentType<TProps>,
 ): React.ComponentType<TProps> {
   return (props: TProps) => (
-    <Layout>
+    <LayoutWrapper>
       <PageComponent {...props} />
-    </Layout>
+    </LayoutWrapper>
   )
 }
 
