@@ -16,7 +16,7 @@ import { FileUploadPreview } from './preview-templates/fileUpload'
 //import ImageGalleryWidget from "./image-gallery-widget.js";
 //import ImageGalleryPreview from "./image-gallery-preview.js";
 
-CMS.registerPreviewStyle('/styles.css');
+CMS.registerPreviewStyle('/previewStyles.css');
 CMS.registerPreviewTemplate('footer', FooterPreview);
 CMS.registerPreviewTemplate('articles', ArticlePreview);
 CMS.registerPreviewTemplate('pages', PagePreview);

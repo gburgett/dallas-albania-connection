@@ -1,13 +1,26 @@
 const Path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   switch (stage) {
     case `build-javascript`:
       actions.setWebpackConfig({
         externals: {
           jquery: 'jQuery'
-        }
+        },
+        /*
+         * Because gatsby-plugin-netlify-cms does something funky to the sass loader,
+         * we can't directly include our css in our preview component js files.
+         * So, instead we build a new css file at a well-known path and include it
+         * using CMS.registerPreviewStyle
+         */
+        plugins: [new MiniCssExtractPlugin({})],
       })
+      
+      let config = getConfig()
+      config.entry.previewStyles = `${__dirname}/src/stylesheets/application.scss`
+      actions.replaceWebpackConfig(config)
   }
 }
 
