@@ -7,7 +7,7 @@ import {FooterPreview} from './preview-templates/footer'
 import {ArticlePreview} from './preview-templates/article'
 import {PagePreview} from './preview-templates/page'
 import {BlogPreview} from './preview-templates/blog'
-import { HomepagePreview } from "./preview-templates/homepage";
+import { HomepagePreview } from "./preview-templates/homepage"
 
 import { FileUploadPreview } from './preview-templates/fileUpload'
 
