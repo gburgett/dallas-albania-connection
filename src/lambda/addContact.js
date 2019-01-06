@@ -1,9 +1,8 @@
 import handler from './addContact/index'
-import { IEvent } from './common/types';
 
-exports.handler = function(event: IEvent, context, callback) {
+exports.handler = function(event, context, callback) {
   handler(event, context)
-    .then((body: string) => callback(null, {
+    .then((body) => callback(null, {
       statusCode: 200,
       body: body || ''
     }))

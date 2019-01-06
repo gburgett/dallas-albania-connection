@@ -13,11 +13,11 @@
   "scripts": {
     "test": "ava",
     "test-watch": "ava --watch",
-    "build": "gatsby build && netlify-lambda -c ./config/lambda/webpack.config.js build src/lambda",
+    "build": "gatsby build && netlify-lambda build src/lambda",
     "serve": "gatsby serve",
     "start": "gatsby develop",
     "build-watch": "nodemon -e ts,tsx,md,yml,scss -i public/ -x 'gatsby build && say \"finished\"'",
-    "lambda": "netlify-lambda -c ./config/lambda/webpack.config.js"
+    "lambda": "netlify-lambda"
   },
   "dependencies": {
     "@types/csv-stringify": "^1.4.2",
@@ -68,7 +68,6 @@
     "@types/request": "^2.48.1",
     "@types/request-promise-native": "^1.0.15",
     "ava": "^1.0.1",
-    "awesome-typescript-loader": "^5.2.1",
     "netlify-lambda": "^1.1.1"
   },
   "ava": {

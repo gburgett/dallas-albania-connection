@@ -1,5 +1,5 @@
 
-export default async function handler(event, context): Promise<string> {
+export default async function handler(event, context) {
   // your server-side functionality
   console.log('e', event);
   console.log('ctx', context);

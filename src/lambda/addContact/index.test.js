@@ -1,7 +1,6 @@
 import test from 'ava'
 
 import handler from './index'
-import { IEvent } from '../common/types';
 
 test('posts new info to google sheet', async (t) => {
   const evt = makeEvent(
@@ -15,7 +14,7 @@ test('posts new info to google sheet', async (t) => {
   t.true(true);
 })
 
-function makeEvent(body: any, method: IEvent['httpMethod'] = 'POST'): IEvent {
+function makeEvent(body, method = 'POST') {
   return {
     path: '/add_contact_to_google_sheet',
     httpMethod: method,
