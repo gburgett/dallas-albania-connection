@@ -34,3 +34,6 @@ public/
 cookies.*
 .envrc
 .vscode
+
+# built from src/lambda
+functions/

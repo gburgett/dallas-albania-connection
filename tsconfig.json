@@ -8,5 +8,8 @@
     "jsx": "react",
     "lib": ["dom", "es2015", "es2017"]
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*"],
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
 }

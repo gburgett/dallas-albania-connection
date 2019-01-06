@@ -3,6 +3,22 @@
   "description": "Gatsby site for albania dallas connection",
   "version": "1.0.0",
   "author": "Gordon Burgett <gordon@gordonburgett.net>",
+  "keywords": [
+    "gatsby",
+    "bootstrap",
+    "bootswatch",
+    "netlify"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "ava",
+    "test-watch": "ava --watch",
+    "build": "gatsby build && netlify-lambda -c ./config/lambda/webpack.config.js build src/lambda",
+    "serve": "gatsby serve",
+    "start": "gatsby develop",
+    "build-watch": "nodemon -e ts,tsx,md,yml,scss -i public/ -x 'gatsby build && say \"finished\"'",
+    "lambda": "netlify-lambda -c ./config/lambda/webpack.config.js"
+  },
   "dependencies": {
     "@types/csv-stringify": "^1.4.2",
     "@types/fs-extra": "^5.0.4",
@@ -28,7 +44,6 @@
     "gatsby-transformer-csv": "^2.0.4",
     "gatsby-transformer-remark": "^2.1.12",
     "netlify-cms": "^2.2.0",
-    "netlify-lambda": "^1.0.3",
     "node-sass": "^4.10.0",
     "prismjs": "^1.15.0",
     "querystring": "^0.2.0",
@@ -44,19 +59,6 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "yargs": "^11.1.0"
   },
-  "keywords": [
-    "gatsby",
-    "bootstrap",
-    "bootswatch",
-    "netlify"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "start": "gatsby develop",
-    "build-watch": "nodemon -e ts,tsx,md,yml,scss -i public/ -x 'gatsby build && say \"finished\"'"
-  },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
     "@types/cheerio": "^0.22.9",
@@ -64,6 +66,24 @@
     "@types/react-helmet": "^5.0.7",
     "@types/reactstrap": "^5.0.27",
     "@types/request": "^2.48.1",
-    "@types/request-promise-native": "^1.0.15"
+    "@types/request-promise-native": "^1.0.15",
+    "ava": "^1.0.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "netlify-lambda": "^1.1.1"
+  },
+  "ava": {
+    "files": [
+      "src/lambda/**/*.test.ts"
+    ],
+    "cache": true,
+    "failFast": true,
+    "verbose": true,
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
