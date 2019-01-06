@@ -4,10 +4,12 @@ exports.handler = function(event, context, callback) {
   handler(event, context)
     .then((body) => callback(null, {
       statusCode: 200,
-      body: body || ''
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(body)
     }))
     .catch((err) => callback(err.toString(), {
       statusCode: 500,
-      body: err.toString()
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(err)
     }))
 }
