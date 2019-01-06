@@ -2,11 +2,11 @@ var webpack = require('webpack');
 var glob = require('glob');
 
 const config = {
-  entry: glob.sync('./*.(ts|js)', {
-      cwd: process.cwd() + './src/lambda'
-    }).reduce((o, key) => ({
-      ...o, [key.replace(/\.(m?js|ts)$/, '')]: key
-    }), {}),
+  // entry: glob.sync('./*.(ts|js)', {
+  //     cwd: process.cwd() + './src/lambda'
+  //   }).reduce((o, key) => ({
+  //     ...o, [key.replace(/\.(m?js|ts)$/, '')]: key
+  //   }), {}),
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },

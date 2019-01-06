@@ -1,4 +1,4 @@
-import handler from './add_contact_to_google_sheet/index'
+import handler from './addContact/index'
 import { IEvent } from './common/types';
 
 exports.handler = function(event: IEvent, context, callback) {
