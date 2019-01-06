@@ -15,7 +15,7 @@ async function loadAuth(scopes) {
 
   } catch(e) {
     // not JSON - points to a file.
-    console.log('Not a JSON file', e)
+    console.log('Credentials already parsed')
   }
 
   return await google.auth.getClient({
@@ -37,13 +37,14 @@ export default async function handler(event, context) {
   });
 
   const body = JSON.parse(event.body)
+  const data = body.data ? body.data.split(/\s+/) : []
 
   sheets.spreadsheets.values.append({
     spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
     range: 'A1:A1',
     valueInputOption: 'USER_ENTERED',
     requestBody: {
-      values: [[(body.contact || '').trim(), ...(body.rows || [])]],
+      values: [[(body.contact || '').trim(), ...data]],
     },
   });
 
