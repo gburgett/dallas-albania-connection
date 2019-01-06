@@ -7,15 +7,18 @@ async function loadAuth(scopes) {
     throw new Error('Please set GOOGLE_APPLICATION_CREDENTIALS')
   }
 
+  let isJson = false
   try {
     JSON.parse(credentialFile)
-
-    await fs.writeFile('credentials.json', credentialFile)
-    process.env['GOOGLE_APPLICATION_CREDENTIALS'] = credentialFile = 'credentials.json'
-
+    isJson = true
   } catch(e) {
     // not JSON - points to a file.
     console.log('Credentials already parsed')
+  }
+
+  if (isJson) {
+    await fs.writeFile('/tmp/credentials.json', credentialFile)
+    process.env['GOOGLE_APPLICATION_CREDENTIALS'] = credentialFile = '/tmp/credentials.json'
   }
 
   return await google.auth.getClient({
@@ -39,7 +42,7 @@ export default async function handler(event, context) {
   const body = JSON.parse(event.body)
   const data = body.data ? body.data.split(/\s+/) : []
 
-  sheets.spreadsheets.values.append({
+  await sheets.spreadsheets.values.append({
     spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
     range: 'A1:A1',
     valueInputOption: 'USER_ENTERED',
