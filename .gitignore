@@ -37,3 +37,4 @@ cookies.*
 
 # built from src/lambda
 functions/
+credentials.json
