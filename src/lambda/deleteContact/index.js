@@ -24,11 +24,13 @@ export default async function handler(event, context) {
 
   console.log('deleting rows', toDelete)
 
-  await sheets.spreadsheets.values.clear({
-    spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
-    range: toDelete.map((row) => `A${row}:${row}`).join(',')
-  })
-  await deleteRows(toDelete, sheets)
+  for (var row of toDelete) {
+    await sheets.spreadsheets.values.clear({
+      spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+      range: `A${row}:${row}`
+    })
+    console.log('deleted row', row)
+  }
 
   return null;
 }
@@ -58,7 +60,4 @@ export async function findContactRows(body, sheets) {
     .filter(r => r)
 
   return toDelete
-}
-
-export async function deleteRows(toDelete, sheets) {
 }
