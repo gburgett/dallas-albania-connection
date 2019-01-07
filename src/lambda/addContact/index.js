@@ -1,6 +1,7 @@
 const {google} = require('googleapis');
 
 const {loadAuth} = require('../common/auth');
+const {findContactRows} = require('../common/sheets');
 
 export default async function handler(event, context) {
   const auth = await loadAuth([
@@ -15,21 +16,53 @@ export default async function handler(event, context) {
   });
 
   const body = JSON.parse(event.body)
-  
-  appendToSheet(body, sheets)
+  const data = body.data ? body.data.split(/\s+/) : []
+
+  const foundRows = await findContactRows(body.contact, sheets)
+  if (foundRows && foundRows.length > 0) {
+    await updateRow(foundRows[0], body.contact, data, sheets)
+  } else {
+    await appendToSheet(body.contact, data, sheets)
+  }
 
   return null;
 }
 
-export async function appendToSheet(body, sheets) {
-  const data = body.data ? body.data.split(/\s+/) : []
-
-  await sheets.spreadsheets.values.append({
+export async function appendToSheet(contact, data, sheets) {
+  const rowValues = [(contact || '').trim(), ...data]
+  const resp = await sheets.spreadsheets.values.append({
     spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
     range: 'A1:A',
     valueInputOption: 'USER_ENTERED',
     requestBody: {
-      values: [[(body.contact || '').trim(), ...data]],
+      values: [rowValues],
     },
   });
+
+  console.log('added to', resp.data.updates && resp.data.updates.updatedRange, 'values', rowValues)
+}
+
+export async function updateRow(rowNumber, contact, data, sheets) {
+  const row = await sheets.spreadsheets.values.get({
+    spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+    range: `A${rowNumber}:${rowNumber}`
+  });
+
+  const rowValues = row.data.values[0]
+  // copy new values over old cells
+  rowValues[0] = contact;
+  for(let i = 0; i < data.length; i++) {
+    rowValues[i + 1] = data[i];
+  }
+
+  const resp = await sheets.spreadsheets.values.update({
+    spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+    range: `A${rowNumber}:${rowNumber}`,
+    valueInputOption: 'USER_ENTERED',
+    requestBody: {
+      values: [rowValues],
+    },
+  });
+
+  console.log('updated', resp.data.updatedRange, 'with', rowValues)
 }
