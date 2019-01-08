@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const {google} = require('googleapis');
 
-export async function loadAuth(scopes) {
+async function loadAuth(scopes) {
   let credentialFile = process.env['GOOGLE_APPLICATION_CREDENTIALS']
   if (!credentialFile || credentialFile.length == 0) {
     throw new Error('Please set GOOGLE_APPLICATION_CREDENTIALS')
@@ -25,4 +25,8 @@ export async function loadAuth(scopes) {
     // Scopes can be specified either as an array or as a single, space-delimited string.
     scopes
   });
+}
+
+module.exports = {
+  loadAuth
 }
