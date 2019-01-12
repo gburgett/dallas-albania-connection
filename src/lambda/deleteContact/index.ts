@@ -1,7 +1,7 @@
-const {google} = require('googleapis');
+import {google} from 'googleapis';
 
-const {loadAuth} = require('../common/auth');
-const {findContactRows} = require('../common/sheets');
+import {loadAuth} from '../common/auth';
+import {findContactRows} from '../common/sheets';
 
 export default async function handler(event, context) {
   const auth = await loadAuth([

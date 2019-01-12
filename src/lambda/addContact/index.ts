@@ -1,7 +1,7 @@
-const {google} = require('googleapis');
+import {google} from 'googleapis'
 
-const {loadAuth} = require('../common/auth');
-const {findContactRows} = require('../common/sheets');
+import {loadAuth} from '../common/auth'
+import {findContactRows} from '../common/sheets';
 
 export default async function handler(event, context) {
   const auth = await loadAuth([
@@ -39,7 +39,7 @@ export async function appendToSheet(contact, data, sheets) {
     },
   });
 
-  console.log('added to', resp.data.updates && resp.data.updates.updatedRange, 'values', rowValues)
+  console.log('added to', resp && resp.data && resp.data.updates && resp.data.updates.updatedRange, 'values', rowValues)
 }
 
 export async function updateRow(rowNumber, contact, data, sheets) {

@@ -76,7 +76,7 @@
   },
   "ava": {
     "files": [
-      "src/lambda/**/*.test.js"
+      "src/lambda/**/*.test.ts"
     ],
     "cache": true,
     "failFast": true,
@@ -86,7 +86,7 @@
       "ts"
     ],
     "require": [
-      "@ts-node/register"
+      "ts-node/register"
     ]
   }
 }
