@@ -6,6 +6,7 @@ import Hero from '../hero/Hero'
 import Feature, {IFeatureProps} from '../Feature'
 import { Summary as EventSummary } from '../events/summary'
 import { IEventFields } from '../events';
+import { PostList, IPost, IArticle } from './blog';
 
 export interface IPageData {
   site: ISite,
@@ -39,36 +40,6 @@ export interface IPageData {
   }
 }
 
-export interface IArticle {
-  excerpt: string,
-  id: any,
-  frontmatter: {
-    title: string,
-    contentType: string,
-    date: string,
-    path: string,
-    heroimage: string
-  }
-}
-
-export interface IPost {
-  id: string
-  excerpt: string
-  timeToRead: string
-  frontmatter: {
-    slug: string
-    title: string
-    date: string
-    heroimage: string
-    author: {
-      name: string
-      gravatar: string
-      photo: string
-    }
-  }
-}
-
-
 const Article = (article: IArticle) => (
   <Card style={{marginBottom: 10}} key={article.id}>
     <CardBody>
@@ -91,46 +62,6 @@ const GroupedArticles = ({ cards }: { cards: Array<IArticle> }) => {
   </CardGroup>)
   }
   return <Row>{groups}</Row>
-}
-
-const PostList = ({ posts}: { posts: IPost[] }) => {
-  return <div>
-    <h3>Blog Posts</h3>
-    <ul className="post-list">
-      {posts.map(p => {
-        const {heroimage, author} = p.frontmatter
-        let img = heroimage
-        let height = "96px"
-        let width = "128px"
-        if (!img && author) {
-          width = "96px"
-          img = author.photo
-          if (!img && author.gravatar) {
-            img = `https://www.gravatar.com/avatar/${author.gravatar}`
-          }
-        }
-
-        return (
-          <a key={p.frontmatter.slug} href={`/blog/${p.frontmatter.slug}`}>
-          <li className="post">
-            {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
-            </div>}
-            <div className="title">
-              <h4>{p.frontmatter.title}</h4>
-              {author && 
-                <span className="body">by {author.name}</span>}
-            </div>
-            <div className="teaser">
-              <div className="body">
-                {p.excerpt}
-                <footer className="blockquote-footer">{p.timeToRead} minute read</footer>
-              </div>
-            </div>
-          </li>
-          </a>)
-      })}
-    </ul>
-    </div>
 }
 
 export const IndexPage = ({ data }: IPageContext<IPageData>) => {
@@ -183,10 +114,16 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
       <Col xs={12} md={9}>
         <GroupedArticles cards={cards} />
         {featuredPosts.length > 0 && <PostList posts={featuredPosts} />}
-        {postsToShow > 0 && remainingPosts.length > 0 && <h4><a href={`/blog/${remainingPosts[0].frontmatter.slug}`}>
-          {remainingPosts.length} more {remainingPosts.length > 1 ? 'posts' : 'post'}
-          <i style={{paddingLeft: '1em'}} className="fa fa-arrow-right"></i>
-          </a></h4>}
+        {postsToShow > 0 && remainingPosts.length > 0 && <h4>
+            <a className="d-none d-md-block" href={`/blog/${remainingPosts[0].frontmatter.slug}`}>
+              {remainingPosts.length} more {remainingPosts.length > 1 ? 'posts' : 'post'}
+              <i style={{paddingLeft: '1em'}} className="fa fa-arrow-right"></i>
+            </a>
+            <a className="d-md-none" href="/blog">
+              {remainingPosts.length} more {remainingPosts.length > 1 ? 'posts' : 'post'}
+              <i style={{paddingLeft: '1em'}} className="fa fa-arrow-right"></i>
+            </a>
+          </h4>}
       </Col>
     </Row>
   </Container>)

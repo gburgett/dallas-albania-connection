@@ -1,0 +1,151 @@
+import * as React from 'react'
+import { Container, Row, Col } from "reactstrap";
+import { Helmet } from "react-helmet";
+
+
+export interface IPost {
+  id: string
+  excerpt: string
+  timeToRead: string
+  frontmatter: {
+    slug: string
+    title: string
+    date: string
+    heroimage: string
+    contentType: 'blog'
+    author: {
+      name: string
+      gravatar: string
+      photo: string
+    }
+  }
+}
+
+export interface IArticle {
+  excerpt: string,
+  id: any,
+  frontmatter: {
+    title: string,
+    contentType: 'article',
+    date: string,
+    path: string,
+    heroimage: string
+  }
+}
+
+interface IPageData {
+  articles: {
+    edges: Array<{ node: IArticle }>
+  },
+  blogs: {
+    edges: Array<{node: IPost}>
+  }
+}
+
+export const PostList = ({ posts }: { posts: IPost[] }) => {
+  return <div>
+    <h3>Blog Posts</h3>
+    <ul className="post-list">
+      {posts.map(p => <BlogPost {...p} />)}
+    </ul>
+    </div>
+}
+
+const BlogPost = (p: IPost) => {
+  const {heroimage, author} = p.frontmatter
+  let img = heroimage
+  let height = "96px"
+  let width = "128px"
+  if (!img && author) {
+    width = "96px"
+    img = author.photo
+    if (!img && author.gravatar) {
+      img = `https://www.gravatar.com/avatar/${author.gravatar}`
+    }
+  }
+
+  return (
+    <a key={p.frontmatter.slug} href={`/blog/${p.frontmatter.slug}`}>
+    <li className="post">
+      {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
+      </div>}
+      <div className="title">
+        <h4>{p.frontmatter.title}</h4>
+        {author && 
+          <span className="body">by {author.name}</span>}
+      </div>
+      <div className="teaser">
+        <div className="body">
+          {p.excerpt}
+          <footer className="blockquote-footer">{p.timeToRead} minute read</footer>
+        </div>
+      </div>
+    </li>
+    </a>)
+}
+
+const Article = (a: IArticle) => {
+  const {heroimage} = a.frontmatter
+  let img = heroimage
+  let height = "96px"
+  let width = "128px"
+
+  return (
+    <a key={a.frontmatter.path} href={a.frontmatter.path}>
+    <li className="post">
+      {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
+      </div>}
+      <div className="title">
+        <h4>{a.frontmatter.title}</h4>
+      </div>
+      <div className="teaser">
+        <div className="body">
+          {a.excerpt}
+        </div>
+      </div>
+    </li>
+    </a>)
+}
+
+export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
+  
+  let postsAndArticles: Array<IArticle | IPost> = data.articles.edges.map((e) => e.node)
+  postsAndArticles = postsAndArticles.concat(data.blogs.edges.map((e) => e.node))
+  postsAndArticles.sort(byDate).reverse()
+
+  let currentYear = 9999
+
+  return (<Container fluid className="homepage">
+    <Helmet title={'Blog Posts'} titleTemplate={undefined}>
+    </Helmet>
+    <Row>
+      <Col xs={12} md={{ size: 9, offset: 3 }} >
+        <ul className="post-list">
+        {postsAndArticles.map((postOrArticle) => {
+          const dt = new Date(Date.parse(postOrArticle.frontmatter.date))
+          let renderYearHeader = false
+          if (dt.getFullYear() != currentYear) {
+            currentYear = dt.getFullYear()
+            renderYearHeader = true
+          }
+
+          return <>
+            {renderYearHeader && <h2>{currentYear}</h2>}
+            {
+              postOrArticle.frontmatter.contentType == 'article' ?
+                <Article {...postOrArticle as IArticle} /> :
+                <BlogPost {...postOrArticle as IPost} />
+            }
+          </>
+        })}
+        </ul>
+      </Col>
+    </Row>
+  </Container>)
+}
+
+function byDate(a: { frontmatter: { date: string }}, b: { frontmatter: { date: string }}): number {
+  const dtA = Date.parse(a.frontmatter.date)
+  const dtB = Date.parse(b.frontmatter.date)
+  return dtA - dtB
+}

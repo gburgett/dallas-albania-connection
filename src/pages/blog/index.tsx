@@ -1,45 +1,17 @@
 import { graphql } from 'gatsby'
 
-import { withLayout } from '../components/application-wrapper';
-import { IndexPage } from '../components/static-pages/index';
+import { withLayout } from '../../components/application-wrapper';
+import { BlogIndexPage } from '../../components/static-pages/blog';
 
-// graphql fragments eventFields
-import {} from '../events/index'
-
-export default withLayout(IndexPage)
+export default withLayout(BlogIndexPage)
 
 export const pageQuery = graphql`
-query IndexQuery {
+query BlogIndexQuery {
   site {
     siteMetadata {
       title
       siteUrl
       signupFormUrl
-    }
-  }
-  root: markdownRemark(fileAbsolutePath: {regex: "/\/pages\/homepage\/_index\\.md$/"}) {
-    frontmatter {
-      feature {
-        show
-        title
-        image
-        link
-        buttonText
-        buttonStyle
-        backgroundColor
-      }
-      hero {
-        image
-        title
-        subtitle
-      }
-      articles{
-        path
-      }
-      featuredPosts {
-        slug
-      }
-      postsToShow
     }
   }
   articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
@@ -54,13 +26,6 @@ query IndexQuery {
           path
           heroimage
         }
-      }
-    }
-  }
-  events: allMarkdownRemark(filter: { fileAbsolutePath: {regex: "/\\/events\\/.+\\.md$/"}}, sort: {order: ASC, fields: [frontmatter___date]}) {
-    edges {
-      node {
-        ...eventFields
       }
     }
   }

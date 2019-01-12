@@ -54,6 +54,12 @@ const BlogsPreview = (props: { edges: { node: IBlogPreviewData }[] }) => {
         <BlogPreview {...e.node} />
       </li>
     ))}
+    <li className="d-flex w-100 justify-content-between">
+        <a href="/blog">
+          All blogs
+          <i style={{paddingLeft: '1em'}} className="fa fa-arrow-right d-inline"></i>
+        </a>
+      </li>
     </ul>
 }
 
