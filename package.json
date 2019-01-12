@@ -13,11 +13,11 @@
   "scripts": {
     "test": "ava",
     "test-watch": "ava --watch",
-    "build": "gatsby build && netlify-lambda build src/lambda",
+    "build": "gatsby build && netlify-lambda -c ./config/webpack.functions.js build src/lambda",
     "serve": "gatsby serve",
     "start": "gatsby develop",
     "build-watch": "nodemon -e ts,tsx,md,yml,scss -i public/ -x 'gatsby build && say \"finished\"'",
-    "lambda": "netlify-lambda"
+    "lambda": "netlify-lambda -c ./config/webpack.functions.js"
   },
   "dependencies": {
     "@types/csv-stringify": "^1.4.2",
@@ -55,9 +55,10 @@
     "request": "^2.88.0",
     "request-debug": "^0.2.0",
     "tough-cookie-file-store": "^1.2.0",
-    "ts-node": "^5.0.1",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^7.0.1",
     "twilio": "^3.27.1",
-    "typescript": "^2.9.2",
+    "typescript": "^3.2.2",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "yargs": "^11.1.0"
   },
@@ -85,12 +86,7 @@
       "ts"
     ],
     "require": [
-      "@babel/register"
-    ],
-    "babel": {
-      "presets": [
-        "@babel/preset-env"
-      ]
-    }
+      "@ts-node/register"
+    ]
   }
 }
