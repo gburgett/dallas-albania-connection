@@ -1,4 +1,4 @@
-#! /usr/bin/env node --require @babel/register
+#! /usr/bin/env node --require ts-node/register
 
 const {google} = require('googleapis');
 const fs = require('fs-extra');
@@ -10,10 +10,8 @@ const {loadAuth} = require('../src/lambda/common/auth');
 
 const argv = yargs
   .usage("$0 [options] <message>")
-  .option('source', {
-    alias: 's',
-    default: '-',
-    describe: 'The source file, or space ID to load. "-" indicates stdin.'
+  .option('override', {
+    describe: 'A set of phone numbers to use instead of downloading from the google sheet.'
   })
   .argv
 
@@ -33,30 +31,36 @@ Run()
   })
 
 async function Run() {
-  
+  let numbers
 
-  const auth = await loadAuth([
-    'https://www.googleapis.com/auth/drive',
-    'https://www.googleapis.com/auth/drive.file',
-    'https://www.googleapis.com/auth/spreadsheets',
-  ])
-
-  const sheets = google.sheets({
-    version: 'v4',
-    auth
-  });
-
-  const got = await sheets.spreadsheets.values.get({
-    spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
-    range: 'A1:A'
-  });
-
-  if (!got.data.values || got.data.values.length == 0) {
-    console.log('No numbers to message')
+  if (argv.override) {
+    numbers = argv.override.split(',')
   }
-  const numbers = got.data.values.flat()
-  if (numbers.length == 0) {
-    console.log('No numbers to message')
+
+  if (!numbers || numbers.length == 0) {
+    const auth = await loadAuth([
+      'https://www.googleapis.com/auth/drive',
+      'https://www.googleapis.com/auth/drive.file',
+      'https://www.googleapis.com/auth/spreadsheets',
+    ])
+
+    const sheets = google.sheets({
+      version: 'v4',
+      auth
+    });
+
+    const got = await sheets.spreadsheets.values.get({
+      spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+      range: 'A1:A'
+    });
+
+    if (!got.data.values || got.data.values.length == 0) {
+      console.log('No numbers to message')
+    }
+    numbers = got.data.values.flat()
+    if (numbers.length == 0) {
+      console.log('No numbers to message')
+    }
   }
 
   if ( !await prompt(numbers.length, message) ) {
