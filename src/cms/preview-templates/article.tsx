@@ -45,6 +45,7 @@ export const ArticlePreview = ({entry, widgetFor, getAsset}) => {
           buttonStyle: entry.getIn(['data', 'feature', 'buttonStyle']) as string,
           backgroundColor: entry.getIn(['data', 'feature', 'backgroundColor']) as string
         },
+        showRoster: entry.getIn(['data', 'showRoster']),
         roster: roster && roster.toJS()
       }
     }

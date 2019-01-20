@@ -37,7 +37,7 @@ collections:
     folder: "src/pages/homepage"
     create: false
     fields:
-      - { label: "Title", name: "title", widget: "hidden", default: "homepage" }
+      - { label: "Title", name: "title", widget: "string", default: "homepage" }
       - label: "Hero Image"
         name: "hero"
         widget: "object"
@@ -123,6 +123,7 @@ collections:
               name: "backgroundColor", widget: "string", required: false,
               pattern: '^(\w+|\#[a-f0-9]+|(rgba?|hsla?)\(\s*\d+,\s*\d+\%?,\s*\d+\%?(,\s*[\d\.]+)?\))$'}
       - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Show Roster", name: "showRoster", widget: "boolean", default: true }
       - label: "Team Roster"
         name: "roster"
         widget: "object"

@@ -19,6 +19,7 @@ export interface ITemplateData {
       feature?: IFeatureProps & {
         show?: boolean
       },
+      showRoster?: boolean,
       roster: {
         header: string,
         text: string,
@@ -36,7 +37,7 @@ export interface ITemplateData {
 
 export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, smappExport } = data
-  const { heroimage, title, feature, roster } = post.frontmatter;
+  const { heroimage, title, feature, showRoster, roster } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
   let collatedData: ICollatedSmappData
@@ -46,7 +47,7 @@ export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
     collatedData = collateByDesignationNumber(dataForThisYear.map(edge => edge.node))
   }
 
-  const rosterComponent = roster && <div className="row">
+  const rosterComponent = showRoster && roster && <div className="row">
     <div className="col-12">
       {roster.header && <h2 id="roster">{roster.header}</h2>}
       {roster.text && <div dangerouslySetInnerHTML={{ __html: roster.text }}></div>}

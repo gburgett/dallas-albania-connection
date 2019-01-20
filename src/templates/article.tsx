@@ -38,6 +38,7 @@ export const pageQuery = graphql`
           buttonStyle
           backgroundColor
         }
+        showRoster
         roster {
           header
           text
