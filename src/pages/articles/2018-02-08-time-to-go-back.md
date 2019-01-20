@@ -10,6 +10,7 @@ feature:
   buttonText: <i class="fas fa-heart"></i> Donate!
   link: '#roster'
   show: true
+showRoster: false
 roster:
   header: Team Roster
   projectIds:
@@ -163,25 +164,47 @@ roster:
       name: Poland - Regeneration Recovery
   text: Click on one of the buttons below to donate!
 ---
-**Summer Project 2018**
+# Summer Project 2018
 
-Six Teams, five cities, three countries, three ministries... 
+2018, as all previous years, has been full of growth and new things.  The biggest
+new thing this year was us going trans-national with the addition of the Hungary
+and Poland teams.  No longer limited to the Dallas-Albania connection, we are
+rebranding to "Albania+ Poland and Hungary!"
 
-One Mission. 
+## Poland
 
-This summer we are going to Eastern Europe to share the good news of the Gospel of Jesus Christ. We are returning to three cities in Albania: Tirana, Korça, and Elbasan. There we will continue our partnership with Cru Albania for high school and young professionals ministries. Albania teams are departing June 29 and July 7, 2018. This year will mark the sixth that we will have traveled to Albania for the Summer Project.
+The unique experience of the Poland trip was brought about by an expressed desire
+of the Poland CRU staff to participate in [Re:Generation](http://www.regenerationrecovery.org/),
+a biblical recovery ministry developed at Watermark.  The vision was for a team
+of American Re:Gen veterans to go and launch step groups among the Polish CRU staff.
+This goal had the support and blessing of both top-level Polish leadership as well
+as the Watermark elders, and so the process began!
 
-In addition, we have two new teams traveling to Hungary and Poland. A team traveling to Pécs, Hungary (departing July 14, 2018) will be partnering with Cru Hungary to initiate young people in that city in ways that build upon the high school ministry template that is established in Albania. A team traveling to Southern Poland (departing July 7, 2018) will partner with Cru Poland to launch a pilot for a recovery ministry. "Regeneration Recovery" is a 12-step program that was established by Watermark Community Church in Dallas, Texas and is currently adopted by nearly a hundred churches across the United States. 
+As of January 2019 there are now several step groups working through Step 4: Inventory,
+being mentored remotely via Google Hangouts by their American group leaders!  We
+are currently planning a return trip to celebrate their commencement and fully hand
+off the mentorship responsibilities to the CRU staff in Poland.
 
-The teams have been formed, and the ~40 members are undergoing three-month discipleship training ahead of our summer departure. We are looking for supporters to join us through prayer and financial support. The cost for most team members is $3,000, while those members who are a part of multiple teams have a trip cost of $3,500.  
+## Hungary
 
-For more details about this summer, please take a look at the Info Sheet and Calendar below. If you have any questions about our Summer Project or ministry in general, see the Contact information (also wayyy below) and send us an email. We would be encouraged to know that you are supporting us. 
+God has orchestrated several relationships throughought several years to allow us
+to send a team to Hungary this past summer.  The team leader, Randy Valdez, spent
+several months on a stint in Hungary and is passionate about the people and culture
+there.  Other friendships we've forged stretching back to 2013 when we first met
+the Hungarian team in Albania have been instrumental in providing this opportunity.
+We are excited to consider the short-term discipleship trip to Hungary a complete
+success!
 
-To order a team t-shirt, fill out the form below:
-[Eastern Europe T-Shirt Order Form](https://docs.google.com/forms/d/1yYPd3C062VWM6qBzY-eE2beNDXOzcU1z8lJjBejJiwk/viewform?edit_requested=true)
+A team of 8 members went to Pécs, Hungary to share the Gospel with high-school
+students.  The primary focus of the trip was Evangelism, and there was a lot of it
+to be had!  The Catalytic ministry of CRU, Hungary will continue to follow up with
+these high-school students and ensure they are growing in their faith.
 
-Prayer calendars will be posted below as they are available. 
+## Albania
 
-[Download More Information (pdf)](/files/Albania-2018-Info-Sheet.pdf)
+This year we continued our efforts in 3 cities with high school students, and another
+team with the Young Professionals in the capital city of Tirana.  The high-school
+ministries in Tirana and Elbasan have been fruitful, while the high-school
+ministry in Korça was more rocky soil.  The Lord is still working in all these
+places, and we are currently planning to go back to each one.
 
-[Download the Calendar (pdf)](/files/Albania-2018-Info-Session-Calendar.pdf)
