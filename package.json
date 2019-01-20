@@ -45,6 +45,7 @@
     "gatsby-transformer-remark": "^2.2.0",
     "googleapis": "^36.0.0",
     "netlify-cms": "^2.3.3",
+    "netlify-lambda": "^1.2.0",
     "node-sass": "^4.11.0",
     "prismjs": "^1.15.0",
     "querystring": "^0.2.0",
@@ -71,8 +72,7 @@
     "@types/reactstrap": "^5.0.27",
     "@types/request": "^2.48.1",
     "@types/request-promise-native": "^1.0.15",
-    "ava": "^1.0.1",
-    "netlify-lambda": "^1.2.0"
+    "ava": "^1.0.1"
   },
   "ava": {
     "files": [
