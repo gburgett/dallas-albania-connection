@@ -1,7 +1,7 @@
 ---
 contentType: article
 path: /2018
-title: We're Heading Back in 2018!
+title: "2018: To Albania+ and Beyond!"
 date: 2018-02-09T05:31:28.725Z
 heroimage: /files/2018 albania group photo_social.jpg
 feature:
@@ -164,7 +164,6 @@ roster:
       name: Poland - Regeneration Recovery
   text: Click on one of the buttons below to donate!
 ---
-# Summer Project 2018
 
 2018, as all previous years, has been full of growth and new things.  The biggest
 new thing this year was us going trans-national with the addition of the Hungary
