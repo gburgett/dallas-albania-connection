@@ -50,7 +50,8 @@ export function formatLocalDate(date: string | Date) {
     return
   }
   if (typeof date == 'string') {
-    return parseISOLocal(date).toLocaleDateString()
+    return parseISOLocal(date).toLocaleDateString('en-US',
+      { year: 'numeric', month: 'long', day: 'numeric' })
   } else {
     return date.toLocaleDateString()
   }
@@ -62,10 +63,17 @@ export function formatLocalDate(date: string | Date) {
 */
 // https://stackoverflow.com/a/33909265/2192243
 export function parseISOLocal(s: string | Date) {
+  let dt: Date
   if (typeof s == 'string') {
-    return new Date(Date.parse(s))
+    dt = new Date(Date.parse(s))
+  } else {
+    dt = s
   }
-  return s
+
+  // adjust the date because all of them are in the US central time zone
+  dt = new Date(dt.getTime() + 6 * 60 * 60 * 1000);
+
+  return dt
 }
 
 export function parseUrl(strUrl: string) {
