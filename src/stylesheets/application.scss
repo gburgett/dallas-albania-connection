@@ -35,6 +35,12 @@ a {
   color: $theme-links;
 }
 
+hr {
+  &.thick {
+    border-top-width: 8px;
+    border-color: black;
+  }
+}
 
 .navbar-nav {
   flex-direction: row!important;
@@ -337,12 +343,19 @@ blockquote {
 .post-list {
   padding-left: 0px;
 
+  .year-header:first-child {
+    display: none;
+  }
+
   // all but the first year header
   .year-header:nth-child(n+2) {
-    border-top: 1px dashed;
-    border-left: 1px dashed;
     margin-top: 20px;
     text-align: center;
+
+    @include media-breakpoint-down(sm) {
+      border-top: 1px dashed;
+      border-left: 1px dashed;
+    }
   }
 
   .hero {

@@ -7,7 +7,7 @@ import { mergeBlogsAndArticles, parseISOLocal, parseUrl } from '../../blog/utili
 export interface IPost {
   id: string
   excerpt: string
-  timeToRead: string
+  timeToRead: number
   frontmatter: {
     slug: string
     externalUrl: string
@@ -54,7 +54,7 @@ export const PostList = ({ posts }: { posts: IPost[] }) => {
     </div>
 }
 
-const BlogPost = (p: IPost) => {
+export const BlogPost = (p: IPost) => {
   const {heroimage, author} = p.frontmatter
   let img = heroimage
   let height = "96px"
