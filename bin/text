@@ -139,7 +139,7 @@ function writeToTwilio(body) {
     highWaterMark: 0,
     write(chunk, encoding, callback) {
       const to = chunk.toString()
-      console.log('sending', `'${body}'`, 'from', fromNumber, 'to', to)
+      console.log('sending from', fromNumber, 'to', to)
       twilio.messages.create({
         from: fromNumber,
         to: to,
