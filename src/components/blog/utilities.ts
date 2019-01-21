@@ -29,7 +29,7 @@ blogs: {
   postsAndArticles.sort(byDate).reverse()
 
   postsAndArticles = postsAndArticles.filter(({ frontmatter }) => {
-    const dt = Date.parse(frontmatter.date)
+    const dt = parseISOLocal(frontmatter.date).getTime()
     if (frontmatter.contentType == 'blog' && frontmatter.published === false) {
       return false
     }
@@ -43,4 +43,27 @@ function byDate(a: { frontmatter: { date: string }}, b: { frontmatter: { date: s
   const dtA = Date.parse(a.frontmatter.date)
   const dtB = Date.parse(b.frontmatter.date)
   return dtA - dtB
+}
+
+export function formatLocalDate(date: string | Date) {
+  if (!date) {
+    return
+  }
+  if (typeof date == 'string') {
+    return parseISOLocal(date).toLocaleDateString()
+  } else {
+    return date.toLocaleDateString()
+  }
+}
+
+/*  @param {string} s - an ISO 8001 format date and time string
+**                      with all components, e.g. 2015-11-24T19:40:00
+**  @returns {Date} - Date instance from parsing the string. May be NaN.
+*/
+// https://stackoverflow.com/a/33909265/2192243
+export function parseISOLocal(s: string | Date) {
+  if (typeof s == 'string') {
+    return new Date(Date.parse(s))
+  }
+  return s
 }

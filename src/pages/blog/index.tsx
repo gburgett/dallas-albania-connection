@@ -37,6 +37,7 @@ query BlogIndexQuery {
         timeToRead
         frontmatter {
           slug
+          externalUrl
           title
           contentType
           date

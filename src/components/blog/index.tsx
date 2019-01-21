@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { Container } from 'reactstrap'
 import Helmet from 'react-helmet'
+import { URL } from 'url'
 
 import Hero from '../hero/Hero'
 import Author from '../author'
-import { mergeBlogsAndArticles } from './utilities';
+import { mergeBlogsAndArticles, formatLocalDate } from './utilities';
 
 export interface ITemplateData {
   site: ISite,
@@ -55,6 +56,7 @@ export interface IBlogPreviewData {
   timeToRead: number
   frontmatter: {
     slug: string
+    externalUrl: string
     title: string
     contentType: 'blog'
     date: string
@@ -81,16 +83,24 @@ const BlogsPreview = ({ nodes }: { nodes: Array<IArticle | IBlogPreviewData> }) 
 }
 
 const BlogPreview = (node: IBlogPreviewData) => (
-  <a href={`/blog/${node.frontmatter.slug}`}>
-    <span className='body date'>{new Date(Date.parse(node.frontmatter.date)).toLocaleDateString()}</span>
-    <span className='title'>{node.frontmatter.title}</span>
-    <span className='body readtime'>{node.timeToRead} minute read</span>
+  <a href={node.frontmatter.externalUrl || `/blog/${node.frontmatter.slug}`}>
+    <span className='body date'>{formatLocalDate(node.frontmatter.date)}</span>
+    <span className='title'>
+      {node.frontmatter.title}
+    </span>
+    {
+      node.frontmatter.externalUrl ?
+        <span className='body readtime'>
+          {new URL(node.frontmatter.externalUrl).host} <i className="fa fa-external-link-alt" />
+        </span> :
+        <span className='body readtime'>{node.timeToRead} minute read</span>
+    }
   </a>
 )
 
 const ArticlePreview = (node: IArticle) => (
   <a href={node.frontmatter.path}>
-    <span className='body date'>{new Date(Date.parse(node.frontmatter.date)).toLocaleDateString()}</span>
+    <span className='body date'>{formatLocalDate(node.frontmatter.date)}</span>
     <span className='title'>{node.frontmatter.title}</span>
   </a>
 )

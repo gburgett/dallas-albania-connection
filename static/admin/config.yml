@@ -159,7 +159,8 @@ collections:
     fields:
       - {label: "Content Type", name: "contentType", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string", required: false}
+      - {label: "External Link", name: "externalUrl", widget: "string", pattern: '^http(s)?\:\/\/.+', required: false}
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Published?", name: "published", widget: "boolean", default: false}
       - {label: "Hero Image", name: "heroimage", widget: "image", required: false}

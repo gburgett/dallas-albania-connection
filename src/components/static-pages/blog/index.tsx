@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
-import { mergeBlogsAndArticles } from '../../blog/utilities';
+import { URL } from 'url'
 
+import { mergeBlogsAndArticles, parseISOLocal } from '../../blog/utilities';
 
 export interface IPost {
   id: string
@@ -10,6 +11,7 @@ export interface IPost {
   timeToRead: string
   frontmatter: {
     slug: string
+    externalUrl: string
     title: string
     date: string
     heroimage: string
@@ -67,7 +69,8 @@ const BlogPost = (p: IPost) => {
   }
 
   return (
-    <a key={p.frontmatter.slug} href={`/blog/${p.frontmatter.slug}`}>
+    <a key={p.frontmatter.externalUrl || p.frontmatter.slug}
+      href={p.frontmatter.externalUrl || `/blog/${p.frontmatter.slug}`}>
     <li className="post">
       {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
       </div>}
@@ -76,11 +79,21 @@ const BlogPost = (p: IPost) => {
         {author && 
           <span className="body">by {author.name}</span>}
       </div>
-      <div className="teaser">
-        <div className="body">
-          {p.excerpt}
-          <footer className="blockquote-footer">{p.timeToRead} minute read</footer>
-        </div>
+      <div className="teaser col-12">
+        {
+          <div className="body">
+            {p.excerpt}
+            {
+              p.frontmatter.externalUrl ?
+                <footer className="blockquote-footer">
+                  {new URL(p.frontmatter.externalUrl).host} <i className="fa fa-external-link-alt" />
+                </footer> :
+                <footer className="blockquote-footer">
+                  {p.timeToRead} minute read
+                </footer>
+            }
+          </div>
+        }
       </div>
     </li>
     </a>)
@@ -100,7 +113,7 @@ const Article = (a: IArticle) => {
       <div className="title">
         <h4>{a.frontmatter.title}</h4>
       </div>
-      <div className="teaser">
+      <div className="teaser col-12">
         <div className="body">
           {a.excerpt}
         </div>
@@ -122,7 +135,7 @@ export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
       <Col xs={12} md={{ size: 9, offset: 3 }} >
         <ul className="post-list">
         {postsAndArticles.map((postOrArticle) => {
-          const dt = new Date(Date.parse(postOrArticle.frontmatter.date))
+          const dt = parseISOLocal(postOrArticle.frontmatter.date)
           let renderYearHeader = false
           if (dt.getFullYear() != currentYear) {
             currentYear = dt.getFullYear()

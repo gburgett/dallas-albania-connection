@@ -54,6 +54,7 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             slug
+            externalUrl
             title
             contentType
             date

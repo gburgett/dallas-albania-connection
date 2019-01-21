@@ -80,11 +80,14 @@ module.exports = {
               return allMarkdownRemark.edges
                 .filter(edge => edge.node.frontmatter.published !== false)
                 .map(edge => {
-                  const { slug, author, heroimage } = edge.node.frontmatter
-                  console.log('rss', slug)
+                  const { slug, externalUrl, author, heroimage } = edge.node.frontmatter
+                  if (!slug || !externalUrl) {
+                    return null
+                  }
+
                   return Object.assign({}, edge.node.frontmatter, {
-                    url: site.siteMetadata.siteUrl + '/blog/' + slug,
-                    guid: site.siteMetadata.siteUrl + '/blog/' + slug,
+                    url: externalUrl || site.siteMetadata.siteUrl + '/blog/' + slug,
+                    guid: externalUrl || site.siteMetadata.siteUrl + '/blog/' + slug,
                     author: author ? author.name : null,
                     custom_elements: [
                       { "content:encoded": edge.node.html.replace(/\"\/files\//g, `"${site.siteMetadata.siteUrl}/files/`) },
@@ -95,7 +98,7 @@ module.exports = {
                       } }
                     ],
                   });
-                });
+                }).filter(e => e);
             },
             query: `
               {
@@ -113,6 +116,7 @@ module.exports = {
                       timeToRead
                       frontmatter {
                         slug
+                        externalUrl
                         title
                         date
                         published

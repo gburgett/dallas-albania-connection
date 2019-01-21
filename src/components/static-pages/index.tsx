@@ -7,6 +7,7 @@ import Feature, {IFeatureProps} from '../Feature'
 import { Summary as EventSummary } from '../events/summary'
 import { IEventFields } from '../events';
 import { PostList, IPost, IArticle } from './blog';
+import { parseISOLocal } from '../blog/utilities';
 
 export interface IPageData {
   site: ISite,
@@ -80,7 +81,7 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
   let yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
   const events = data.events.edges
     .map(edge => edge.node)
-    .filter(node => Date.parse(node.frontmatter.date) > yesterday)
+    .filter(node => parseISOLocal(node.frontmatter.date).getTime() > yesterday)
   
   const featuredPostSlugs = (data.root.frontmatter.featuredPosts || []).map(p => p.slug);
   const posts = (data.blogs || { edges: [] }).edges.map(edge => ({
@@ -107,8 +108,7 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
       <Col xs={12} md={3} className="eventsList">
         <h3>Upcoming Events</h3>
         {events.map((node, i) => {
-          const dt = Date.parse(node.frontmatter.date)
-          return <EventSummary key={dt} {...node} collapse={i > 0} />
+          return <EventSummary key={node.frontmatter.date} {...node} collapse={i > 0} />
         })}
       </Col>
       <Col xs={12} md={9}>

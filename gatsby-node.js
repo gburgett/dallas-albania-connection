@@ -29,8 +29,12 @@ exports.createPages = ({ actions, graphql }) => {
 
   const createNode = ({ node }) => {
     let { contentType, path, slug } = node.frontmatter
-    if (contentType) {
-      path = path || `${contentType}/${slug}`
+    if (!path) {
+      if (!contentType || !slug) {
+        return
+      }
+
+      path = `${contentType}/${slug}`
     }
 
     const context = {

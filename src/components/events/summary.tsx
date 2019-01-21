@@ -2,6 +2,7 @@ import * as React from 'react'
 import { IEventFields } from '.'
 
 import { Card, CardTitle, CardHeader, CardBody } from 'reactstrap'
+import { parseISOLocal } from '../blog/utilities';
 
 interface IEventSummaryProps extends IEventFields {
   collapse: boolean
@@ -12,7 +13,7 @@ export const Summary = (props: IEventSummaryProps) => {
 
   let color="light"
 
-  const dt = Date.parse(date)
+  const dt = parseISOLocal(date).getTime()
   const tomorrow = Date.now() + (1 * 24 * 60 * 60 * 1000)
   if (dt < tomorrow) {
     color="danger"
