@@ -17,7 +17,6 @@ articles:
   - path: /2017
   - path: /2016
   - path: /2015
-  - path: /2014
 featuredPosts:
   - slug: no-post
 postsToShow: 4
