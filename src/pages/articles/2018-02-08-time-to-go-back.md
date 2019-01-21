@@ -1,7 +1,7 @@
 ---
 contentType: article
 path: /2018
-title: "2018: To Albania+ and Beyond!"
+title: '2018: To Albania+ and Beyond!'
 date: 2018-02-09T05:31:28.725Z
 heroimage: /files/2018 albania group photo_social.jpg
 feature:
@@ -9,7 +9,7 @@ feature:
   buttonStyle: info
   buttonText: <i class="fas fa-heart"></i> Donate!
   link: '#roster'
-  show: true
+  show: false
 showRoster: false
 roster:
   header: Team Roster
@@ -23,7 +23,6 @@ roster:
   teams:
     - adjustment: '150'
       goal: '3000'
-      mileMarker: '1700'
       members:
         - adjustment: '3000'
           cruId: 0746249
@@ -43,10 +42,10 @@ roster:
           name: Lauren Horner
         - cruId: 0999996
           name: Sally Neeley
+      mileMarker: '1700'
       name: 'Tirana, Albania - Young Professionals'
     - adjustment: '150'
       goal: '3000'
-      mileMarker: '1700'
       members:
         - cruId: 0936825
           name: Carrie Beckner
@@ -69,10 +68,10 @@ roster:
           name: Morgan Asbill
         - cruId: '1000512'
           name: Seth Gordon
+      mileMarker: '1700'
       name: 'Tirana, Albania - High School'
     - adjustment: '150'
       goal: '3000'
-      mileMarker: '1700'
       members:
         - cruId: 0936790
           goal: '3500'
@@ -92,10 +91,10 @@ roster:
         - cruId: 0999940
           goal: '3500'
           name: Faith Michael
+      mileMarker: '1700'
       name: 'Korça, Albania - High School'
     - adjustment: '150'
       goal: '3000'
-      mileMarker: '1700'
       members:
         - cruId: 0880885
           name: Marlie Austin
@@ -115,10 +114,10 @@ roster:
           name: Christina Edwards
         - cruId: '1000010'
           name: Chelsea Prettyman
+      mileMarker: '1700'
       name: 'Elbasan, Albania - High School'
     - adjustment: '150'
       goal: '3000'
-      mileMarker: '1700'
       members:
         - cruId: 0937180
           name: Randy Valdez
@@ -138,10 +137,10 @@ roster:
           name: Faith Michael
         - cruId: '1000430'
           name: Aaron Dutton
+      mileMarker: '1700'
       name: 'Pécs, Hungary - High School'
     - adjustment: '150'
       goal: '3000'
-      mileMarker: '1700'
       members:
         - cruId: 0936992
           name: Chris Hyland
@@ -161,6 +160,7 @@ roster:
           name: Lauren Horner
         - cruId: 0999875
           name: Jose Lopez
+      mileMarker: '1700'
       name: Poland - Regeneration Recovery
   text: Click on one of the buttons below to donate!
 ---
