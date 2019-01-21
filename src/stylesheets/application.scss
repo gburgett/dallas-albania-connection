@@ -42,6 +42,10 @@ a {
   & > * {
     padding-left: 10px;
   }
+
+  .nav-link {
+    font-size: 18px;
+  }
 }
 
 .jumbotron {
@@ -332,6 +336,14 @@ blockquote {
 
 .post-list {
   padding-left: 0px;
+
+  // all but the first year header
+  .year-header:nth-child(n+2) {
+    border-top: 1px dashed;
+    border-left: 1px dashed;
+    margin-top: 20px;
+    text-align: center;
+  }
 
   .hero {
     width: 96px;

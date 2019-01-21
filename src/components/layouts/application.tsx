@@ -46,6 +46,10 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
             <a href='/' className='navbar-brand'>Home</a>
             <ul className='nav navbar-nav'>
 
+              <li className='nav-item'>
+                <a href='/blog' className='nav-link'>Blog</a>
+              </li>
+
               {user && (
                 <li className='nav-item'>
                   <a href='/admin' className='nav-link'>Admin</a>

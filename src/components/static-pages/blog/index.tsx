@@ -130,7 +130,7 @@ export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
           }
 
           return <>
-            {renderYearHeader && <h2>{currentYear}</h2>}
+            {renderYearHeader && <h2 className="year-header">{currentYear}</h2>}
             {
               postOrArticle.frontmatter.contentType == 'article' ?
                 <Article {...postOrArticle as IArticle} /> :
