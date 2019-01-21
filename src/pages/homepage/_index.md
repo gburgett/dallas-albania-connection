@@ -20,5 +20,6 @@ articles:
   - path: /2014
 featuredPosts:
   - slug: marlie-albania-2017
+postsToShow: 4
 ---
 
