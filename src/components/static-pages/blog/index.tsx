@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
-import { URL } from 'url'
 
-import { mergeBlogsAndArticles, parseISOLocal } from '../../blog/utilities';
+import { mergeBlogsAndArticles, parseISOLocal, parseUrl } from '../../blog/utilities';
 
 export interface IPost {
   id: string
@@ -86,7 +85,7 @@ const BlogPost = (p: IPost) => {
             {
               p.frontmatter.externalUrl ?
                 <footer className="blockquote-footer">
-                  {new URL(p.frontmatter.externalUrl).host} <i className="fa fa-external-link-alt" />
+                  {parseUrl(p.frontmatter.externalUrl).host} <i className="fa fa-external-link-alt" />
                 </footer> :
                 <footer className="blockquote-footer">
                   {p.timeToRead} minute read

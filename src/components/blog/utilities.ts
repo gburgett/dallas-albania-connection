@@ -67,3 +67,11 @@ export function parseISOLocal(s: string | Date) {
   }
   return s
 }
+
+export function parseUrl(strUrl: string) {
+  if (typeof URL !== 'undefined') {
+    return new URL(strUrl)
+  }
+  const nodeUrl = require('url')
+  return new nodeUrl.URL(strUrl)
+}

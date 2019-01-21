@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { Container } from 'reactstrap'
 import Helmet from 'react-helmet'
-import { URL } from 'url'
 
 import Hero from '../hero/Hero'
 import Author from '../author'
-import { mergeBlogsAndArticles, formatLocalDate } from './utilities';
+import { mergeBlogsAndArticles, formatLocalDate, parseUrl } from './utilities';
 
 export interface ITemplateData {
   site: ISite,
@@ -91,7 +90,7 @@ const BlogPreview = (node: IBlogPreviewData) => (
     {
       node.frontmatter.externalUrl ?
         <span className='body readtime'>
-          {new URL(node.frontmatter.externalUrl).host} <i className="fa fa-external-link-alt" />
+          {parseUrl(node.frontmatter.externalUrl).host} <i className="fa fa-external-link-alt" />
         </span> :
         <span className='body readtime'>{node.timeToRead} minute read</span>
     }
