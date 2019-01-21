@@ -57,7 +57,7 @@ async function Run() {
     if (!got.data.values || got.data.values.length == 0) {
       console.log('No numbers to message')
     }
-    numbers = got.data.values.flat()
+    numbers = flatten(got.data.values)
     if (numbers.length == 0) {
       console.log('No numbers to message')
     }
@@ -155,3 +155,6 @@ function writeToTwilio(body) {
   });
 }
 
+function flatten(arr) {
+  return [].concat(...arr)
+}
