@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
+import { mergeBlogsAndArticles } from '../../blog/utilities';
 
 
 export interface IPost {
@@ -13,6 +14,7 @@ export interface IPost {
     date: string
     heroimage: string
     contentType: 'blog'
+    published?: boolean
     author: {
       name: string
       gravatar: string
@@ -109,9 +111,7 @@ const Article = (a: IArticle) => {
 
 export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
   
-  let postsAndArticles: Array<IArticle | IPost> = data.articles.edges.map((e) => e.node)
-  postsAndArticles = postsAndArticles.concat(data.blogs.edges.map((e) => e.node))
-  postsAndArticles.sort(byDate).reverse()
+  const postsAndArticles = mergeBlogsAndArticles(data.articles, data.blogs);
 
   let currentYear = 9999
 
@@ -142,10 +142,4 @@ export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
       </Col>
     </Row>
   </Container>)
-}
-
-function byDate(a: { frontmatter: { date: string }}, b: { frontmatter: { date: string }}): number {
-  const dtA = Date.parse(a.frontmatter.date)
-  const dtB = Date.parse(b.frontmatter.date)
-  return dtA - dtB
 }

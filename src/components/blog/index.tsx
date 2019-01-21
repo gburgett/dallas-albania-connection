@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 
 import Hero from '../hero/Hero'
 import Author from '../author'
+import { mergeBlogsAndArticles } from './utilities';
 
 export interface ITemplateData {
   site: ISite,
@@ -24,10 +25,27 @@ export interface ITemplateData {
       }
     }
   },
+  articles: {
+    edges: {
+      node: IArticle
+    }[]
+  }
   blogs: {
     edges: {
       node: IBlogPreviewData
     }[]
+  }
+}
+
+interface IArticle {
+  excerpt: string,
+  id: any,
+  frontmatter: {
+    title: string,
+    contentType: 'article',
+    date: string,
+    path: string,
+    heroimage: string
   }
 }
 
@@ -38,20 +56,19 @@ export interface IBlogPreviewData {
   frontmatter: {
     slug: string
     title: string
+    contentType: 'blog'
     date: string
     published?: boolean
   }
 }
 
-const BlogsPreview = (props: { edges: { node: IBlogPreviewData }[] }) => {
-  const edges = props.edges.filter(e => {
-    const dt = Date.parse(e.node.frontmatter.date)
-    return dt <= Date.now() && e.node.frontmatter.published !== false
-  })
+const BlogsPreview = ({ nodes }: { nodes: Array<IArticle | IBlogPreviewData> }) => {
   return <ul className='list-group'>
-    { edges.map(e => (
-      <li className="d-flex w-100 justify-content-between" key={e.node.id}>
-        <BlogPreview {...e.node} />
+    { nodes.map(e => (
+      <li className="d-flex w-100 justify-content-between" key={e.id}>
+      {e.frontmatter.contentType == 'article' ?
+        <ArticlePreview {...e as IArticle} /> :
+        <BlogPreview {...e as IBlogPreviewData} />}
       </li>
     ))}
     <li className="d-flex w-100 justify-content-between">
@@ -71,8 +88,15 @@ const BlogPreview = (node: IBlogPreviewData) => (
   </a>
 )
 
+const ArticlePreview = (node: IArticle) => (
+  <a href={node.frontmatter.path}>
+    <span className='body date'>{new Date(Date.parse(node.frontmatter.date)).toLocaleDateString()}</span>
+    <span className='title'>{node.frontmatter.title}</span>
+  </a>
+)
+
 export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
-  const { markdownRemark: post, blogs } = data
+  const { markdownRemark: post, blogs, articles } = data
   const { heroimage, heroAttribution, title } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
@@ -84,6 +108,8 @@ export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
       author = undefined
     }
   }
+
+  const postsAndArticles = mergeBlogsAndArticles(articles, blogs);
 
   return (
     <div className="blog">
@@ -106,7 +132,7 @@ export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
       <Container>
         <div className='row blog-body'>
           <div className='d-none d-md-block col-md-2 blog-list'>
-            { <BlogsPreview edges={blogs.edges} /> }
+            { <BlogsPreview nodes={postsAndArticles} /> }
           </div>
           <div className='col-md-10'>
             {!heroimage && <h1 className='display-3'>{title}</h1>}

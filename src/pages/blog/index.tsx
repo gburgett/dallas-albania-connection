@@ -41,6 +41,7 @@ query BlogIndexQuery {
           contentType
           date
           heroimage
+          published
           author {
             name
             gravatar

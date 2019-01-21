@@ -31,7 +31,21 @@ export const pageQuery = graphql`
         }
       }
     }
-
+    articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          excerpt(pruneLength: 150)
+          id
+          frontmatter {
+            title
+            contentType
+            date(formatString: "MMMM DD, YYYY")
+            path
+            heroimage
+          }
+        }
+      }
+    }
     blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
@@ -41,6 +55,7 @@ export const pageQuery = graphql`
           frontmatter {
             slug
             title
+            contentType
             date
             published
           }
