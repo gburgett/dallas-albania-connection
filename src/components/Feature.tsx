@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Row, Col, Button } from 'reactstrap'
+import { Row, Col, Button, Container } from 'reactstrap'
 
 export interface IFeatureProps {
   title?: string
@@ -24,20 +24,24 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
       'btn-success'
 
     if (present(image)) {
-      return  (<Row className="feature" style={ style }>
-        <Col className='col-12 col-md-6'>
-          <div className="bgimg" style={ { backgroundImage: present(image) && `url('${image}')` }}>
-            {present(title) && <h2 className="d-none d-md-block">{title}</h2>}
+      return  (<div className="feature" style={ style }>
+        <Container>
+          <Row>
+            <Col md={6}>
+              <div className="bgimg" style={ { backgroundImage: present(image) && `url('${image}')` }}>
+              {present(title) && <h2 className="d-none d-md-block">{title}</h2>}
 
-            <a className={`d-block d-md-none btn ${buttonStyle}`} href={link}
-              dangerouslySetInnerHTML={{ __html: present(title) ? title : buttonText }}></a>
-          </div>
-        </Col>
-        <Col className={`d-none d-md-block ${present(image) ? 'col-md-6' : 'col-md-12'}`}>
-          <a className={`btn ${buttonStyle}`} href={link}
-            dangerouslySetInnerHTML={{ __html: buttonText }}></a>
-        </Col>
-      </Row>)
+              <a className={`d-block d-md-none btn ${buttonStyle}`} href={link}
+                dangerouslySetInnerHTML={{ __html: present(title) ? title : buttonText }}></a>
+            </div>
+            </Col>
+            <Col md={present(image) ? 6 : 12} className={`d-none d-md-flex`}>
+              <a className={`btn ${buttonStyle}`} href={link}
+                dangerouslySetInnerHTML={{ __html: buttonText }}></a>
+            </Col>
+          </Row>
+        </Container>
+      </div>)
     }
 
     return (<Row className="feature feature-sm">

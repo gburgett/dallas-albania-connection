@@ -75,17 +75,10 @@ hr {
 
 @include media-breakpoint-up(lg) {
   .jumbotron .hero-image {
-    max-width: 90%;
     padding: 0 5%;
     margin-left: auto;
     margin-right: auto;
     min-height: 600px;
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  .jumbotron .hero-image {
-    max-width: 70%;
   }
 }
 
@@ -143,9 +136,9 @@ hr {
 
 .feature {
   min-height: 200px;
-  max-width: 90%;
   background-color: $theme-primary-1;
   margin: 0 auto;
+  padding: 10px;
   transform: translateY(-30px);
 
   &.feature-sm {
@@ -159,8 +152,7 @@ hr {
   }
 
   .bgimg {
-    height: 100%;
-    width: 100%;
+    min-height: 200px;
     background-size: cover;
     border-radius: 8px;
     background-position: center;
@@ -179,21 +171,14 @@ hr {
 
   .btn {
     position: relative;
-    top: 120px;
     left: 20%;
-    width: 85%;
-  }
-}
+    min-width: 85%;
+    margin: auto 0;
 
-@include media-breakpoint-up(md) {
-  .feature .btn {
-    top: 80px;
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  .feature {
-    max-width: 70%;
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      bottom: 10px;
+    }
   }
 }
 
@@ -470,5 +455,11 @@ blockquote {
 @each $color, $value in $colors {
   .btn-outline-#{$color} {
     @include button-outline-variant($value);
+  }
+}
+
+.embed-responsive-4by3 {
+  &::before {
+    padding-top: percentage(3 / 4);
   }
 }
