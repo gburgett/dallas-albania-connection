@@ -5,8 +5,8 @@ hero:
   subtitle: Discipleship Trips to Albania and Eastern Europe
   title: Team Albania
 feature:
-  backgroundColor: darkslategray
-  buttonStyle: orange
+  backgroundColor: black
+  buttonStyle: danger
   buttonText: Apply Now!
   image: /files/img_0020.jpg
   link: /apply

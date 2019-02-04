@@ -458,6 +458,12 @@ blockquote {
   }
 }
 
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}
+
 .embed-responsive-4by3 {
   &::before {
     padding-top: percentage(3 / 4);

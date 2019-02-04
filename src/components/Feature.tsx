@@ -14,17 +14,12 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
   render() {
     const {title, image, link, buttonText, backgroundColor} = this.props;
 
-    const style = {} as any
-    if (present(backgroundColor)) {
-      style.backgroundColor = backgroundColor
-    }
-
     const buttonStyle = present(this.props.buttonStyle) ?
       ('btn-' + this.props.buttonStyle).replace(/^btn\-btn\-/, 'btn-') :
       'btn-success'
 
     if (present(image)) {
-      return  (<div className="feature" style={ style }>
+      return  (<div className={`feature bg-${backgroundColor}`}>
         <Container>
           <Row>
             <Col md={6}>
