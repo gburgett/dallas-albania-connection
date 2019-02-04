@@ -24,7 +24,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   }
 }
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   const createNode = ({ node }) => {
@@ -54,7 +54,7 @@ exports.createPages = ({ actions, graphql }) => {
     })
   }
 
-  return graphql(`
+  const result = await graphql(`
   {
     pages: allMarkdownRemark(filter: { frontmatter: { path: { ne: null } } }) {
       edges {
@@ -81,11 +81,11 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
-    result.data.pages.edges.forEach(createNode)
-    result.data.blogs.edges.forEach(createNode)
-  })
+  `)
+
+  if (result.errors) {
+    throw new Error(result.errors)
+  }
+  result.data.pages.edges.forEach(createNode)
+  result.data.blogs.edges.forEach(createNode)
 }
