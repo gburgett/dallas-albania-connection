@@ -1,3 +1,1 @@
-/participants/:year   200!	Role=admin,editor,:year
-/participants/:year/* 200!	Role=admin,editor,:year
-/participants/*	/login	401
+/apply    https://docs.google.com/forms/d/e/1FAIpQLSe9rcYz1_cL7ZvpN6GrN1UIUw8sSmFB8Rek5bzR5DMXYRmeYw/viewform?usp=sf_link
