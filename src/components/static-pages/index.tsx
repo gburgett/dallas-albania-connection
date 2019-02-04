@@ -90,7 +90,6 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
     }))
   const featuredPosts = posts.filter(n => n.index >= 0).sort((a, b) => a.index - b.index)
   const latestPosts = posts.filter(n => n.index < 0).slice(0, Math.max(postsToShow - featuredPosts.length, 0))
-  console.log(postsToShow, featuredPosts.length, latestPosts)
   featuredPosts.push(...latestPosts)
   const remainingPosts = posts.filter(n => n.index < 0).slice(latestPosts.length)
 

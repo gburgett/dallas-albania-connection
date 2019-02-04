@@ -29,7 +29,6 @@ export const BlogPreview = ({entry, widgetFor, getAsset}) => {
   const heroImage = getAsset(entry.getIn(['data', 'heroimage']))
   const authorPhoto = getAsset(entry.getIn(['data', 'author', 'photo']))
   const body = entry.getIn(['data', 'body']) as string
-  console.log('body', body)
 
   // Grab the fields
   const fields: ITemplateData & { markdownRemark: IPost } = {
