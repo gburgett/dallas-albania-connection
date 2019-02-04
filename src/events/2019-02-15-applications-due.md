@@ -2,5 +2,7 @@
 contentType: event
 title: 2019 Applications Due!
 date: '2019-02-15'
-link: ''
+link: /apply
 ---
+
+Click Here to Apply Now!

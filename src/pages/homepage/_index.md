@@ -5,13 +5,13 @@ hero:
   subtitle: Discipleship Trips to Albania and Eastern Europe
   title: Team Albania
 feature:
-  backgroundColor: '#4582EC'
-  buttonStyle: success
-  buttonText: Read More
-  image: /files/blog/2017/albania-ron-acord.jpg
-  link: /blog/marlie-albania-2017
+  backgroundColor: darkslategray
+  buttonStyle: orange
+  buttonText: Apply Now!
+  image: /files/img_0020.jpg
+  link: /apply
   show: true
-  title: Memories of Elbasan
+  title: ''
 articles:
   - path: /2018
   - path: /2017
