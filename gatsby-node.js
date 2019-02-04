@@ -1,5 +1,6 @@
 const Path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const fs = require('fs-extra')
 
 
 exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
@@ -26,6 +27,10 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
+  createRedirect = (...args) => {
+    console.log('creating redirect', ...args)
+    actions.createRedirect.call(this, ...args)
+  }
 
   const createNode = ({ node }) => {
     let { contentType, path, slug } = node.frontmatter
@@ -88,4 +93,10 @@ exports.createPages = async ({ actions, graphql }) => {
   }
   result.data.pages.edges.forEach(createNode)
   result.data.blogs.edges.forEach(createNode)
+
+  const meta = JSON.parse(await fs.readFile('site/metadata.json'))
+  console.log('metadata:', meta)
+  if (meta.applicationUrl && meta.applicationUrl.length > 0) {
+    createRedirect({ fromPath: "/apply", toPath: meta.applicationUrl, isPermanent: false })
+  }
 }
