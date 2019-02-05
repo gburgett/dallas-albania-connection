@@ -17,7 +17,7 @@ export interface IPageData {
         show: boolean
       },
       jumbotronCta: IFeatureProps & {
-        show: boolean
+        showUntil: string
       },
       hero: {
         image: string,
@@ -78,10 +78,10 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .filter(n =>  n.index >= 0)
     .sort((a, b) => a.index - b.index)
 
-  const { feature, hero, postsToShow, } = data.root.frontmatter
+  const { feature, hero, postsToShow, jumbotronCta} = data.root.frontmatter
   const {title, siteUrl} = data.site.siteMetadata
 
-  let yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
+  const yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
   const events = data.events.edges
     .map(edge => edge.node)
     .filter(node => parseISOLocal(node.frontmatter.date).getTime() > yesterday)
@@ -96,8 +96,11 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
   featuredPosts.push(...latestPosts)
   const remainingPosts = posts.filter(n => n.index < 0).slice(latestPosts.length)
 
+  const showJumbotronCta = jumbotronCta && jumbotronCta.showUntil &&
+    (parseISOLocal(jumbotronCta.showUntil).getTime() > yesterday)
+
   const heroProps: Hero['props'] =
-    data.root.frontmatter.jumbotronCta && data.root.frontmatter.jumbotronCta.show ?
+    showJumbotronCta ?
       data.root.frontmatter.jumbotronCta :
       data.root.frontmatter.hero  
 

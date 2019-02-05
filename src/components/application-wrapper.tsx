@@ -53,7 +53,7 @@ export const LayoutWrapper = ({children}) => {
               link
               buttonStyle
               buttonText
-              show
+              showUntil
             }
           }
         }

@@ -30,7 +30,7 @@ query IndexQuery {
         backgroundColor
       }
       jumbotronCta {
-        show
+        showUntil
         title
         subtitle
         image

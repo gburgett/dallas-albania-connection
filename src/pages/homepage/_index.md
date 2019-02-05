@@ -11,7 +11,7 @@ jumbotronCta:
   link: /apply
   buttonStyle: danger
   buttonText: Apply Now ->
-  show: true
+  showUntil: 2019-02-15
 feature:
   backgroundColor: black
   buttonStyle: gray-dark

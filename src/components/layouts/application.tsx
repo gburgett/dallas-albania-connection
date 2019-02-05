@@ -5,13 +5,14 @@ import Helmet from 'react-helmet'
 import {IFooterFields, Footer} from '../footer/Footer'
 import { ISitemapFields } from '../footer/Sitemap';
 import { IFeatureProps } from '../Feature';
+import { parseISOLocal } from '../blog/utilities';
 
 export interface ILayoutData {
   site: ISite,
   homepage: {
     frontmatter: {
       jumbotronCta: IFeatureProps & {
-        show: boolean
+        showUntil: string
       }
     }
   },
@@ -45,7 +46,11 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
       .filter(p => p.frontmatter.published !== false)
       .slice(0, 6)
 
+    const yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
+
     const cta = data.homepage.frontmatter.jumbotronCta
+    const showCta = cta && cta.showUntil &&
+      parseISOLocal(cta.showUntil).getDate() > yesterday
 
     return (
       <div className='App'>
@@ -70,7 +75,7 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
                 <a href='/about' className='nav-link'>About</a>
               </li>
 
-              {cta && cta.show &&
+              {showCta &&
                 <li className="nav-item">
                   <a href={cta.link} className={`nav-link btn btn-${cta.buttonStyle}`}>
                     {cta.buttonText}
