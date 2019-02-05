@@ -58,12 +58,44 @@ hr {
   margin: 0 -15px;
   padding: 0;
   background-color: $theme-white;
+  position: sticky;
 
   .hero-image {
     background-position: center;
     min-height: 240px;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: rgba($black, 0.6);
+
+    &:before {
+      content:" ";
+      background-color:inherit;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%; 
+    }
+
+    &__title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      @include media-breakpoint-up(md) {
+        top: 80px;
+
+        .btn {
+          margin-top: 20px;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        .subtitle {
+          display: none;
+        }
+      }
+    }
   }
 }
 
@@ -93,31 +125,6 @@ hr {
   color: $light;
 }
 
-.hero-title {
-  padding: 40px 40px;
-
-  color: $hero-text;
-
-  h1 {
-    color: $hero-head;
-  }
-
-  .subtitle {
-    background-color: $hero-bg;
-    border-radius: 4px;
-    display: inline-block;
-    padding: 4px 2px;
-    position: relative;
-    left: 60%;
-    max-width: 40%;
-    max-height: 50%;
-
-    p {
-      margin: 0px;
-    }
-  }
-}
-
 .hero-body {
   margin-bottom: auto;
   display:flex;
@@ -136,15 +143,18 @@ hr {
 
 .feature {
   min-height: 200px;
-  background-color: $theme-primary-1;
-  margin: 0 auto;
   padding: 10px;
-  transform: translateY(-30px);
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
 
-  &.feature-sm {
-    background-color: inherit;
-    transform: translateY(-110%);
-    margin-bottom: -200px;
+  @include media-breakpoint-up(md) {
+    transform: translateY(-30px);
+  }
+
+  > .container {
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .col {
@@ -154,31 +164,7 @@ hr {
   .bgimg {
     min-height: 200px;
     background-size: cover;
-    border-radius: 8px;
     background-position: center;
-
-    h2 {
-      position: relative;
-      left: 10%;
-      max-width: 90%;
-      top: 120px;
-      background-color: $theme-dark;
-      color: $hero-text;
-      padding: 2px;
-      border-radius: 4px;
-    }
-  }
-
-  .btn {
-    position: relative;
-    left: 20%;
-    min-width: 85%;
-    margin: auto 0;
-
-    @include media-breakpoint-down(sm) {
-      position: absolute;
-      bottom: 10px;
-    }
   }
 }
 
@@ -446,7 +432,12 @@ blockquote {
   }
 }
 
+.btn {
+  border-radius: 0;
+}
+
 @each $color, $value in $colors {
+  @debug $color;
   .btn-#{$color} {
     @include button-variant($value, $value);
   }
@@ -461,6 +452,11 @@ blockquote {
 @each $color, $value in $colors {
   .bg-#{$color} {
     background-color: $value;
+    color: color-yiq($value);
+
+    .subtitle {
+      color: darken(color-yiq($value), 20%);
+    }
   }
 }
 

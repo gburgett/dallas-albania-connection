@@ -22,11 +22,21 @@ query IndexQuery {
       feature {
         show
         title
+        subtitle
         image
         link
         buttonText
         buttonStyle
         backgroundColor
+      }
+      jumbotronCta {
+        show
+        title
+        subtitle
+        image
+        link
+        buttonText
+        buttonStyle
       }
       hero {
         image

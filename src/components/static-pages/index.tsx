@@ -16,6 +16,9 @@ export interface IPageData {
       feature: IFeatureProps & {
         show: boolean
       },
+      jumbotronCta: IFeatureProps & {
+        show: boolean
+      },
       hero: {
         image: string,
         title: string,
@@ -76,7 +79,7 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
     .sort((a, b) => a.index - b.index)
 
   const { feature, hero, postsToShow, } = data.root.frontmatter
-  const {title, siteUrl, signupFormUrl} = data.site.siteMetadata
+  const {title, siteUrl} = data.site.siteMetadata
 
   let yesterday = Date.now() - ( 1 * 24 * 60 * 60 * 1000 )
   const events = data.events.edges
@@ -93,14 +96,16 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
   featuredPosts.push(...latestPosts)
   const remainingPosts = posts.filter(n => n.index < 0).slice(latestPosts.length)
 
+  const heroProps: Hero['props'] =
+    data.root.frontmatter.jumbotronCta && data.root.frontmatter.jumbotronCta.show ?
+      data.root.frontmatter.jumbotronCta :
+      data.root.frontmatter.hero  
+
   return (<Container fluid className="homepage">
     <Helmet title={title} titleTemplate={undefined}>
         {hero && <meta property="og:image" content={siteUrl + hero.image}></meta>}
     </Helmet>
-    <Hero {...hero} >
-      <div className="signup">
-        <a className="btn btn-dark" href={signupFormUrl}><i className="fas fa-envelope"></i>Get updates!</a>
-      </div>
+    <Hero {...heroProps} >
     </Hero>
     {feature && feature.show && <Feature {...feature} />}
     <Row>

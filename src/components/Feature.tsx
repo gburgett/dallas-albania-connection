@@ -1,8 +1,9 @@
 import * as React from 'react'
-import { Row, Col, Button, Container } from 'reactstrap'
+import { Row, Col, Container } from 'reactstrap'
 
 export interface IFeatureProps {
   title?: string
+  subtitle?: string
   image?: string
   link: string
   buttonText: string
@@ -12,7 +13,7 @@ export interface IFeatureProps {
 
 export default class Feature extends React.Component<IFeatureProps, {}> {
   render() {
-    const {title, image, link, buttonText, backgroundColor} = this.props;
+    const {title, subtitle, image, link, buttonText, backgroundColor} = this.props;
 
     const buttonStyle = present(this.props.buttonStyle) ?
       ('btn-' + this.props.buttonStyle).replace(/^btn\-btn\-/, 'btn-') :
@@ -30,7 +31,7 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
                 dangerouslySetInnerHTML={{ __html: present(title) ? title : buttonText }}></a>
             </div>
             </Col>
-            <Col md={present(image) ? 6 : 12} className={`d-none d-md-flex`}>
+            <Col md={6} className={`d-none d-md-flex justify-content-center`}>
               <a className={`btn ${buttonStyle}`} href={link}
                 dangerouslySetInnerHTML={{ __html: buttonText }}></a>
             </Col>
@@ -39,16 +40,20 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
       </div>)
     }
 
-    return (<Row className="feature feature-sm">
-      <Col className='d-none d-md-block col-md-6' />
-      <Col className='col-12 col-md-6'  style={ style }>
-        <div className="bgimg" style={ { backgroundImage: present(image) && `url('${image}')` }}>
-          {title && <h2 className="d-none d-md-block">{title}</h2>}
-          <a className={`btn ${buttonStyle}`} href={link}
-            dangerouslySetInnerHTML={{ __html: buttonText }}></a>
-        </div>
-      </Col>
-    </Row>)
+    return (<div className={`feature bg-${backgroundColor}`}>
+        <Container>
+          <Row>
+          <Col col={12} md={6}>
+            {present(title) && <h2 className="">{title}</h2>}
+            {present(subtitle) && <p className="subtitle">{subtitle}</p>}
+          </Col>
+          <Col col={12} md={6}>
+            <a className={`btn ${buttonStyle}`} href={link}
+              dangerouslySetInnerHTML={{ __html: buttonText }}></a>
+          </Col>
+          </Row>
+        </Container>
+      </div>)
   }
 }
 

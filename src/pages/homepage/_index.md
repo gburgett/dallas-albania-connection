@@ -4,14 +4,23 @@ hero:
   image: /files/background-cover.jpg
   subtitle: Discipleship Trips to Albania and Eastern Europe
   title: Team Albania
+jumbotronCta:
+  image: /files/background-cover.jpg
+  title: 2019 Applications Are Due!
+  subtitle: Complete your application by Feb 15
+  link: /apply
+  buttonStyle: danger
+  buttonText: Apply Now ->
+  show: true
 feature:
   backgroundColor: black
-  buttonStyle: danger
-  buttonText: Apply Now!
-  image: /files/img_0020.jpg
-  link: /apply
+  buttonStyle: gray-dark
+  buttonText: Get Updates
+  link: http://eepurl.com/dtPWW5
+  title: Subscribe for Email Updates
+  subtitle: 'Or: text "Albania" to 214-444-7523'
+  image: ''
   show: true
-  title: ''
 articles:
   - path: /2018
   - path: /2017
