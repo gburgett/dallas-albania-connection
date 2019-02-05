@@ -25,7 +25,7 @@ export default class Hero extends React.Component<IHeroProps, {}> {
             {title && (<h1>{ title }</h1>)}
             {subtitle && <p className="subtitle">{subtitle}</p>}
             {link &&
-              <a className={`btn btn-${buttonStyle}`}>
+              <a className={`btn btn-${buttonStyle}`} href={link}>
                 {buttonText}
               </a>}
           </Col>
