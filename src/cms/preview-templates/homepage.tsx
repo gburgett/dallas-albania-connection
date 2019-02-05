@@ -65,6 +65,7 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
           buttonStyle: entry.getIn(['data', 'feature', 'buttonStyle']) as string,
           backgroundColor: entry.getIn(['data', 'feature', 'backgroundColor']) as string
         },
+        jumbotronCta: null,
         hero: {
           title: entry.getIn(['data', 'hero', 'title']) as string,
           subtitle: entry.getIn(['data', 'hero', 'subtitle']) as string,

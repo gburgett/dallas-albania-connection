@@ -9,6 +9,11 @@ export const FakeLayoutData: ILayoutData = {
       signupFormUrl: 'https://test.com'
     }
   },
+  homepage: {
+    frontmatter: {
+      jumbotronCta: null
+    }
+  },
   footer: {
     html: '<p>Copyright © 2018 Gordon Burgett<br/>All rights reserved</p>',
     frontmatter: {
