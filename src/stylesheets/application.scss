@@ -54,6 +54,29 @@ hr {
   }
 }
 
+.navbar {
+  .navbar-brand {
+    color: #343a40;
+  }
+
+  .nav-link:not(.btn) {
+    color: rgba(2, 2, 2, 0.5);
+
+    &:hover,
+    &:focus {
+      color: #343a40;
+    }
+  }
+
+  .nav-link.btn {
+    height: calc(100% + 1rem);
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
+    padding-top: calc(8px + 0.5rem);
+    padding-bottom: calc(8px + 0.5rem);
+  }
+}
+
 .jumbotron {
   margin: 0 -15px;
   padding: 0;

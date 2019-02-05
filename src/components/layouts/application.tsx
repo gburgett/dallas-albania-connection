@@ -4,9 +4,17 @@ import Helmet from 'react-helmet'
 
 import {IFooterFields, Footer} from '../footer/Footer'
 import { ISitemapFields } from '../footer/Sitemap';
+import { IFeatureProps } from '../Feature';
 
 export interface ILayoutData {
   site: ISite,
+  homepage: {
+    frontmatter: {
+      jumbotronCta: IFeatureProps & {
+        show: boolean
+      }
+    }
+  },
   footer: IFooterFields,
   sitemap: {
     edges: {
@@ -37,11 +45,13 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
       .filter(p => p.frontmatter.published !== false)
       .slice(0, 6)
 
+    const cta = data.homepage.frontmatter.jumbotronCta
+
     return (
       <div className='App'>
         <Helmet titleTemplate={`${data.site.siteMetadata.title} | %s`}>
         </Helmet>
-        <div className='navbar navbar-expand-lg navbar-light bg-light'>
+        <div className='navbar navbar-expand-lg bg-light'>
           <Container fluid>
             <a href='/' className='navbar-brand'>Home</a>
             <ul className='nav navbar-nav'>
@@ -59,6 +69,13 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
               <li className='nav-item'>
                 <a href='/about' className='nav-link'>About</a>
               </li>
+
+              {cta && cta.show &&
+                <li className="nav-item">
+                  <a href={cta.link} className={`nav-link btn btn-${cta.buttonStyle}`}>
+                    {cta.buttonText}
+                  </a>
+                </li>}
             </ul>
           </Container>
         </div>

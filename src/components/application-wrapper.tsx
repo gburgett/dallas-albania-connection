@@ -44,6 +44,19 @@ export const LayoutWrapper = ({children}) => {
             title
           }
         }
+        homepage: markdownRemark(fileAbsolutePath: {regex: "/\/pages/homepage/_index\\.md$/"}) {
+          frontmatter {
+            jumbotronCta {
+              image
+              title
+              subtitle
+              link
+              buttonStyle
+              buttonText
+              show
+            }
+          }
+        }
         footer: markdownRemark(fileAbsolutePath: {regex: "/\/components/footer/Footer\\.md$/"}) {
           ...footerFields
         }
