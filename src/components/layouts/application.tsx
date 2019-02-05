@@ -50,7 +50,7 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
 
     const cta = data.homepage.frontmatter.jumbotronCta
     const showCta = cta && cta.showUntil &&
-      parseISOLocal(cta.showUntil).getDate() > yesterday
+      (parseISOLocal(cta.showUntil).getTime() > yesterday)
 
     return (
       <div className='App'>
@@ -64,12 +64,6 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
               <li className='nav-item'>
                 <a href='/blog' className='nav-link'>Blog</a>
               </li>
-
-              {user && (
-                <li className='nav-item'>
-                  <a href='/admin' className='nav-link'>Admin</a>
-                </li>
-              )}
 
               <li className='nav-item'>
                 <a href='/about' className='nav-link'>About</a>

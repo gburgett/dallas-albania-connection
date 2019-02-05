@@ -50,6 +50,7 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
 
   const heroImage = getAsset(entry.getIn(['data', 'hero', 'image']))
   const featureImage = getAsset(entry.getIn(['data', 'feature', 'image']))
+  const ctaImage = getAsset(entry.getIn(['data', 'jumbotronCta', 'image']))
 
   // Grab the fields
   const fields: IPageData = {
@@ -59,13 +60,22 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
         feature: {
           show: entry.getIn(['data', 'feature', 'show']) as boolean,
           title: entry.getIn(['data', 'feature', 'title']) as string,
+          subtitle: entry.getIn(['data', 'jumbotronCta', 'subtitle']) as string,
           link: entry.getIn(['data', 'feature', 'link']) as string,
           buttonText: entry.getIn(['data', 'feature', 'buttonText']) as string,
           image: featureImage ? featureImage.value : undefined,
           buttonStyle: entry.getIn(['data', 'feature', 'buttonStyle']) as string,
           backgroundColor: entry.getIn(['data', 'feature', 'backgroundColor']) as string
         },
-        jumbotronCta: null,
+        jumbotronCta: {
+          showUntil: entry.getIn(['data', 'jumbotronCta', 'showUntil']) as string,
+          title: entry.getIn(['data', 'jumbotronCta', 'title']) as string,
+          subtitle: entry.getIn(['data', 'jumbotronCta', 'subtitle']) as string,
+          link: entry.getIn(['data', 'jumbotronCta', 'link']) as string,
+          buttonText: entry.getIn(['data', 'jumbotronCta', 'buttonText']) as string,
+          image: ctaImage ? ctaImage.value : undefined,
+          buttonStyle: entry.getIn(['data', 'jumbotronCta', 'buttonStyle']) as string,
+        },
         hero: {
           title: entry.getIn(['data', 'hero', 'title']) as string,
           subtitle: entry.getIn(['data', 'hero', 'subtitle']) as string,
@@ -87,8 +97,18 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
     }
   }
 
+  const layoutData = Object.assign({},
+    FakeLayoutData,
+    {
+      homepage: {
+        frontmatter: Object.assign({},
+          FakeLayoutData.homepage.frontmatter,
+          fields.root.frontmatter)
+      }
+    })
 
-  return <ApplicationLayout data={FakeLayoutData}>
+
+  return <ApplicationLayout data={layoutData}>
       <IndexPage data={fields} location={{pathname: ''}} />
     </ApplicationLayout>
 };

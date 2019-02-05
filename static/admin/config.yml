@@ -77,7 +77,7 @@ collections:
               pattern: '^[a-zA-Z]+$'}
           - {label: "Background Color (see https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)",
               name: "backgroundColor", widget: "string", required: false,
-              pattern: '^(\w+|\#[a-f0-9]+|(rgba?|hsla?)\(\s*\d+,\s*\d+\%?,\s*\d+\%?(,\s*[\d\.]+)?\))$'}
+              pattern: '^[a-zA-Z]+$'}
       - label: "Featured Articles"
         name: "articles"
         widget: "list"
