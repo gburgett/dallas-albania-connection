@@ -52,7 +52,7 @@ query IndexQuery {
       postsToShow
     }
   }
-  articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+  articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}, public: {ne: false}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
     edges {
       node {
         excerpt(pruneLength: 150)

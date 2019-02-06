@@ -31,7 +31,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+    articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}, public: {ne: false}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
           excerpt(pruneLength: 150)
@@ -46,7 +46,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+    blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" }, published: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
           id

@@ -4,6 +4,7 @@ path: /2019
 title: Eastern Europe 2019
 date: 2019-02-06T02:21:04.174Z
 heroimage: /files/ronacord-berat.jpg
+public: false
 feature:
   show: false
 showRoster: false
