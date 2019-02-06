@@ -9,15 +9,17 @@ interface IHeroProps {
   buttonText?: string
   buttonStyle?: string
   heroAttribution?: string
+  /** Darken the hero image background */
+  darken?: boolean
 }
 
 export default class Hero extends React.Component<IHeroProps, {}> {
   render() {
-    const {title, image, subtitle, heroAttribution} = this.props
+    const {title, image, darken, subtitle, heroAttribution} = this.props
     const {link, buttonText, buttonStyle} = this.props
 
     return  (<Jumbotron className="bg-black">
-      <div className="hero-image" style={ {backgroundImage: `url('${image}')`} }>
+      <div className={`hero-image ${darken && 'dark'}`} style={ {backgroundImage: `url('${image}')`} }>
       </div>
       <Container className="hero-image__title">
         <Row className="hero-title">

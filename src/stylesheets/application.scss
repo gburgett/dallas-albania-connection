@@ -90,7 +90,7 @@ hr {
     background-repeat: no-repeat;
     background-color: rgba($black, 0.6);
 
-    &:before {
+    &.dark:before {
       content:" ";
       background-color:inherit;
       position: absolute;

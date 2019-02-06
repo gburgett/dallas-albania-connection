@@ -108,7 +108,7 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
     <Helmet title={title} titleTemplate={undefined}>
         {hero && <meta property="og:image" content={siteUrl + hero.image}></meta>}
     </Helmet>
-    <Hero {...heroProps} >
+    <Hero {...heroProps} darken={true} >
     </Hero>
     {feature && feature.show && <Feature {...feature} />}
     <Row>
