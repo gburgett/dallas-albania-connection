@@ -126,7 +126,7 @@ export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
         {heroimage && <meta property="og:image" content={siteUrl + heroimage}></meta>}
       </Helmet>
 
-      <Container fluid>
+      <Container>
         {heroimage && 
           <Hero image={heroimage} heroAttribution={heroAttribution} >
             <h1 className='display-3 title'>

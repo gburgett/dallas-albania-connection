@@ -61,7 +61,7 @@ export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
         {heroimage && <meta property="og:image" content={siteUrl + heroimage}></meta>}
       </Helmet>
 
-      <Container fluid>
+      <Container>
         {heroimage && <Hero image={heroimage} />}
         {feature && feature.show &&
             <Feature {...feature} />}
