@@ -4,7 +4,6 @@ path: /2019
 title: Eastern Europe 2019
 date: 2019-02-06T02:21:04.174Z
 heroimage: /files/ronacord-berat.jpg
-public: false
 feature:
   show: false
 showRoster: false
@@ -22,19 +21,19 @@ Since 2014 we have sent teams to Albania to participate in Cru’s high school s
 
 The 2019 team will join the participants for commencement and be tasked to (1) continue to train local leaders and (2) work with local leaders to launch the next 12-step groups.
 
-In 2019 we are sending a new team to the Albanian city of Shkodër, where team members will host an English camp. The team will teach English and have opportunities to engage college students with the Gospel. Cru Hungary will be finishing their month-long “Speak Out” project when our team arrives to strategize on reaching young Hungarians.  In 2018, the team engaged in city-
+In 2019 we are sending a new team to the Albanian city of Shkodër, where team members will host an academic camp and retreat. The team will meet with college students and have opportunities to share the Gospel. Cru Hungary will be finishing their month-long “Speak Out” project when our team arrives to strategize on reaching young Hungarians.  In 2018, the team engaged in city-
 wide evangelism in Pëcs and hosted an English camp with a Gospel presentation and opportunities for local follow-up.
 
 ## Dates
 
 | Team Travel Dates        | Country | Ministry Area       | Key Activities                          |
 | ------------------------ | ------- | ------------------- | --------------------------------------- |
-| Sat, Jun 22 – Mon, Jul 1 | Albania | College             | English camp, teaching                  |
-| Fri, Jun 28 – Mon, Jul 8 | Albania | High school         | Summer camp, discipleship, evangelism   |
-| Fri, Jul 5 – Sun, Jul 14 | Albania | High school         | Summer camp, discipleship, evangelism   |
+| Sat, Jun 22 – Mon, Jul 1 | Albania | College             | Academic camp, retreat                  |
+| Fri, Jun 28 – Mon, Jul 8 | Albania | High school         | Summer camp   |
+| Fri, Jul 5 – Sun, Jul 14 | Albania | High school         | Summer camp   |
 | Sat, Jul 6 – Mon, Jul 15 | Albania | Young professionals | Speaking, seminars, retreat             |
 | Fri, Jul 5 – Sun, Jul 14 | Poland  | Regeneration        | Recovery, group launch, leader training |
-| Sun, Aug 4 – Mon, Aug 12 | Hungary | Mixed               | English Summer camp, evangelism         |
+| Sun, Aug 4 – Mon, Aug 12 | Hungary | Mixed               | English camp, |
 
 
 
