@@ -29,6 +29,7 @@ fragment sitemapFields on MarkdownRemark {
     contentType
     path
     slug
+    externalUrl
     title
     published
   }

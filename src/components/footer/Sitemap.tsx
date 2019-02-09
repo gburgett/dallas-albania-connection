@@ -8,6 +8,7 @@ export interface ISitemapFields {
     title: string,
     path?: string,
     slug?: string,
+    externalUrl?: string
     published?: boolean
   }
 }
@@ -50,7 +51,9 @@ const Posts = (props: { posts: Array<ISitemapFields> }) => {
     <ul>
       {props.posts.map(p => (
         <li key={p.frontmatter.slug}>
-          <a href={`/blog/${p.frontmatter.slug}`}>{p.frontmatter.title}</a>
+          <a href={p.frontmatter.externalUrl || `/blog/${p.frontmatter.slug}`}>
+            {p.frontmatter.title}
+          </a>
         </li>
       ))}
     </ul>

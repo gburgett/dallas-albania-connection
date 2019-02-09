@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Row, Col, Container } from 'reactstrap'
 
-import { Sitemap, ISitemapFields, ISitemapProps } from './Sitemap'
+import { Sitemap, ISitemapProps } from './Sitemap'
 
 export class Footer extends React.Component<{sitemap: ISitemapProps, fields: IFooterFields}> {
   render() {
