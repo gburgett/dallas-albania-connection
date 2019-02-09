@@ -50,7 +50,7 @@ export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
   const rosterComponent = showRoster && roster && <div className="row">
     <div className="col-12">
       {roster.header && <h2 id="roster">{roster.header}</h2>}
-      {roster.text && <div dangerouslySetInnerHTML={{ __html: roster.text }}></div>}
+      {roster.text && <div className="markdown" dangerouslySetInnerHTML={{ __html: roster.text }}></div>}
       {roster.teams && roster.teams.map(team => <TeamRoster {...team} data={collatedData} />)}
     </div>
   </div>
@@ -70,7 +70,7 @@ export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
       <Container>
 
         <h1 className='display-3'>{title}</h1>
-        {post.html && <div dangerouslySetInnerHTML={{ __html: post.html }} />}
+        {post.html && <div className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />}
 
         {rosterComponent}
       </Container>

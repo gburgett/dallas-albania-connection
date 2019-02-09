@@ -36,7 +36,7 @@ export function PageTemplate ({ data }: IPageContext<ITemplateData>) {
       <Container>
 
         <h1 className='display-3'>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
       </Container>
     </div>
   )

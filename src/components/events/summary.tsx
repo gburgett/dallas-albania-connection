@@ -31,9 +31,9 @@ export const Summary = (props: IEventSummaryProps) => {
             <div id={id} className={`collapse ${props.collapse || 'show'}`}>
               <CardBody>
                 {present(link) ?
-                  <a href={link} dangerouslySetInnerHTML={{ __html: props.html }}>
+                  <a href={link} className="markdown" dangerouslySetInnerHTML={{ __html: props.html }}>
                   </a> :
-                  <span dangerouslySetInnerHTML={{ __html: props.html }}></span>
+                  <span className="markdown" dangerouslySetInnerHTML={{ __html: props.html }}></span>
                 }
               </CardBody>
             </div>

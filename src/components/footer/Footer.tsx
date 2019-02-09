@@ -28,7 +28,7 @@ export class Footer extends React.Component<{sitemap: ISitemapProps, fields: IFo
               </ul>
           </Col>
         </Row>
-        <Row className="footer-content"
+        <Row className="footer-content markdown"
           dangerouslySetInnerHTML={{ __html: this.props.fields.html }}>
         </Row>
       </Container>

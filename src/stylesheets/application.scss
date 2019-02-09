@@ -488,3 +488,10 @@ blockquote {
     padding-top: percentage(3 / 4);
   }
 }
+
+.markdown {
+  table {
+    @extend .table;
+    @extend .table-striped;
+  }
+}

@@ -148,7 +148,7 @@ export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
             {author &&
               <Author {...author} />}
             {post.html && 
-              <div className='post' dangerouslySetInnerHTML={{ __html: post.html}} />}
+              <div className='post markdown' dangerouslySetInnerHTML={{ __html: post.html}} />}
           </div>
         </div>
       </Container>
