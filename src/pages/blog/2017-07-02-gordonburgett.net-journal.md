@@ -4,7 +4,7 @@ title: "Gordon's 2017 Journal"
 externalUrl: http://gordonburgett.net/albania/2017/
 date: '2017-07-02'
 published: true
-heroimage: //gordonburgett.net/.640x/images/2017/project/committee.jpg
+heroimage: http://gordonburgett.net/.640x/images/2017/project/committee.jpg
 author:
   gravatar: df4465d02ee102eafa27c948dccd8e4d
   name: Gordon Burgett
