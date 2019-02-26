@@ -84,7 +84,7 @@ module.exports = {
                 .filter(edge => edge.node.frontmatter.published !== false)
                 .map(edge => {
                   const { slug, externalUrl, author, heroimage } = edge.node.frontmatter
-                  if (!slug || !externalUrl) {
+                  if (!slug && !externalUrl) {
                     return null
                   }
 
