@@ -9,7 +9,7 @@ jumbotronCta:
   buttonText: Apply Now ->
   image: /files/background-cover.jpg
   link: /apply
-  showUntil: 2019-03-01T00:00:00.000Z
+  showUntil: 2019-03-10T23:00:00.000Z
   subtitle: ''
   title: 2019 Applications Are Due!
 feature:
