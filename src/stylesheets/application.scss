@@ -495,3 +495,10 @@ blockquote {
     @extend .table-striped;
   }
 }
+
+
+.source {
+  float: right;
+  padding-right: 10px;
+  text-decoration: underline;
+}
