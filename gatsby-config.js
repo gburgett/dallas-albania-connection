@@ -18,6 +18,7 @@ const algoliaQueries = [
             rawMarkdownBody
             frontmatter {
               path
+              contentType
               date(formatString: "YYYY-MM-DD")
               title
               heroimage
@@ -61,6 +62,8 @@ const algoliaQueries = [
             timeToRead
             frontmatter {
               slug
+              externalUrl
+              contentType
               date(formatString: "YYYY-MM-DD")
               title
               heroimage
