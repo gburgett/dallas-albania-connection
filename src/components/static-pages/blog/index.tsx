@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
+import {InstantSearch, SearchBox, Hits} from 'react-instantsearch-dom'
 
 import { mergeBlogsAndArticles, parseISOLocal, parseUrl } from '../../blog/utilities';
 
@@ -121,9 +122,11 @@ const Article = (a: IArticle) => {
     </a>)
 }
 
+const algoliaAppId = process.env.GATSBY_ALGOLIA_APP_ID
+const indexPrefix = process.env.GATSBY_ALGOLIA_INDEX_NAME
+const searchApiKey = process.env.GATSBY_ALGOLIA_SEARCH_API_KEY
+
 export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
-  
-  const postsAndArticles = mergeBlogsAndArticles(data.articles, data.blogs);
 
   let currentYear = 9999
 
@@ -132,25 +135,32 @@ export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
     </Helmet>
     <Row>
       <Col xs={12} md={{ size: 9, offset: 3 }} >
-        <ul className="post-list">
-        {postsAndArticles.map((postOrArticle) => {
-          const dt = parseISOLocal(postOrArticle.frontmatter.date)
-          let renderYearHeader = false
-          if (dt.getFullYear() != currentYear) {
-            currentYear = dt.getFullYear()
-            renderYearHeader = true
-          }
+        <InstantSearch
+          appId={algoliaAppId}
+          indexName={indexPrefix + '_blogs'}
+          apiKey={searchApiKey}
+        >
+          <SearchBox />
 
-          return <>
-            {renderYearHeader && <h2 className="year-header">{currentYear}</h2>}
-            {
-              postOrArticle.frontmatter.contentType == 'article' ?
-                <Article {...postOrArticle as IArticle} /> :
-                <BlogPost {...postOrArticle as IPost} />
+          <Hits<IPost | IArticle> hitComponent={
+            ({ hit }) => {
+              const dt = parseISOLocal(hit.frontmatter.date)
+              let renderYearHeader = false
+              if (dt.getFullYear() != currentYear) {
+                currentYear = dt.getFullYear()
+                renderYearHeader = true
+              }
+              return <>
+              {renderYearHeader && <h2 className="year-header">{currentYear}</h2>}
+              {
+                hit.frontmatter.contentType == 'article' ?
+                  <Article {...hit as IArticle} /> :
+                  <BlogPost {...hit as IPost} />
+              }
+            </>
             }
-          </>
-        })}
-        </ul>
+          } />
+        </InstantSearch>
       </Col>
     </Row>
   </Container>)

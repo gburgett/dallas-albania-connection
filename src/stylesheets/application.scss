@@ -325,24 +325,33 @@ blockquote {
   }
 
   @include media-breakpoint-up(md) {
-  .hero-body .author {
-    display: none;
-  }
-  .blog-body .author {
-    display: flex;
-  }
+    .hero-body .author {
+      display: none;
+    }
+    .blog-body .author {
+      display: flex;
+    }
   }
 }
 
-.post-list {
-  padding-left: 0px;
+.ais-SearchBox {
+  padding: 20px;
 
-  .year-header:first-child {
-    display: none;
+  &-input {
+    @extend .form-control;
   }
 
-  // all but the first year header
-  .year-header:nth-child(n+2) {
+  &-submit,
+  &-reset {
+    display: none;
+  }
+}
+
+.ais-Hits-list {
+  padding-left: 0px;
+  list-style: none;
+
+  .year-header {
     margin-top: 20px;
     text-align: center;
 

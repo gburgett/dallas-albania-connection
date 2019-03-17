@@ -59,6 +59,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
+    "react-instantsearch": "^5.4.0",
     "reactstrap": "^5.0.0",
     "request": "^2.88.0",
     "request-debug": "^0.2.0",
@@ -72,6 +73,7 @@
   },
   "devDependencies": {
     "@babel/register": "^7.0.0",
+    "@types/react-instantsearch": "^5.2.2",
     "ava": "^1.0.1"
   },
   "ava": {

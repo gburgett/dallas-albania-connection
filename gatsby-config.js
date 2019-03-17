@@ -18,7 +18,7 @@ const algoliaQueries = [
             rawMarkdownBody
             frontmatter {
               path
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "YYYY-MM-DD")
               title
               heroimage
               feature {
@@ -61,7 +61,7 @@ const algoliaQueries = [
             timeToRead
             frontmatter {
               slug
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "YYYY-MM-DD")
               title
               heroimage
               heroAttribution
@@ -87,7 +87,7 @@ const algoliaQueries = [
             objectID: node.id
           }))
     }, // optional
-    indexName: process.env.ALGOLIA_INDEX_NAME + '_blogs',
+    indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME + '_blogs',
     settings: {
     },
   },
@@ -238,9 +238,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: process.env.ALGOLIA_APP_ID,
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
         queries: algoliaQueries,
         chunkSize: 10000, // default: 1000
       },
