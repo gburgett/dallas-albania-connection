@@ -14,7 +14,7 @@ query BlogIndexQuery {
       signupFormUrl
     }
   }
-  articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+  articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}, published: {ne: false}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
     edges {
       node {
         excerpt(pruneLength: 150)

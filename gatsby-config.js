@@ -1,3 +1,98 @@
+
+
+const algoliaQueries = [
+  {
+    query: `
+    query AlgoliaBlogsQuery {
+      site {
+        siteMetadata {
+          title
+          siteUrl
+        }
+      }
+      articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}, published: {ne: false}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+        edges {
+          node {
+            id
+            excerpt(pruneLength: 150)
+            rawMarkdownBody
+            frontmatter {
+              path
+              date(formatString: "MMMM DD, YYYY")
+              title
+              heroimage
+              feature {
+                show
+                title
+                image
+                link
+                buttonText
+                buttonStyle
+                backgroundColor
+              }
+              showRoster
+              roster {
+                header
+                text
+                projectIds
+                teams {
+                  name
+                  goal
+                  adjustment
+                  mileMarker
+                  members {
+                    name
+                    cruId
+                    goal
+                    adjustment
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" }, published: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
+        edges {
+          node {
+            id
+            excerpt(pruneLength: 150)
+            rawMarkdownBody
+            timeToRead
+            frontmatter {
+              slug
+              date(formatString: "MMMM DD, YYYY")
+              title
+              heroimage
+              heroAttribution
+              published
+              author {
+                name
+                gravatar
+                photo
+              }
+            }
+          }
+        }
+      }
+    }`,
+    transformer: ({ data }) => {
+      const articles = data.articles.edges.map(({ node }) => node)
+      const blogs = data.blogs.edges.map(({ node }) => node)
+
+      return [...articles, ...blogs].map((node) =>
+        Object.assign(node,
+          data.site.siteMetadata,
+          {
+            objectID: node.id
+          }))
+    }, // optional
+    indexName: process.env.ALGOLIA_INDEX_NAME + '_blogs',
+    settings: {
+    },
+  },
+]
+
 module.exports = {
   siteMetadata: require('./site/metadata'),
   mapping: {
@@ -139,6 +234,16 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries: algoliaQueries,
+        chunkSize: 10000, // default: 1000
+      },
+    },
   ]
 }
