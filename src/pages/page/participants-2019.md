@@ -1,6 +1,6 @@
 ---
 path: /participants/2019
-title: Participants 2019
+title: Welcome 2019 Team Members!
 public: false
 ---
 Team Members, 
