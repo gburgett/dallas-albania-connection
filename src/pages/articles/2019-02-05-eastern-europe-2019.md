@@ -41,7 +41,8 @@ roster:
         - name: Emily McCoppin
       mileMarker: '1699'
       name: Albania - Tirana (Young Professionals)
-    - goal: '3000'
+    - adjustment: '200'
+      goal: '3000'
       members:
         - cruId: '1000470'
           name: Marc Flores
