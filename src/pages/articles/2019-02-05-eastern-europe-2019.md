@@ -4,15 +4,90 @@ path: /2019
 title: Eastern Europe 2019
 date: 2019-02-06T02:21:04.174Z
 heroimage: /files/ronacord-berat.jpg
-published: true
 feature:
   show: false
-showRoster: false
+showRoster: true
 roster:
   header: Team Roster
   teams:
-    - members:
-        - {}
+    - adjustment: '200'
+      goal: '3000'
+      members:
+        - adjustment: '200'
+          cruId: '1000327'
+          goal: '6000'
+          name: James Byrd
+        - adjustment: '200'
+          cruId: '1000327'
+          goal: '6000'
+          name: McKenzie Byrd
+        - adjustment: '2'
+          name: Jenn Saucier
+        - name: Uchechi Amuneke
+      mileMarker: '1700'
+      name: Albania - Tirana (High School)
+    - adjustment: '200'
+      goal: '3000'
+      members:
+        - cruId: 0936889
+          name: Brian Claussen
+        - cruId: 0936825
+          name: Carrie Beckner
+        - cruId: 0746249
+          name: Gordon Burgett
+        - name: Joanne Gray
+        - name: Priscilla Carlos
+        - name: John Thomas
+        - name: Emily McCoppin
+      mileMarker: '1699'
+      name: Albania - Tirana (Young Professionals)
+    - goal: '3000'
+      members:
+        - cruId: '1000470'
+          name: Marc Flores
+        - cruId: 0880885
+          name: Marlie Austin
+        - name: Stephanie Sims
+        - name: Phoebe Grant
+        - name: Madison McGill
+        - name: Andres Alvarado
+      mileMarker: '1700'
+      name: Albania - Elbasan (Elbacat?)
+    - adjustment: '200'
+      goal: '3000'
+      members:
+        - adjustment: '200'
+          cruId: 0936790
+          goal: '6000'
+          name: Nico Arguello
+        - adjustment: '200'
+          cruId: 0936790
+          goal: '6000'
+          name: Katy Arguello
+        - cruId: '1000512'
+          name: Seth Gordon
+        - name: Chris Scott
+        - name: Meaghan Scott
+      mileMarker: '1700'
+      name: Albania - Korça
+    - adjustment: '200'
+      goal: '2998'
+      members:
+        - cruId: '1000291'
+          name: Sam Barrientos
+        - cruId: 0999940
+          name: Faith Michael
+        - name: Patrick Patterson
+        - name: Carly Rochelle
+        - name: Abigail Fletcher
+      mileMarker: '1700'
+      name: Hungary
+    - adjustment: '200'
+      goal: '3000'
+      members:
+        - name: Jim Foley
+      mileMarker: '1700'
+      name: Poland
 ---
 Since 2014, we have sent teams to Albania to participate in [Cru’s](https://www.cru.org/) high school summer camp, in which Cru staff and volunteers engage with young people through evangelism, teaching, games, coffee meetings, and discipleship. Following these camps, the local Cru/church leaders maintain relationships they have built through the summer camps and continue to evangelize non-believers and disciple believers throughout the rest of the year. In addition, team members can continue to grow these relationships after they return. We currently send three high school teams to the cities of Tirana, Elbasan, and Korça.
 
