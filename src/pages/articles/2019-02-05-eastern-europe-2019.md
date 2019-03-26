@@ -21,7 +21,7 @@ roster:
           cruId: '1000327'
           goal: '6000'
           name: McKenzie Byrd
-        - adjustment: '2'
+        - adjustment: ''
           name: Jenn Saucier
         - name: Uchechi Amuneke
       mileMarker: '1700'
@@ -39,7 +39,7 @@ roster:
         - name: Priscilla Carlos
         - name: John Thomas
         - name: Emily McCoppin
-      mileMarker: '1699'
+      mileMarker: '1700'
       name: Albania - Tirana (Young Professionals)
     - adjustment: '200'
       goal: '3000'
@@ -72,7 +72,7 @@ roster:
       mileMarker: '1700'
       name: Albania - Korça
     - adjustment: '200'
-      goal: '2998'
+      goal: '3000'
       members:
         - cruId: '1000291'
           name: Sam Barrientos
