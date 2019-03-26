@@ -86,6 +86,16 @@ roster:
       goal: '3000'
       members:
         - name: Jim Foley
+        - name: Morgan Asbill
+        - name: Will Noll
+        - name: Lauren Noll
+        - name: Joseph Woodard
+        - name: Nelson Ward
+        - name: Danielle Smith
+        - name: Amy Tubbesing
+        - name: Kelsi Mata
+        - name: Christopher Hyland
+        - name: Evann Hopkins
       mileMarker: '1700'
       name: Poland
 ---
