@@ -9,7 +9,7 @@ This page is a place where you can get resources, find links, and see other thin
 
 **Participant Guide**
 
-*Coming Soon*
+[Eastern Europe 2019 Participant Packet](/files/Eastern_Europe_2019_Participant_Guide_3.26.2019)
 
 **Donations Tracker (Cru Internal)**
 
