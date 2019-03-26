@@ -19,8 +19,8 @@ feature:
   image: ''
   link: /2019
   show: true
-  subtitle: Read more about the 2019 discipleship trips
-  title: Read About the 2019 Teams....
+  subtitle: Read more about what we're doing this year...
+  title: About the Summer 2019 Teams
 articles:
   - path: /2018
   - path: /2017
