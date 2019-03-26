@@ -24,12 +24,6 @@ Remember to click on the "other" tab to see your name listed, then click on the 
 If you are on two teams, your name will only appear in one of the two projects.\
 When signing in, make sure you choose "sign in using Relay"
 
-
-
-**Donations Tracker**
-
-*Coming Soon*
-
 **Sample Support Letters**
 
 *Coming Soon*
