@@ -8,7 +8,7 @@ feature:
   show: false
 showRoster: true
 roster:
-  header: Team Roster
+  header: Team Roster and Fundraising Status
   teams:
     - adjustment: '200'
       goal: '3000'
