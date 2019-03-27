@@ -18,8 +18,11 @@ roster:
           goal: '6000'
           name: James  & McKenzie Byrd
         - adjustment: ''
+          cruId: '1000050'
           name: Jenn Saucier
         - name: Uchechi Amuneke
+        - cruId: '1050480'
+          name: Lucy Chang
       mileMarker: '1700'
       name: Albania - Tirana (High School)
     - adjustment: '200'
@@ -31,9 +34,12 @@ roster:
           name: Carrie Beckner
         - cruId: 0746249
           name: Gordon Burgett
-        - name: Joanne Gray
-        - name: Priscilla Carlos
-        - name: John Thomas
+        - cruId: '1050604'
+          name: Joanne Gray
+        - cruId: '1050472'
+          name: Priscilla Carlos
+        - cruId: '1051026'
+          name: John Thomas
         - name: Emily McCoppin
       mileMarker: '1700'
       name: Albania - Tirana (Young Professionals)
@@ -44,7 +50,8 @@ roster:
           name: Marc Flores
         - cruId: 0880885
           name: Marlie Austin
-        - name: Stephanie Sims
+        - cruId: '1050999'
+          name: Stephanie Sims
         - name: Phoebe Grant
         - name: Madison McGill
         - name: Andres Alvarado
@@ -59,8 +66,10 @@ roster:
           name: Nico & Katy Arguello
         - cruId: '1000512'
           name: Seth Gordon
-        - name: Chris Scott
-        - name: Meaghan Scott
+        - adjustment: '200'
+          cruId: '1050216'
+          goal: '6000'
+          name: Chris & Meaghan Scott
       mileMarker: '1700'
       name: Albania - Korça
     - adjustment: '200'
@@ -79,16 +88,21 @@ roster:
       goal: '3000'
       members:
         - name: Jim Foley
-        - name: Morgan Asbill
+        - cruId: '1000284'
+          name: Morgan Asbill
         - adjustment: '200'
+          cruId: '0735167'
           goal: '6000'
           name: Will & Lauren Noll
-        - name: Joseph Woodard
+        - cruId: 0881236
+          name: Joseph Woodard
         - name: Nelson Ward
         - name: Danielle Smith
         - name: Amy Tubbesing
-        - name: Kelsi Mata
-        - name: Christopher Hyland
+        - cruId: 0937076
+          name: Kelsi Mata
+        - cruId: 0936992
+          name: Christopher Hyland
         - name: Evann Hopkins
       mileMarker: '1700'
       name: Poland
