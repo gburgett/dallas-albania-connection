@@ -16,11 +16,7 @@ roster:
         - adjustment: '200'
           cruId: '1000327'
           goal: '6000'
-          name: James Byrd
-        - adjustment: '200'
-          cruId: '1000327'
-          goal: '6000'
-          name: McKenzie Byrd
+          name: James  & McKenzie Byrd
         - adjustment: ''
           name: Jenn Saucier
         - name: Uchechi Amuneke
@@ -60,11 +56,7 @@ roster:
         - adjustment: '200'
           cruId: 0936790
           goal: '6000'
-          name: Nico Arguello
-        - adjustment: '200'
-          cruId: 0936790
-          goal: '6000'
-          name: Katy Arguello
+          name: Nico & Katy Arguello
         - cruId: '1000512'
           name: Seth Gordon
         - name: Chris Scott
@@ -88,8 +80,9 @@ roster:
       members:
         - name: Jim Foley
         - name: Morgan Asbill
-        - name: Will Noll
-        - name: Lauren Noll
+        - adjustment: '200'
+          goal: '6000'
+          name: Will & Lauren Noll
         - name: Joseph Woodard
         - name: Nelson Ward
         - name: Danielle Smith
