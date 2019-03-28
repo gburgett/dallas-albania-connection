@@ -122,7 +122,7 @@ Also [In 2018](/2018), the Hungary team engaged in city-wide evangelism in Pëcs
 | Team Travel Dates        | Country | Ministry Area       | Key Activities                          |
 | ------------------------ | ------- | ------------------- | --------------------------------------- |
 | Fri, Jun 28 – Mon, Jul 8 | Albania | High school         | Summer camp                             |
-| Fri, Jul 5 – Sun, Jul 14 | Albania | High school         | Summer camp                             |
+| Fri, Jul 5 – Sun, Jul 14 | Albania | High school         | Summer camp (2 teams)                            |
 | Sat, Jul 6 – Mon, Jul 15 | Albania | Young professionals | Speaking, seminars, retreat             |
 | Fri, Jul 5 – Sun, Jul 14 | Poland  | Regeneration        | Recovery, group launch, leader training |
 | Sun, Aug 4 – Mon, Aug 12 | Hungary | Mixed               | English camp,                           |
