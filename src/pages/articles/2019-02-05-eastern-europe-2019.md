@@ -109,13 +109,13 @@ roster:
 ---
 This summer we are sending 39 people to Albania, Hungary, and Poland to make disciples through evangelism, teaching, and encouragement. To appreciate how we got here, a brief history of our ministry is helpful: 
 
-Since 2014, we have sent teams to Albania to participate in [Cru’s](https://www.cru.org/) high school summer camp, in which Cru staff and volunteers engage with young people through evangelism, teaching, games, coffee meetings, and discipleship. Following these camps, the local Cru/church leaders maintain relationships they have built through the summer camps and continue to evangelize non-believers and disciple believers throughout the rest of the year. Additionally, team members can continue to grow these relationships after they return. We've sent a team to Elbasan since [2016](/2016), and to the city of Korça since [2017](/2017). This summer we are again sending 3 high school-focused teams. 
+Since 2014, we have sent teams to Albania to participate in [Cru’s](https://www.cru.org/) high school summer camp, in which Cru staff and volunteers engage with young people through evangelism, teaching, games, coffee meetings, and discipleship. Following these camps, the local Cru/church leaders maintain relationships they have built through the summer camps and continue to evangelize non-believers and disciple believers throughout the rest of the year. Additionally, team members can continue to grow these relationships after they return. We've sent a team to Elbasan since [2015](/2015), and to the city of Korça since [2017](/2017). This summer we are again sending 3 high school-focused teams. 
 
 [In 2016](/2016) we first sent a team to work with Cru Albania’s young professionals ministry, which organizes and executes seminars and events throughout the year aimed at evangelism and discipleship of working professionals. Team members typically have an opportunity to assist with the planning and execution of a business-focused seminar, become friends with and share the Gospel with young professionals (like The Porch crowd), host a weekend retreat, and build relationships with Cru staff.
 
-[In 2018](/2018) we sent our first teams to Hungary and Poland. That summer we sent a group to Poland to host a retreat focused on teaching Re:generation Recovery, a Biblical-based 12-Step program. The full program launched in October 2018, with team members (also Watermark members) serving as remote step-group leaders. This represented the first ex-US expansion of "Re:gen" and the first time that Watermark allowed for program sponsorship by a non-local-church entity. Currently, there are about 40 people in the Warsaw area working through the steps and/or mentoring participants. The 2019 team will join the participants for commencement and be tasked to (1) continue to train local leaders and (2) work with local leaders to launch the next 12-step groups.
+[In 2018](/2018) we sent our first teams to Hungary and Poland. That summer we sent a group to Poland to host a retreat focused on teaching Re:generation Recovery, a Biblical-based 12-Step program. The full program launched in October 2018, with team members (also Watermark members) serving as remote step-group leaders. This represented the first ex-US expansion of "Re:gen" and the first time that Watermark allowed for program sponsorship by a non-local-church entity. Currently, there are about 40 people in the Warsaw area working through the steps and/or mentoring participants. The 2019 team will join the participants for commencement and be tasked to (1) continue to train local leaders and (2) work with those leaders to launch the next 12-step groups.
 
-Also in 2018, the Hungary team engaged in city-wide evangelism in Pëcs and hosted an English camp with a Gospel presentation that brought opportunities for local follow-up. In 2019, our team will be inserting in-country following Cru's month-long “Speak Out” project, when our team will strategize on reaching young Hungarians.
+Also [In 2018](/2018), the Hungary team engaged in city-wide evangelism in Pëcs and hosted an English camp with a Gospel presentation that brought opportunities for local follow-up. In 2019, our team will be inserting in-country following Cru's month-long “Speak Out” project, where the team will strategize on reaching young Hungarians.
 
 ## Dates
 
@@ -131,22 +131,13 @@ Also in 2018, the Hungary team engaged in city-wide evangelism in Pëcs and host
 
 ## Fundraising
 
-We use fundraising as the primary way to fund our trip. Fundraising is a great way to allow others to partner with you, and God can use the fundraising process to help you trust Him. God has always faithfully provided the funds needed for past trips.
+We use fundraising as the primary way to fund our trip. Fundraising is a great way to allow others to partner with you, and God can use the fundraising process to help you trust Him. God has always faithfully provided the funds needed for past trips. This year we anticipate the following funding needs, and schedule:
 
-* Training and support in how to fundraise will be provided at team meetings.
 * $3000 total estimated fundraising goal, which includes:
   * Plane tickets (\~$1400-1900); in-country/operational (\~$1000).
-  * $200 deposit due Thu 3/14 (will go towards fundraising goal).
 * Mile Marker #1 (Fri 5/10): Team member expected to have raised ~$1500-$1900\
   Individuals under target personally responsible for gap.  
 * Mile Marker #2 (Fri 6/14): Team member expected to have raised $2000\
   Individual responsibility to be reduced proportionally according to total team fundraising performance
 * Mile Marker #3 (Sat 6/29): Team member expected to have raised full $3000
 
-## Estimated Personal Expenses
-
-* $200 deposit due on Thu 3/15 (will go towards fundraising goal).
-* $5 for book that we will read as a team prior to trip.
-* $15 for team t-shirt.
-* $20 for miscellaneous costs for gifts and supplies in-country.
-* Potential funds to meet fundraising progress markers if short of targets.
