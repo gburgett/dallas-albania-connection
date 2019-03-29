@@ -54,10 +54,12 @@ roster:
           name: Marlie Austin
         - cruId: '1050999'
           name: Stephanie Sims
-        - name: Phoebe Grant
+        - cruId: '1052441'
+          name: Phoebe Grant
         - cruId: 0999918
           name: Madison McGill
-        - name: Andres Alvarado
+        - cruId: '1052384'
+          name: Andres Alvarado
       mileMarker: '1700'
       name: Albania - Elbasan (Elbacat?)
     - adjustment: '200'
