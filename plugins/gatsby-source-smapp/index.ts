@@ -1,5 +1,6 @@
 import * as fs from 'fs-extra'
 import * as path from 'path'
+import globby from 'globby'
 import chalk from 'chalk'
 import {createFileNode} from 'gatsby-source-filesystem/create-file-node'
 
@@ -44,14 +45,15 @@ export async function sourceNodes(
   }
 
   // Add existing csv files in directory
-  downloaded.push(...(await fs.readdir(dataDir)))
+  const globs = await globby(path.join(dataDir, '**/*.csv'))
+  downloaded.push(...globs)
   downloaded = downloaded.filter((elem, pos) =>
     downloaded.indexOf(elem) == pos
   )
 
   // create nodes from csv files
   const promises = downloaded.map(async (csvFile) => {
-    const node = await createFileNode(path.join(dataDir, csvFile), createNodeId)
+    const node = await createFileNode(csvFile, createNodeId)
     Object.assign(node.internal, {
       type: "SmappExport"
     })

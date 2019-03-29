@@ -1,6 +1,7 @@
 const csv = require(`csvtojson`)
 const _ = require(`lodash`)
 const crypto = require(`crypto`)
+const path = require(`path`)
 
 const convertToJson = (data, options) =>
   new Promise((res, rej) => {
@@ -51,6 +52,7 @@ async function onCreateNode(
       return {
         ...obj,
         name: node.name,
+        year: path.basename(node.dir),
         id: obj.id ? obj.id : `${node.id} [${i}] >>> CSV`,
         children: [],
         parent: node.id,
