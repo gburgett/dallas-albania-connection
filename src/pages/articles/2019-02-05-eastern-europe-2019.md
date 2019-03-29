@@ -20,7 +20,8 @@ roster:
         - adjustment: ''
           cruId: '1000050'
           name: Jenn Saucier
-        - name: Uchechi Amuneke
+        - cruId: '1051154'
+          name: Uchechi Amuneke
         - cruId: '1050480'
           name: Lucy Chang
       mileMarker: '1700'
@@ -40,7 +41,8 @@ roster:
           name: Priscilla Carlos
         - cruId: '1051026'
           name: John Thomas
-        - name: Emily McCoppin
+        - cruId: 0880846
+          name: Emily McCoppin
       mileMarker: '1700'
       name: Albania - Tirana (Young Professionals)
     - adjustment: '200'
@@ -53,7 +55,8 @@ roster:
         - cruId: '1050999'
           name: Stephanie Sims
         - name: Phoebe Grant
-        - name: Madison McGill
+        - cruId: 0999918
+          name: Madison McGill
         - name: Andres Alvarado
       mileMarker: '1700'
       name: Albania - Elbasan (Elbacat?)
@@ -80,14 +83,17 @@ roster:
         - cruId: 0999940
           name: Faith Michael
         - name: Patrick Patterson
-        - name: Carly Rochelle
-        - name: Abigail Fletcher
+        - cruId: '1052007'
+          name: Carly Rochelle
+        - cruId: '1052167'
+          name: Abigail Fletcher
       mileMarker: '1700'
       name: Hungary
     - adjustment: '200'
       goal: '3000'
       members:
-        - name: Jim Foley
+        - cruId: '1052046'
+          name: Jim Foley
         - cruId: '1000284'
           name: Morgan Asbill
         - adjustment: '200'
@@ -96,14 +102,18 @@ roster:
           name: Will & Lauren Noll
         - cruId: 0881236
           name: Joseph Woodard
-        - name: Nelson Ward
-        - name: Danielle Smith
-        - name: Amy Tubbesing
+        - cruId: '1051396'
+          name: Nelson Ward
+        - cruId: '1051340'
+          name: Danielle Smith
+        - cruId: '1051389'
+          name: Amy Tubbesing
         - cruId: 0937076
           name: Kelsi Mata
         - cruId: 0936992
           name: Christopher Hyland
-        - name: Evann Hopkins
+        - cruId: '1051243'
+          name: Evann Hopkins
       mileMarker: '1700'
       name: Poland
 ---
