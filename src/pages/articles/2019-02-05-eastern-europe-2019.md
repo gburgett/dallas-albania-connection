@@ -8,6 +8,13 @@ feature:
   show: false
 showRoster: true
 roster:
+  projectIds:
+    - '985'
+    - '1444'
+    - '1442'
+    - '1443'
+    - '1446'
+    - '1447'
   header: Team Roster and Fundraising Status
   teams:
     - adjustment: '200'

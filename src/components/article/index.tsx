@@ -40,10 +40,12 @@ export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
   const { heroimage, title, feature, showRoster, roster } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
+  const year = data.markdownRemark.frontmatter.path.replace(/^\//, '')
+
   let collatedData: ICollatedSmappData
   if (roster && roster.teams && roster.teams.length > 0 && roster.projectIds && smappExport) {
     const dataForThisYear = smappExport.edges
-      .filter(({node}) => data.markdownRemark.frontmatter.path == node.year)
+      .filter(({node}) => year == node.year)
       .filter(({node}) => roster.projectIds.includes(node.name))
     collatedData = collateByDesignationNumber(dataForThisYear.map(edge => edge.node))
   }

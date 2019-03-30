@@ -8,7 +8,7 @@ import download from './download'
 
 export async function sourceNodes(
   { actions, store, createNodeId },
-  { username, password, dataDir }
+  { username, password, dataDir, sessionId }
 ) {
   const { createNode, setPluginStatus } = actions
   dataDir = dataDir || 'data/'
@@ -32,7 +32,8 @@ export async function sourceNodes(
       downloaded = await download({
           dataDir,
           username,
-          password
+          password,
+          sessionId: sessionId || process.env.SMAPP_SESSION_ID
         },
         cookies,
         saveCookies
@@ -53,7 +54,9 @@ export async function sourceNodes(
 
   // create nodes from csv files
   const promises = downloaded.map(async (csvFile) => {
+    console.log('createFileNode', csvFile)
     const node = await createFileNode(csvFile, createNodeId)
+    console.log('createdFileNode', csvFile)
     Object.assign(node.internal, {
       type: "SmappExport"
     })
@@ -67,5 +70,6 @@ export async function sourceNodes(
 }
 
 export function loadNodeContent(fileNode) {
+  console.log('attempt to read', fileNode.absolutePath)
   return fs.readFile(fileNode.absolutePath, `utf-8`)
 }

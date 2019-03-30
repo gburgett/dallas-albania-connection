@@ -130,7 +130,7 @@ module.exports = {
       options: {
         username: process.env['SMAPP_USERNAME'],
         password: process.env['SMAPP_PASSWORD'],
-        dataDir: 'data/donations'
+        dataDir: `data/donations/2019`
       }
     },
     {
