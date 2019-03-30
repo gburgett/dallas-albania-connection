@@ -1,6 +1,7 @@
 import * as fs from 'fs-extra'
 import * as csv from 'csvtojson'
 import * as path from 'path'
+import globby from 'globby'
 import * as csvStringify from 'csv-stringify'
 
 import {asyncWriter} from './plugins/gatsby-source-smapp/utils'
@@ -8,18 +9,18 @@ import {asyncWriter} from './plugins/gatsby-source-smapp/utils'
 const dataDir = 'data/donations'
 
 async function run() {
-  const files = await fs.readdir(dataDir)
+  const files = await globby(path.join(dataDir, '**/*.csv'))
   console.log('files', files)
 
   return Promise.all(files.map(async (file) => {
-    const csvJson = await convertToJson(path.join(dataDir, file)) as ICsvRow[]
+    const csvJson = await convertToJson(file) as ICsvRow[]
 
     const grouped = groupByDesignation(csvJson)
     const rows = Object.keys(grouped).map(number => 
       sum(grouped[number])
     )
 
-    return writeCsv(path.join(dataDir, file), rows)
+    return writeCsv(file, rows)
   }))
 }
 

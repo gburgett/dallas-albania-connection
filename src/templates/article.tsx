@@ -11,6 +11,7 @@ fragment smappExportFields on SmappExportCsv {
   amount
   designation
   name
+  year
 }
 `
 

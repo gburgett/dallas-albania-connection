@@ -33,7 +33,8 @@ require('request-debug')(requestLib, function(type, data, r) {
 export interface IDownloadArgs {
   dataDir: string,
   username: string,
-  password: string
+  password: string,
+  sessionId?: string
 }
 
 export default async function Download(args: IDownloadArgs, cookies?: any, saveCookies?: (cookies: any) => void) {
@@ -45,6 +46,9 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
     store.idx = deserializeCookies(cookies)
   }
   const jar = requestLib.jar(store)
+  if (args.sessionId) {
+    jar.setCookie(`_session_id=${args.sessionId}`, 'https://smapp.cru.org')
+  }
 
   const request = promisify(requestLib.defaults({ jar: jar, followRedirect: false }))
 
@@ -73,7 +77,7 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
     }
 
     /** Step 2 - parse out project IDs */
-    const projIds = []
+    const projIds = new Set<string>()
     $('a').each((i, elem) => {
       const href = elem.attribs['href']
       // https://smapp.cru.org/admin/reports/mpd_summary?project_id=1444
@@ -82,11 +86,11 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
         return
       }
 
-      projIds.push(m[1])
+      projIds.add(m[1])
     })
 
     /** step 3 - map those project IDs to CSV files */
-    const promises = projIds.map(async (projId) => {
+    const promises = Array.from(projIds).map(async (projId) => {
       const details = await getAllDonationLinksForProject(projId)
       if (details.participants.length > 0) {
         return generateCsvForProject(details)
@@ -170,6 +174,10 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
 
     try {
       const promises = project.participants.map(async (participant) => {
+        if (!participant.donationListLink) {
+          return
+        }
+
         const resp = await request.get('https://smapp.cru.org' + participant.donationListLink)
         const $ = cheerio.load(resp.body)
 
@@ -205,7 +213,7 @@ export default async function Download(args: IDownloadArgs, cookies?: any, saveC
       fileStream.on('error', (err) => reject(err))
     })
 
-    return fileName
+    return filePath
   }
 
   /** Old way - the report download does not include team leaders */

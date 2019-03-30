@@ -2,6 +2,7 @@ import { ICollatedSmappData } from "./index";
 
 export interface ISmappExportFields {
   name: string
+  year: string
   studentName: string
   amount: string
   designation: string
