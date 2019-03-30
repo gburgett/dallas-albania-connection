@@ -15,12 +15,12 @@ jumbotronCta:
 feature:
   backgroundColor: black
   buttonStyle: warning
-  buttonText: Learn More ->
+  buttonText: Learn More / Donate ->
   image: ''
   link: /2019
   show: true
-  subtitle: Read more about what we're doing this year...
-  title: About the Summer 2019 Teams
+  subtitle: We're sending 6 teams to Eastern Europe this summer!
+  title: Learn About the 2019 Summer Projects
 articles:
   - path: /2018
   - path: /2017
