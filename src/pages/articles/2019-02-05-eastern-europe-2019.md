@@ -8,6 +8,7 @@ feature:
   show: false
 showRoster: true
 roster:
+  header: Team Roster and Fundraising Status
   projectIds:
     - '985'
     - '1444'
@@ -15,7 +16,6 @@ roster:
     - '1443'
     - '1446'
     - '1447'
-  header: Team Roster and Fundraising Status
   teams:
     - adjustment: '200'
       goal: '3000'
@@ -68,7 +68,7 @@ roster:
         - cruId: '1052384'
           name: Andres Alvarado
       mileMarker: '1700'
-      name: Albania - Elbasan (Elbacat?)
+      name: Albania - Elbasan (High School)
     - adjustment: '200'
       goal: '3000'
       members:
@@ -83,7 +83,7 @@ roster:
           goal: '6000'
           name: Chris & Meaghan Scott
       mileMarker: '1700'
-      name: Albania - Korça
+      name: Albania - Korça (High School)
     - adjustment: '200'
       goal: '3000'
       members:
@@ -97,7 +97,7 @@ roster:
         - cruId: '1052167'
           name: Abigail Fletcher
       mileMarker: '1700'
-      name: Hungary
+      name: Hungary (Mixed)
     - adjustment: '200'
       goal: '3000'
       members:
@@ -124,7 +124,7 @@ roster:
         - cruId: '1051243'
           name: Evann Hopkins
       mileMarker: '1700'
-      name: Poland
+      name: 'Poland (Re:generation Recovery)'
 ---
 This summer we are sending 39 people to Albania, Hungary, and Poland to make disciples through evangelism, teaching, and encouragement. To appreciate how we got here, a brief history of our ministry is helpful: 
 
