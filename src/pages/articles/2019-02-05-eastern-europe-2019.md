@@ -26,10 +26,12 @@ roster:
           name: James  & McKenzie Byrd
         - adjustment: ''
           cruId: '1000050'
+          goal: '3500'
           name: Jenn Saucier
         - cruId: '1051154'
           name: Uchechi Amuneke
         - cruId: '1050480'
+          goal: '3500'
           name: Lucy Chang
       mileMarker: '1700'
       name: Albania - Tirana (High School)
@@ -41,6 +43,7 @@ roster:
         - cruId: 0936825
           name: Carrie Beckner
         - cruId: 0746249
+          goal: '3500'
           name: Gordon Burgett
         - cruId: '1050604'
           name: Joanne Gray
@@ -74,7 +77,7 @@ roster:
       members:
         - adjustment: '200'
           cruId: 0936790
-          goal: '6000'
+          goal: '7000'
           name: Nico & Katy Arguello
         - cruId: '1000512'
           name: Seth Gordon
@@ -107,9 +110,10 @@ roster:
           name: Morgan Asbill
         - adjustment: '200'
           cruId: '0735167'
-          goal: '6000'
+          goal: '7000'
           name: Will & Lauren Noll
         - cruId: 0881236
+          goal: '3500'
           name: Joseph Woodard
         - cruId: '1051396'
           name: Nelson Ward
