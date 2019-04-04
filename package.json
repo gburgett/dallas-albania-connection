@@ -64,6 +64,7 @@
     "reactstrap": "^5.0.0",
     "request": "^2.88.0",
     "request-debug": "^0.2.0",
+    "stopwords": "0.0.9",
     "tough-cookie-file-store": "^1.2.0",
     "ts-loader": "^5.3.3",
     "ts-node": "^7.0.1",

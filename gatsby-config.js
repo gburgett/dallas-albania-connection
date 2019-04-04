@@ -22,30 +22,15 @@ const algoliaQueries = [
               date(formatString: "YYYY-MM-DD")
               title
               heroimage
-              feature {
-                show
-                title
-                image
-                link
-                buttonText
-                buttonStyle
-                backgroundColor
-              }
-              showRoster
               roster {
                 header
                 text
                 projectIds
                 teams {
                   name
-                  goal
-                  adjustment
-                  mileMarker
                   members {
                     name
                     cruId
-                    goal
-                    adjustment
                   }
                 }
               }
@@ -80,8 +65,11 @@ const algoliaQueries = [
       }
     }`,
     transformer: ({ data }) => {
-      const articles = data.articles.edges.map(({ node }) => node)
-      const blogs = data.blogs.edges.map(({ node }) => node)
+      let articles = data.articles.edges.map(({ node }) => node)
+      let blogs = data.blogs.edges.map(({ node }) => node)
+
+      articles = articles.map(extractWordFrequency('rawMarkdownBody'))
+      blogs = blogs.map(extractWordFrequency('rawMarkdownBody'))
 
       return [...articles, ...blogs].map((node) =>
         Object.assign(node,
@@ -95,6 +83,39 @@ const algoliaQueries = [
     },
   },
 ]
+
+function extractWordFrequency(attr) {
+  const { english } = require('stopwords');
+
+  return (node) => {
+    const text = node[attr]
+    delete(node[attr])
+
+    const wordsMap = {};
+    text.replace(/[^\w]/g, ' ').split(/\s+/)
+      .map((word) => word.toLowerCase())
+      .filter((word) => word.length > 0 && !english.includes(word))
+      .forEach((word) => {
+        if (wordsMap.hasOwnProperty(word)) {
+          wordsMap[word]++;
+        } else {
+          wordsMap[word] = 1;
+        }
+      })
+
+    const frequency = Object.keys(wordsMap).map((key) => {
+      return {
+        name: key,
+        total: wordsMap[key]
+      };
+    });
+
+    frequency.sort((a, b) => b.total - a.total)
+    
+    node[attr + '_freq'] = frequency.map((v) => v.name)
+    return node
+  }
+}
 
 module.exports = {
   siteMetadata: require('./site/metadata'),
