@@ -94,7 +94,8 @@ roster:
           name: Sam Barrientos
         - cruId: 0999940
           name: Faith Michael
-        - name: Patrick Patterson
+        - cruId: '1053454'
+          name: Patrick Patterson
         - cruId: '1052007'
           name: Carly Rochelle
         - cruId: '1052167'
