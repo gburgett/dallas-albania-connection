@@ -3,7 +3,7 @@ contentType: article
 path: /2019
 title: Eastern Europe 2019
 date: 2019-02-06T02:21:04.174Z
-heroimage: /files/ronacord-berat.jpg
+heroimage: /files/2019-albania-group-photo_l.jpg
 feature:
   show: false
 showRoster: true
