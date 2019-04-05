@@ -10,44 +10,46 @@ author:
   name: Gordon Burgett
 ---
 
-What does the '+' mean in Albania+?
+It's now the 7th year in a row that we've sent a team from Watermark to Albania.
+We've grown a lot in that time, from 3 people in 2013 to almost 40 in 2019.  But
+what have we learned, what have we gained from continuing to do this?  What has
+been the reason for growth, the purpose behind all this effort, the continued
+*Mission* that we have there?  Why do we ask people to support us in this?
 
-## High School +
+As we've grown, we've also had to expand our brand.  No longer just Team Albania,
+we have become **Albania+ Eastern Europe**.  So why the '+'?  What does it mean
+to us?  Does it mean -
 
-Every year since 2015 we've added more projects and more people.  It started out
-when Kaon Serjani, then the director of High School ministries for CRU Albania,
-invited us to take a team to Elbasan.  We added in 2016 a team to Korça, as well
-as a team to work with Young Professionals in the capital city.  We've done this
-because the CRU staff invited us.  The projects were well-planned and executed.
-We continue to see fruit in the lives of kids and young adults whom we've impacted
-through these projects.
+1. '+' more countries (Hungary, Poland, and beyond)?
+2. '+' more audiences beyond High School?
+3. '+' more seasons, not just CRU Summer Projects?
+4. '+' more partners, i.e. churches and individuals whose hearts are fully Christ's?
 
-So does the '+' mean more people?  Yes, but not primarily...
+It encompasses all these things, but it's deeper than that.
 
-## Albania +
+<span class="callout">For the impatient, [skip to our mission statement](#mission-statement)</span>
+
+### 1. More Countries
 
 In 2017, we added two new locations outside Albania.  We began going to Poland and
 Hungary to work with CRU staff there.  This was not a random decision - we were
 invited by people whom we had met and developed relations with in each of the
 countries.  There was a desire for us to participate with them, and there were
-leaders excited to carry the torch.
+leaders excited to carry the torch - Randy Valdez in Hungary and Will Noll &
+Chris Hyland in Poland.
 
-Randy Valdez did an excellent job carrying the torch for us in Hungary.  He knew
-the culture, having spent 8 months living there at one point.  We partnered with
-the Catalytic team to share the Gospel in a town where CRU did not have an ongoing
-presence.  The Catalytic team was then able to equip believers there to continue
-evangelizing and discipling their own neighbors.
 
-Wes Chick, Chris Hyland, and Lauren Horner (now Lauren Noll) did an excellent job
-in Poland bringing the Re:Generation program to the Polish CRU staff.  This is
-something they had asked us for, having seen it in action here in Dallas.  Leadership
-in Poland was on-board, and the people who attended the camp were willing to go
-all-in on the program.  If a project is like this, there's no question we will
-do whatever we can to help it succeed.
+### 2. More Audiences
 
-So does the '+' mean more countries?  Yes, but not primarily...
+Every year since 2015 we've added more projects and more people.  It started out
+when Kaon Serjani, then the director of High School ministries for CRU Albania,
+invited us to take a team to Elbasan.  We added in 2016 a team to Korça, as well
+as a team to work with Young Professionals in the capital city.  We've done this
+because the CRU staff invited us. We continue to see fruit in the lives of kids
+and young adults whom we've impacted through these projects.
 
-## Summer Projects +
+
+### 3. More Seasons
 
 Two of our members have now spent years living in Albania, and more have expressed
 a desire to.  I (Gordon Burgett) spent two years in the STINT program with the
@@ -66,44 +68,64 @@ they are working to translate the Re:Gen materials into Polish.  This ongoing
 effort has earned the respect of the Polish CRU staff and built deep relationships
 with our friends in Poland.
 
-So does the '+' mean more months of the year, not just summer projects?  Yes,
-but not primarily...
+### 4. More Partners
+
+In 2017, we invited 5 members of Cornerstone Church Albania to come to Watermark's
+Church Leadership Conference.  We saw an opportunity to invest in some lay-leaders
+who wouldn't otherwise have the opportunity to attend a conference of that sort.
+After the conference, they expressed a desire to form more authentic small groups
+at Cornerstone church.  This led to a mens' small group conference in December of
+2017 that we were invited to speak at.
+
+Lauren Dean and I (Gordon Burgett) have also joined this church multiple times at
+their annual all-church retreat in Vlora.  We have been able to build deeper
+relationships with the members through that church retreat, many of whom are CRU
+staff.  We have been encouraging them to *be* the church in their communities.
 
 ## The strategy behind the +
 
-The '+' means that we are committed to going deeper in our relationships with
-the staff with whom we have been in contact.  We are encouraging and discipling
-them, just as they encourage and disciple us.  We are experiencing the "unity of
-the Spirit in the bond of peace" that Paul talks about in Ephesians 4:
+I hope you've noticed how often I've used the word "relationship" in the above
+paragraphs.  *This* is the heart of what the '+' means. We are intentionally engaged
+in encouraging and discipling our partners, just as they encourage and disciple us.
+We are experiencing the "unity of the Spirit in the bond of peace" that Paul talks
+about in Ephesians 4:
 
 > 4 There is one body and one Spirit, just as you too were called to the one hope
 > of your calling, 5 one Lord, one faith, one baptism, 6 one God and Father of all,
 > who is over all and through all and in all.
 > <span class="source"><a href="https://biblehub.com/net/ephesians/4.htm">Ephesians 4:4-6</a></span>
 
-John Stott, in his book [Christian Mission in the Modern World](https://www.amazon.com/Christian-Mission-Modern-World-Stott/dp/0830844392), describes the difference between activities with a missionary *dimension*
-and activities with a missionary *intention*.  Those with a missionary *dimension*
+Thanks to these deep relationships, we are putting ourselves in position to support
+the church in Albania.  As the church in Albania, Hungary, and Poland grows, it
+will begin to take over from CRU more and more of the activities which do not have
+a specific missionary *intention*, freeing CRU up to focus wholly on those activities.
+
+This term was coined by John Stott, in his book [Christian Mission in the Modern World](https://www.amazon.com/Christian-Mission-Modern-World-Stott/dp/0830844392).
+He highlights the difference between activities with a missionary *dimension*
+and activities with a missionary *intention*  Those with a missionary *dimension*
 are activities that create strong believers who as a byproduct will go and share the Gospel,
 while those with a missionary *intention* are the ones whose express, direct purpose
 is evangelism and as a byproduct create strong believers.
 Things like Re:Generation are activities with a missionary *dimension*, while the
 summer projects in Albania & Hungary are activities with a missionary *intention*.
 
-As the church in Albania, Hungary, and Poland grows, it will begin to take over
-from CRU more and more of the activities with a missionary *dimension* freeing CRU
-up to focus wholly on activities with a missionary *intention*.  Watermark is
-well-positioned to support the church in these activities, and we as a team are
-well-positioned to be the bridge, offering the resources that Watermark makes available
-and adapting them to the cultures of the countries where we have these partnerships.
-Re:Generation is just the beginning, there are so many more ways that we as the
-body at Watermark can resource and equip Albanian, Hungarian, and Polish churches.
+Watermark is well-positioned to support the global church in these activities,
+and we as a team are well-positioned to be the bridge, offering the resources
+that Watermark makes available and adapting them to the cultures of the countries
+where we have these partnerships. Re:Generation is just the beginning, there are
+so many more ways that we as the body at Watermark can resource and equip our
+Albanian, Hungarian, and Polish friends.
 
 In the process, our members will also grow spiritually and be equipped as "apostles,
 prophets, evangelists, pastors, and teachers" (Ephesians 4:11).  This is also part
 of the '+', and not to be taken lightly.  "therefore you who teach someone else,
 do you not teach yourself?" (Romans 2:21a)
 
-Thus, our mission statement:
+<a id="mission-statement"></a>
+
+This leads us to...
+## Our Mission Statement:
+
 
 > We are building deep relationships with believers and non-believers in Albania and beyond,  
 >  through mutual discipleship and partnering in Evangelism,  
