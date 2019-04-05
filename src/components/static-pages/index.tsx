@@ -122,11 +122,7 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
         <GroupedArticles cards={cards} />
         {featuredPosts.length > 0 && <PostList posts={featuredPosts} />}
         {postsToShow > 0 && remainingPosts.length > 0 && <h4>
-            <a className="d-none d-md-block" href={`/blog/${remainingPosts[0].frontmatter.slug}`}>
-              {remainingPosts.length} more {remainingPosts.length > 1 ? 'posts' : 'post'}
-              <i style={{paddingLeft: '1em'}} className="fa fa-arrow-right"></i>
-            </a>
-            <a className="d-md-none" href="/blog">
+            <a href="/blog">
               {remainingPosts.length} more {remainingPosts.length > 1 ? 'posts' : 'post'}
               <i style={{paddingLeft: '1em'}} className="fa fa-arrow-right"></i>
             </a>
