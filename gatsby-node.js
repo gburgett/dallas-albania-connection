@@ -19,9 +19,9 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
         plugins: [new MiniCssExtractPlugin({})],
       })
       
-      let config = getConfig()
-      config.entry.previewStyles = `${__dirname}/src/stylesheets/application.scss`
-      actions.replaceWebpackConfig(config)
+      // let config = getConfig()
+      // config.entry.previewStyles = `${__dirname}/src/stylesheets/application.scss`
+      // actions.replaceWebpackConfig(config)
   }
 }
 

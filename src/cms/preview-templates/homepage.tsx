@@ -9,9 +9,10 @@ import { IEventFields } from '../../components/events';
 export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) => {
 
   const articles = []
-  if (fieldsMetaData.get('articles')) {
-    for (let k of fieldsMetaData.get('articles').keys()) {
-      const article = fieldsMetaData.getIn(['articles', k]).toJS()
+  if (fieldsMetaData.getIn(['articles', 'path', 'articles'])) {
+    const articleMetaData = fieldsMetaData.getIn(['articles', 'path', 'articles']).toJS()
+    for (let k of Object.keys(articleMetaData)) {
+      const article = articleMetaData[k]
       articles.push(
         { node: {
           excerpt: article.body.substr(0, 100) + '...',
@@ -28,18 +29,19 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
   }
 
   const blogs = []
-  if (fieldsMetaData.get('featuredPosts')) {
-    for (let k of fieldsMetaData.get('featuredPosts').keys()) {
-      const blog = fieldsMetaData.getIn(['featuredPosts', k]).toJS()
+  if (fieldsMetaData.getIn(['featuredPosts', 'slug', 'blog'])) {
+    const blogMetaData = fieldsMetaData.getIn(['featuredPosts', 'slug', 'blog']).toJS()
+    for (let k of Object.keys(blogMetaData)) {
+      const blog = blogMetaData[k]
       blogs.push(
         { node: {
           excerpt: blog.body.substr(0, 100) + '...',
           timeToRead: '?',
-          id: `fakeblog-${blog.date.getTime()}`,
+          id: `fakeblog-${blog.date}`,
           frontmatter: {
             title: blog.title,
             slug: blog.slug,
-            date: blog.date.toDateString(),
+            date: blog.date,
             contentType: blog.contentType,
             heroimage: blog.heroimage,
             author: blog.author
