@@ -27,7 +27,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
-  createRedirect = (...args) => {
+  const createRedirect = (...args) => {
     console.log('creating redirect', ...args)
     actions.createRedirect.call(this, ...args)
   }
