@@ -160,6 +160,9 @@ export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
             </>
             }
           } />
+          <a href="https://www.algolia.com/" style={{float: 'right'}}>
+            <img src="/search-by-algolia-light-background.svg"></img>
+          </a>
         </InstantSearch>
       </Col>
     </Row>
