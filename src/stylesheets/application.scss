@@ -347,7 +347,8 @@ blockquote {
   }
 }
 
-.ais-Hits-list {
+.ais-Hits-list,
+.post-list {
   padding-left: 0px;
   list-style: none;
 
@@ -368,6 +369,7 @@ blockquote {
     background-position: center;
     margin: 0.5em;
     border-radius: 12px;
+    background-size: cover;
   }
 
   .title {
