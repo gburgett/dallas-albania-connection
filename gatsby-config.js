@@ -117,7 +117,7 @@ function extractWordFrequency(attr) {
   }
 }
 
-module.exports = {
+const config = {
   siteMetadata: require('./site/metadata'),
   mapping: {
    // TODO: this only matches on IDs
@@ -259,15 +259,20 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
-        queries: algoliaQueries,
-        chunkSize: 10000, // default: 1000
-      },
-    },
   ]
 }
+
+if (process.env.ALGOLIA_API_KEY) {
+  config.plugins.push({
+    resolve: `gatsby-plugin-algolia`,
+    options: {
+      appId: process.env.GATSBY_ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
+      queries: algoliaQueries,
+      chunkSize: 10000, // default: 1000
+    },
+  })
+}
+
+module.exports = config
