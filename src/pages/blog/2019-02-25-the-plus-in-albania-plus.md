@@ -96,10 +96,9 @@ do you not teach yourself?" (Romans 2:21a)
 This leads us to...
 ## Our Mission Statement:
 
-
-> We are building deep relationships with believers and non-believers in Albania and beyond,  
->  through mutual discipleship and partnering in Evangelism,  
->    for the fulfillment of the Great Comission in our respective cities. 
+> We are building deep relationships in and beyond Albania  
+>  through mutual discipleship and partnering in Evangelism  
+>    for the fulfillment of the Great Comission.
 
 We are excited for this mission. And we are praying for more, greater, deeper, '+'.
 Holding fast to the promises of God, we are patiently and actively waiting for Him
