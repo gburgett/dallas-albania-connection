@@ -36,28 +36,25 @@ invited us to take a team to Elbasan in 2015. In 2017 we added a team to work wi
 ### 3. More Seasons
 
 Two of our members have taken the step to move to Albania, with possibly more on the way. I (Gordon Burgett) spent two years in the STINT program with the
-Young Professionals ministry, leveraging my experience as a volunteer at The Porch (Watermark's young adults ministry) to help Albanians reach their peers in the workplace. Lauren Dean also did a STINT and is planning on a third as the librarian at the international school, where she disciples the kids of missionaries, and disciples women in the local young adults ministry. We continue building deep relationships through shared life with the Albanian people.
+Young Professionals ministry, leveraging my experience as a volunteer at The Porch (Watermark's young adults ministry) to help Albanians reach their peers in the workplace. Lauren Dean also did a STINT and is planning on a third year as the librarian at the international school, where she disciples the kids of missionaries, and disciples women in the local young adults ministry. We continue building deep relationships through shared life with the Albanian people.
 
-In Poland, the 2018 project did not end when the team returned to the states. After the week-long retreat focused on Re:generation Recovery--a biblically based 12-step program developed at Watermark--a group of about 30 Poles committed to working through the program, and meeting weekly over Google Hangouts with Dallas-based small group leaders. This ongoing project not only required the translation of 900+ pages of Re:gen material into Polish, but involved novel problem solving stemming from the first international launch of Re:gen. (The program has been launched in about 80 churches in the United States). The key to the program has been partnership between Cru leaders and leaders within the "Albania+" team.
+In Poland, the 2018 project did not end when the team returned to the states. After the week-long retreat focused on Re:generation Recovery--a biblically based 12-step recovery program developed at Watermark--a group of about 30 Poles committed to working through the program and meeting weekly over Google Hangouts with Dallas-based group leaders. This ongoing project not only required the translation of 900+ pages of Re:gen material into Polish, but involved novel problem solving stemming from the first international launch of Re:gen. (The program has been launched in about 80 churches in the United States). The key to the program has been partnership between Cru leaders and leaders within the "Albania+" team.
 
 ### 4. More Partners
 
 In 2017, we invited 5 members of Cornerstone Church Albania to come to Watermark's
-Church Leadership Conference.  We saw an opportunity to invest in some lay-leaders
+Church Leaders Conference. We saw an opportunity to invest in some lay leaders
 who wouldn't otherwise have the opportunity to attend a conference of that sort.
 After the conference, they expressed a desire to form more authentic small groups
-at Cornerstone church.  This led to a mens' small group conference in December of
+at Cornerstone church. This led to a mens' small group conference in December of
 2017 that we were invited to speak at.
 
-Lauren Dean and I (Gordon Burgett) have also joined this church multiple times at
-their annual all-church retreat in Vlora.  We have been able to build deeper
-relationships with the members through that church retreat, many of whom are CRU
-staff.  We have been encouraging them to *be* the church in their communities.
+Lauren Dean and I have also joined this church multiple times at its annual all-church retreat in Vlora. We have been able to build deeper relationships with church members through these shared discipleship events, and we have encouraged our friends to *be* the church in their communities.
 
 ## The strategy behind the "+"
 
 I hope you've noticed how often I've used the word "relationship" in the above
-paragraphs.  *This* is the heart of what the '+' means. We are intentionally engaged
+paragraphs. *This* is the heart of what the "+" means. We are intentionally engaged
 in encouraging and discipling our partners, just as they encourage and disciple us.
 We are experiencing the "unity of the Spirit in the bond of peace" that Paul talks
 about in Ephesians 4:
@@ -67,28 +64,20 @@ about in Ephesians 4:
 > who is over all and through all and in all.
 > <span class="source"><a href="https://biblehub.com/net/ephesians/4.htm">Ephesians 4:4-6</a></span>
 
-Thanks to these deep relationships, we are putting ourselves in position to support
-the church in Albania. As the church in Albania, Hungary, and Poland grows, it
-will begin to take over from CRU more and more of the activities which do not have
-a specific missionary *intention*, freeing CRU up to focus wholly on those activities.
+We have been put into a position to be able to support the church in Albania (and beyond) thanks to these deep relationships. As the local churches in Albania, Hungary, and Poland grow, they will begin to take over from Cru more of the activities that do not have a specific missionary *intention*, freeing Cru to focus wholly on those activities.
 
 This term was coined by John Stott, in his book [Christian Mission in the Modern World](https://www.amazon.com/Christian-Mission-Modern-World-Stott/dp/0830844392).
 He highlights the difference between activities with a missionary *dimension*
-and activities with a missionary *intention* Those with a missionary *dimension*
-are activities that create strong believers who as a byproduct will go and share the Gospel,
-while those with a missionary *intention* are the ones whose express, direct purpose
-is evangelism and as a byproduct create strong believers. Things like Re:Generation are activities with a missionary *dimension*, while the summer projects in Albania & Hungary are activities with a missionary *intention*.
+verses activities with a missionary *intention*. Activities with a missionary *dimension* are those that create strong believers who as a byproduct will go and share the Gospel, while those with a missionary *intention* are the ones whose expressed, direct purpose is evangelism and as a byproduct create strong believers. Ministries like Re:generation are activities with a missionary *dimension*, while the summer projects in Albania and Hungary are activities with a missionary *intention*.
 
 Watermark is well-positioned to support the global church in these activities,
 and we as a team are well-positioned to be the bridge, offering the resources
 that Watermark makes available and adapting them to the cultures of the countries
-where we have these partnerships. Re:Generation is just the beginning, there are
-so many more ways that we as the body at Watermark can resource and equip our
-Albanian, Hungarian, and Polish friends.
+where we have these partnerships. Re:generation is just the beginning, because there are additional ways that we as a local church body (at Watermark) can resource and equip our Albanian, Hungarian, and Polish friends.
 
 In the process, our members will also grow spiritually and be equipped as "apostles,
 prophets, evangelists, pastors, and teachers" (Ephesians 4:11). This is also part
-of the '+', and not to be taken lightly.  "therefore you who teach someone else,
+of the "+", and not to be taken lightly. "therefore you who teach someone else,
 do you not teach yourself?" (Romans 2:21a)
 
 <a id="mission-statement"></a>
@@ -97,13 +86,9 @@ This leads us to...
 ## Our Mission Statement:
 
 > We are building deep relationships in and beyond Albania  
->  through mutual discipleship and partnering in Evangelism  
->    for the fulfillment of the Great Comission.
+>  through mutual discipleship and partnering in evangelism  
+>    for the fulfillment of the Great Commission.
 
-We are excited for this mission. And we are praying for more, greater, deeper, '+'.
+We are excited for this mission. And we are praying for a greater and deeper "+".
 Holding fast to the promises of God, we are patiently and actively waiting for Him
-to reveal to us the next '+'. As we go on the projects this summer, we have this
-vision in mind. Through our conversations, actions, and relationships we will
-strive to run the race well and complete the Great Commision, using all the tools
-at our disposal, both those with a missionary *intention* and those with a missionary
-*dimension*.
+to reveal to us the next "+". This is our vision as we go on the projects that we have planned for summer 2019. Through our conversations, actions, and relationships we will strive to run the race well and complete the Great Commission by using all the tools at our disposal: activities with a missionary *intention* and those with a missionary *dimension*.
