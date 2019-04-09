@@ -293,6 +293,16 @@ blockquote {
       color: $white;
       background-color: $info;
       box-shadow: -6px -6px 6px 0 $secondary;
+      color: $gray-100;
+
+      a {
+        color: lighten($yellow, 10%);
+        text-decoration: underline;
+
+        &:hover {
+          color: lighten($yellow, 25%);
+        }
+      }
     }
 
     @include media-breakpoint-down(sm) {
