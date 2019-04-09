@@ -86,8 +86,8 @@ This leads us to...
 ## Our Mission Statement:
 
 > We are building deep relationships in and beyond Albania  
->  through mutual discipleship and partnering in evangelism  
->    for the fulfillment of the Great Commission.
+> &nbsp;&nbsp;through mutual discipleship and partnering in evangelism  
+> &nbsp;&nbsp;&nbsp;&nbsp;for the fulfillment of the Great Commission.
 
 We are excited for this mission. And we are praying for a greater and deeper "+".
 Holding fast to the promises of God, we are patiently and actively waiting for Him

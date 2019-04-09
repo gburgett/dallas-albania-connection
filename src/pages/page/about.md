@@ -9,7 +9,11 @@ Our home base is Dallas, Texas, but we have many friends in other cities across 
 
 **Mission**
 
-We seek to follow Christ as he leads us to make him known among people in Albania and across Eastern Europe. 
+> We are building deep relationships in and beyond Albania  
+> &nbsp;&nbsp;through mutual discipleship and partnering in evangelism  
+> &nbsp;&nbsp;&nbsp;&nbsp;for the fulfillment of the Great Commission.
+
+[Read about how we came up with this mission statement](/blog/2019-02-25-the-plus-in-albania-plus)
 
 **Vision**
 
