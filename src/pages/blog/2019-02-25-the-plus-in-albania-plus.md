@@ -31,7 +31,7 @@ In 2018 we sent 2 new teams projects outside of Albania. We began going to Polan
 
 Every year since 2015 we've added more projects and more people. It started out
 when Kaon Serjani, then the director of High School ministries for Cru Albania,
-invited us to take a team to Elbasan in 2015. In 2017 we added a team to work with young professionals in Tirana, the capital city of Albania. In 2017 we sent a high school team to Korça, a city in the south of Albania. These additions were possible due to the invitations of Cru staff. And over the years we have continued to see fruit in the lives of high schoolers and adults with whom we've done ministry.
+invited us to take a team to Elbasan. In 2016 we added a team to work with young professionals in Tirana, the capital city of Albania. In 2017 we sent a high school team to Korça, a city in the south of Albania. These additions were possible due to the invitations of Cru staff. And over the years we have continued to see fruit in the lives of high schoolers and adults with whom we've done ministry.
 
 ### 3. More Seasons
 
@@ -68,7 +68,7 @@ We have been put into a position to be able to support the church in Albania (an
 
 This term was coined by John Stott, in his book [Christian Mission in the Modern World](https://www.amazon.com/Christian-Mission-Modern-World-Stott/dp/0830844392).
 He highlights the difference between activities with a missionary *dimension*
-verses activities with a missionary *intention*. Activities with a missionary *dimension* are those that create strong believers who as a byproduct will go and share the Gospel, while those with a missionary *intention* are the ones whose expressed, direct purpose is evangelism and as a byproduct create strong believers. Ministries like Re:generation are activities with a missionary *dimension*, while the summer projects in Albania and Hungary are activities with a missionary *intention*.
+and activities with a missionary *intention*. Activities with a missionary *dimension* are those that create strong believers who as a byproduct will go and share the Gospel, while those with a missionary *intention* are the ones whose expressed, direct purpose is evangelism and as a byproduct create strong believers. Ministries like Re:generation are activities with a missionary *dimension*, while the summer projects in Albania and Hungary are activities with a missionary *intention*.
 
 Watermark is well-positioned to support the global church in these activities,
 and we as a team are well-positioned to be the bridge, offering the resources
