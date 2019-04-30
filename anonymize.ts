@@ -3,6 +3,7 @@ import * as csv from 'csvtojson'
 import * as path from 'path'
 import globby from 'globby'
 import * as csvStringify from 'csv-stringify'
+import * as _ from 'lodash'
 
 import {asyncWriter} from './plugins/gatsby-source-smapp/utils'
 
@@ -15,10 +16,14 @@ async function run() {
   return Promise.all(files.map(async (file) => {
     const csvJson = await convertToJson(file) as ICsvRow[]
 
-    const grouped = groupByDesignation(csvJson)
-    const rows = Object.keys(grouped).map(number => 
-      sum(grouped[number])
-    )
+    let grouped = groupByDesignation(csvJson)
+    
+    const rows = Object.keys(grouped).map(number => {
+      const toSum = _.uniqBy(grouped[number], node => {
+        return node.Amount + node.Date + node["Donor Name"]
+      })
+      return sum(toSum)
+    })
 
     return writeCsv(file, rows)
   }))

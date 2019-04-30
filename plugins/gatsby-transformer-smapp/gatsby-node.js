@@ -42,7 +42,7 @@ async function onCreateNode(
   let parsedContent = await convertToJson(content, options)
 
   if (_.isArray(parsedContent)) {
-    const csvArray = parsedContent.map((obj, i) => {
+    let csvArray = parsedContent.map((obj, i) => {
       const objStr = JSON.stringify(obj)
       const contentDigest = crypto
         .createHash(`md5`)
@@ -64,6 +64,13 @@ async function onCreateNode(
           type: _.upperFirst(_.camelCase(`${node.internal.type} Csv`)),
         },
       }
+    })
+
+    // Strip out duplicates - this can happen when two students share a designation
+    // (ex. a married couple)
+    csvArray = _.uniqBy(csvArray, node => {
+      console.log('uniq by', node.designation + node.amount + node.date + node.donorName)
+      return node.designation + node.amount + node.date + node.donorName
     })
 
     _.each(csvArray, y => {
