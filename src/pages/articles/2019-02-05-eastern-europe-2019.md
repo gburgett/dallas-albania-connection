@@ -31,7 +31,7 @@ roster:
         - cruId: '1051154'
           name: Uchechi Amuneke
         - cruId: '1050480'
-          goal: '3500'
+          goal: ''
           name: Lucy Chang
       mileMarker: '1700'
       name: Albania - Tirana (High School)
