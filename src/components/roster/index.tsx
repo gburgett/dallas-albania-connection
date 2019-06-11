@@ -24,10 +24,11 @@ interface IRosterMemberProps {
 
 class RosterMember extends React.Component<IRosterMemberProps, {}> {
   render() {
-    const {name, goal, mileMarker, cruId, raised} = this.props
+    const { name, mileMarker, cruId, raised } = this.props
+    const goal = toInt(this.props.goal)
     const adjustment = this.props.adjustment || 0;
     const amt = toInt(adjustment) + raised;
-    const prog = 100 * (amt / toInt(goal))
+    const prog = 100 * (amt / goal)
 
     const donateButton = (
       <a className={`donate btn btn-sm ${cruId ? "btn-info" : "btn-secondary disabled"}`}
@@ -46,7 +47,7 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
 
     let bgColor = "bg-secondary"
     if (cruId) { bgColor = 'bg-info' }
-    if (amt >= toInt(goal)) { bgColor = 'bg-success' }
+    if (amt >= goal) { bgColor = 'bg-success' }
 
     const passedMileMarker = amt >= toInt(mileMarker)
 
@@ -54,19 +55,21 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
       <div className="progress">
         <div className={`progress-bar progress-bar-striped progress-bar-animated ${bgColor}`}
           role="progressbar"
-          style={{ width: prog + "%"}}
+          style={{ width: prog + "%" }}
           aria-valuenow={amt}
           aria-valuemin={0}
-          aria-valuemax={toInt(goal)}>
-          {passedMileMarker && <i className="fas fa-plane" style={{marginLeft: 'auto', marginRight: '4px'}}></i>}
-          </div>
+          aria-valuemax={goal}>
+          {passedMileMarker && <i className="fas fa-plane" style={{ marginLeft: 'auto', marginRight: '4px' }}></i>}
+        </div>
       </div>
     )
 
     return (<div className="member">
       <span className="memberName d-none d-sm-flex">
         <span className="name">{name}</span>
-        {goal && <span className="amt">${amt} of ${goal || "?"}</span>}
+        {goal && <span className="amt">
+          ${amt.toLocaleString(undefined, { maximumFractionDigits: 2, minimumFractionDigits: 0 })} of
+          ${goal.toLocaleString(undefined, { maximumFractionDigits: 2, minimumFractionDigits: 0 })}</span>}
         {cruId && <span className="cruId">{cruId}</span>}
         {donateButton}
       </span>
@@ -80,10 +83,10 @@ class RosterMember extends React.Component<IRosterMemberProps, {}> {
 
 export class TeamRoster extends React.Component<ITeamRosterProps, {}> {
   render() {
-    const { name, goal, adjustment, mileMarker, members, data} = this.props
+    const { name, goal, adjustment, mileMarker, members, data } = this.props
     let adj = adjustment ? toInt(adjustment) : 0
-    
-    return  (<div className="teamRoster">
+
+    return (<div className="teamRoster">
       <h4>{name}</h4>
       <ul>
         {members && members.map(m => (<li key={m.name}>
@@ -100,7 +103,7 @@ export class TeamRoster extends React.Component<ITeamRosterProps, {}> {
 }
 
 function toInt(num: number | string): number {
-  if(typeof num == 'number') {
+  if (typeof num == 'number') {
     return num;
   }
   return parseInt(num)
