@@ -29,8 +29,5 @@ articles:
 postsToShow: 4
 featuredPosts:
   - slug: 2019-02-25-the-plus-in-albania-plus
-  - slug: support-raising-101
-  - slug: marlie-albania-2017
-  - slug: 2018-05-the-gospel-in-albania
 ---
 
