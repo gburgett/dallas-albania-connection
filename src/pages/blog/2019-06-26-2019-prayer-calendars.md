@@ -21,6 +21,13 @@ Click each image to download a printable PDF version.
   <h3 style="float:right;">Download <i class="fas fa-download"></i></h3>
 </a>
 
+<a href="/files/prayercalendars/2019/EE-2019_Prayer-Calendar_Team-Elbasan-HS.pdf">
+  <img src="/files/prayercalendars/2019/elbasan-hs.jpg"
+    alt="Team Elbasan (High School)">
+  </img>
+  <h3 style="float:right;">Download <i class="fas fa-download"></i></h3>
+</a>
+
 <a href="/files/prayercalendars/2019/EE-2019_Prayer-Calendar_Team-Tirana-YP.pdf">
   <img src="/files/prayercalendars/2019/tirana-yp.jpg"
     alt="Team Tirana (Young Professionals)">
