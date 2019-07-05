@@ -1,7 +1,7 @@
 ---
 contentType: blog
 title: "Gordon's 2016 Journal (YP)"
-externalUrl: http://gordonburgett.net/albania/2016_YoungProfessionals/
+externalUrl: http://gordonburgett.net/albania/2016_youngprofessionals/
 date: '2016-07-04'
 published: true
 heroimage: http://gordonburgett.net/.640x/images/albania/2016/yp_committe.jpg

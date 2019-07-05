@@ -1,7 +1,7 @@
 ---
 contentType: blog
 title: "Gordon's 2016 Journal (HS)"
-externalUrl: http://gordonburgett.net/albania/2016_IceAndSpice/
+externalUrl: http://gordonburgett.net/albania/2016_iceandspice/
 date: '2016-06-27'
 published: true
 heroimage: http://gordonburgett.net/.640x/images/albania/2016/2016_team.jpg
