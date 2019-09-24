@@ -10,7 +10,6 @@ This page is a place where you can retrieve resources, find links, and see other
 
 **Participant Guide**
 
-[Download the Participant Guide](/files/albania_plus_2018_participant_guide_3.27.2018.pdf)
 
 **Donations Tracker**
 
