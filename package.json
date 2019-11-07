@@ -75,7 +75,7 @@
   },
   "devDependencies": {
     "@babel/register": "^7.0.0",
-    "@types/lodash": "^4.14.123",
+    "@types/lodash": "^4.14.145",
     "@types/react-instantsearch": "^5.2.2",
     "ava": "^1.0.1"
   },
