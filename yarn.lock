@@ -1252,10 +1252,10 @@
     "@types/react" "*"
     "@types/react-instantsearch-core" "*"
 
-"@types/react-instantsearch@^5.2.2":
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/@types/react-instantsearch/-/react-instantsearch-5.2.2.tgz#0f654c2dfcdd694544b0333ab386ecf5c0183f57"
-  integrity sha512-N1DSeO6d3puRzQ8lv0GvT4zXHuDQalhC+/7n0WbKGCdJyNAlKnwk3PPjny1JfeT8+/TkUxrhUCFJXM5EvWmGtA==
+"@types/react-instantsearch@^5.2.3":
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/@types/react-instantsearch/-/react-instantsearch-5.2.3.tgz#8e093a35746040e17854f2643c3c2fdc849174c5"
+  integrity sha512-PUgHWwPBXqlV4wSPYeUJOPe+uCaIbdJ19p1HDDQfSDvYChEeRurQ4PXyvkFbRyHpKcNE6A3faQFwQjYQI5D/vA==
   dependencies:
     "@types/react-instantsearch-core" "*"
     "@types/react-instantsearch-dom" "*"
