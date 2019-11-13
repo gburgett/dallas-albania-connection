@@ -1092,12 +1092,12 @@
   dependencies:
     "@types/node" "*"
 
-"@types/csv-stringify@^1.4.2":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@types/csv-stringify/-/csv-stringify-1.4.3.tgz#538326331445809293fe8755694173dd01590f32"
-  integrity sha512-vfbvOBhuTjDYQjdG8dCxLjOsyQMjCE0oN0bIUkJtiolqkCe1WTCjh36w4hEhtkdLHUgsB4aN4r6SFD8iLJgiGQ==
+"@types/csv-stringify@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@types/csv-stringify/-/csv-stringify-3.1.0.tgz#4c172ef462740e584a5bfe66ea78b67759f7bb32"
+  integrity sha512-jNRWx49wIc9UjJXukCaQt8iZRjyzDiEC1CGAAIZsydECWl5xM9oq4pSc5+Jhl4oATrRr+eGA9Vf0y9duDbKAvg==
   dependencies:
-    "@types/node" "*"
+    csv-stringify "*"
 
 "@types/debug@^0.0.29":
   version "0.0.29"
@@ -3886,6 +3886,11 @@ csstype@^2.2.0, csstype@^2.5.2, csstype@^2.5.7:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.3.tgz#b701e5968245bf9b08d54ac83d00b624e622a9fa"
   integrity sha512-rINUZXOkcBmoHWEyu7JdHu5JMzkGRoMX4ov9830WNgxf5UYxcBUO0QTKAqeJ5EZfSdlrcJYkC8WwfVW7JYi4yg==
+
+csv-stringify@*:
+  version "5.3.3"
+  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-5.3.3.tgz#c4725686a33db9f61e70d87af712285baefebe21"
+  integrity sha512-q8Qj+/lN74LRmG7Mg0LauE5WcnJOD5MEGe1gI57IYJCB61KWuEbAFHm1uIPDkI26aqElyBB57SlE2GGwq2EY5A==
 
 csv-stringify@^3.1.1:
   version "3.1.1"
