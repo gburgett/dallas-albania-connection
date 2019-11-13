@@ -22,7 +22,7 @@
   "dependencies": {
     "@types/cheerio": "^0.22.14",
     "@types/csv-stringify": "^1.4.2",
-    "@types/fs-extra": "^5.0.4",
+    "@types/fs-extra": "^8.0.1",
     "@types/react": "^16.7.18",
     "@types/react-helmet": "^5.0.8",
     "@types/reactstrap": "^5.0.27",
