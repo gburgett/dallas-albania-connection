@@ -59,7 +59,7 @@
     "querystring": "^0.2.0",
     "react": "^16.11.0",
     "react-dom": "^16.7.0",
-    "react-helmet": "^5.2.0",
+    "react-helmet": "^5.2.1",
     "react-instantsearch": "^5.4.0",
     "reactstrap": "^8.1.1",
     "request": "^2.88.0",
