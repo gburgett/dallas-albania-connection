@@ -61,7 +61,7 @@
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-instantsearch": "^5.4.0",
-    "reactstrap": "^5.0.0",
+    "reactstrap": "^8.1.1",
     "request": "^2.88.0",
     "request-debug": "^0.2.0",
     "stopwords": "0.0.9",
