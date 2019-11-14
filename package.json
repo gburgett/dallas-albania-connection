@@ -53,7 +53,7 @@
     "googleapis": "^45.0.0",
     "lodash": "^4.17.13",
     "netlify-cms": "^2.9.4",
-    "netlify-lambda": "^1.2.0",
+    "netlify-lambda": "^1.6.3",
     "node-sass": "^4.11.0",
     "prismjs": "^1.15.0",
     "querystring": "^0.2.0",
