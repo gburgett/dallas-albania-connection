@@ -37,7 +37,7 @@
     "fs-extra": "^8.1.0",
     "gatsby": "^2.0.91",
     "gatsby-node-helpers": "^0.3.0",
-    "gatsby-plugin-algolia": "^0.3.0",
+    "gatsby-plugin-algolia": "^0.4.0",
     "gatsby-plugin-feed": "^2.1.2",
     "gatsby-plugin-netlify": "^2.1.24",
     "gatsby-plugin-netlify-cms": "^4.1.0",
