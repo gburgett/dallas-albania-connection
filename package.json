@@ -71,7 +71,7 @@
     "twilio": "^3.27.1",
     "typescript": "^3.2.2",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "yargs": "^11.1.0"
+    "yargs": "^14.2.0"
   },
   "devDependencies": {
     "@babel/register": "^7.7.0",
