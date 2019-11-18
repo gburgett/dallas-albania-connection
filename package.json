@@ -52,7 +52,7 @@
     "globby": "^9.1.0",
     "googleapis": "^45.0.0",
     "lodash": "^4.17.13",
-    "netlify-cms": "^2.9.4",
+    "netlify-cms": "^2.9.7",
     "netlify-lambda": "^1.6.3",
     "node-sass": "^4.11.0",
     "prismjs": "^1.15.0",
