@@ -27,7 +27,7 @@
     "@types/react-helmet": "^5.0.14",
     "@types/reactstrap": "^5.0.27",
     "@types/request": "^2.48.1",
-    "@types/request-promise-native": "^1.0.15",
+    "@types/request-promise-native": "^1.0.17",
     "@types/yargs": "^13.0.3",
     "bootstrap": "^4.2.1",
     "bootswatch": "^4.2.1",
