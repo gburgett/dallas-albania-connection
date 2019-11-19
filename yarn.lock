@@ -5956,10 +5956,10 @@ gatsby-telemetry@^1.0.5:
     stack-utils "1.0.2"
     uuid "3.3.2"
 
-gatsby-transformer-csv@^2.1.17:
-  version "2.1.17"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-csv/-/gatsby-transformer-csv-2.1.17.tgz#b60e3d1ac16167639d59fe21af1e88b9d945fec0"
-  integrity sha512-Aok9yDMgKpNgUIiLylPG8BOHO5yICG6DSYuVFpnWiJiAxOefkAGaUajF6rAqHbRIbgElLxFJBjxsfrt//Nt/Dw==
+gatsby-transformer-csv@^2.1.18:
+  version "2.1.18"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-csv/-/gatsby-transformer-csv-2.1.18.tgz#918e815f523decceb8ba85836ea4593492564d60"
+  integrity sha512-GsFKm4sYSQQQyVTG0qKFxHyJyYTTyM0USHNSvpmK4QPPhVOEBXt4cJi7hDib6NjpCz9xK1nxVe9izwH37LHKhw==
   dependencies:
     "@babel/runtime" "^7.7.2"
     bluebird "^3.7.1"
