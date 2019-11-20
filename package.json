@@ -68,7 +68,7 @@
     "tough-cookie-file-store": "^1.2.0",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.5.2",
-    "twilio": "^3.27.1",
+    "twilio": "^3.37.1",
     "typescript": "^3.7.2",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "yargs": "^14.2.0"

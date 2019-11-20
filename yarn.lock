@@ -1282,10 +1282,10 @@
     "@types/node" "*"
     "@types/range-parser" "*"
 
-"@types/express@^4.11.1":
-  version "4.16.1"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.16.1.tgz#d756bd1a85c34d87eaf44c888bad27ba8a4b7cf0"
-  integrity sha512-V0clmJow23WeyblmACoxbHBu2JKlE5TiIme6Lem14FnPW9gsttyHtk6wq7njcdIWH1njAaFgR8gW09lgY98gQg==
+"@types/express@^4.17.2":
+  version "4.17.2"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.2.tgz#a0fb7a23d8855bac31bc01d5a58cadd9b2173e6c"
+  integrity sha512-5mHFNyavtLoJmnusB8OKJ5bshSzw+qkMIBAobLrIM48HJvunFva9mOa6aBwh64lBFyNwBbs0xiEFuj4eU/NjCA==
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
@@ -8059,7 +8059,7 @@ jsonify@~0.0.0:
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
-jsonwebtoken@^8.1.0:
+jsonwebtoken@^8.5.1:
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz#00e71e0b8df54c2121a1f26137df2280673bcc0d"
   integrity sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w==
@@ -9046,11 +9046,6 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5, mkdirp@^0.5.0, mkdirp
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
-
-moment@2.19.3:
-  version "2.19.3"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.3.tgz#bdb99d270d6d7fda78cc0fbace855e27fe7da69f"
-  integrity sha1-vbmdJw1tf9p4zA+6zoVeJ/59pp8=
 
 moment@^2.21.0, moment@^2.24.0:
   version "2.24.0"
@@ -13706,16 +13701,16 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twilio@^3.27.1:
-  version "3.30.0"
-  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.30.0.tgz#8ed3a756ccd9199e979dafc97f973c4321833793"
-  integrity sha512-K9ilUIWDLxXeMxouxY5yVdWDphBXkBZmUJk3X7gRVw9HWCTiy0NWTigadPsZGr1s2ZDBj/HFdn4dbjjFqwefQg==
+twilio@^3.37.1:
+  version "3.37.1"
+  resolved "https://registry.yarnpkg.com/twilio/-/twilio-3.37.1.tgz#048270adf473c2e0833bd234ccd88f6a25fc4fa5"
+  integrity sha512-BdLOmO2WsQuVh8J8h44mKUE72FTVCFnv60wvEsJqhHgEOi5m2f9Lq7gPE9KFmVLohvPukNrlxhhc4ZSPH+HLyg==
   dependencies:
-    "@types/express" "^4.11.1"
+    "@types/express" "^4.17.2"
     deprecate "1.0.0"
-    jsonwebtoken "^8.1.0"
-    lodash "^4.17.11"
-    moment "2.19.3"
+    jsonwebtoken "^8.5.1"
+    lodash "^4.17.15"
+    moment "^2.24.0"
     q "2.0.x"
     request "^2.88.0"
     rootpath "0.1.2"
