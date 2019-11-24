@@ -11,13 +11,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "ava",
-    "test-watch": "ava --watch",
     "build": "gatsby build && netlify-lambda -c ./config/webpack.functions.js build src/lambda",
     "serve": "gatsby serve",
     "start": "gatsby develop",
     "build-watch": "nodemon -e ts,tsx,md,yml,scss -i public/ -x 'gatsby build && say \"finished\"'",
-    "lambda": "netlify-lambda -c ./config/webpack.functions.js"
+    "lambda": "netlify-lambda -c ./config/webpack.functions.js",
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "dependencies": {
     "@types/cheerio": "^0.22.14",
@@ -74,24 +74,14 @@
     "yargs": "^15.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
     "@babel/register": "^7.7.0",
+    "@types/jest": "^24.0.23",
     "@types/lodash": "^4.14.149",
     "@types/react-instantsearch": "^5.2.3",
-    "ava": "^2.4.0"
-  },
-  "ava": {
-    "files": [
-      "src/lambda/**/*.test.ts"
-    ],
-    "cache": true,
-    "failFast": true,
-    "verbose": true,
-    "compileEnhancements": false,
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ]
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0"
   }
 }
