@@ -38,8 +38,6 @@ export async function appendToSheet(contact, data, sheets) {
       values: [rowValues],
     },
   });
-
-  console.log('added to', resp && resp.data && resp.data.updates && resp.data.updates.updatedRange, 'values', rowValues)
 }
 
 export async function updateRow(rowNumber, contact, data, sheets) {

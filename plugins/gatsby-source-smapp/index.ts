@@ -54,9 +54,7 @@ export async function sourceNodes(
 
   // create nodes from csv files
   const promises = downloaded.map(async (csvFile) => {
-    console.log('createFileNode', csvFile)
     const node = await createFileNode(csvFile, createNodeId)
-    console.log('createdFileNode', csvFile)
     Object.assign(node.internal, {
       type: "SmappExport"
     })
@@ -70,6 +68,5 @@ export async function sourceNodes(
 }
 
 export function loadNodeContent(fileNode) {
-  console.log('attempt to read', fileNode.absolutePath)
   return fs.readFile(fileNode.absolutePath, `utf-8`)
 }

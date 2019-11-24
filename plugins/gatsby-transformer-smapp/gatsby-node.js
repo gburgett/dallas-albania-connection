@@ -69,7 +69,6 @@ async function onCreateNode(
     // Strip out duplicates - this can happen when two students share a designation
     // (ex. a married couple)
     csvArray = _.uniqBy(csvArray, node => {
-      console.log('uniq by', node.designation + node.amount + node.date + node.donorName)
       return node.designation + node.amount + node.date + node.donorName
     })
 
