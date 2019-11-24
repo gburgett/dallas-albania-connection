@@ -1,0 +1,4 @@
+
+script:
+  - yarn test
+  - yarn check-types
