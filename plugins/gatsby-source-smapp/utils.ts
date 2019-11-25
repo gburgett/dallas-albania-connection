@@ -1,4 +1,3 @@
-import * as requestLib from 'request'
 import { RequestCallback, Request, Response, RequestAPI } from 'request';
 
 /** 

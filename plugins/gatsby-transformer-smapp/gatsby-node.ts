@@ -1,10 +1,10 @@
-const csv = require(`csvtojson`)
-const _ = require(`lodash`)
-const crypto = require(`crypto`)
-const path = require(`path`)
+import * as csv from 'csvtojson'
+import * as _ from 'lodash'
+import * as crypto from 'crypto'
+import * as path from 'path'
 
 const convertToJson = (data, options) =>
-  new Promise((res, rej) => {
+  new Promise<Array<any>>((res, rej) => {
     csv(options)
       .fromString(data)
       .on(`end_parsed`, jsonData => {
