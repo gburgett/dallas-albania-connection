@@ -5,7 +5,7 @@ import { Card, CardTitle, CardHeader, CardBody } from 'reactstrap'
 import { parseISOLocal } from '../blog/utilities';
 
 interface IEventSummaryProps extends IEventFields {
-  collapse: boolean
+  collapse?: boolean
 }
 
 export const Summary = (props: IEventSummaryProps) => {
