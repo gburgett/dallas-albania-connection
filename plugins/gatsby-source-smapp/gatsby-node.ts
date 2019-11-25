@@ -6,7 +6,7 @@ import {createFileNode} from 'gatsby-source-filesystem/create-file-node'
 
 import download from './download'
 
-export async function sourceNodes(
+async function sourceNodes(
   { actions, store, createNodeId },
   { username, password, dataDir, sessionId }
 ) {
@@ -67,6 +67,4 @@ export async function sourceNodes(
   await Promise.all(promises)
 }
 
-export function loadNodeContent(fileNode) {
-  return fs.readFile(fileNode.absolutePath, `utf-8`)
-}
+exports.sourceNodes = sourceNodes

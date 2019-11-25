@@ -2,7 +2,7 @@
   "name": "gatsby-source-smapp",
   "version": "1.0.0",
   "description": "Sources data from Cru's summer missions tool for gatsbyjs",
-  "main": "index",
+  "main": "gatsby-config.js",
   "scripts": {
     "test": "test"
   },

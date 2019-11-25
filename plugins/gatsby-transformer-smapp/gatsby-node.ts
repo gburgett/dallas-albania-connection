@@ -1,7 +1,8 @@
-import * as csv from 'csvtojson'
+import csv from 'csvtojson'
 import * as _ from 'lodash'
 import * as crypto from 'crypto'
 import * as path from 'path'
+import * as fs from 'fs-extra'
 
 const convertToJson = (data, options) =>
   new Promise<Array<any>>((res, rej) => {
@@ -28,7 +29,7 @@ const convertToJson = (data, options) =>
   })
 
 async function onCreateNode(
-  { node, actions, loadNodeContent },
+  { node, actions },
   options
 ) {
   const { createNode, createParentChildLink } = actions
@@ -79,6 +80,10 @@ async function onCreateNode(
   }
 
   return
+}
+
+function loadNodeContent(fileNode) {
+  return fs.readFile(fileNode.absolutePath, `utf-8`)
 }
 
 exports.onCreateNode = onCreateNode

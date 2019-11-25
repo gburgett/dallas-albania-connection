@@ -4,7 +4,7 @@ import * as querystring from 'querystring'
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import * as tough from 'tough-cookie'
-import * as FileCookieStore from 'tough-cookie-file-store'
+import FileCookieStore from 'tough-cookie-file-store'
 import * as csvStringify from 'csv-stringify'
 import chalk from 'chalk'
 
