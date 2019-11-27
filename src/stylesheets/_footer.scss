@@ -4,6 +4,7 @@
   color: $theme-light-gray;
   background-color: $theme-dark;
   padding-bottom: 20px;
+  margin-top: auto;
 
   .footer-content {
     width: 100%;
@@ -31,6 +32,10 @@
   a {
     color: $theme-light-gray;
   }
+}
+
+#gatsby-focus-wrapper {
+  height: 100%;
 }
 
 .list-header {
