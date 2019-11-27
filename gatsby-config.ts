@@ -151,7 +151,8 @@ const plugins: Array<string | {resolve: string, options?: any}> = [
     resolve: 'gatsby-transformer-remark',
     options: {
       plugins: [
-        'gatsby-remark-copy-linked-files'
+        'gatsby-remark-copy-linked-files',
+        `gatsby-remark-autolink-headers`
       ]
     }
   },

@@ -33,7 +33,7 @@ module.exports = class HTML extends React.Component<IHTMLProps, any> {
           <script src='/admin/netlify_redirect.js' />
           {this.props.headComponents}
         </head>
-        <body {...this.props.bodyAttributes}>
+        <body {...this.props.bodyAttributes} data-spy="scroll" data-target="#scrollspy-sidebar">
           {this.props.preBodyComponents}
           <div
             key={`body`}
