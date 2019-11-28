@@ -36,7 +36,7 @@
     "gatsby": "^2.18.4",
     "gatsby-node-helpers": "^0.3.0",
     "gatsby-plugin-algolia": "^0.5.0",
-    "gatsby-plugin-feed": "^2.3.21",
+    "gatsby-plugin-feed": "^2.3.22",
     "gatsby-plugin-netlify": "^2.1.26",
     "gatsby-plugin-netlify-cms": "^4.1.28",
     "gatsby-plugin-offline": "^3.0.24",
