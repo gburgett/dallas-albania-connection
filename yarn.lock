@@ -6744,12 +6744,12 @@ gatsby-telemetry@^1.1.40:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-transformer-csv@^2.1.18:
-  version "2.1.18"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-csv/-/gatsby-transformer-csv-2.1.18.tgz#918e815f523decceb8ba85836ea4593492564d60"
-  integrity sha512-GsFKm4sYSQQQyVTG0qKFxHyJyYTTyM0USHNSvpmK4QPPhVOEBXt4cJi7hDib6NjpCz9xK1nxVe9izwH37LHKhw==
+gatsby-transformer-csv@^2.1.19:
+  version "2.1.19"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-csv/-/gatsby-transformer-csv-2.1.19.tgz#0f937002d84cab29e3543bb12ca6c05e9f36d1ea"
+  integrity sha512-mTuLcwRH6no07zHmWwJS4VqgML0AyYJD/bzoFNIobN7ZAmQN8qX4vCrCIaK3+5Fd9oxdkvu41Dp0YJBSEKxhiQ==
   dependencies:
-    "@babel/runtime" "^7.7.2"
+    "@babel/runtime" "^7.7.4"
     bluebird "^3.7.1"
     csvtojson "^1.1"
 
