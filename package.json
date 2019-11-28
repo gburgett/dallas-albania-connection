@@ -45,7 +45,7 @@
     "gatsby-plugin-typescript": "^2.1.20",
     "gatsby-remark-copy-linked-files": "^2.1.31",
     "gatsby-source-filesystem": "^2.1.39",
-    "gatsby-transformer-csv": "^2.1.18",
+    "gatsby-transformer-csv": "^2.1.19",
     "gatsby-transformer-remark": "^2.6.38",
     "globby": "^10.0.1",
     "googleapis": "^45.0.0",
