@@ -65,7 +65,7 @@
     "stopwords": "0.0.9",
     "tough-cookie-file-store": "^1.2.0",
     "ts-loader": "^6.2.1",
-    "ts-node": "^8.5.3",
+    "ts-node": "^8.5.4",
     "twilio": "^3.37.1",
     "typescript": "^3.7.2",
     "uglifyjs-webpack-plugin": "^2.2.0",
