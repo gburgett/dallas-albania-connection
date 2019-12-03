@@ -59,6 +59,42 @@ Group time:
 Active participation/evaluation/discussion of weekly topics and presentations.  
 Your own personalized 1 page planned biblical response to the topic of the week.
 
+### Lessons
+
+###### Week 1: Intro
+
+Get together, know your discussion group, Q&A
+
+###### Week 2: Lesson 1 - Crisis, Counseling, and Conflict
+
+Give a biblical overview of pastoral care and answer:
+How do you shepherd others in the midst of crises?
+How do you have hard conversations with others?
+What scripture guides you in these situations?
+How do you balance truth and grace in these circumstances?
+
+###### Week 3: Lesson 2 - Stewardship & Navigating Conversations
+
+Give a biblical overview of stewardship and answer:
+What is the OT standard for giving?
+What is the NT standard for giving?
+How do you determine how much to give?
+What does it mean to be characterized as a generous giver?
+
+###### Week 4: Lesson 3 - Charismatic Confusion
+
+Give a biblical overview of sign gifts and answer: What are the Sign Gifts?
+What is a cessationist church? Is WCC cessationist?
+How do you account for signs and wonders worldwide?
+What is the 2nd filling (blessing) of the Holy Spirit?
+What is the gift of tongues? Is it different from a prayer language? How? What is the “gift” of healing? What is WCC position on healing?
+
+###### Week 5: Lesson 4 - Cross Cultural Ministry
+
+###### Week 6: Stand and Deliver
+
+Be prepared to teach any of your 4 one-pagers
+
 ### Materials
 
 View the materials [in this Google Drive folder](https://drive.google.com/drive/folders/1tyk50Tdo2zEagXMYxwf0gDxliym18vlL?usp=sharing)
