@@ -31,7 +31,7 @@
     "bootswatch": "^4.4.1",
     "chalk": "^3.0.0",
     "cheerio": "^1.0.0-rc.3",
-    "csv-stringify": "^5.3.3",
+    "csv-stringify": "^5.3.4",
     "fs-extra": "^8.1.0",
     "gatsby": "^2.18.6",
     "gatsby-node-helpers": "^0.3.0",
