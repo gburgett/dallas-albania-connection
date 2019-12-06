@@ -59,7 +59,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-instantsearch": "^5.4.0",
-    "reactstrap": "^8.1.1",
+    "reactstrap": "^8.2.0",
     "request": "^2.88.0",
     "request-debug": "^0.2.0",
     "stopwords": "0.0.9",
