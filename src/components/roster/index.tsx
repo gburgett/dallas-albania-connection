@@ -5,7 +5,12 @@ export interface ITeamRosterProps {
   goal: string | number,
   mileMarker: string | number,
   adjustment: string | number,
-  members: IRosterMemberProps[],
+  members: Array<{
+    name: string,
+    cruId?: string,
+    goal?: number | string,
+    adjustment?: number | string
+  }>,
   data?: ICollatedSmappData
 }
 
