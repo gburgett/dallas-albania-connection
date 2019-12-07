@@ -15,6 +15,10 @@ export const pageQuery = graphql`
 
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      headings {
+        value
+        depth
+      }
       frontmatter {
         path
         public

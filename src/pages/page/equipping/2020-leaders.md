@@ -4,6 +4,8 @@ title: 2020 Team Leaders Equipping
 public: false
 ---
 
+## Overview
+
 ### Mission
 
 Our desire through this leadership training is to equip you to respond with grace 
