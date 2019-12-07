@@ -62,12 +62,12 @@ export default class Scrollspy extends React.Component<IScrollspyProps, {}> {
           onUpdate={this.onUpdate}>
           {headers.map((h) => {
             return <li className={firstHeader == h.value ? 'active' : undefined} key={h.slug}>
-              <a href={'#' + h.slug}>{h.value}</a>
+              <a href={'#' + h.slug} onClick={this.onClick(h.slug)}>{h.value}</a>
               {h.children.length > 0 &&
                 <ul className="nav nav-stacked">
                   {h.children.map((child) => {
                     return <li key={child.slug}>
-                      <a href={'#' + child.slug} data-parent={h.slug}>{child.value}</a>
+                      <a href={'#' + child.slug} onClick={this.onClick(child.slug)} data-parent={h.slug}>{child.value}</a>
                     </li>
                   })}
                 </ul>}
@@ -76,6 +76,18 @@ export default class Scrollspy extends React.Component<IScrollspyProps, {}> {
         </ReactScrollspy>
       </nav>
     )
+  }
+
+  private onClick = (slug: string) => (evt: React.MouseEvent) => {
+    evt.preventDefault();
+
+    const href = '#' + slug
+    $('html, body').animate({
+      scrollTop: $(href).offset().top
+    }, 400, function(){
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = href;
+    });
   }
 
   private onUpdate = (elem: any) => {
@@ -93,3 +105,4 @@ export default class Scrollspy extends React.Component<IScrollspyProps, {}> {
     }
   }
 }
+
