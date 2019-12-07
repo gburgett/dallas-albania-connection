@@ -27,6 +27,7 @@
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
     "@babel/register": "^7.7.4",
+    "@types/jquery": "^3.3.31",
     "@types/react-scrollspy": "^3.3.2",
     "bootstrap": "^4.4.1",
     "bootswatch": "^4.4.1",

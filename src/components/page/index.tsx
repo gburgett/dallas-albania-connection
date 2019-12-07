@@ -8,7 +8,7 @@ export interface ITemplateData {
   site: ISite,
   markdownRemark: {
     html: string,
-    headings: Array<{
+    headings?: Array<{
       value: string,
       depth: number
     }> | null,
