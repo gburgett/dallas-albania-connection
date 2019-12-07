@@ -29,7 +29,6 @@ export function PageTemplate ({ data }: IPageContext<ITemplateData>) {
   const {siteUrl} = data.site.siteMetadata;
 
   const headings = (post.headings || []).filter((h) => h.depth > 1 && h.depth <= 3)
-  console.log('headings', headings)
 
   return (
     <div>
