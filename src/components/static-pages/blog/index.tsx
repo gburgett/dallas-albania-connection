@@ -2,8 +2,9 @@ import * as React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
 import {InstantSearch, SearchBox, Hits} from 'react-instantsearch-dom'
+import * as algoliasearch from 'algoliasearch';
 
-import { mergeBlogsAndArticles, parseISOLocal, parseUrl } from '../../blog/utilities';
+import { parseISOLocal, parseUrl } from '../../blog/utilities';
 
 export interface IPost {
   id: string
@@ -126,6 +127,11 @@ const algoliaAppId = process.env.GATSBY_ALGOLIA_APP_ID
 const indexPrefix = process.env.GATSBY_ALGOLIA_INDEX_NAME
 const searchApiKey = process.env.GATSBY_ALGOLIA_SEARCH_API_KEY
 
+const searchClient = algoliasearch(
+  algoliaAppId,
+  searchApiKey
+);
+
 export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
 
   let currentYear = 9999
@@ -136,6 +142,7 @@ export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
     <Row>
       <Col xs={12} md={{ size: 9, offset: 3 }} >
         <InstantSearch
+          searchClient={searchClient}
           appId={algoliaAppId}
           indexName={indexPrefix + '_blogs'}
           apiKey={searchApiKey}
