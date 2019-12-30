@@ -1,9 +1,9 @@
-const Path = require('path')
+import { GatsbyNode } from 'gatsby'
+import * as Path from 'path'
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const fs = require('fs-extra')
+import * as fs from 'fs-extra'
 
-
-exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ stage, actions, getConfig }) => {
   switch (stage) {
     case `build-javascript`:
       actions.setWebpackConfig({
@@ -25,7 +25,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   }
 }
 
-exports.createPages = async ({ actions, graphql }) => {
+export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql }) => {
   const { createPage } = actions
   const createRedirect = (...args) => {
     console.log('creating redirect', ...args)
@@ -59,7 +59,7 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   }
 
-  const result = await graphql(`
+  const result = await graphql<CreatePagesQuery>(`
   {
     pages: allMarkdownRemark(filter: { frontmatter: { path: { ne: null } } }) {
       edges {
@@ -94,9 +94,36 @@ exports.createPages = async ({ actions, graphql }) => {
   result.data.pages.edges.forEach(createNode)
   result.data.blogs.edges.forEach(createNode)
 
-  const meta = JSON.parse(await fs.readFile('site/metadata.json'))
+  const meta = JSON.parse((await fs.readFile('site/metadata.json')).toString())
   console.log('metadata:', meta)
   if (meta.applicationUrl && meta.applicationUrl.length > 0) {
     createRedirect({ fromPath: "/apply", toPath: meta.applicationUrl, isPermanent: false })
+  }
+}
+
+interface CreatePagesQuery {
+  pages: {
+    edges: Array<{
+      node: {
+        id: string
+        frontmatter: {
+          contentType: string
+          path: string
+          date: string
+        }
+      }
+    }>
+  },
+  blogs: {
+    edges: Array<{
+      node: {
+        id: string
+        frontmatter: {
+          contentType: string
+          slug: string
+          date: string
+        }
+      }
+    }>
   }
 }
