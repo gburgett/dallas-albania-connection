@@ -26,7 +26,7 @@ Each day was devoted to one of these themes, with the end-conference goal that e
 3. understand how to take those steps.
 
 
-![Session photo 2](/files/LI_session_2.jpg)
+![Session photo 2](../../../static/files/LI_session_2.jpg)
 
 My top three takeaways from the conference are as follows:
 
@@ -44,7 +44,7 @@ God moves across cultural boundaries, and yet intentionally uses cultural differ
 
 I certainly fall into this when I become too focused on my to-do list, and forget to love the people God has entrusted around me. When we go to Albania (or host our Albanian friends in Dallas), I am always reminded that people are not projects and that our God is incredibly relational. In Albania I’m reminded that coffee is for much more than a beverage, but a convenient opportunity for bonding with others, which ultimately helps us to communicate (and demonstrate) the gospel. In turn, our Albanian friends have learned from us about how to infuse more organizational capability into their teams, allowing them to be more effective. It’s truly a win-win situation orchestrated by God’s use of cultural differences.
 
-![Leader Impact Team](/files/LI_team.jpg)
+![Leader Impact Team](../../../static/files/LI_team.jpg)
 
 ###When will the next LeaderImpact Conference happen?
 
