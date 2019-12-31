@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Row, Col, Container, Card, CardGroup, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import Helmet from 'react-helmet'
+import Img, { GatsbyImageProps } from "gatsby-image"
 
 import Hero from '../hero/Hero'
 import Feature, {IFeatureProps} from '../Feature'
@@ -8,7 +9,6 @@ import { Summary as EventSummary } from '../events/summary'
 import { IEventFields } from '../events';
 import { PostList, IPost, IArticle } from './blog';
 import { parseISOLocal } from '../blog/utilities';
-import { GatsbyImageProps } from 'gatsby-image'
 
 export interface IPageData {
   site: ISite,
@@ -46,16 +46,22 @@ export interface IPageData {
   }
 }
 
-const Article = (article: IArticle) => (
-  <Card style={{marginBottom: 10}} key={article.id}>
+const Article = (article: IArticle) => {
+  const img = article.frontmatter.heroImageSharp ?
+    <Img {...article.frontmatter.heroImageSharp} className="card-img-top" /> :
+    <img src={article.frontmatter.heroimage} className="card-img-top" />
+
+  return <Card style={{marginBottom: 10}} key={article.id}>
+    <a href={article.frontmatter.path} className="a-block">
     <CardBody>
-      <CardImg top width="100%" src={article.frontmatter.heroimage} alt="Card image cap" />
-      <CardTitle><a href={article.frontmatter.path}>{article.frontmatter.title}</a></CardTitle>
+      {img}
+      <CardTitle><h4>{article.frontmatter.title}</h4></CardTitle>
       <CardSubtitle style={{marginBottom: 10}}>{article.frontmatter.date}</CardSubtitle>
       <CardText>{article.excerpt}</CardText>
     </CardBody>
+    </a>
   </Card>
-)
+}
 
 const GroupedArticles = ({ cards }: { cards: Array<IArticle> }) => {
   const groups = []

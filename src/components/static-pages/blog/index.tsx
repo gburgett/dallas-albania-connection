@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
 import {InstantSearch, SearchBox, Hits} from 'react-instantsearch-dom'
 import * as algoliasearch from 'algoliasearch';
+import { GatsbyImageProps } from 'gatsby-image';
 
 import { parseISOLocal, parseUrl } from '../../blog/utilities';
 
@@ -16,6 +17,7 @@ export interface IPost {
     title: string
     date: string
     heroimage: string
+    heroImageSharp: GatsbyImageProps | null
     contentType: 'blog'
     published?: boolean
     author: {
@@ -35,6 +37,7 @@ export interface IArticle {
     date: string,
     path: string,
     heroimage: string
+    heroImageSharp: GatsbyImageProps | null
   }
 }
 
