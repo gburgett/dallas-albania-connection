@@ -92,6 +92,9 @@ hr {
     background-repeat: no-repeat;
     background-color: $ironside;
 
+    // prevent the image going too tall on wide screens
+    max-height: 81vh;
+
     &.dark:before {
       content:" ";
       background-color:inherit;

@@ -8,6 +8,7 @@ import { Summary as EventSummary } from '../events/summary'
 import { IEventFields } from '../events';
 import { PostList, IPost, IArticle } from './blog';
 import { parseISOLocal } from '../blog/utilities';
+import { GatsbyImageProps } from 'gatsby-image'
 
 export interface IPageData {
   site: ISite,
@@ -24,6 +25,7 @@ export interface IPageData {
         title: string,
         subtitle: string
       }
+      heroImageSharp: GatsbyImageProps | null
       articles: Array<{
         path: string
       }>,
@@ -102,7 +104,10 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const heroProps: Hero['props'] =
     showJumbotronCta ?
       data.root.frontmatter.jumbotronCta :
-      data.root.frontmatter.hero  
+      {
+        ...data.root.frontmatter.hero,
+        image: data.root.frontmatter.heroImageSharp || data.root.frontmatter.hero.image
+      }
 
   return (<Container fluid className="homepage">
     <Helmet title={title} titleTemplate={undefined}>

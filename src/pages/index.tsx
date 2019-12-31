@@ -43,6 +43,11 @@ query IndexQuery {
         title
         subtitle
       }
+      heroImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
       articles{
         path
       }
