@@ -1,7 +1,9 @@
-import { GatsbyNode } from 'gatsby'
+import { GatsbyNode, CreateResolversArgs } from 'gatsby'
 import * as Path from 'path'
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import * as fs from 'fs-extra'
+import {delegateToSchema} from 'graphql-tools'
+import * as path from 'path'
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ stage, actions, getConfig }) => {
   switch (stage) {
@@ -126,4 +128,44 @@ interface CreatePagesQuery {
       }
     }>
   }
+}
+
+
+export const createResolvers: GatsbyNode['createResolvers'] = async ({createResolvers, getNode, getNodesByType}: CreateResolversArgs) => {
+  createResolvers({
+    MarkdownRemarkFrontmatter: {
+      heroImageSharp: {
+        type: 'ImageSharp',
+        resolve: (source: HeroImageFrontmatter, args, context, info) => {
+          const relPath = source.heroimage || (source.hero && source.hero.image)
+          if (!relPath) {
+            return null
+          }
+          const fullPath = path.join(__dirname, 'static', relPath)
+          const f = getNodesByType('File').find((f) => f.absolutePath == fullPath)
+          if (!f) {
+            // An external URL most likely
+            return null
+          }
+          const imgSharp = (f.children || []).map((childId) => getNode(childId))
+            .find((child) => child.internal && child.internal.type == 'ImageSharp')
+
+          return imgSharp
+        }
+      }
+    }
+  })
+}
+
+type HeroImageFrontmatter = {
+  heroimage: string
+  hero: undefined
+} | {
+  heroimage: undefined
+  hero: {
+    image: string
+  }
+} | {
+  heroimage: undefined
+  hero: undefined
 }

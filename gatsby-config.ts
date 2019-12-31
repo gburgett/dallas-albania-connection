@@ -32,14 +32,15 @@ const plugins: GatsbyConfig['plugins'] = [
       dataDir: `data/donations/2019`
     }
   },
+  `gatsby-transformer-sharp`,
+  `gatsby-plugin-sharp`,
   {
     resolve: 'gatsby-source-filesystem',
     options: {
-      path: `${__dirname}/static/files`,
+      path: `${__dirname}/static`,
+      name: 'static'
     }
   },
-  `gatsby-transformer-sharp`,
-  `gatsby-plugin-sharp`,
   {
     resolve: 'gatsby-transformer-remark',
     options: {
