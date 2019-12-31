@@ -42,6 +42,11 @@ query BlogIndexQuery {
           contentType
           date
           heroimage
+          heroImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
           published
           author {
             name

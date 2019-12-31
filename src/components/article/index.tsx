@@ -1,11 +1,13 @@
 import * as React from 'react'
 import { Container } from 'reactstrap'
 import Helmet from 'react-helmet'
+import { GatsbyImageProps } from 'gatsby-image'
 
 import Hero from '../hero/Hero'
 import Feature, {IFeatureProps} from '../Feature'
 import { ITeamRosterProps, TeamRoster, ICollatedSmappData } from '../roster';
 import { ISmappExportFields, collateByDesignationNumber } from '../roster/support';
+
 
 export interface ITemplateData {
   site: ISite,
@@ -16,6 +18,7 @@ export interface ITemplateData {
       date: string,
       title: string,
       heroimage: string,
+      heroImageSharp: GatsbyImageProps | null
       feature?: IFeatureProps & {
         show?: boolean
       },
@@ -37,7 +40,7 @@ export interface ITemplateData {
 
 export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, smappExport } = data
-  const { heroimage, title, feature, showRoster, roster } = post.frontmatter;
+  const { heroimage, heroImageSharp, title, feature, showRoster, roster } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
   const year = data.markdownRemark.frontmatter.path.replace(/^\//, '')
@@ -64,8 +67,8 @@ export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
         {heroimage && <meta property="og:image" content={siteUrl + heroimage}></meta>}
       </Helmet>
 
-      <Container>
-        {heroimage && <Hero image={heroimage} />}
+      <Container fluid>
+        {heroimage && <Hero image={heroImageSharp || heroimage} />}
         {feature && feature.show &&
             <Feature {...feature} />}
       </Container>

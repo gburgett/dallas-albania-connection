@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Container } from 'reactstrap'
 import Helmet from 'react-helmet'
+import { GatsbyImageProps } from 'gatsby-image'
 
 import Hero from '../hero/Hero'
 import Author from '../author'
@@ -16,6 +17,7 @@ export interface ITemplateData {
       date: string,
       title: string,
       heroimage: string,
+      heroImageSharp: GatsbyImageProps | null
       heroAttribution: string,
       published?: boolean
       author: {
@@ -45,7 +47,6 @@ interface IArticle {
     contentType: 'article',
     date: string,
     path: string,
-    heroimage: string
   }
 }
 
@@ -106,7 +107,7 @@ const ArticlePreview = (node: IArticle) => (
 
 export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, blogs, articles } = data
-  const { heroimage, heroAttribution, title } = post.frontmatter;
+  const { heroimage, heroImageSharp, heroAttribution, title } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
   let author = post.frontmatter.author
@@ -126,9 +127,9 @@ export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
         {heroimage && <meta property="og:image" content={siteUrl + heroimage}></meta>}
       </Helmet>
 
-      <Container>
+      <Container fluid>
         {heroimage && 
-          <Hero image={heroimage} heroAttribution={heroAttribution} >
+          <Hero image={heroImageSharp || heroimage} heroAttribution={heroAttribution} >
             <h1 className='display-3 title'>
               {author &&
                 <Author {...author} />}
