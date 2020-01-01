@@ -83,6 +83,7 @@ export const HomepagePreview = ({entry, widgetFor, getAsset, fieldsMetaData}) =>
           subtitle: entry.getIn(['data', 'hero', 'subtitle']) as string,
           image: heroImage ? heroImage.value : undefined
         },
+        heroImageSharp: null,
         articles: entry.getIn(['data', 'articles']).toJS(),
         featuredPosts: entry.getIn(['data', 'featuredPosts']) && entry.getIn(['data', 'featuredPosts']).toJS(),
         postsToShow: entry.getIn(['data', 'postsToShow']) as number

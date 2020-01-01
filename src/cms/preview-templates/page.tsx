@@ -36,7 +36,8 @@ export const PagePreview = ({entry, widgetFor, getAsset}) => {
         path: entry.getIn(['data', 'path']),
         date: entry.getIn(['data', 'date']),
         title: entry.getIn(['data', 'title']),
-        heroimage: heroImage ? heroImage.value : undefined
+        heroimage: heroImage ? heroImage.value : undefined,
+        heroImageSharp: null,
       }
     }
   }
