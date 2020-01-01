@@ -1,8 +1,9 @@
 import * as React from 'react'
+import Img, { GatsbyImageProps } from "gatsby-image"
 import { Row, Jumbotron, Col, Container, Button } from 'reactstrap'
 
 interface IHeroProps {
-  image?: string
+  image?: string | GatsbyImageProps
   title?: string
   subtitle?: string
   link?: string
@@ -18,8 +19,14 @@ export default class Hero extends React.Component<IHeroProps, {}> {
     const {title, image, darken, subtitle, heroAttribution} = this.props
     const {link, buttonText, buttonStyle} = this.props
 
+    const imgComponent = !image ? undefined : 
+      typeof(image) == 'string' ?
+        (<img src={image} className=""></img>) :
+        (<Img {...image} className="" />)
+
     return  (<Jumbotron className="bg-black">
       <div className={`hero-image ${darken && 'dark'}`} style={ {backgroundImage: `url('${image}')`} }>
+        {imgComponent}
       </div>
       <Container className="hero-image__title">
         <Row className="hero-title">

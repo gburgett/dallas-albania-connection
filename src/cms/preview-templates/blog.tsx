@@ -46,6 +46,7 @@ export const BlogPreview = ({entry, widgetFor, getAsset}) => {
         title: entry.getIn(['data', 'title']),
         published: entry.getIn(['data', 'published']),
         heroimage: heroImage ? heroImage.value : undefined,
+        heroImageSharp: null,
         heroAttribution: entry.getIn(['data', 'heroAttribution']),
         author: {
           name: entry.getIn(['data', 'author', 'name']),

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Row, Col, Container, Card, CardGroup, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import Helmet from 'react-helmet'
+import Img, { GatsbyImageProps } from "gatsby-image"
 
 import Hero from '../hero/Hero'
 import Feature, {IFeatureProps} from '../Feature'
@@ -24,6 +25,7 @@ export interface IPageData {
         title: string,
         subtitle: string
       }
+      heroImageSharp: GatsbyImageProps | null
       articles: Array<{
         path: string
       }>,
@@ -44,16 +46,22 @@ export interface IPageData {
   }
 }
 
-const Article = (article: IArticle) => (
-  <Card style={{marginBottom: 10}} key={article.id}>
+const Article = (article: IArticle) => {
+  const img = article.frontmatter.heroImageSharp ?
+    <Img {...article.frontmatter.heroImageSharp} className="card-img-top" /> :
+    <img src={article.frontmatter.heroimage} className="card-img-top" />
+
+  return <Card style={{marginBottom: 10}} key={article.id}>
+    <a href={article.frontmatter.path} className="a-block">
     <CardBody>
-      <CardImg top width="100%" src={article.frontmatter.heroimage} alt="Card image cap" />
-      <CardTitle><a href={article.frontmatter.path}>{article.frontmatter.title}</a></CardTitle>
+      {img}
+      <CardTitle><h4>{article.frontmatter.title}</h4></CardTitle>
       <CardSubtitle style={{marginBottom: 10}}>{article.frontmatter.date}</CardSubtitle>
       <CardText>{article.excerpt}</CardText>
     </CardBody>
+    </a>
   </Card>
-)
+}
 
 const GroupedArticles = ({ cards }: { cards: Array<IArticle> }) => {
   const groups = []
@@ -102,7 +110,10 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
   const heroProps: Hero['props'] =
     showJumbotronCta ?
       data.root.frontmatter.jumbotronCta :
-      data.root.frontmatter.hero  
+      {
+        ...data.root.frontmatter.hero,
+        image: data.root.frontmatter.heroImageSharp || data.root.frontmatter.hero.image
+      }
 
   return (<Container fluid className="homepage">
     <Helmet title={title} titleTemplate={undefined}>

@@ -43,6 +43,11 @@ query IndexQuery {
         title
         subtitle
       }
+      heroImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
       articles{
         path
       }
@@ -63,6 +68,11 @@ query IndexQuery {
           date(formatString: "MMMM DD, YYYY")
           path
           heroimage
+          heroImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
@@ -87,6 +97,11 @@ query IndexQuery {
           contentType
           date
           heroimage
+          heroImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
           author {
             name
             gravatar

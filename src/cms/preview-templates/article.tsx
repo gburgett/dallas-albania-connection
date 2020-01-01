@@ -36,6 +36,7 @@ export const ArticlePreview = ({entry, widgetFor, getAsset}) => {
         date: entry.getIn(['data', 'date']),
         title: entry.getIn(['data', 'title']),
         heroimage: heroImage ? heroImage.value : undefined,
+        heroImageSharp: null,
         feature: {
           show: entry.getIn(['data', 'feature', 'show']) as boolean,
           title: entry.getIn(['data', 'feature', 'title']) as string,

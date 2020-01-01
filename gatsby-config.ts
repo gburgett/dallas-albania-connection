@@ -1,123 +1,8 @@
+import {GatsbyConfig} from 'gatsby'
+import { algoliaQueries } from "./gatsby-config/algolia";
+import { gatsbyPluginFeed } from "./gatsby-config/feed";
 
-
-const algoliaQueries = [
-  {
-    query: `
-    query AlgoliaBlogsQuery {
-      site {
-        siteMetadata {
-          title
-          siteUrl
-        }
-      }
-      articles: allMarkdownRemark(filter: {frontmatter: {contentType: {eq: "article"}, published: {ne: false}}}, sort: {order: DESC, fields: [frontmatter___date]}) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 150)
-            rawMarkdownBody
-            frontmatter {
-              path
-              contentType
-              date(formatString: "YYYY-MM-DD")
-              title
-              heroimage
-              roster {
-                header
-                text
-                projectIds
-                teams {
-                  name
-                  members {
-                    name
-                    cruId
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      blogs: allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" }, published: {ne: false} } }, sort: {order: DESC, fields: [frontmatter___date]}) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 150)
-            rawMarkdownBody
-            timeToRead
-            frontmatter {
-              slug
-              externalUrl
-              contentType
-              date(formatString: "YYYY-MM-DD")
-              title
-              heroimage
-              heroAttribution
-              published
-              author {
-                name
-                gravatar
-                photo
-              }
-            }
-          }
-        }
-      }
-    }`,
-    transformer: ({ data }) => {
-      let articles = data.articles.edges.map(({ node }) => node)
-      let blogs = data.blogs.edges.map(({ node }) => node)
-
-      articles = articles.map(extractWordFrequency('rawMarkdownBody'))
-      blogs = blogs.map(extractWordFrequency('rawMarkdownBody'))
-
-      return [...articles, ...blogs].map((node) =>
-        Object.assign(node,
-          data.site.siteMetadata,
-          {
-            objectID: node.id
-          }))
-    }, // optional
-    indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME + '_blogs',
-    settings: {
-    },
-  },
-]
-
-function extractWordFrequency(attr) {
-  const { english } = require('stopwords');
-
-  return (node) => {
-    const text = node[attr]
-    delete(node[attr])
-
-    const wordsMap = {};
-    text.replace(/[^\w]/g, ' ').split(/\s+/)
-      .map((word) => word.toLowerCase())
-      .filter((word) => word.length > 0 && !english.includes(word))
-      .forEach((word) => {
-        if (wordsMap.hasOwnProperty(word)) {
-          wordsMap[word]++;
-        } else {
-          wordsMap[word] = 1;
-        }
-      })
-
-    const frequency = Object.keys(wordsMap).map((key) => {
-      return {
-        name: key,
-        total: wordsMap[key]
-      };
-    });
-
-    frequency.sort((a, b) => b.total - a.total)
-    
-    node[attr + '_freq'] = frequency.map((v) => v.name)
-    return node
-  }
-}
-
-const plugins: Array<string | {resolve: string, options?: any}> = [
+const plugins: GatsbyConfig['plugins'] = [
   {
     resolve: 'gatsby-source-filesystem',
     options: {
@@ -147,26 +32,40 @@ const plugins: Array<string | {resolve: string, options?: any}> = [
       dataDir: `data/donations/2019`
     }
   },
+  `gatsby-transformer-sharp`,
+  `gatsby-plugin-sharp`,
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      path: `${__dirname}/static`,
+      name: 'static'
+    }
+  },
   {
     resolve: 'gatsby-transformer-remark',
     options: {
       plugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            // It's important to specify the maxWidth (in pixels) of
+            // the content container as this plugin uses this as the
+            // base for generating different widths of each image.
+            maxWidth: 1440,
+          },
+        },
         'gatsby-remark-copy-linked-files',
-        `gatsby-remark-autolink-headers`
+        `gatsby-remark-autolink-headers`,
       ]
     }
   },
-  {
-    resolve: 'gatsby-transformer-smapp'
-  },
+  'gatsby-transformer-smapp',
   {
     resolve: "gatsby-plugin-typescript",
     options: {
     },
   },
-  {
-    resolve: 'gatsby-plugin-netlify'
-  },
+  'gatsby-plugin-netlify',
   {
     resolve: 'gatsby-plugin-netlify-cms',
     options: {
@@ -174,82 +73,7 @@ const plugins: Array<string | {resolve: string, options?: any}> = [
       stylesPath: `${__dirname}/src/components/layout.scss`
     }
   },
-  {
-    resolve: `gatsby-plugin-feed`,
-    options: {
-      query: `
-        {
-          site {
-            siteMetadata {
-              title
-              description
-              siteUrl
-              site_url: siteUrl
-            }
-          }
-        }
-      `,
-      feeds: [
-        {
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges
-              .filter(edge => edge.node.frontmatter.published !== false)
-              .map(edge => {
-                const { slug, externalUrl, author, heroimage } = edge.node.frontmatter
-                if (!slug && !externalUrl) {
-                  return null
-                }
-
-                return Object.assign({}, edge.node.frontmatter, {
-                  url: externalUrl || site.siteMetadata.siteUrl + '/blog/' + slug,
-                  guid: externalUrl || site.siteMetadata.siteUrl + '/blog/' + slug,
-                  author: author ? author.name : null,
-                  custom_elements: [
-                    { "content:encoded": edge.node.html.replace(/\"\/files\//g, `"${site.siteMetadata.siteUrl}/files/`) },
-                    { "media:content":  { 
-                      _attr: {
-                        url: site.siteMetadata.siteUrl + edge.node.frontmatter.heroimage
-                      }
-                    } }
-                  ],
-                });
-              }).filter(e => e);
-          },
-          query: `
-            {
-              site {
-                siteMetadata {
-                  siteUrl
-                }
-              },
-              allMarkdownRemark(filter: { frontmatter: { contentType: { eq: "blog" } } }, sort: {order: DESC, fields: [frontmatter___date]}) {
-                edges {
-                  node {
-                    id
-                    html
-                    excerpt(pruneLength: 1000)
-                    timeToRead
-                    frontmatter {
-                      slug
-                      externalUrl
-                      title
-                      date
-                      published
-                      heroimage
-                      author {
-                        name
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          `,
-          output: "/blogrss.xml",
-        }
-      ]
-    }
-  },
+  gatsbyPluginFeed,
   'gatsby-plugin-offline',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
@@ -268,7 +92,7 @@ if (process.env.ALGOLIA_API_KEY) {
   })
 }
 
-const config = {
+const config: GatsbyConfig = {
   siteMetadata: require('./site/metadata'),
   mapping: {
    // TODO: this only matches on IDs

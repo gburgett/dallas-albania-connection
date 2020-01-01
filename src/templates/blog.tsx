@@ -22,6 +22,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         heroimage
+        heroImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
         heroAttribution
         published
         author {
@@ -41,7 +46,6 @@ export const pageQuery = graphql`
             contentType
             date(formatString: "MMMM DD, YYYY")
             path
-            heroimage
           }
         }
       }

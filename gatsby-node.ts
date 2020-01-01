@@ -1,9 +1,11 @@
-const Path = require('path')
+import { GatsbyNode, CreateResolversArgs } from 'gatsby'
+import * as Path from 'path'
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const fs = require('fs-extra')
+import * as fs from 'fs-extra'
+import {delegateToSchema} from 'graphql-tools'
+import * as path from 'path'
 
-
-exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ stage, actions, getConfig }) => {
   switch (stage) {
     case `build-javascript`:
       actions.setWebpackConfig({
@@ -25,7 +27,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   }
 }
 
-exports.createPages = async ({ actions, graphql }) => {
+export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql }) => {
   const { createPage } = actions
   const createRedirect = (...args) => {
     console.log('creating redirect', ...args)
@@ -59,7 +61,7 @@ exports.createPages = async ({ actions, graphql }) => {
     })
   }
 
-  const result = await graphql(`
+  const result = await graphql<CreatePagesQuery>(`
   {
     pages: allMarkdownRemark(filter: { frontmatter: { path: { ne: null } } }) {
       edges {
@@ -94,9 +96,76 @@ exports.createPages = async ({ actions, graphql }) => {
   result.data.pages.edges.forEach(createNode)
   result.data.blogs.edges.forEach(createNode)
 
-  const meta = JSON.parse(await fs.readFile('site/metadata.json'))
+  const meta = JSON.parse((await fs.readFile('site/metadata.json')).toString())
   console.log('metadata:', meta)
   if (meta.applicationUrl && meta.applicationUrl.length > 0) {
     createRedirect({ fromPath: "/apply", toPath: meta.applicationUrl, isPermanent: false })
   }
+}
+
+interface CreatePagesQuery {
+  pages: {
+    edges: Array<{
+      node: {
+        id: string
+        frontmatter: {
+          contentType: string
+          path: string
+          date: string
+        }
+      }
+    }>
+  },
+  blogs: {
+    edges: Array<{
+      node: {
+        id: string
+        frontmatter: {
+          contentType: string
+          slug: string
+          date: string
+        }
+      }
+    }>
+  }
+}
+
+
+export const createResolvers: GatsbyNode['createResolvers'] = async ({createResolvers, getNode, getNodesByType}: CreateResolversArgs) => {
+  createResolvers({
+    MarkdownRemarkFrontmatter: {
+      heroImageSharp: {
+        type: 'ImageSharp',
+        resolve: (source: HeroImageFrontmatter, args, context, info) => {
+          const relPath = source.heroimage || (source.hero && source.hero.image)
+          if (!relPath) {
+            return null
+          }
+          const fullPath = path.join(__dirname, 'static', relPath)
+          const f = getNodesByType('File').find((f) => f.absolutePath == fullPath)
+          if (!f) {
+            // An external URL most likely
+            return null
+          }
+          const imgSharp = (f.children || []).map((childId) => getNode(childId))
+            .find((child) => child.internal && child.internal.type == 'ImageSharp')
+
+          return imgSharp
+        }
+      }
+    }
+  })
+}
+
+type HeroImageFrontmatter = {
+  heroimage: string
+  hero: undefined
+} | {
+  heroimage: undefined
+  hero: {
+    image: string
+  }
+} | {
+  heroimage: undefined
+  hero: undefined
 }

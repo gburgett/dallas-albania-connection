@@ -35,6 +35,10 @@ body {
 
 a {
   color: $theme-links;
+  
+  &.a-block {
+    text-decoration: none;
+  }
 }
 
 hr {
@@ -91,6 +95,9 @@ hr {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: $ironside;
+
+    // prevent the image going too tall on wide screens
+    max-height: 81vh;
 
     &.dark:before {
       content:" ";
