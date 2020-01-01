@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
 import {InstantSearch, SearchBox, Hits} from 'react-instantsearch-dom'
 import * as algoliasearch from 'algoliasearch';
-import { GatsbyImageProps } from 'gatsby-image';
+import Img, { GatsbyImageProps, FixedObject } from 'gatsby-image';
 
 import { parseISOLocal, parseUrl } from '../../blog/utilities';
 
@@ -17,7 +17,7 @@ export interface IPost {
     title: string
     date: string
     heroimage: string
-    heroImageSharp: GatsbyImageProps | null
+    heroImageSharp: { fixed: FixedObject } | null
     contentType: 'blog'
     published?: boolean
     author: {
@@ -37,17 +37,11 @@ export interface IArticle {
     date: string,
     path: string,
     heroimage: string
-    heroImageSharp: GatsbyImageProps | null
+    heroImageSharp: { fixed: FixedObject } | null
   }
 }
 
 interface IPageData {
-  articles: {
-    edges: Array<{ node: IArticle }>
-  },
-  blogs: {
-    edges: Array<{node: IPost}>
-  }
 }
 
 export const PostList = ({ posts }: { posts: IPost[] }) => {
@@ -60,24 +54,29 @@ export const PostList = ({ posts }: { posts: IPost[] }) => {
 }
 
 export const BlogPost = (p: IPost) => {
-  const {heroimage, author} = p.frontmatter
-  let img = heroimage
-  let height = "96px"
-  let width = "128px"
+  const {heroimage, heroImageSharp, author} = p.frontmatter
+
+  let img = heroImageSharp ?
+    <Img fixed={{
+      ...heroImageSharp.fixed,
+      width: 128,
+      height: 96
+    }} /> :
+    heroimage ? <img src={heroimage} style={{height: "96px"}} /> : undefined
+
   if (!img && author) {
-    width = "96px"
-    img = author.photo
-    if (!img && author.gravatar) {
-      img = `https://www.gravatar.com/avatar/${author.gravatar}`
-    }
+    img = author.photo ?
+      <img className="author" src={author.photo} style={{height: "96px"}} /> :
+      author.gravatar ? 
+        <img className="author" src={`https://www.gravatar.com/avatar/${author.gravatar}`} style={{height: "96px"}} /> :
+          undefined
   }
 
   return (
     <a key={p.frontmatter.externalUrl || p.frontmatter.slug}
       href={p.frontmatter.externalUrl || `/blog/${p.frontmatter.slug}`}>
     <li className="post">
-      {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
-      </div>}
+      {img}
       <div className="title">
         <h4>{p.frontmatter.title}</h4>
         {author && 
@@ -104,16 +103,19 @@ export const BlogPost = (p: IPost) => {
 }
 
 const Article = (a: IArticle) => {
-  const {heroimage} = a.frontmatter
-  let img = heroimage
-  let height = "96px"
-  let width = "128px"
+  const {heroimage, heroImageSharp} = a.frontmatter
 
+  let img = heroImageSharp ?
+    <Img fixed={{
+      ...heroImageSharp.fixed,
+      width: 128,
+      height: 96
+    }} /> :
+    heroimage ? <img src={heroimage} style={{height: "96px"}} /> : undefined
   return (
     <a key={a.frontmatter.path} href={a.frontmatter.path}>
     <li className="post">
-      {img && <div className="hero" style={ {backgroundImage: `url('${img}')`, width, height} }>
-      </div>}
+      {img}
       <div className="title">
         <h4>{a.frontmatter.title}</h4>
       </div>
@@ -135,7 +137,7 @@ const searchClient = algoliasearch(
   searchApiKey
 );
 
-export const BlogIndexPage = ({ data }: IPageContext<IPageData>) => {
+export const BlogIndexPage = ({ }: IPageContext<IPageData>) => {
 
   let currentYear = 9999
 

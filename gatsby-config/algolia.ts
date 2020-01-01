@@ -2,6 +2,14 @@
 export const algoliaQueries = [
   {
     query: `
+    fragment GatsbyImageSharpFixed on ImageSharpFixed {
+      base64
+      width
+      height
+      src
+      srcSet
+    }
+
     query AlgoliaBlogsQuery {
       site {
         siteMetadata {
@@ -21,6 +29,11 @@ export const algoliaQueries = [
               date(formatString: "YYYY-MM-DD")
               title
               heroimage
+              heroImageSharp {
+                fixed(width:128, height:96) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
               roster {
                 header
                 text
@@ -51,6 +64,11 @@ export const algoliaQueries = [
               date(formatString: "YYYY-MM-DD")
               title
               heroimage
+              heroImageSharp {
+                fixed(width:128, height:96) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
               heroAttribution
               published
               author {
