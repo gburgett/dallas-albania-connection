@@ -24,6 +24,11 @@ export const pageQuery = graphql`
         public
         title
         heroimage
+        heroImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   }

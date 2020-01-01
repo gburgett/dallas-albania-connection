@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Container, Row } from 'reactstrap'
 import Helmet from 'react-helmet'
+import { GatsbyImageProps } from 'gatsby-image'
+
 import Hero from '../hero/Hero'
 import Scrollspy from './scrollspy'
 
@@ -18,6 +20,7 @@ export interface ITemplateData {
       date: string,
       title: string,
       heroimage: string
+      heroImageSharp: GatsbyImageProps | null
     }
   }
 }
@@ -25,7 +28,7 @@ export interface ITemplateData {
 
 export function PageTemplate ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post } = data
-  const { heroimage, title } = post.frontmatter;
+  const { heroimage, heroImageSharp, title } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
   const headings = (post.headings || []).filter((h) => h.depth > 1 && h.depth <= 3)
@@ -37,7 +40,7 @@ export function PageTemplate ({ data }: IPageContext<ITemplateData>) {
       </Helmet>
 
       <Container fluid>
-        <Hero image={heroimage} >
+        <Hero image={heroImageSharp || heroimage} >
           <h1 className='display-3 title'>{title}</h1>
         </Hero>
       </Container>
