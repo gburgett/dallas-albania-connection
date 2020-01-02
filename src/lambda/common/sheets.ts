@@ -1,6 +1,7 @@
+import { sheets_v4 } from "googleapis";
 
 
-export async function findContactRows(contact, sheets) {
+export async function findContactRows(contact: string, sheets: sheets_v4.Sheets): Promise<number[]> {
   contact = (contact || '').replace(/\D+/g, '').trim()
   if (!contact || contact.length == 0) {
     throw new Error('no contact given')

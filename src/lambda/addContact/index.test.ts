@@ -1,9 +1,10 @@
-const { appendToSheet } = require('./index');
+import { appendToSheet, updateRow } from './index'
 
 describe('appendToSheet', () => {
   test('posts new info to google sheet', async () => {
     const body = {
       contact: '+19725551234',
+      message: 'albania',
       data: 'test testerson test@test.com'
     }
     
@@ -20,10 +21,92 @@ describe('appendToSheet', () => {
     }
 
     // act
-    await appendToSheet(body.contact, body.data.split(/\s+/), sheets);
+    await appendToSheet(body.contact, body.message, body.data.split(/\s+/), sheets as any);
 
     expect(appendData.requestBody.values).toEqual(
-      [[ '+19725551234', 'test', 'testerson', 'test@test.com' ]]);
+      [[ '+19725551234', 'albania', 'test', 'testerson', 'test@test.com' ]]);
+  })
+
+  test('updates google sheet', async () => {
+    const body = {
+      contact: '+19725551234',
+      message: 'other',
+      data: 'test testerson test@test.com'
+    }
+
+    const existing = [
+      [ '+19725551234', 'albania', 'test', 'q' ]
+    ]
+    
+    let updateData
+    const sheets = {
+      spreadsheets: {
+        values: {
+          get: function(data) {
+            return Promise.resolve({
+              data: {
+                values: existing,
+              }
+            })
+          },
+          update: function(data) {
+            updateData = data
+            return Promise.resolve({
+              data: {
+                updatedRange: data.range
+              }
+            })
+          }
+        }
+      }
+    }
+
+    // act
+    await updateRow(1, body.contact, body.message, body.data.split(/\s+/), sheets as any);
+
+    expect(updateData.requestBody.values).toEqual(
+      [[ '+19725551234', 'albania,other', 'test', 'testerson', 'test@test.com' ]]);
+  })
+
+  test('keeps unique segments', async () => {
+    const body = {
+      contact: '+19725551234',
+      message: 'albania',
+      data: 'test testerson test@test.com'
+    }
+
+    const existing = [
+      [ '+19725551234', 'def,albania,abc', 'test', 'q' ]
+    ]
+    
+    let updateData
+    const sheets = {
+      spreadsheets: {
+        values: {
+          get: function(data) {
+            return Promise.resolve({
+              data: {
+                values: existing,
+              }
+            })
+          },
+          update: function(data) {
+            updateData = data
+            return Promise.resolve({
+              data: {
+                updatedRange: data.range
+              }
+            })
+          }
+        }
+      }
+    }
+
+    // act
+    await updateRow(1, body.contact, body.message, body.data.split(/\s+/), sheets as any);
+
+    expect(updateData.requestBody.values).toEqual(
+      [[ '+19725551234', 'abc,albania,def', 'test', 'testerson', 'test@test.com' ]]);
   })
 
   function makeEvent(body, method = 'POST') {

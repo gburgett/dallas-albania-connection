@@ -1,4 +1,4 @@
-import {google} from 'googleapis'
+import {google, sheets_v4} from 'googleapis'
 
 import {loadAuth} from '../common/auth'
 import {findContactRows} from '../common/sheets';
@@ -20,16 +20,16 @@ export default async function handler(event, context) {
 
   const foundRows = await findContactRows(body.contact, sheets)
   if (foundRows && foundRows.length > 0) {
-    await updateRow(foundRows[0], body.contact, data, sheets)
+    await updateRow(foundRows[0], body.message, body.contact, data, sheets)
   } else {
-    await appendToSheet(body.contact, data, sheets)
+    await appendToSheet(body.contact, body.message, data, sheets)
   }
 
   return null;
 }
 
-export async function appendToSheet(contact, data, sheets) {
-  const rowValues = [(contact || '').trim(), ...data]
+export async function appendToSheet(contact: string, segment: string, data: string[], sheets: sheets_v4.Sheets) {
+  const rowValues = [(contact || '').trim(), segment, ...data]
   const resp = await sheets.spreadsheets.values.append({
     spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
     range: 'A1:A',
@@ -40,17 +40,29 @@ export async function appendToSheet(contact, data, sheets) {
   });
 }
 
-export async function updateRow(rowNumber, contact, data, sheets) {
+export async function updateRow(rowNumber: number, contact: string, segment: string, data: string[], sheets: sheets_v4.Sheets) {
   const row = await sheets.spreadsheets.values.get({
     spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
     range: `A${rowNumber}:${rowNumber}`
   });
 
-  const rowValues = row.data.values[0]
+  const rowValues = row.data.values[0] as string[]
   // copy new values over old cells
   rowValues[0] = contact;
+
+  // append to comma separated list of segments
+  const oldSegments = (rowValues[1] || '').split(',')
+  let newSegments = [
+    ...oldSegments,
+    segment
+  ].map((s) => s.trim())
+    .filter((s) => s && s.length > 0)
+    .filter(onlyUnique)
+    .sort()
+  rowValues[1] = newSegments.join(',')
+
   for(let i = 0; i < data.length; i++) {
-    rowValues[i + 1] = data[i];
+    rowValues[i + 2] = data[i];
   }
 
   const resp = await sheets.spreadsheets.values.update({
@@ -63,4 +75,8 @@ export async function updateRow(rowNumber, contact, data, sheets) {
   });
 
   console.log('updated', resp.data.updatedRange, 'with', rowValues)
+}
+
+function onlyUnique(value: string, index: number, self: string[]) { 
+  return self.indexOf(value) === index;
 }
