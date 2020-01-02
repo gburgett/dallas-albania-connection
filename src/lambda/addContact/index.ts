@@ -20,7 +20,7 @@ export default async function handler(event, context) {
 
   const foundRows = await findContactRows(body.contact, sheets)
   if (foundRows && foundRows.length > 0) {
-    await updateRow(foundRows[0], body.message, body.contact, data, sheets)
+    await updateRow(foundRows[0], body.contact, body.message, data, sheets)
   } else {
     await appendToSheet(body.contact, body.message, data, sheets)
   }
