@@ -98,8 +98,8 @@ query IndexQuery {
           date
           heroimage
           heroImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+            fixed {
+              ...GatsbyImageSharpFixed
             }
           }
           author {

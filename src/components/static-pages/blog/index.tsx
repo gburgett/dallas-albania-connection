@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
 import {InstantSearch, SearchBox, Hits} from 'react-instantsearch-dom'
 import * as algoliasearch from 'algoliasearch';
-import Img, { GatsbyImageProps, FixedObject } from 'gatsby-image';
+import Img, { FixedObject } from 'gatsby-image';
 
 import { parseISOLocal, parseUrl } from '../../blog/utilities';
 
@@ -62,13 +62,13 @@ export const BlogPost = (p: IPost) => {
       width: 128,
       height: 96
     }} /> :
-    heroimage ? <img src={heroimage} style={{height: "96px"}} /> : undefined
+    heroimage ? <img src={heroimage} style={{width: "128px", height: "96px"}} /> : undefined
 
   if (!img && author) {
     img = author.photo ?
-      <img className="author" src={author.photo} style={{height: "96px"}} /> :
+      <img className="author" src={author.photo} style={{width: "128px", height: "96px"}} /> :
       author.gravatar ? 
-        <img className="author" src={`https://www.gravatar.com/avatar/${author.gravatar}`} style={{height: "96px"}} /> :
+        <img className="author" src={`https://www.gravatar.com/avatar/${author.gravatar}`} style={{width: "128px", height: "96px"}} /> :
           undefined
   }
 
