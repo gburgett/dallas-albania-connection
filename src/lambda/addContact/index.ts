@@ -55,7 +55,7 @@ export async function updateRow(rowNumber: number, contact: string, segment: str
   let newSegments = [
     ...oldSegments,
     segment
-  ].map((s) => s.trim())
+  ].map((s) => s.trim().toLowerCase())
     .filter((s) => s && s.length > 0)
     .filter(onlyUnique)
     .sort()

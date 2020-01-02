@@ -71,7 +71,7 @@ describe('appendToSheet', () => {
   test('keeps unique segments', async () => {
     const body = {
       contact: '+19725551234',
-      message: 'albania',
+      message: 'Albania',
       data: 'test testerson test@test.com'
     }
 
