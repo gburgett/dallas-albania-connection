@@ -15,17 +15,17 @@ jumbotronCta:
 feature:
   backgroundColor: black
   buttonStyle: warning
-  buttonText: Learn More / Donate ->
+  buttonText: Learn More ->
   image: ''
-  link: /2019
+  link: /2020
   show: true
-  subtitle: We're sending 6 teams to Eastern Europe this summer!
-  title: Learn About the 2019 Summer Projects
+  subtitle: Join us either in the summer or the fall
+  title: Be a part of the 2020 projects!
 articles:
+  - path: /2019
   - path: /2018
   - path: /2017
   - path: /2016
-  - path: /2015
 postsToShow: 4
 featuredPosts:
   - slug: 2019-02-25-the-plus-in-albania-plus
