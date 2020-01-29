@@ -3,7 +3,7 @@ contentType: article
 path: /2020
 title: Eastern Europe 2020
 date: 2020-01-30T00:04:32.558Z
-heroimage: /files/berat-3707970_1920.jpg
+heroimage: /files/juri-gianfrancesco-rtfs5bqrxzk-unsplash-16by9.jpg
 feature:
   buttonText: Apply Now!
   link: /apply
