@@ -6,7 +6,7 @@ date: 2019-02-06T02:21:04.174Z
 heroimage: /files/2019-albania-group-photo_l.jpg
 feature:
   show: false
-showRoster: true
+showRoster: false
 roster:
   header: Team Roster and Fundraising Status
   projectIds:
@@ -131,7 +131,11 @@ roster:
       mileMarker: '1700'
       name: 'Poland (Re:generation Recovery)'
 ---
-This summer we are sending 39 people to Albania, Hungary, and Poland to make disciples through evangelism, teaching, and encouragement. To appreciate how we got here, a brief history of our ministry is helpful: 
+
+In 2019 we continued with our desire to strongly support our ministry partners in Albania, Hungary, and Poland
+through evangelism, teaching, and encouragement.  To appreciate how we got here, a brief history of our ministry is helpful: 
+
+### The Past
 
 Since 2014, we have sent teams to Albania to participate in [Cru’s](https://www.cru.org/) high school summer camp, in which Cru staff and volunteers engage with young people through evangelism, teaching, games, coffee meetings, and discipleship. Following these camps, the local Cru/church leaders maintain relationships they have built through the summer camps and continue to evangelize non-believers and disciple believers throughout the rest of the year. Additionally, team members can continue to grow these relationships after they return. We've sent a team to Elbasan since [2015](/2015), and to the city of Korça since [2017](/2017). This summer we are again sending 3 high school-focused teams. 
 
@@ -141,27 +145,53 @@ Since 2014, we have sent teams to Albania to participate in [Cru’s](https://ww
 
 Also [In 2018](/2018), the Hungary team engaged in city-wide evangelism in Pëcs and hosted an English camp with a Gospel presentation that brought opportunities for local follow-up. In 2019, our team will be inserting in-country following Cru's month-long “Speak Out” project, where the team will strategize on reaching young Hungarians.
 
-## Dates
+### The Present
 
-| Team Travel Dates        | Country | Ministry Area       | Key Activities                          |
-| ------------------------ | ------- | ------------------- | --------------------------------------- |
-| Fri, Jun 28 – Mon, Jul 8 | Albania | High school         | Summer camp                             |
-| Fri, Jul 5 – Sun, Jul 14 | Albania | High school         | Summer camp (2 teams)                            |
-| Sat, Jul 6 – Mon, Jul 15 | Albania | Young professionals | Speaking, seminars, retreat             |
-| Fri, Jul 5 – Sun, Jul 14 | Poland  | Regeneration        | Recovery, group launch, leader training |
-| Sun, Aug 4 – Mon, Aug 12 | Hungary | Mixed               | English camp                          |
+###### Albania
+* Many students came to Christ through 3 different High School projects in Tirana, Elbasan, and Korçë.
+* Young Professionals heard the Gospel preached and shared their struggles with our team through the Professional
+Seminars in Tirana.
+* Believing college students were strengthened and non-believing students heard the Gospel in Shkodër, where we
+partnered with a church in Nashville to send a team.
 
+###### Hungary
+* Hungarian high school and college students heard the Gospel shared via the Catalytic ministry of CRU in the city of
+Pècs
 
+###### Poland
+* CRU Staff and their families were deeply encouraged as the first Re:Gen groups in Poland commenced this summer!
+* These same people who have more deeply experienced freedom in Christ have signed up to help others do the same,
+launching several more Polish Re:Gen groups that will continue through 2020
 
-## Fundraising
+### The Future
 
-We use fundraising as the primary way to fund our trip. Fundraising is a great way to allow others to partner with you, and God can use the fundraising process to help you trust Him. God has always faithfully provided the funds needed for past trips. This year we anticipate the following funding needs, and schedule:
+Through deep relationships we've developed over the years with many staff members, we have begun challenging more of our
+Albanian friends to live openly and authentically without fear or shame.  We are committed to supporting them in this
+endeavor, and to that end we are looking into how we can bring some of them to Watermark's [Church Leaders Conference
+2020](https://www.watermarkresources.com/conferences/clc).  We've also begun talking with some of our partners about
+the possibility of bringing [the Re:Generation curriculum](https://www.watermarkresources.com/ministries/regen) to
+Albania.
 
-* $3000 total estimated fundraising goal, which includes:
-  * Plane tickets (\~$1400-1900); in-country/operational (\~$1000).
-* Mile Marker #1 (Fri 5/10): Team member expected to have raised ~$1500-$1900\
-  Individuals under target personally responsible for gap.  
-* Mile Marker #2 (Fri 6/14): Team member expected to have raised $2000\
-  Individual responsibility to be reduced proportionally according to total team fundraising performance
-* Mile Marker #3 (Sat 6/29): Team member expected to have raised full $3000
+In Poland with the commencement of the Re:Gen groups this year, our direct involvement has been reduced in favor of
+the Polish staff themselves leading Re:Gen groups.  We continue to see strong success from their faithfulness, and
+news of what God is doing in Poland has reached a wider audience through CRU regional conferences.  We are investigating
+ways to continue to support CRU in this.
 
+In Dallas we are beginning to think about a more year-round model of organizing our ministry, which would allow us to
+further support our CRU partners at the times of year that they most need it.  Next year we are praying that we will be
+able to take teams not only in the summer but also in the fall, and potentially the spring of 2021.
+
+We are also working on new ways to train and equip our leaders.  We are beginning a leadership development class
+based on materials provided by Watermark.  Already several of our leaders have expressed interest and committed to
+growing in their leadership abilities and their dependence on the Lord.
+
+Finally, one of our members, Marlie Austin, has made the decision to move to Albania and work full-time for the GDQ
+international school!  She has been praying for this opportunity for some time, and God has recently moved some
+significant mountains to make this possible.  We're excited for you Marlie!
+
+[Support Marlie Here -->](https://give.teachbeyond.org/support/marlie-austin)
+
+### Thank You
+
+Without your continued support both financially and in prayer, none of this would be possible.  God has generously
+blessed us through you.
