@@ -15,11 +15,11 @@ jumbotronCta:
 feature:
   backgroundColor: black
   buttonStyle: warning
-  buttonText: Learn More ->
+  buttonText: Apply Now!
   image: ''
-  link: /2020
+  link: /apply
   show: true
-  subtitle: Join us either in the summer or the fall
+  subtitle: '<a href="/2020">Learn More -></a>'
   title: Be a part of the 2020 projects!
 articles:
   - path: /2019

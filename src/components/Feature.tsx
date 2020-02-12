@@ -45,7 +45,8 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
           <Row>
           <Col col={12} md={6}>
             {present(title) && <h2 className="">{title}</h2>}
-            {present(subtitle) && <p className="subtitle">{subtitle}</p>}
+            {present(subtitle) && <p className="subtitle"
+              dangerouslySetInnerHTML={{__html: subtitle}}></p>}
           </Col>
           <Col col={12} md={6}>
             <a className={`btn ${buttonStyle}`} href={link}

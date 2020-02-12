@@ -109,7 +109,11 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
 
   const heroProps: Hero['props'] =
     showJumbotronCta ?
-      data.root.frontmatter.jumbotronCta :
+      { 
+
+        ...data.root.frontmatter.hero,
+        ...data.root.frontmatter.jumbotronCta,
+      } :
       {
         ...data.root.frontmatter.hero,
         image: data.root.frontmatter.heroImageSharp || data.root.frontmatter.hero.image
