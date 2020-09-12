@@ -142,7 +142,7 @@ export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
       <Container>
         <div className='row blog-body'>
           <div className='d-none d-md-block col-md-2 blog-list'>
-            { <BlogsPreview nodes={postsAndArticles} /> }
+            <BlogsPreview nodes={postsAndArticles.slice(0, 10)} />
           </div>
           <div className='col-md-10'>
             {!heroimage && <h1 className='display-3'>{title}</h1>}
