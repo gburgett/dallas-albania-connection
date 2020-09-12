@@ -426,6 +426,10 @@ blockquote {
     margin: 0 70px 0 auto;
   }
 
+  &__body {
+    justify-content: center;
+  }
+
   @include media-breakpoint-down(sm) {
   .eventsList {
     .card:nth-child(n+4) {

@@ -126,13 +126,14 @@ export const IndexPage = ({ data }: IPageContext<IPageData>) => {
     <Hero {...heroProps} darken={true} >
     </Hero>
     {feature && feature.show && <Feature {...feature} />}
-    <Row>
-      <Col xs={12} md={3} className="eventsList">
-        <h3>Upcoming Events</h3>
-        {events.map((node, i) => {
-          return <EventSummary key={node.frontmatter.date} {...node} collapse={i > 0} />
-        })}
-      </Col>
+    <Row className="homepage__body">
+      {events.length > 0 &&
+        <Col xs={12} md={3} className="eventsList">
+          <h3>Upcoming Events</h3>
+          {events.map((node, i) => {
+            return <EventSummary key={node.frontmatter.date} {...node} collapse={i > 0} />
+          })}
+        </Col>}
       <Col xs={12} md={9}>
         <GroupedArticles cards={cards} />
         {featuredPosts.length > 0 && <PostList posts={featuredPosts} />}
