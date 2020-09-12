@@ -430,6 +430,12 @@ blockquote {
     justify-content: center;
   }
 
+  .bg-black {
+    .subtitle {
+      color: $white;
+    }
+  }
+
   @include media-breakpoint-down(sm) {
   .eventsList {
     .card:nth-child(n+4) {
