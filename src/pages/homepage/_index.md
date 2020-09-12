@@ -18,7 +18,7 @@ feature:
   buttonText: Apply Now!
   image: ''
   link: /apply
-  show: true
+  show: false
   subtitle: '<a href="/2020">Learn More -></a>'
   title: Be a part of the 2020 projects!
 articles:
