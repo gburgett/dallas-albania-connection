@@ -48,7 +48,6 @@ export const LayoutWrapper = ({children}) => {
         homepage: markdownRemark(fileAbsolutePath: {regex: "/\/pages/homepage/_index\\.md$/"}) {
           frontmatter {
             jumbotronCta {
-              image
               title
               subtitle
               link

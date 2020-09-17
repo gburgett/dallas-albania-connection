@@ -6,12 +6,11 @@ hero:
   title: Team Albania
 jumbotronCta:
   buttonStyle: danger
-  buttonText: Apply Now ->
-  image: /files/background-cover.jpg
-  link: /apply
-  showUntil: 2019-03-10T23:00:00.000Z
-  subtitle: ''
-  title: 2019 Applications Are Due!
+  buttonText: Support us! -->
+  link: /2020
+  showUntil: 2020-10-11T23:00:00.000Z
+  subtitle: We're going in October!
+  title: ''
 feature:
   backgroundColor: black
   buttonStyle: warning

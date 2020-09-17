@@ -33,7 +33,6 @@ query IndexQuery {
         showUntil
         title
         subtitle
-        image
         link
         buttonText
         buttonStyle
