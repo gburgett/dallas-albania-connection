@@ -71,7 +71,7 @@ export class ApplicationLayout extends React.Component<{ data: ILayoutData }, an
 
               {showCta &&
                 <li className="nav-item">
-                  <a href={cta.link} className={`nav-link btn btn-${cta.buttonStyle}`}>
+                  <a href={cta.link} className={`nav-link btn btn-link`}>
                     {cta.buttonText}
                   </a>
                 </li>}
