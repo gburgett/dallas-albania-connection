@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Row, Col, Container } from 'reactstrap'
+import { Mailchimp } from './mailchimp';
 
 export interface IFeatureProps {
   title?: string
@@ -13,11 +14,7 @@ export interface IFeatureProps {
 
 export default class Feature extends React.Component<IFeatureProps, {}> {
   render() {
-    const {title, subtitle, image, link, buttonText, backgroundColor} = this.props;
-
-    const buttonStyle = present(this.props.buttonStyle) ?
-      ('btn-' + this.props.buttonStyle).replace(/^btn\-btn\-/, 'btn-') :
-      'btn-success'
+    const {title, subtitle, image, link, buttonStyle, buttonText, backgroundColor} = this.props;
 
     if (present(image)) {
       return  (<div className={`feature bg-${backgroundColor}`}>
@@ -27,8 +24,7 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
               <div className="bgimg" style={ { backgroundImage: present(image) && `url('${image}')` }}>
               {present(title) && <h2 className="d-none d-md-block">{title}</h2>}
 
-              <a className={`d-block d-md-none btn ${buttonStyle}`} href={link}
-                dangerouslySetInnerHTML={{ __html: present(title) ? title : buttonText }}></a>
+              <FeatureButton buttonStyle={buttonStyle} link={link} title={title} buttonText={buttonText} />
             </div>
             </Col>
             <Col md={6} className={`d-none d-md-flex justify-content-center`}>
@@ -49,13 +45,37 @@ export default class Feature extends React.Component<IFeatureProps, {}> {
               dangerouslySetInnerHTML={{__html: subtitle}}></p>}
           </Col>
           <Col col={12} md={6}>
-            <a className={`btn ${buttonStyle}`} href={link}
-              dangerouslySetInnerHTML={{ __html: buttonText }}></a>
+            <FeatureButton buttonStyle={buttonStyle} link={link} title={title} buttonText={buttonText} />
           </Col>
           </Row>
         </Container>
       </div>)
   }
+}
+
+function FeatureButton({
+  buttonStyle,
+  link,
+  title,
+  buttonText
+}: {
+  buttonStyle: string,
+  link: string,
+  title?: string,
+  buttonText: string
+}) {
+
+  console.log('style', buttonStyle)
+  if (buttonStyle == 'mailchimp') {
+    return <Mailchimp mailchimp={link} />
+  }
+
+  const btn = present(buttonStyle) ?
+    ('btn-' + this.props.buttonStyle).replace(/^btn\-btn\-/, 'btn-') :
+    'btn-success'
+
+  return <a className={`d-block d-md-none btn ${btn}`} href={link}
+  dangerouslySetInnerHTML={{ __html: present(title) ? title : buttonText }}></a>
 }
 
 function present(str) {

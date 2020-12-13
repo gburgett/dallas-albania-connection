@@ -13,18 +13,18 @@ jumbotronCta:
   title: ''
 feature:
   backgroundColor: black
-  buttonStyle: success
+  buttonStyle: mailchimp
   buttonText: Read More
   image: ''
-  link: /2020
+  link: https://teamalbania.us11.list-manage.com/subscribe/post?u=fbcbfba66020e12dd41b9cf1b&amp;id=4a0067c925
   show: true
-  subtitle: ''
-  title: Read about our October trip!
+  subtitle: Text "Albania" to 214-444-7523
+  title: Stay up to date!
 articles:
+  - path: /2020
   - path: /2019
   - path: /2018
   - path: /2017
-  - path: /2016
 postsToShow: 4
 featuredPosts:
   - slug: 2019-02-25-the-plus-in-albania-plus
