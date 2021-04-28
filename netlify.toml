@@ -2,3 +2,7 @@
   functions = "./functions"
 [build.environment]
   NODE_ENV = "production"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy="interest-cohort=()"
