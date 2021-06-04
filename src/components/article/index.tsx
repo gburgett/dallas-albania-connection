@@ -73,9 +73,10 @@ export function ArticleTemplate ({ data }: IPageContext<ITemplateData>) {
             <Feature {...feature} />}
       </Container>
 
-      <Container>
+      <Container className="main">
 
-        <h1 className='display-3'>{title}</h1>
+        {!(feature && feature.show) &&
+          <h1 className='display-3'>{title}</h1>}
         {post.html && <div className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />}
 
         {rosterComponent}

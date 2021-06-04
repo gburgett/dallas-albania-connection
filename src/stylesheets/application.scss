@@ -36,6 +36,10 @@ body,
 
 .pageContent {
   flex: 1;
+
+  .container.main {
+    min-height: 70vh;
+  }
 }
 
 a {

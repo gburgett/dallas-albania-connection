@@ -2,7 +2,6 @@ import { GatsbyNode, CreateResolversArgs } from 'gatsby'
 import * as Path from 'path'
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 import * as fs from 'fs-extra'
-import {delegateToSchema} from 'graphql-tools'
 import * as path from 'path'
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ stage, actions, getConfig }) => {
