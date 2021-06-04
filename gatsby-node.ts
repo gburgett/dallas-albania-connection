@@ -82,6 +82,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql 
             contentType
             slug
             date
+            externalUrl
           }
         }
       }
@@ -93,7 +94,17 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql 
     throw new Error(result.errors)
   }
   result.data.pages.edges.forEach(createNode)
-  result.data.blogs.edges.forEach(createNode)
+  result.data.blogs.edges.forEach(({node}) => {
+    if (node.frontmatter.externalUrl && node.frontmatter.slug) {
+      createRedirect({
+        fromPath: node.frontmatter.slug,
+        toPath: node.frontmatter.externalUrl,
+        isPermanent: true
+      })
+    } else {
+      createNode({node})
+    }
+  })
 
   const meta = JSON.parse((await fs.readFile('site/metadata.json')).toString())
   console.log('metadata:', meta)
@@ -121,7 +132,8 @@ interface CreatePagesQuery {
         id: string
         frontmatter: {
           contentType: string
-          slug: string
+          slug?: string
+          externalUrl?: string
           date: string
         }
       }

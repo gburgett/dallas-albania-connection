@@ -13,20 +13,21 @@ jumbotronCta:
   title: ''
 feature:
   backgroundColor: black
-  buttonStyle: mailchimp
-  buttonText: Read More
+  buttonStyle: info
+  buttonText: Apply Now for 2021!
   image: ''
-  link: https://teamalbania.us11.list-manage.com/subscribe/post?u=fbcbfba66020e12dd41b9cf1b&amp;id=4a0067c925
+  link: /appi
   show: true
   subtitle: Text "Albania" to 214-444-7523
   title: Stay up to date!
 articles:
+  - path: /2021
   - path: /2020
   - path: /2019
   - path: /2018
-  - path: /2017
 postsToShow: 4
 featuredPosts:
+  - slug: gordonburgett_net/albania/2020/
   - slug: 2019-02-25-the-plus-in-albania-plus
 ---
 
