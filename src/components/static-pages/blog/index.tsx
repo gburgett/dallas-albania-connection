@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Container, Row, Col } from "reactstrap";
 import { Helmet } from "react-helmet";
-import {InstantSearch, SearchBox, Hits} from 'react-instantsearch-dom'
+import {InstantSearch, SearchBox, Hits, Configure} from 'react-instantsearch-dom'
 import * as algoliasearch from 'algoliasearch';
 import Img, { FixedObject } from 'gatsby-image';
 
@@ -152,6 +152,7 @@ export const BlogIndexPage = ({ }: IPageContext<IPageData>) => {
           indexName={indexPrefix + '_blogs'}
           apiKey={searchApiKey}
         >
+          <Configure hitsPerPage={99} />
           <SearchBox />
 
           <Hits<IPost | IArticle> hitComponent={

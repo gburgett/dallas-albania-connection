@@ -10,4 +10,4 @@ author:
   photo: ''
 ---
 
-Follow Gordon's experience on the Young Professionals team in 2017!
+Follow Gordon's experience with the High School ministry team in 2014!

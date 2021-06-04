@@ -10,5 +10,3 @@ author:
   name: Gordon Burgett
   photo: ''
 ---
-
-Follow Gordon's experience on the Young Professionals team in 2017!
