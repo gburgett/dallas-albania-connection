@@ -34,7 +34,7 @@ async function Run() {
   let numbers
 
   if (argv.override) {
-    numbers = argv.override.split(',')
+    numbers = argv.override.toString().split(',')
   }
 
   if (!numbers || numbers.length == 0) {
