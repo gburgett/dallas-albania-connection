@@ -1,8 +1,6 @@
 {
-  "compilerOptions": {
-    "lib": [
-      "es2015",
-      "dom"
-    ]
-  }
+  "extends": "../../tsconfig.json",
+  "include": [
+    "gatsby-node.ts"
+  ]
 }

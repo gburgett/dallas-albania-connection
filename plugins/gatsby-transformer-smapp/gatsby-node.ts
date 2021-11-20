@@ -4,29 +4,24 @@ import * as crypto from 'crypto'
 import * as path from 'path'
 import * as fs from 'fs-extra'
 
-const convertToJson = (data, options) =>
-  new Promise<Array<any>>((res, rej) => {
-    csv(options)
-      .fromString(data)
-      .on(`end_parsed`, jsonData => {
-        if (!jsonData) {
-          rej(`CSV to JSON conversion failed!`)
-        }
+const convertToJson = async (data, options) => {
+  const jsonData = await csv(options).fromString(data)
 
-        jsonData = jsonData.map(row => {
-          Object.keys(row).forEach(key => {
-            const camelCased = _.camelCase(key)
-            if (camelCased != key) {
-              row[camelCased] = row[key]
-              delete(row[key])
-            }
-          })
-          return row
-        })
+  if (!jsonData) {
+    throw new Error(`CSV to JSON conversion failed!`)
+  }
 
-        res(jsonData)
-      })
+  return jsonData.map(row => {
+    Object.keys(row).forEach(key => {
+      const camelCased = _.camelCase(key)
+      if (camelCased != key) {
+        row[camelCased] = row[key]
+        delete(row[key])
+      }
+    })
+    return row
   })
+}
 
 async function onCreateNode(
   { node, actions },

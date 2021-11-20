@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  gatsby:
+    build: .
+    command: [yarn", "build"]
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules:delegated
+      - cache:/app/.cache:delegated
+      - public:/app/public
+    environment:
+      NODE_ENV: development
+
+volumes:
+  # Have the services share the public directory so we can serve it locally.
+  # TODO: separate service that simulates the CDN/s3 bucket?
+  public:
+    name: 'gatsby-public'
+  node_modules:
+  cache:
+

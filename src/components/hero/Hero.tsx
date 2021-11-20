@@ -24,7 +24,7 @@ export default class Hero extends React.Component<IHeroProps, {}> {
         (<img src={image} className=""></img>) :
         (<Img {...image} className="" />)
 
-    return  (<Jumbotron className="bg-black">
+    return <Jumbotron className="bg-black">
       <div className={`hero-image ${darken && 'dark'}`} style={ {backgroundImage: `url('${image}')`} }>
         {imgComponent}
       </div>
@@ -49,6 +49,6 @@ export default class Hero extends React.Component<IHeroProps, {}> {
           </footer>
         }
       </Container>
-    </Jumbotron>)
+    </Jumbotron>
   }
 }

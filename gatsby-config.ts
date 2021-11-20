@@ -66,15 +66,7 @@ const plugins: GatsbyConfig['plugins'] = [
     },
   },
   'gatsby-plugin-netlify',
-  {
-    resolve: 'gatsby-plugin-netlify-cms',
-    options: {
-      modulePath: `${__dirname}/src/cms`,
-      stylesPath: `${__dirname}/src/components/layout.scss`
-    }
-  },
   gatsbyPluginFeed,
-  'gatsby-plugin-offline',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-sass',
 ]

@@ -27,7 +27,7 @@ async function sourceNodes(
 
 
   let downloaded = []
-  if (process.env.NODE_ENV === `production`) {
+  if (false) { // (process.env.NODE_ENV === `production`) {
     try {
       downloaded = await download({
           dataDir,

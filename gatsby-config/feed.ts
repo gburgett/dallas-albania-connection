@@ -15,6 +15,7 @@ export const gatsbyPluginFeed = {
     `,
     feeds: [
       {
+        title: 'Team Albania Blog',
         serialize: ({ query: { site, allMarkdownRemark } }) => {
           return allMarkdownRemark.edges
             .filter(edge => edge.node.frontmatter.published !== false)
