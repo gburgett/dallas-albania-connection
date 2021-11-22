@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build && netlify-lambda -c ./config/webpack.functions.js build src/lambda",
+    "build": "gatsby build && NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" netlify-lambda -c ./config/webpack.functions.js build src/lambda",
     "serve": "gatsby serve",
     "develop": "gatsby develop",
     "build-watch": "nodemon -e ts,tsx,md,yml,scss -i public/ -x 'gatsby build && say \"finished\"'",
