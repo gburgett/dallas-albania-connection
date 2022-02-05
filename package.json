@@ -19,7 +19,8 @@
     "lambda": "netlify-lambda -c ./config/webpack.functions.js",
     "check-types": "tsc --noemit && for plugin in plugins/*/tsconfig.json; do (pushd $(dirname $plugin); tsc --noemit); done",
     "test": "jest",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch",
+    "clean": "rm -rf ./public ./functions"
   },
   "dependencies": {
     "@babel/core": "^7.7.4",

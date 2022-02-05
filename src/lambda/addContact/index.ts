@@ -31,7 +31,7 @@ export default async function handler(event, context) {
 export async function appendToSheet(contact: string, segment: string, data: string[], sheets: sheets_v4.Sheets) {
   const rowValues = [(contact || '').trim(), segment, ...data]
   const resp = await sheets.spreadsheets.values.append({
-    spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+    spreadsheetId: '1ckvstVEVvsFD8RuFvRL-NwUi3h7rW3zmyDAX3NECte0',
     range: 'A1:A',
     valueInputOption: 'USER_ENTERED',
     requestBody: {
@@ -42,7 +42,7 @@ export async function appendToSheet(contact: string, segment: string, data: stri
 
 export async function updateRow(rowNumber: number, contact: string, segment: string, data: string[], sheets: sheets_v4.Sheets) {
   const row = await sheets.spreadsheets.values.get({
-    spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+    spreadsheetId: '1ckvstVEVvsFD8RuFvRL-NwUi3h7rW3zmyDAX3NECte0',
     range: `A${rowNumber}:${rowNumber}`
   });
 
@@ -66,7 +66,7 @@ export async function updateRow(rowNumber: number, contact: string, segment: str
   }
 
   const resp = await sheets.spreadsheets.values.update({
-    spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+    spreadsheetId: '1ckvstVEVvsFD8RuFvRL-NwUi3h7rW3zmyDAX3NECte0',
     range: `A${rowNumber}:${rowNumber}`,
     valueInputOption: 'USER_ENTERED',
     requestBody: {

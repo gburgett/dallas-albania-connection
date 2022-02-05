@@ -8,7 +8,7 @@ export async function findContactRows(contact: string, sheets: sheets_v4.Sheets)
   }
 
   const got = await sheets.spreadsheets.values.get({
-    spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+    spreadsheetId: '1ckvstVEVvsFD8RuFvRL-NwUi3h7rW3zmyDAX3NECte0',
     range: 'A1:A'
   });
 

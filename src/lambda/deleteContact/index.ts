@@ -27,7 +27,7 @@ export default async function handler(event, context) {
 
   for (var row of toDelete) {
     await sheets.spreadsheets.values.clear({
-      spreadsheetId: '1zPr4lam-rZihE7_gtSmWrEK6nROLemZep6h34w33gPE',
+      spreadsheetId: '1ckvstVEVvsFD8RuFvRL-NwUi3h7rW3zmyDAX3NECte0',
       range: `A${row}:${row}`
     })
     console.log('deleted row', row)
