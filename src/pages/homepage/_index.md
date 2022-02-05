@@ -14,9 +14,9 @@ jumbotronCta:
 feature:
   backgroundColor: black
   buttonStyle: info
-  buttonText: Apply Now for 2021!
+  buttonText: Apply Now for 2022!
   image: ''
-  link: /appi
+  link: https://watermark.gomethod.app/!/#/24255/albania-july-2022
   show: true
   subtitle: Text "Albania" to 214-444-7523
   title: Stay up to date!
