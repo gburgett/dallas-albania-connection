@@ -14,7 +14,7 @@ jumbotronCta:
 feature:
   backgroundColor: black
   buttonStyle: info
-  buttonText: Apply Now for 2022!
+  buttonText: Support the 2022 team!
   image: ''
   link: https://watermark.gomethod.app/!/#/24255/albania-july-2022
   show: true
