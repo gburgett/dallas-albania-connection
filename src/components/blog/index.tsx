@@ -19,6 +19,7 @@ export interface ITemplateData {
       heroimage: string,
       heroImageSharp: GatsbyImageProps | null
       heroAttribution: string,
+      lightHeroImage?: boolean
       published?: boolean
       author: {
         name: string,
@@ -107,7 +108,7 @@ const ArticlePreview = (node: IArticle) => (
 
 export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
   const { markdownRemark: post, blogs, articles } = data
-  const { heroimage, heroImageSharp, heroAttribution, title } = post.frontmatter;
+  const { heroimage, heroImageSharp, lightHeroImage, heroAttribution, title } = post.frontmatter;
   const {siteUrl} = data.site.siteMetadata;
 
   let author = post.frontmatter.author
@@ -130,7 +131,7 @@ export function BlogTemplate ({ data }: IPageContext<ITemplateData>) {
       <Container fluid>
         {heroimage && 
           <Hero image={heroImageSharp || heroimage} heroAttribution={heroAttribution} >
-            <h1 className='display-3 title'>
+            <h1 className={`display-3 title ${lightHeroImage && 'dark'}`}>
               {author &&
                 <Author {...author} />}
               {title}

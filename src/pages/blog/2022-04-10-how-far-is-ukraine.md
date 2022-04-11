@@ -4,6 +4,7 @@ title: How far is Albania from Ukraine?
 slug: 2022-04-10-how-far-is-ukraine
 date: 2022-04-10T12:00:00Z
 published: false
+lightHeroImage: true
 heroimage: /files/blog/2022_tirana_to_ukraine_map.png
 heroAttribution: ''
 ---

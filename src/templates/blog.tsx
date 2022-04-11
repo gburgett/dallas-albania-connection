@@ -27,6 +27,7 @@ export const pageQuery = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+        lightHeroImage
         heroAttribution
         published
         author {
