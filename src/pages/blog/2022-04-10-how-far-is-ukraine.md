@@ -3,7 +3,7 @@ contentType: blog
 title: How far is Albania from Ukraine?
 slug: 2022-04-10-how-far-is-ukraine
 date: 2022-04-10T12:00:00Z
-published: false
+published: true
 lightHeroImage: true
 heroimage: /files/blog/2022_tirana_to_ukraine_map.png
 heroAttribution: ''
@@ -49,37 +49,23 @@ to go share the Gospel with high school students.  How could we then turn a blin
 Should we be like Jonah, who when called to go east to Ninevah, ran west to Spain?  That didn't end up so safe for him.
 
 Just as we should not run from God's calling, neither should we assume that God will only lead us to safe places.
-[Foxe's book of Martyrs](https://www.gutenberg.org/files/22400/22400-h/22400-h.htm) recounts chilling tales of men and
-women for whom following God's call led them into mortal danger.  And God promises that still more people will be
-martyred before Christ returns:
-
-> Then they were each given a white robe and told to rest a little longer, until the number of their fellow servants
-> and their brothers should be complete, who were to be killed as they themselves had been.
-> <footer class="blockquote-footer">Revelation 6:11</footer>
-
-Let me be absolutely clear here: we do not believe that we should seek out martyrdom, nor aspire to be martyred.  That
-is foolishness and presuming upon God's plan for our lives.  So we are taking abundant precaution to preserve the safety
-of the people God has given us on this trip.  We are trying to be good stewards of everything God has given us,
-especially the health and safety of our team.
+Sometimes God does his greatest work in the midst of dangerous situations, and in those situations we have the greatest
+opportunity to trust His leading and His goodness.  This doesn't mean we charge ahead recklessly, heedless of danger,
+but rather we use the wisdom and discernment he has given us to count the costs and be prepared to follow Him.
 
 So understanding all the above, let's reevaluate what "Safety" means in the context of following Christ.  Knowing
 that it does not mean a guarantee of physical safety, nor does it mean a shrinking back from our calling, we understand
 it to mean spiritual life and eternal security no matter what physical danger may befall us.
 
-> Who shall separate us from the love of Christ? Shall tribulation, or distress, or persecution, or famine, or 
-> nakedness, or danger, or sword? As it is written,
->
->  “For your sake we are being killed all the day long;
->     we are regarded as sheep to be slaughtered.”
->
-> No, in all these things we are more than conquerors through him who loved us. For I am sure that neither death nor 
+> For I am sure that neither death nor 
 > life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything 
 > else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.
+> <footer class="blockquote-footer">Romans 8:38-39</footer>
 
 This is an incredible promise of God's care for us and His goodness towards us.  The God who became a lowly man, lived
-a sinless life and was martyred on a cross for our sakes, knows what it is like to face mortal danger and choose that
+a sinless life and was crucified on a cross for our sakes, knows what it is like to face danger and choose that
 path anyways.  Now He watches over us, protecting us not from every potential physical danger, but preparing
-opportunities for us to lose our lives for His sake, and in so doing find them ([Luke 17:33](https://biblehub.com/esv/luke/17.htm)).
+opportunities for us to give our lives for His sake, and in so doing find them ([Luke 17:33](https://biblehub.com/esv/luke/17.htm)).
 
 ## So will we be safe?
 
@@ -87,8 +73,8 @@ Absolutely.  We are taking abundant precautions to ensure the safety of those on
 contact with CRU's global emergency response team.  In the highly unlikely event that some concern should arise for our
 safety, they will assist us in evacuating as quickly as possible.  This is good stewardship.
 
-But even if the chance of danger were higher, we would still go.  We would go because God has called us, there is a
-harvest He has prepared for us, and the workers are few.
+But even if the chance of danger were higher, we would likely still go.  We would go because God has called us, 
+there is a harvest He has prepared for us, and the workers are few.
 
 Please pray for our safety, and the safety of all other CRU staff and missionaries around the world.  Pray especially
 for the CRU staff in Ukraine, who are evacuating refugees, feeding the hungry who are sheltering in place, or even fighting
