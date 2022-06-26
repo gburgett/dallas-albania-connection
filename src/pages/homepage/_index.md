@@ -27,7 +27,7 @@ articles:
   - path: /2018
 postsToShow: 4
 featuredPosts:
-  - slug: gordonburgett_net/albania/2020/
+  - slug: 2022-06-22-2022-prayer-calendars
   - slug: 2019-02-25-the-plus-in-albania-plus
 ---
 

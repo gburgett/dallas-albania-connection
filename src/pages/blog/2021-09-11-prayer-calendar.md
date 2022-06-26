@@ -4,6 +4,7 @@ title: 2021 Prayer Calendar
 slug: 2021-prayer-calendar
 date: 2021-09-11T12:58:40.239Z
 published: true
+hideTitle: true
 heroimage: /files/prayercalendars/2021/2021_albania_prayer_calendar.png
 heroAttribution: ''
 ---

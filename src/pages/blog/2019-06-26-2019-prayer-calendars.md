@@ -4,6 +4,7 @@ title: 2019 Prayer Calendars
 slug: 2019-prayer-calendars
 date: 2019-06-26T12:58:40.239Z
 published: true
+hideTitle: true
 heroimage: /files/agenda-black-calendar-273011.jpg
 heroAttribution: ''
 ---

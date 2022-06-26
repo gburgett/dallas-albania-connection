@@ -21,6 +21,7 @@ export const pageQuery = graphql`
         slug
         date(formatString: "MMMM DD, YYYY")
         title
+        hideTitle
         heroimage
         heroImageSharp {
           fluid {
