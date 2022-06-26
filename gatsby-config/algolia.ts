@@ -97,7 +97,28 @@ export const algoliaQueries = [
     }, // optional
     indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME + '_blogs',
     settings: {
+      "attributesToIndex": [
+        "unordered(frontmatter.date)",
+        "unordered(frontmatter.author.name)",
+        "unordered(frontmatter.title)",
+        "rawMarkdownBody_freq",
+        "unordered(excerpt)"
+      ],
+      "ranking": [
+        "typo",
+        "geo",
+        "words",
+        "filters",
+        "proximity",
+        "attribute",
+        "exact",
+        "custom"
+      ],
+      "customRanking": [
+        "desc(frontmatter.date)"
+      ],
     },
+    mergeSettings: true
   },
 ]
 
