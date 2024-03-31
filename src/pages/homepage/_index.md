@@ -17,9 +17,7 @@ feature:
   buttonText: Support the 2022 team!
   image: ''
   link: https://watermark.gomethod.app/!/#/24255/albania-july-2022
-  show: true
-  subtitle: Text "Albania" to 214-444-7523
-  title: Stay up to date!
+  show: false
 articles:
   - path: /2021
   - path: /2020
