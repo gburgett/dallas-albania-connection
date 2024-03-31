@@ -17,6 +17,7 @@ feature:
   buttonText: Support the 2022 team!
   image: ''
   link: https://watermark.gomethod.app/!/#/24255/albania-july-2022
+  subtitle: ''
   show: false
 articles:
   - path: /2021
